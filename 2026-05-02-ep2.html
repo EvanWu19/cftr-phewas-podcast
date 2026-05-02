@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<title>Episode 11 · 2026-05-02 / ep2 · CFTR PheWAS Reading Podcast</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="index.html">← All episodes</a></nav>
+<h1 class="ep">Episode 11 · 2026-05-02 / ep2</h1>
+<p class="ep-date">Karczewski KJ 2022</p>
+
+<h2>Blurb</h2>
+<p>Karczewski et al. (Cell Genomics 2022) is the templated systematic ExWAS — SAIGE-GENE applied to 394,841 UK Biobank exomes across 4,529 phenotypes (pruned to 3,819 independent), released as the Genebass browser. For our CFTR PheWAS the architecture transfers but the scale doesn&#x27;t: at ~5K CFF WGS subjects we cannot run an open-ended discovery PheWAS, so this paper anchors a <em>targeted</em> design — CFGP-nominated modifier loci against pruned CFFPR phecodes — with the AC&gt;=50 filter, LOEUF-stratified reporting, and SAIGE-GENE+ as the engine.</p>
+<h2>Citation</h2>
+<p>Karczewski KJ, Solomonson M, Chao KR, et al. Systematic single-variant and gene-based association testing of thousands of phenotypes in 394,841 UK Biobank exomes. <strong>Cell Genomics</strong> 2022;2(9):100168.</p>
+<ul>
+<li>PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/36778668/" target="_blank" rel="noopener">36778668</a></li>
+<li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9903662/" target="_blank" rel="noopener">PMC9903662</a></li>
+<li>DOI: <a href="https://doi.org/10.1016/j.xgen.2022.100168" target="_blank" rel="noopener">10.1016/j.xgen.2022.100168</a></li>
+</ul>
+<h2>Methods to lift</h2>
+<ul>
+<li><strong>SAIGE-GENE+ (1.x)</strong> — successor to SAIGE-GENE 0.44.2 used here; better-calibrated for very rare variants and small case counts (our regime).</li>
+<li><strong>Three group-test design</strong> — pLoF (LOFTEE HC), missense-like (incl. LOFTEE LC), synonymous as negative control; run burden + SKAT-O + single-variant in parallel and don&#x27;t pre-commit to one.</li>
+<li><strong>AC&gt;=50 expected-allele-count filter</strong> — drop gene-by-phenotype cells where MAF × n_cases &lt; 50; this is exactly the threshold that excludes most under-powered cells in a small cohort like ours, and excluding them is the honest move.</li>
+<li><strong>Phenotype pruning recipe</strong> — pairwise r² &gt; 0.5 on phecode matrix, maximal independent set, tie-breaker on case count. Apply to CFFPR phecodes before running anything.</li>
+<li><strong>Genebass browser (genebass.org)</strong> — query each CFTR modifier gene we hit to see what UKBB phenotypes it touches; free hypothesis-generation layer.</li>
+<li><strong>Calibration filter</strong> — drop phenotypes with lambda GC &lt; 0.75; drop genes with mean coverage &lt; 20 or synonymous-class lambda GC &lt; 0.75.</li>
+</ul>
+<h2>Concept-note paste</h2>
+<blockquote>
+<p>Following Karczewski et al. (Cell Genomics 2022), we will run targeted gene-burden tests using SAIGE-GENE+ on the CFGP-nominated modifier-locus gene set against a pruned set of independent phecodes derived from CFFPR; we will run pLoF burden, missense-burden, and SKAT-O tests with the AC&gt;=50 expected allele count filter, and report results as gene-by-phecode tables with LOEUF-stratified prior weighting (Karczewski et al., Nature 2020).</p>
+</blockquote>
+<h2>Scale-and-scope honesty</h2>
+<ul>
+<li>394k exomes vs. our ~5K WGS — we are not claiming an open-ended discovery PheWAS. We are doing a <em>targeted</em> PheWAS on a pre-specified gene set. Frame this as scope-appropriate, not scope-limited.</li>
+<li>Constraint enrichment they report (top-LOEUF-decile genes 6.38% with phenotype hit vs. 2.12% background, OR 3.14) is a useful prior to cite when reporting our hits.</li>
+<li>Commit early to public release of summary statistics, even if just as a supplementary table; eventually a small static browser modeled on Genebass.</li>
+</ul>
+<h2>Today's papers</h2>
+    <article class="paper-card">
+      <div class="paper-meta">
+        <span class="slot">Biobank #2</span>
+        <span class="tag">Genebass / SAIGE-GENE / 394k UKBB exomes</span>
+      </div>
+      <h3 class="paper-title">Systematic single-variant and gene-based association testing of thousands of phenotypes in 394,841 UK Biobank exomes.</h3>
+      <p class="byline">Karczewski KJ <span class="dot">·</span> <span class="journal">Cell Genomics · 2022</span></p>
+      <div class="links">
+                <a class="btn primary" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9903662/" target="_blank" rel="noopener">PMC full text</a>
+        <a class="btn" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9903662/pdf/" target="_blank" rel="noopener">PDF</a>
+        <a class="btn" href="https://doi.org/10.1016/j.xgen.2022.100168" target="_blank" rel="noopener">DOI</a>
+        <a class="btn ghost" href="https://pubmed.ncbi.nlm.nih.gov/36778668/" target="_blank" rel="noopener">PubMed</a>
+      </div>
+    </article>
+<details class="transcript"><summary>Read full transcript (49 turns · ~1743 words)</summary>
+<div class="transcript-body"><p class="line alex"><span class="speaker">ALEX</span> Episode 2 — Karczewski et al. 2022, Cell Genomics. Same first author as Episode 1, but now applied: 394,841 UK Biobank exomes, SAIGE-GENE across 4,529 phenotypes, full results browser at genebass dot org. PMID 36778668.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> This is the templated PheWAS we&#x27;ve been wanting to study. What&#x27;s the architecture?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Three nested choices. First, variants are grouped into three annotation buckets per gene — pLoF using LOFTEE high-confidence, missense-like which lumps in LOFTEE low-confidence pLoFs, and synonymous as a calibration negative control. Second, three test types are run per group — burden, SKAT-O, and single-variant. Third, this gets run for 4,529 phenotypes — so end of pipeline they release roughly 993 million gene-level association statistics and 28 billion single-variant statistics.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Numbers like that are not the kind we&#x27;ll be running for CFF.</p>
+<p class="line alex"><span class="speaker">ALEX</span> No, but the architecture transfers. The phenotype side is what I want to study. They start with 4,529 raw phenotypes, then prune to 3,819 high-quality independent phenotypes — 677 continuous traits and 3,142 binary traits, including 708 ICD codes. The pruning method is correlation-based — they build a phenotype-by-phenotype correlation matrix, threshold at r-squared 0.5, and apply Hail&#x27;s maximal independent set with a tie-breaker that prefers phenotypes with more cases.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That tie-breaker is interesting. They&#x27;re explicitly trading phenotype redundancy for power.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Right. For our CFF PheWAS the phecode side is going to look different — we&#x27;re using phecodes derived from CFFPR, not raw ICD-10 from EHR. But the pruning logic is the same. We&#x27;ll have phecodes that are highly correlated — like &quot;respiratory failure&quot; and &quot;ventilator dependence&quot; — and we should not double-count.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Significance thresholds?</p>
+<p class="line alex"><span class="speaker">ALEX</span> SKAT-O at 2.5 times 10 to the negative 7. Burden at 6.7 times 10 to the negative 7. Single-variant at 8 times 10 to the negative 9. They calibrate these to roughly 0.05 expected false positives per phenotype.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Per phenotype. Not per study.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Per phenotype, which is the right way to think about a PheWAS. The total false positive count scales with the number of independent phenotypes — they tolerate that explicitly. We need to make the same call. For 5,000 CFF subjects and a smaller phecode count — call it 200 well-populated phecodes — our budget is different.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Let me push on the test choice. Why three tests instead of just SKAT-O?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Different power profiles. Burden is most powerful when most rare variants in the gene have effects in the same direction. SKAT-O is robust to mixed-direction effects. Single-variant is what you fall back on when one rare variant is doing the work. They run all three because they don&#x27;t know in advance which architecture each gene has.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> For CFTR specifically — the modifier loci you&#x27;d hit, what architecture?</p>
+<p class="line alex"><span class="speaker">ALEX</span> SLC26A9, SLC9A3 — these are channel/transporter genes where loss-of-function is the dominant disease model. Burden will likely outperform SKAT-O. For genes like MUC4 with structural complexity, mixed effects are more plausible — SKAT-O wins. We should plan to run both, not pre-commit.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> There&#x27;s a quality-control filter I want to dig into. They throw out summary statistics where expected allele count is less than 50.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Yes. Expected AC equals minor allele frequency times number of cases. Below 50, the asymptotic chi-squared on SAIGE-GENE deflates and you get artificially low test statistics. This is exactly the regime our CFF cohort lives in. Our case counts for many phecodes will be in the tens to low hundreds, not the tens of thousands UKBB has.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> So the AC-50 threshold is going to remove most of our potential signal.</p>
+<p class="line alex"><span class="speaker">ALEX</span> It will remove most of our gene-by-phecode cells, yes. The honest answer is: we don&#x27;t have UKBB-scale power for systematic single-variant ExWAS. We have CFF-scale power for *targeted* burden tests on a pre-specified gene set — the CFGP-discovered modifier loci — across the full phecode footprint. That&#x27;s a different study design and we should write it that way.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Can you say more on that distinction? Because it matters for how we frame the proposal.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Karczewski 2022 is a discovery PheWAS — open-ended, all genes against all phenotypes. We can&#x27;t replicate that at 5,000 N. What we can do is: take the published modifier loci from CFGP — Zhou 2023&#x27;s six lung loci, Aksit 2022&#x27;s GI loci, Aksit 2020&#x27;s CFRD loci, the Corvol 2015 panel — and run a targeted PheWAS, scanning only those loci against the full CFFPR phecode footprint. That&#x27;s powered, defensible, and addresses Gap 1 from our gap-map directly.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> One more methods point. The Hail Batch infrastructure. They decompose into roughly 18 million jobs, one per megabase per phenotype.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Right, and we will not be running 18 million jobs. But the unit-of-decomposition idea matters. For our scale, the natural unit is one gene per phecode per analysis variant — a few thousand jobs total. Local laptop or modest HPC handles that. We don&#x27;t need Hail Batch.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> SAIGE-GENE version they used?</p>
+<p class="line alex"><span class="speaker">ALEX</span> SAIGE-GENE 0.44.2, R 4.0.2, Hail 0.2.49 to 0.2.62. We should use SAIGE-GENE+, the successor. SAIGE-GENE+ explicitly fixes the lambda GC issues with very rare variants and very small case counts, which is again exactly our regime. There&#x27;s a Zhou 2022 paper specifically on the upgrade — that&#x27;s coming up in our reading.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> The biological signal they highlight is SCRIB and white matter integrity from MRI — eight rare pLoF variants in SCRIB aggregate to a SKAT-O p-value of 6 times 10 to the negative 15 against a tapetum diffusion-MRI phenotype. None of the individual variants would be discoverable.</p>
+<p class="line alex"><span class="speaker">ALEX</span> That&#x27;s the textbook gene-burden win — no single variant matters, the aggregate does. It&#x27;s also the result type we should hope to produce. If our PheWAS hits a CFGP modifier locus that no one has nominated against an unexpected phecode, the gain comes from aggregation, not from any single variant being suddenly discoverable.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> There&#x27;s also a constraint enrichment finding I want to log. They show that constrained genes — top LOEUF decile, which we just talked about in Episode 1 — are 6.38% likely to have at least one phenotype association versus 2.12% for frequency-matched background. Fisher exact p of 1.2 times 10 to the negative 3, OR around 3.14.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Three-fold enrichment in constrained genes is a useful background number to cite. When we find a hit in a constrained gene we can argue prior plausibility from this. When we find a hit in a tolerant gene we should be more skeptical. We just lifted that policy from Episode 1.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Tools and artifacts to lift into the methods primer?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Genebass browser at genebass.org — for any CFTR-modifier gene we find a hit on, look it up in Genebass to see what UKBB phenotypes it associates with. That&#x27;s a free hypothesis-generation step. SAIGE-GENE+ for the actual testing — install version 1.x. Hail for the variant filtering and group-test setup, even if we don&#x27;t use Hail Batch for orchestration. The phenotype-pruning recipe — pairwise correlation, r-squared 0.5 threshold, maximal independent set with case-count tie-breaker — apply this to our CFFPR phecode set.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Concept-note paste for today?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Try this. &quot;Following Karczewski et al. (Cell Genomics 2022), we will run targeted gene-burden tests using SAIGE-GENE+ on the CFGP-nominated modifier-locus gene set against a pruned set of independent phecodes derived from CFFPR; we will run pLoF burden, missense-burden, and SKAT-O tests with the AC&gt;=50 expected allele count filter, and report results as gene-by-phecode tables with LOEUF-stratified prior weighting.&quot; That&#x27;s one sentence and it answers the methods reviewer.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> I&#x27;d add — we explicitly call out the scale difference. We are not claiming to do a 394k-exome PheWAS in 5k WGS subjects. We are doing a targeted PheWAS, and that&#x27;s the right design for our N.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Agreed. Frame it as scope-appropriate, not scope-limited.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> One last thing — they put everything in a public browser. Are we committing to releasing summary stats?</p>
+<p class="line alex"><span class="speaker">ALEX</span> We should be. Genebass is the gold standard for this. Even if our PheWAS is targeted, the summary stats from those gene-by-phecode tests should land somewhere public — at minimum a supplementary table — and ideally a small static browser. That&#x27;s a scope decision for later but I want to flag it now.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> One sub-thread I want to close before we wrap. They run SKAT-O at p threshold 2.5 times 10 to the negative 7 — which means roughly 0.05 expected false positives per phenotype. For 3,819 independent phenotypes that&#x27;s about 191 false positives across the study. They tolerate that.</p>
+<p class="line alex"><span class="speaker">ALEX</span> They tolerate it because their replication and follow-up infrastructure is the Genebass browser plus downstream functional studies — readers can re-prioritize a hit by looking at the full per-phenotype profile. We won&#x27;t have that. For our targeted PheWAS we should be stricter — Bonferroni across our actual gene-by-phecode test count, not per-phenotype.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> How many tests are we talking?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Rough math. Say 30 CFGP-nominated modifier genes times 3 group tests times maybe 200 well-powered phecodes — that&#x27;s 18,000 tests. Bonferroni at 0.05 is 2.8 times 10 to the negative 6. Plus a sensitivity analysis at FDR 5%. Both reported.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s a number I want pre-registered before we look at any data.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Agreed. Pre-registration is the right move. SAP locks the gene list, the phecode list, the test types, and the significance thresholds before we look.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Logged. Concrete artifact for today: methods primer entry — &quot;SAIGE-GENE+ targeted PheWAS, CFGP modifier loci against pruned CFFPR phecodes, AC&gt;=50 filter, LOEUF-stratified reporting; pre-registered Bonferroni across actual test count plus FDR sensitivity; commit to public release of summary statistics.&quot; Logged.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Tomorrow we&#x27;re paired with: Collaco et al. 2016, Sources of Variation in Sweat Chloride Measurements — a CFF-cohort variance-components paper that tells us how much of sweat chloride is genetic versus test noise. It&#x27;s our gap-map check on whether sweat chloride is a usable PheWAS phenotype.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s a useful reality check before we get fancy. End of episode 2.</p>
+<p class="line alex"><span class="speaker">ALEX</span> One footnote on infrastructure. They release the entire results dataset — almost a billion gene-level statistics — under a permissive license through Genebass. We should plan from day one that our targeted PheWAS summary stats land somewhere comparably reusable. Even a static GitHub Pages browser plus a downloadable TSV is enough to mirror that release pattern at our scale. Reviewers notice that.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That goes into the data-management plan, not the methods primer. Logged separately.</p>
+<p class="line alex"><span class="speaker">ALEX</span> End of episode 2.</p></div></details>
+</main><footer>Generated 2026-05-02 07:18</footer></body></html>

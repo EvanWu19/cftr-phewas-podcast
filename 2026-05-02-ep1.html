@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<title>Episode 10 · 2026-05-02 / ep1 · CFTR PheWAS Reading Podcast</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="index.html">← All episodes</a></nav>
+<h1 class="ep">Episode 10 · 2026-05-02 / ep1</h1>
+<p class="ep-date">Karczewski KJ 2020</p>
+
+<h2>Blurb</h2>
+<p>Karczewski et al. (Nature 2020) introduce the gnomAD v2 dataset (125,748 exomes + 15,708 genomes = 141,456 individuals) and the LOEUF metric — a continuous, confidence-bounded measure of per-gene loss-of-function intolerance that supersedes pLI. For the CFTR PheWAS, this paper is consumed as a prior: every gene-burden test we run on the ~5K CFF WGS cohort will be filtered with LOFTEE (their high-confidence pLoF annotator) and stratified or weighted by LOEUF decile so that constraint heterogeneity does not masquerade as biological signal.</p>
+<h2>Citation</h2>
+<p>Karczewski KJ, Francioli LC, Tiao G, et al. The mutational constraint spectrum quantified from variation in 141,456 humans. <strong>Nature</strong> 2020;581(7809):434-443.</p>
+<ul>
+<li>PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/32461654/" target="_blank" rel="noopener">32461654</a></li>
+<li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7334197/" target="_blank" rel="noopener">PMC7334197</a></li>
+<li>DOI: <a href="https://doi.org/10.1038/s41586-020-2308-7" target="_blank" rel="noopener">10.1038/s41586-020-2308-7</a></li>
+</ul>
+<h2>Methods to lift</h2>
+<ul>
+<li><strong>gnomAD v2.1.1 constraint table</strong> (per-gene LOEUF, pLI, MIS-Z, observed/expected per consequence class) — download from gnomad.broadinstitute.org; use canonical-transcript values as default.</li>
+<li><strong>LOFTEE</strong> VEP plugin (high-confidence pLoF call) — apply as filter for background gene-set tests, apply as annotation only on the CFTR index locus to avoid losing real C-terminal disruptions.</li>
+<li><strong>Decile stratification</strong> — pre-register that &quot;constrained&quot; = top LOEUF decile, &quot;tolerant&quot; = bottom decile; report enrichment within strata, not pooled.</li>
+<li><strong>Synonymous calibration check</strong> — replicate their r ≈ 0.979 expected-vs-observed synonymous on our cohort as a QC that variant calling is not pathologically biased.</li>
+</ul>
+<h2>Concept-note paste</h2>
+<blockquote>
+<p>Rare-variant burden tests will be restricted to high-confidence pLoF variants annotated by LOFTEE on the gnomAD v2.1.1 LOEUF table; gene-level tests will be reported within LOEUF decile strata to control for the substantial heterogeneity in baseline pLoF tolerance across the genome (Karczewski et al., Nature 2020).</p>
+</blockquote>
+<h2>Caveats logged</h2>
+<ul>
+<li>LOEUF was estimated on a non-Finnish-European-dominant population — priors will be best-calibrated for our European-ancestry CFF subjects; non-European stratified analyses inherit ancestry bias.</li>
+<li>LOFTEE is conservative on terminal truncations. The CFTR C-terminus carries the PDZ-binding motif and we will treat LOFTEE on CFTR as advisory rather than filtering.</li>
+<li>CFTR is autosomal recessive and so falls in the <em>middle</em> of the LOEUF distribution by design — do not use top-decile constraint as a positive control for AR modifier candidates.</li>
+</ul>
+<h2>Today's papers</h2>
+    <article class="paper-card">
+      <div class="paper-meta">
+        <span class="slot">Biobank #1</span>
+        <span class="tag">gnomAD constraint / LOEUF / LOFTEE</span>
+      </div>
+      <h3 class="paper-title">The mutational constraint spectrum quantified from variation in 141,456 humans.</h3>
+      <p class="byline">Karczewski KJ <span class="dot">·</span> <span class="journal">Nature · 2020</span></p>
+      <div class="links">
+                <a class="btn primary" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7334197/" target="_blank" rel="noopener">PMC full text</a>
+        <a class="btn" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7334197/pdf/" target="_blank" rel="noopener">PDF</a>
+        <a class="btn" href="https://doi.org/10.1038/s41586-020-2308-7" target="_blank" rel="noopener">DOI</a>
+        <a class="btn ghost" href="https://pubmed.ncbi.nlm.nih.gov/32461654/" target="_blank" rel="noopener">PubMed</a>
+      </div>
+    </article>
+<details class="transcript"><summary>Read full transcript (54 turns · ~1995 words)</summary>
+<div class="transcript-body"><p class="line alex"><span class="speaker">ALEX</span> Morning, Runyu. Episode 1 today is the gnomAD constraint paper — Karczewski et al., Nature 2020, 141,456 humans. PMID 32461654. This is the paper where LOEUF gets defined and pLI gets demoted.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Demoted is a strong word. pLI is everywhere in the rare-variant literature.</p>
+<p class="line alex"><span class="speaker">ALEX</span> pLI is a binary-ish call — is the gene haploinsufficient or not, posterior probability above 0.9 or not. LOEUF is continuous. The whole point of this paper is that constraint is continuous, not dichotomous, and you should be binning genes into deciles, not flipping a switch.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> OK, so for our CFTR PheWAS, why do I care which decile the gene is in?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Two reasons. First, gene-set background. When you run a SKAT-O on, say, MUC4 because it came up as a CFGP modifier locus, the question reviewers will ask is &quot;is this just noise from a constraint-tolerant gene?&quot; LOEUF tells you what the prior should be. MUC4 is in a permissive decile — high LOEUF — which means the gnomAD population already carries pLoF variants in it without obvious phenotype. SLC9A3 is more constrained. Reviewers will read those two associations differently and you should too.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Second reason?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Variant filtering, and a power consideration too. Constrained genes are enriched for disease association in published PheWAS — they show this in their own follow-up paper, the Karczewski 2022 Genebass paper we are reading tomorrow. If our targeted gene set is dominated by tolerant-decile genes, our prior on finding any signal at all is correspondingly low, and we should write the proposal acknowledging that. Reviewer will ask &quot;why these genes?&quot; and the right answer mixes biological nomination with constraint-tier reasoning.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Variant filtering proper?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Their high-confidence pLoF set is built by LOFTEE — Loss-of-Function Transcript Effect Estimator — which removes terminal truncations, rescued splice variants, anything that looks like it would escape nonsense-mediated decay. If you pull a list of CFTR rare variants out of the CFF WGS and run gene-burden tests without LOFTEE filtering, you will absolutely have annotation noise inflating your test statistic.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Give me the headline numbers from this paper.</p>
+<p class="line alex"><span class="speaker">ALEX</span> 125,748 exomes plus 15,708 genomes — 141,456 individuals total. Roughly twice the size of ExAC, the previous flagship. They observe a median of 17.9 expected pLoF variants per gene, and 72.1% of genes have more than 10 expected pLoF variants — meaning only at this sample size do most genes become powered to be classified as constrained.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That is a power point I want to internalize. Most genes aren&#x27;t even classifiable for constraint until you cross 100k.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Right — and this is exactly what we have to face for our CFF cohort. We have 5,000 WGS. There is no scenario in which we are going to compute LOEUF de novo from CFF data. We are consuming gnomAD&#x27;s LOEUF estimates as priors and using them to weight our gene-level tests.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That sounds like exactly what SAIGE-GENE+ supports — incorporating prior weights on gene categories.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Yes, and we can do better. We can pre-stratify our gene set into LOEUF deciles before we run anything, and report results conditional on decile. If the CFTR locus itself shows up in our PheWAS — and it will — we can show that the signal is constraint-dependent, which is reassuring biologically. If a gene like SLC26A9 shows up only in the high-LOEUF tail, we treat that hit with a lot more skepticism.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Sample composition? I want to know what populations we&#x27;re inheriting priors from.</p>
+<p class="line alex"><span class="speaker">ALEX</span> gnomAD v2 is roughly 56% non-Finnish European, 19% Latino, 13% African and African American, 9% East Asian, with smaller fractions Finnish, South Asian, Ashkenazi Jewish. Sample size per population matters for the LOEUF estimates — they explicitly down-sample for the cross-population comparison so that detection power doesn&#x27;t confound the result. For our purposes the take-home is: priors are best-calibrated for non-Finnish European, decent for African ancestry, weaker elsewhere.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Walk me through the LOEUF construction one more time. I keep getting it confused with pLI.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Okay. For each gene they fit a mutational model — given the trinucleotide context, methylation status, sequencing coverage, what is the expected number of synonymous, missense, and pLoF variants? They calibrate this against observed synonymous variants — they get r equals 0.979 between expected and observed synonymous, which is the QC check that the model is calibrated. Then for pLoF they compute observed-over-expected. They take the upper bound of the 90% confidence interval on that ratio — the LOEUF. Genes get binned into deciles. Top decile, lowest LOEUF, most constrained. Bottom decile, highest LOEUF, most tolerant.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> And pLI is just a Bayesian classifier on the same observation, with a prior, that gives you a posterior probability of intolerance.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Right. pLI loses information at the extremes — a small gene with one expected pLoF and zero observed gets the same pLI as a giant gene with 100 expected and zero observed, even though those mean very different things. LOEUF preserves the magnitude.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Okay, what does the paper say about how LOEUF behaves for known disease-gene categories?</p>
+<p class="line alex"><span class="speaker">ALEX</span> This is the validation. Known haploinsufficient genes are strongly depleted of pLoF — they sit in the top LOEUF decile, exactly where they should. Olfactory receptors, which are tolerant by construction, sit in the bottom decile. Autosomal recessive genes — and CFTR is an AR gene — fall in the middle of the distribution. That last fact matters for us.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Wait, hold on. CFTR sits in the middle?</p>
+<p class="line alex"><span class="speaker">ALEX</span> It does, and that&#x27;s the right place for it. AR genes are under selection, but the selection acts on homozygotes, not heterozygotes. So the per-allele constraint is weaker than for a haploinsufficient gene. This is biologically consistent — CFTR pLoF carriers are clinically silent, CFTR pLoF homozygotes have CF.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> There&#x27;s also a heterozygote-advantage hypothesis for CFTR — the carrier-frequency-too-high observation that gets explained as resistance to cholera or typhoid or something else.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Right, and any balancing selection at the locus also flattens the constraint signal. Either way, you don&#x27;t expect CFTR to look strongly constrained on a metric that assumes purely deleterious pLoF effect. So when we report the LOEUF for CFTR in our methods table — it&#x27;s around the genome-wide median — we should attribute that to AR plus possible balancing selection, not to &quot;CFTR doesn&#x27;t matter.&quot;</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That has an implication for our analysis. If we&#x27;re testing CFTR modifier loci that are themselves AR genes — and a lot of CFGP candidate modifiers are recessive — we shouldn&#x27;t expect them in the top LOEUF decile.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Correct. And we should not write a methods section that claims constraint-enrichment as a positive control unless we account for that.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> They show ancestry differences in LOEUF — African and African American individuals have a lower mean observed-over-expected, consistent with selection being more efficient in larger effective population sizes. What does this mean for our cohort?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Two things. First, gnomAD LOEUF is computed on a non-Finnish-European-dominant population — the constraint estimates have ancestry bias baked in. Second, our CFF cohort is overwhelmingly European too — Zhou 2023 was about 95% European — so we&#x27;re pulling priors that are roughly population-matched. That&#x27;s good for the European tests and bad for any non-European stratified analysis we attempt.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> There&#x27;s a missense story I want to ask about. They define a missense badness score, MIS-Z, in addition to LOEUF. Should we be using that for missense burden tests on CFTR modifier loci?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Yes, conditionally. MIS-Z is the missense Z-score — the standardized observed-versus-expected for missense variants per gene. It&#x27;s their analog of LOEUF for the missense class. The way to use it is as a per-variant prior weight in the missense burden test, not as a hard filter. SAIGE-GENE+ supports custom variant weights and you would pass the gene&#x27;s MIS-Z plus a per-variant deleteriousness score like REVEL or AlphaMissense as the weight vector.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> REVEL versus AlphaMissense versus the older MetaSVM ensemble. Do we pick one?</p>
+<p class="line alex"><span class="speaker">ALEX</span> We pick one for the primary analysis and run sensitivity analyses with the others. AlphaMissense is the current best published per-variant pathogenicity score and would be my default. REVEL is the legacy default and we should run it as a sensitivity. Both go in the SAP. If primary and sensitivity disagree on a hit, we flag it.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s another pre-registration item. Good.</p>
+<p class="line alex"><span class="speaker">ALEX</span> It is. Pre-register the score, the threshold, and the sensitivity set. No post-hoc score-shopping.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Tell me what tools we lift from this paper into our methods primer.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Three artifacts. First, the gnomAD v2.1.1 constraint table — the LOEUF table per gene per transcript. Download from gnomad.broadinstitute.org. Use the canonical-transcript constraint per gene as your default. Second, LOFTEE — VEP plugin, the Karczewski-lab repo on GitHub. Use it as the high-confidence pLoF filter on every rare-variant test we run. Third, the gnomAD allele frequency table itself — for any CFTR variant we observe in our CFF cohort, we want to know the gnomAD non-Finnish European AF as a sanity check that our calling pipeline isn&#x27;t generating phantoms.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> One concrete thing for the proposal. What&#x27;s the sentence I paste?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Try this. &quot;Rare-variant burden tests will be restricted to high-confidence pLoF variants annotated by LOFTEE on the gnomAD v2.1.1 LOEUF table; gene-level tests will be reported within LOEUF decile strata to control for the substantial heterogeneity in baseline pLoF tolerance across the genome (Karczewski et al., Nature 2020).&quot; That sentence does two jobs — it pre-empts the constraint-confound objection and it signals to a reviewer that we know what we&#x27;re doing.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> I want to add one piece. We should also pre-register the LOEUF threshold for our enrichment analyses. If we say &quot;constrained genes&quot; we mean top decile. If we say &quot;tolerant&quot; we mean bottom decile. Those operational definitions go in the SAP.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Agreed. Don&#x27;t let &quot;constrained&quot; become a moving target across reviewer rounds.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> One last thing — the limitations. They flag that LOFTEE is conservative. It removes terminal truncations that might still be functional pLoFs through C-terminal domain loss. That bites us.</p>
+<p class="line alex"><span class="speaker">ALEX</span> It does. CFTR&#x27;s C-terminus has the PDZ-binding motif. A premature stop in the last exon that LOFTEE flags as low-confidence might actually disrupt CFTR membrane localization. We should not blindly accept LOFTEE&#x27;s call on the CFTR locus itself — we annotate but we do not auto-filter our index gene.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Good. So for CFTR we use LOFTEE as annotation, not exclusion.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Exactly. For the rest of the gene-set background, we use LOFTEE as exclusion and accept the conservative bias.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> One more thing on the dataset itself. They flag that 1,815 genes are tolerant to biallelic inactivation — homozygous pLoF carriers exist in healthy gnomAD individuals. That&#x27;s a useful marker for the negative-control set in our background.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Right. If a gene is tolerant to biallelic inactivation in healthy gnomAD individuals, it&#x27;s almost certainly not the gene driving a CF comorbidity in our cohort. We can use that 1,815-gene set as part of a sanity-check background — burden tests on those genes should be uniformly null in our PheWAS, and if they aren&#x27;t, we have a calibration problem.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s the kind of internal control that strengthens a methods section a lot.</p>
+<p class="line alex"><span class="speaker">ALEX</span> It is. And it costs nothing — it&#x27;s a flat list to download.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Concrete artifact for today — methods primer entry: &quot;gnomAD v2.1.1 LOEUF plus LOFTEE high-confidence filter, applied to background gene set; LOFTEE annotation but not filter on the CFTR locus itself; 1,815-gene biallelic-tolerant set used as null calibration; AlphaMissense primary, REVEL sensitivity, MIS-Z for gene-level missense weighting.&quot; Logged.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Tomorrow we&#x27;re paired with: Karczewski et al. 2022 Cell Genomics — same first author, same shop, but now applied to 394,841 UKBB exomes with SAIGE-GENE running across 4,529 phenotypes. It&#x27;s the templated PheWAS we want to reverse-engineer for CFF.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Looking forward to it. End of episode 1.</p></div></details>
+</main><footer>Generated 2026-05-02 07:18</footer></body></html>

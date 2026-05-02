@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<title>Episode 1 · 2026-04-30 / ep1 · CFTR PheWAS Reading Podcast</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="index.html">← All episodes</a></nav>
+<h1 class="ep">Episode 1 · 2026-04-30 / ep1</h1>
+<p class="ep-date">Bycroft C 2018</p>
+<audio controls preload="none" src="2026-04-30-ep1.mp3" style="width:100%;margin:8px 0 16px;"></audio><p style="color:var(--muted);font-size:12px;margin:-12px 0 16px;">Audio · 13.2 MB · gpt-4o-mini-tts</p>
+<p>Bycroft and colleagues describe the centralized QC, population-structure analysis, phasing, imputation and HLA inference for the full ~500K UK Biobank cohort (488,377 samples after QC, genotyped on the UK BiLEVE Axiom and UK Biobank Axiom arrays sharing 95% of marker content, imputed up to ~96M variants against HRC and UK10K+1KG). For the CFTR PheWAS the load-bearing implication is the relatedness pipeline: with 30.3% of UKBB participants related at third-degree or closer, the KING -&gt; BOLT-LMM workflow is the only defensible template for the CFF cohort, where the NCT00676169 twin/sibling sub-study and multiplex CF families push the related-pair fraction at least as high.</p>
+<h2>Citation</h2>
+<p>Bycroft C, Freeman C, Petkova D, Band G, Elliott LT, Sharp K, Motyer A, Vukcevic D, Delaneau O, O&#x27;Connell J, Cortes A, Welsh S, Young A, Effingham M, McVean G, Leslie S, Allen N, Donnelly P, Marchini J. <strong>The UK Biobank resource with deep phenotyping and genomic data.</strong> <em>Nature</em> 562, 203-209 (2018).</p>
+<ul>
+<li>PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/30305743/" target="_blank" rel="noopener">30305743</a></li>
+<li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6786975/" target="_blank" rel="noopener">PMC6786975</a></li>
+<li>DOI: <a href="https://doi.org/10.1038/s41586-018-0579-z" target="_blank" rel="noopener">10.1038/s41586-018-0579-z</a></li>
+</ul>
+<h2>Methods to lift</h2>
+<ul>
+<li><strong>KING</strong> — kinship-based inference robust to population structure; use to identify related pairs in the CFF cohort prior to GWAS.</li>
+<li><strong>BOLT-LMM v2.2</strong> — linear mixed model for association testing that absorbs cryptic relatedness and structure simultaneously; the published workflow for the height positive control.</li>
+<li><strong>fastPCA (EIGENSOFT v6.0.1)</strong> — scalable PCA for hundreds of thousands of samples; run on an LD-pruned unrelated subset, then project relatives.</li>
+<li><strong>Per-batch marker QC across 106 batches</strong> — compute the distribution of how many batches a marker fails (84% of MAF&lt;1% markers pass in all batches); mirror per-sequencing-batch for CFF WGS calls.</li>
+<li><strong>Sample QC: missing rate + ancestry-residualized heterozygosity</strong> — flagged 968 samples (0.2%); the residualization step is critical for an admixed cohort.</li>
+<li><strong>Sex-chromosome karyotype check via L2R intensity on X and Y</strong> — recovered 652 (0.134%) putative aneuploidies separately from 378 self-report mismatches; flag rather than drop.</li>
+<li><strong>Duplicate concordance + ExAC allele-frequency cross-check</strong> — 588 duplicate pairs at 99.87% mean concordance, 91,298 ExAC overlap markers at r^2 = 0.93; for CFF use GnomAD as the external anchor.</li>
+<li><strong>SHAPEIT3 + IMPUTE4 + HRC/UK10K+1KG panels</strong> — phasing/imputation stack producing ~96M variants at 0.229% median switch error; relevant only as the historical baseline before the WGS-era pipelines.</li>
+<li>**HLA*IMP:02 for 11 classical HLA genes at two-field resolution** — validated by replicating MS associations (HLA-DRB1*15:01 OR 3.16, p = 2.3e-85); modern WGS analog is HLA-LA / T1K but the positive-control logic is identical.</li>
+<li><strong>BGEN v1.2 + qctool v2 + SNPTEST</strong> — ship the file format and the tooling alongside the data release.</li>
+</ul>
+<h2>Gap-map note</h2>
+<p>This is the canonical 2018 array+imputation paper, strong on cohort QC but weak on rare variants below 1% MAF — exactly the band where CFTR modifier biology sits. It defines our QC template; it does not address our power problem. The rare-variant primer starts tomorrow with Halldorsson 2022 (the UKBB WGS rollout).</p>
+<h2>Today's papers</h2>
+    <article class="paper-card">
+      <div class="paper-meta">
+        <span class="slot">Biobank #1</span>
+        <span class="tag">UKBB cohort/QC</span>
+      </div>
+      <h3 class="paper-title">The UK Biobank resource with deep phenotyping and genomic data.</h3>
+      <p class="byline">Bycroft C <span class="dot">·</span> <span class="journal">Nature · 2018</span></p>
+      <div class="links">
+                <a class="btn primary" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6786975/" target="_blank" rel="noopener">PMC full text</a>
+        <a class="btn" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6786975/pdf/" target="_blank" rel="noopener">PDF</a>
+        <a class="btn" href="https://doi.org/10.1038/s41586-018-0579-z" target="_blank" rel="noopener">DOI</a>
+        <a class="btn ghost" href="https://pubmed.ncbi.nlm.nih.gov/30305743/" target="_blank" rel="noopener">PubMed</a>
+      </div>
+    </article>
+<details class="transcript"><summary>Read full transcript (43 turns · ~1753 words)</summary>
+<div class="transcript-body"><p class="line alex"><span class="speaker">ALEX</span> Welcome back. Single-paper format starts today, and we are kicking off with the one that everybody cites and almost nobody reads end to end — Bycroft and colleagues, 2018, Nature, &quot;The UK Biobank resource with deep phenotyping and genomic data.&quot;</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> The 500K paper.</p>
+<p class="line alex"><span class="speaker">ALEX</span> 488,377 after QC, to be exact. And the reason we are re-digesting it as a standalone is that for our CFTR PheWAS we are going to lift roughly half of its quality-control stack, so we should actually understand what the stack does.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Let me set the stage for the listener. We have about 5,000 CFF whole-genome samples, we want to do a phenome-wide scan against CFTR variation, and the methods reviewers are going to ask us why we trust our calls and our population structure handling. UKBB is the reference template.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Right. So let me walk through it the way I read it the second time, which is QC-first, science-second. The cohort was genotyped on two arrays. About 49,950 participants — the UK BiLEVE Lung Exome Variant Evaluation subset — were run on the Applied Biosystems UK BiLEVE Axiom array at 807,411 markers. Then 438,427 participants were run on the closely related UK Biobank Axiom array at 825,927 markers. The two arrays share roughly 95 percent of marker content.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Why do I care about that 95 percent?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Because the 5 percent that is not shared becomes a batch covariate forever. Any variant that is only on one array and shows an apparent association will be confounded with whatever is correlated with being a smoker who got recruited into BiLEVE first. For us, the analog is that CFF samples were not all sequenced in one batch on one platform — we have samples across years, multiple sequencing centers, and at least two assay generations. The Bycroft pattern is the right pattern: track the batch, code it as a covariate, and run your batch-level QC tests before you ever touch a phenotype.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> They mention 106 sequential genotyping batches of about 4,700 samples each.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Yes, and they ran batch-level marker QC across all 106 batches and reported the distribution of how many batches a marker fails. A marker that fails QC in just one batch is a different beast from one that fails in twenty. Common-frequency markers above 5 percent MAF mostly pass everywhere; for rare markers below 1 percent MAF, only 84 percent pass in all batches. That number — 84 percent — is the one I would tattoo on the wall before doing rare-variant work on a multi-batch dataset.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> For our cohort, with WGS instead of array calls, the analogy would be...</p>
+<p class="line alex"><span class="speaker">ALEX</span> The analogy is per-batch DeepVariant or GATK call concordance, plus per-batch missingness and per-batch Ti/Tv. Same idea: a variant that only looks weird in one batch is a batch artifact. A variant that looks weird in all batches is real biology, even if it is uncomfortable.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Sample QC.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Two metrics, both classic. Missing rate per sample and heterozygosity adjusted for population structure. They flagged 968 samples — 0.2 percent — as outliers in one or both. The &quot;adjusted for population structure&quot; piece is the one PIs forget. Raw heterozygosity is confounded with ancestry; an admixed individual will look heterozygous and you will throw them out for the wrong reason. For CFF samples that include Hispanic, African American and admixed participants, you must do the heterozygosity check after you have residualized on principal components, not before.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Sex check.</p>
+<p class="line alex"><span class="speaker">ALEX</span> They used the relative intensity of X and Y chromosome markers to infer karyotypic sex, then compared to self-report. They found 652 individuals — 0.134 percent — with putative sex chromosome aneuploidies: X0, XXX, XXY, XYY. And separately, 378 individuals where self-reported and inferred sex disagreed. Those are two different categories and the paper keeps them separate, which I appreciate.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> For us those numbers are tiny in absolute terms but the pattern matters. CF has known fertility consequences, especially in males, so an excess of CBAVD in our cohort is biology not error.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Right, and that is the kind of thing you only find if you actually run the karyotype check rather than dropping all sex mismatches. Bycroft kept the aneuploids in the released file with a flag. We should do the same.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Concordance.</p>
+<p class="line alex"><span class="speaker">ALEX</span> 588 pairs of experimental duplicates with mean concordance 99.87 percent and minimum 99.39 percent. That is the headline number for &quot;the array works.&quot; They also crosswalked 91,298 overlapping markers against ExAC allele frequencies in European-ancestry participants and got an r-squared of 0.93. About 300 markers had wildly different frequencies — non-working probesets, annotation errors, mapping errors in complex regions. They flagged them and moved on.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> For us the parallel is GnomAD. We should do exactly that allele-frequency cross-check, because if our CFF cohort allele frequencies disagree with GnomAD non-Finnish European at common SNPs, something is broken. CFTR variants will be enriched, but the rest of the genome should match.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Now relatedness, which is the bit I actually care most about for our project. They used KING — the kinship-based inference for genome-wide-association-studies tool — to estimate kinship coefficients on quality-controlled autosomal markers typed on both arrays. KING is the standard because it is robust to population structure; it does not assume a single homogeneous reference allele frequency the way method-of-moments estimators do.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> How related is UKBB?</p>
+<p class="line alex"><span class="speaker">ALEX</span> 147,731 participants — 30.3 percent of the cohort — are inferred related at third degree or closer to at least one other person. 107,162 related pairs total. Sibling pairs alone are 22,666, which is roughly twice the number you would expect by chance from random sampling of the UK population. They attribute it to recruitment clustering and the family-pulls-family effect.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That is huge. And it is exactly the issue the CFF cohort has. We have NCT00676169, the twin-sibling sub-study, and we have multiplex CF families recruited together. Our relatedness fraction will be at least as high as UKBB and probably higher.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Which is why the second key tool is BOLT-LMM. The paper references BOLT-LMM v2.2 for the height GWAS. A linear mixed model handles cryptic relatedness and population structure simultaneously, by modeling a genetic random effect calibrated against a kinship matrix. If you ignore relatedness in a cohort with 30 percent related individuals you inflate test statistics across the genome and the manuscript will not survive review.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> KING for inference, BOLT-LMM for analysis.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Yes. And for population structure they used fastPCA from the EIGENSOFT package version 6.0.1, which is the algorithm that scales PCA to hundreds of thousands of samples without doing full eigendecomposition. They get the first four PCs to separate sub-Saharan African, European, and East Asian ancestry, with admixed individuals on continua between groups. Further PCs picked up sub-continental structure within self-reported British.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> For our cohort, even though we are mostly European-ancestry CF, the Hispanic and African-American sub-cohorts will fall on those continua and the PCs will catch them — but only if we run PCA on a properly LD-pruned set with relateds removed first.</p>
+<p class="line alex"><span class="speaker">ALEX</span> That is exactly the workflow. Relatives bias PCA toward whatever family they belong to. You compute PCs on an unrelated subset, then project the relatives onto those PCs.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Phasing and imputation.</p>
+<p class="line alex"><span class="speaker">ALEX</span> They prephased with SHAPEIT3, using the 1000 Genomes phase 3 dataset as a reference panel — primarily to help with non-European samples — and reported a median phasing switch error of 0.229 percent against trio-derived truth. Then they imputed with IMPUTE4 against the Haplotype Reference Consortium panel, 64,976 broadly European haplotypes at 39,235,157 SNPs. They also imputed against the merged UK10K plus 1000 Genomes panel for additional rare variant coverage. The combined imputed dataset is approximately 96 million variants — a more-than-100-fold increase over the genotyped count.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> We have WGS, so imputation is mostly moot for us.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Mostly. But the HLA piece is not. They imputed two-field — four-digit — alleles for 11 classical HLA genes — A, B, C, DRB1, DRB3, DRB4, DRB5, DQA1, DQB1, DPA1, DPB1 — using HLA*IMP:02 with a multi-population reference panel. They validated by replicating known multiple sclerosis associations: HLA-DRB1*15:01 came in at odds ratio 3.16, p equals 2.3 times 10 to the minus 85, with 1,501 self-reported MS cases and 409,724 controls.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> For us — CF has known HLA associations with Pseudomonas colonization and infection severity. If we want to claim our PheWAS includes HLA, we need to call HLA alleles from WGS. The modern equivalent is HLA-LA or T1K rather than HLA*IMP:02, but the validation logic — replicate a known association as a positive control — is exactly what reviewers will want.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> They did a height GWAS as a positive control.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Yes, on chromosome 2 they showed BOLT-LMM imputed-data Z-scores tracked GIANT 2014 with regression slope 1.369 and r-squared 0.965. The slope greater than one is interesting — UKBB single cohort is more powerful per locus than the GIANT meta-analysis, partly because of cohort homogeneity, partly raw N. We need our own positive control. Skin pigmentation in our cohort, or height, or anything well-characterized that is not CF-related.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> File formats.</p>
+<p class="line alex"><span class="speaker">ALEX</span> They built BGEN v1.2, a compressed indexed format for imputed dosage data, and distributed everything through that. Tooling — qctool v2 and SNPTEST — was released alongside. For us, this is the cultural lesson more than the technical one: when you publish a methods-heavy biobank paper, you ship the file format and the tools, not just the variants. Reviewers like that.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Take it home for our methods primer.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Three things land. One — KING for relatedness inference followed by BOLT-LMM for the actual association test is the only defensible workflow when your cohort has 30-percent-plus related pairs, which ours does because of the twin-sibling sub-study and multiplex families. Two — fastPCA on an LD-pruned, unrelated subset, with relatives projected on, is the population-structure recipe; for our admixed Hispanic and African-American sub-cohorts this is non-negotiable. Three — every QC step in the Bycroft pipeline is per-batch first, then global; we should mirror that for our multi-year, multi-site CFF samples.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> And the gap.</p>
+<p class="line alex"><span class="speaker">ALEX</span> This paper is a 2018 array paper. The rare variants — the ones we actually care about for CFTR PheWAS — are imputed and underpowered below 1 percent MAF. Tomorrow we pair this with Halldorsson 2022, the WGS rollout on the same UKBB cohort, where the rare-variant story actually starts.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> See you tomorrow.</p></div></details>
+</main><footer>Generated 2026-05-02 07:18</footer></body></html>

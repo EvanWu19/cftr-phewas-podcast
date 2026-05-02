@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<title>Episode 12 · 2026-05-02 / ep3 · CFTR PheWAS Reading Podcast</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="index.html">← All episodes</a></nav>
+<h1 class="ep">Episode 12 · 2026-05-02 / ep3</h1>
+<p class="ep-date">Collaco JM 2016</p>
+
+<h2>Blurb</h2>
+<p>Collaco et al. (AJRCCM 2016) used nested mixed modeling on 2,639 sweat chloride measurements from 1,761 twins and siblings (CF Twin-Sibling Study, French CF Modifier Gene Study, Canadian Consortium for Genetic Studies — i.e. the same family base that became the CFGP WGS cohort) to partition sweat chloride variation: 56.1% CFTR genotype, 13.8% time-of-test, 13.5% environment, 9.9% residual, 6.8% unique-individual. Critically, modifier-gene heritability is negligible (H²=0; 95% CI 0–0.35). For our CFTR PheWAS, this paper rules sweat chloride <em>out</em> as a modifier-discovery phenotype and supplies a methods template — Collaco-style variance components — that should be applied to <em>every</em> continuous candidate phenotype before inclusion.</p>
+<h2>Citation</h2>
+<p>Collaco JM, Blackman SM, Raraigh KS, et al. Sources of Variation in Sweat Chloride Measurements in Cystic Fibrosis. <strong>Am J Respir Crit Care Med</strong> 2016;194(11):1375-1382.</p>
+<ul>
+<li>PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/27258095/" target="_blank" rel="noopener">27258095</a></li>
+<li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5148144/" target="_blank" rel="noopener">PMC5148144</a></li>
+<li>DOI: <a href="https://doi.org/10.1164/rccm.201603-0459OC" target="_blank" rel="noopener">10.1164/rccm.201603-0459OC</a></li>
+</ul>
+<h2>Methods to lift</h2>
+<ul>
+<li><strong>Nested mixed-model variance components</strong> — random effects for patient, family, and time; fixed effects for age and sex; lme4 in R is the standard implementation. Apply per candidate continuous phenotype.</li>
+<li><strong>Twin-pair heritability decomposition</strong> — compare within-pair to between-pair variance to bound the additive modifier-gene heritability; identifies phenotypes worth a modifier-discovery PheWAS.</li>
+<li><strong>Within-vs-between subject decomposition</strong> — separate the population-level variance partition from the per-individual partition; phenotypes where within-individual time variation dominates are not productive <em>trajectory</em> phenotypes.</li>
+</ul>
+<h2>Gap-map: closes</h2>
+<ul>
+<li>Sub-question under Gap 3 (longitudinal/trajectory phenotypes): sweat chloride is excluded as a trajectory phenotype — within-individual variation is 58.1% time-of-test plus 41.9% residual, leaving no systematic per-person trajectory signal.</li>
+<li>Defensive citation that pre-empts the reviewer question &quot;why didn&#x27;t you include sweat chloride?&quot; — answered by the modifier-H²=0 result on the actual cohort families.</li>
+</ul>
+<h2>Gap-map: leaves open</h2>
+<ul>
+<li>The full 7 gaps from <code>gap_map.md</code> remain open — this paper is a phenotype-screening methodology, not a modifier-locus paper, and does not advance any modifier-discovery gap.</li>
+<li>Specifically does not close Gap 3 itself: FEV1 slope, exacerbation frequency, and other trajectory phenotypes still need their own Collaco-style decomposition before being committed to as PheWAS endpoints (Schluchter 2006 is the next reference to read for this).</li>
+</ul>
+<h2>Concept-note paste</h2>
+<blockquote>
+<p>Sweat chloride is excluded as a PheWAS endpoint based on Collaco et al. (AJRCCM 2016), who used nested mixed-model variance-components analysis on 2,639 measurements from 1,761 twins and siblings — the same family base as the CFGP WGS cohort — to show that CFTR genotype accounts for 56.1% of sweat chloride variation while modifier-gene heritability is negligible (H²=0, 95% CI 0–0.35). Each remaining candidate continuous phenotype will be subjected to a Collaco-style variance-components decomposition prior to inclusion, with a minimum non-CFTR heritable component required for inclusion.</p>
+</blockquote>
+<h2>Cohort note</h2>
+<ul>
+<li>NCT00676169 (CF Twin-Sibling Study, Cutting/JHU) + NCT00037778 (UNC Modifier Genes; Knowles) + French CF Modifier Gene Study (Corvol) + Canadian Consortium for Genetic Studies (Strug/Toronto). This is the CFGP family base, <em>not</em> a separate cohort — direct relevance, no extrapolation.</li>
+</ul>
+<h2>Today's papers</h2>
+    <article class="paper-card">
+      <div class="paper-meta">
+        <span class="slot">CFTR-WGS (CFF cohort)</span>
+        <span class="tag">biomarker variance components / sweat chloride</span>
+      </div>
+      <h3 class="paper-title">Sources of Variation in Sweat Chloride Measurements in Cystic Fibrosis.</h3>
+      <p class="byline">Collaco JM <span class="dot">·</span> <span class="journal">American Journal of Respiratory and Critical Care Medicine · 2016</span></p>
+      <div class="links">
+                <a class="btn primary" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5148144/" target="_blank" rel="noopener">PMC full text</a>
+        <a class="btn" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5148144/pdf/" target="_blank" rel="noopener">PDF</a>
+        <a class="btn" href="https://doi.org/10.1164/rccm.201603-0459OC" target="_blank" rel="noopener">DOI</a>
+        <a class="btn ghost" href="https://pubmed.ncbi.nlm.nih.gov/27258095/" target="_blank" rel="noopener">PubMed</a>
+      </div>
+    </article>
+<details class="transcript"><summary>Read full transcript (56 turns · ~1917 words)</summary>
+<div class="transcript-body"><p class="line alex"><span class="speaker">ALEX</span> Episode 3 — CFTR-WGS slot. Collaco et al. 2016, AJRCCM, &quot;Sources of Variation in Sweat Chloride Measurements in Cystic Fibrosis.&quot; PMID 27258095, PMCID PMC5148144. Cohorts: CF Twin-Sibling Study at JHU under Cutting, French CF Modifier Gene Study under Corvol, and Canadian Consortium for Genetic Studies under Strug. 2,639 sweat chloride measurements in 1,761 twins and siblings.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Why are we reading a sweat chloride paper for a PheWAS proposal?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Because the answer to &quot;is sweat chloride a usable phenotype for our PheWAS?&quot; is a methodological question, and this is the paper that answers it. They run a nested mixed model, partition variance, and tell us where the signal comes from.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Hit me with the variance components.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Across the population: CFTR genotype itself accounts for 56.1% of sweat chloride variation. Variation over time — meaning factors related to testing on different days — accounts for 13.8%. Environmental factors like climate and family diet are 13.5%. Other residual factors — test variability, lab-to-lab — are 9.9%. And unique individual factors, which is where modifier-gene effects would live, are 6.8%. Likelihood ratio test p less than 0.001 for the full model.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> And the modifier-gene heritability?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Negligible. H-squared equals 0, with a 95% confidence interval of 0 to 0.35. They use a twin design — comparing within-twin-pair variance to between-pair variance — which is the strongest possible test for additive genetic modifier effects beyond CFTR itself. The signal isn&#x27;t there.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s a striking null. Walk me through the within-individual breakdown.</p>
+<p class="line alex"><span class="speaker">ALEX</span> For an individual person with CF, variation in sweat chloride is 58.1% from variation over time and 41.9% from residual or random factors. So if you sweat-test the same patient twice, the difference is mostly day-to-day biology and lab measurement, not anything systematic about the person.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> OK. What does this mean for our gap-map?</p>
+<p class="line alex"><span class="speaker">ALEX</span> It rules out one phenotype. Sweat chloride is dominated by CFTR genotype itself plus measurement noise, with effectively zero modifier signal. There is no point including sweat chloride as a PheWAS endpoint for modifier-locus discovery. We will hit CFTR by construction — that&#x27;s a positive control, not a discovery — and we will not hit anything else.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s a useful exclusion. But this paper is older — 2016, premodulator. Does the conclusion still hold in the Trikafta era?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Good question and worth flagging. The 2016 paper&#x27;s conclusions are about untreated or pre-modulator sweat chloride. Trikafta cuts sweat chloride substantially in responders, and the change in sweat chloride post-modulator is a different phenotype with potentially different variance partitioning. That&#x27;s exactly the angle Eastman 2021 tried to chase with SLC26A9 and ivacaftor — and got a null. So even the modulator-response sweat chloride phenotype has a published null on its most-nominated modifier locus.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> So it&#x27;s not just &quot;sweat chloride is dominated by CFTR&quot; — it&#x27;s &quot;sweat chloride doesn&#x27;t have a usable modifier signal in either era.&quot;</p>
+<p class="line alex"><span class="speaker">ALEX</span> That&#x27;s the cleaner statement. There may still be a use for change in sweat chloride as a pharmacodynamic endpoint — a within-person difference rather than an absolute level — but for PheWAS-of-modifier-loci purposes, it&#x27;s not a productive phenotype.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Gap-map mapping. Where does this paper land?</p>
+<p class="line alex"><span class="speaker">ALEX</span> It doesn&#x27;t directly close any of the seven open gaps. But it does close a sub-question under Gap 3 — longitudinal/trajectory phenotypes. Gap 3 says we should be looking at registry-derived trajectories, not summary scores. This paper tells us the within-person time variation in sweat chloride is dominated by random biological/lab noise, so a sweat chloride trajectory isn&#x27;t a productive trajectory phenotype. FEV1 slope is. Sweat chloride slope is not.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s a sentence I want explicit in the proposal. We&#x27;re going to be asked &quot;why don&#x27;t you include sweat chloride.&quot; We can cite Collaco 2016 to say &quot;we did consider it, the variance partitioning rules it out as a modifier-discovery phenotype, and we are not including it for that reason.&quot;</p>
+<p class="line alex"><span class="speaker">ALEX</span> Right. It&#x27;s a defensive citation. It pre-empts a reviewer.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> There&#x27;s a methodological piece I want to pull out separately. The variance-components mixed-model framework they use is exactly the framework we should be applying to any phenotype we plan to include in the PheWAS.</p>
+<p class="line alex"><span class="speaker">ALEX</span> That&#x27;s the right read. Before we accept a phecode as a modifier-discovery phenotype, we should ask the same question — what fraction of phenotype variance is CFTR-genotype-attributable, what fraction is non-genetic background, what fraction is residual? If the non-genetic background dominates and the residual heritable component is near zero, it&#x27;s not a productive PheWAS endpoint.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> And we have the data to do that. CFFPR has CFTR genotype, longitudinal phenotype, repeated measures, and family relationships through the Twin-Sibling Study and registry sibling links.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Yes. The variance-components calculation generalizes — Collaco used a nested mixed model with patient-level random effects, time-level random effects, and family-level random effects. The same model fits any continuous CFFPR phecode.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Concrete artifact for the proposal then?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Two pieces. First, a defensive sentence on sweat chloride exclusion. Try this: &quot;Sweat chloride is excluded as a PheWAS endpoint based on Collaco et al. (AJRCCM 2016), who used variance-components analysis in 2,639 measurements from 1,761 twins and siblings to show that CFTR genotype accounts for 56.1% of sweat chloride variation while modifier-gene heritability is negligible (H-squared equals 0, 95% CI 0 to 0.35).&quot; That&#x27;s the inclusion-criteria justification.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Second piece?</p>
+<p class="line alex"><span class="speaker">ALEX</span> A proactive methods commitment. &quot;Each candidate continuous phenotype will be subjected to a Collaco-style variance-components decomposition prior to inclusion in the PheWAS, with a minimum non-CFTR heritable component as an inclusion threshold.&quot; That moves us from reactive exclusion to a pre-registered filter. Sets us up to defend the full phenotype list.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> The threshold itself — what should we set it at?</p>
+<p class="line alex"><span class="speaker">ALEX</span> I&#x27;d want to look at Schluchter 2006 and the FEV1-slope decomposition before fixing a number. Tentatively — non-CFTR additive heritable component above 5% gets in, below 5% gets excluded with citation. We can revisit when we read the FEV1 trajectory papers.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Cohort-anchor question. This study is the CF Twin-Sibling Study under NCT00676169 plus the Cutting/Knowles/Strug/Corvol consortium. Is this the same cohort as the CFGP WGS dataset?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Substantial overlap, yes. The CF Twin-Sibling Study — NCT00676169 — is the original recruitment vehicle for what eventually became the CFGP WGS cohort. The same families that contributed sweat chloride measurements in 2016 are the families whose WGS we&#x27;d be analyzing. That&#x27;s important — it means the modifier-heritability null in Collaco 2016 is directly informative about the cohort we&#x27;d actually be running PheWAS in. It&#x27;s not extrapolation.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> One more methods-of-the-paper question. They report 2,639 measurements in 1,761 subjects — so on average about 1.5 measurements per person. Is that enough to estimate the within-person variance component cleanly?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Marginally. The within-person variance is identified mainly from the subset of subjects with two or more measurements. Their nested mixed model handles the unbalanced design correctly, but the within-person estimate is dominated by the repeat-measurement subset. If we replicate this analysis on CFFPR data we&#x27;ll have many more repeat measurements per subject — sweat chloride is rarely repeated but FEV1 is repeated four times a year on average. The variance components for FEV1 will be much more precisely estimated than for sweat chloride.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s a methods strength of doing it on CFFPR rather than the cross-sectional twin sample.</p>
+<p class="line alex"><span class="speaker">ALEX</span> It is. We can extend Collaco&#x27;s framework into the much denser longitudinal regime CFFPR provides.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That makes the citation stronger. We&#x27;re not citing a methodological paper from a different cohort — we&#x27;re citing the variance-components analysis on the same families.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Exactly the right framing. And it supports a broader point — the CFGP cohort has already had this question asked and answered for sweat chloride. The same approach now needs to be done for the candidate PheWAS phenotypes systematically.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Tools and patterns to lift?</p>
+<p class="line alex"><span class="speaker">ALEX</span> The nested mixed-model variance-components framework — implementable in R lme4 with random effects for patient, family, and time, plus fixed effects for age and sex. The Schluchter 2006 longitudinal model extends this. One R notebook in the repo: variance-components decomposition per candidate phenotype, output table goes into the SAP appendix.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> The fixed-effect covariate structure matters too. They adjust for age, sex, and what else — repeat-measurement number, time of year for the seasonal effect on sweat?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Age, sex, and the test-related covariates — collection day attributes that go into the time-of-test variance bucket. They don&#x27;t pull season out as a separate fixed effect because environment is its own random effect. For our analog on FEV1 we&#x27;d want age, sex, height, modulator-era indicator, and a center-level random effect on top of family. That center-level term is the analog of their lab-to-lab residual.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> A center-level random effect is non-trivial for CFFPR. There are roughly 130 accredited CF care centers and a per-center random intercept will eat degrees of freedom.</p>
+<p class="line alex"><span class="speaker">ALEX</span> It will. But not adjusting for it is worse — center-level differences in measurement practice and patient mix will inflate apparent residual variance. The right call is the nested random-effect structure: family within center, patient within family, measurement within patient.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Logged. That&#x27;s a structural pattern lifted from Collaco straight into our SAP.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Concrete artifact today: gap-map line — &quot;Sub-question under Gap 3: sweat chloride is not a productive PheWAS or trajectory endpoint per Collaco 2016 (modifier H-squared equals 0, 95% CI 0 to 0.35); FEV1 slope is — needs separate variance-components confirmation per Schluchter 2006.&quot;</p>
+<p class="line alex"><span class="speaker">ALEX</span> That goes into gap-map.md as a Gap-3 footnote. Logged.</p>
+<p class="line alex"><span class="speaker">ALEX</span> One last thing to log before we close. The Collaco team uses the CF Twin-Sibling Study and the French and Canadian sibling cohorts as their family base. That same family structure is preserved in the CFGP WGS — we have known sibling pairs, parent-offspring trios, and a substantial set of monozygotic twin pairs in the WGS sample. That&#x27;s an under-exploited resource for our PheWAS.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> How do we exploit it?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Two ways. One — sibling-based heritability bounds on every PheWAS phenotype, using the same Collaco-style decomposition I described. Two — within-family transmission analysis on candidate modifier loci. If a modifier allele is over-transmitted from heterozygous parents to affected sibs with a particular comorbidity, that&#x27;s a TDT-style replication signal independent of the main PheWAS association. We can build that as a sensitivity analysis on any hit.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> TDT requires trios. How many CF trios are in the WGS?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Several hundred at minimum based on the Cutting/JHU recruitment design — exact count needs confirming with Albert Faro&#x27;s Therapy team, who own the WGS data. That&#x27;s a question for the data-access conversation.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Logged as a Therapy-team data-access question.</p>
+<p class="line alex"><span class="speaker">ALEX</span> One more concept-note paste while we have it: &quot;The CFGP WGS family structure — sibling pairs, trios, and monozygotic twin pairs preserved from the CF Twin-Sibling Study — supports within-family transmission analyses (TDT) as a sensitivity check on PheWAS hits, independent of the population-based test. This is unique to the CFGP cohort among published CF genetic resources.&quot;</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s a strong differentiator sentence for the proposal. Logged.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Tomorrow we&#x27;re paired with: Zhou 2018, &quot;Efficiently controlling for case-control imbalance and sample relatedness in large-scale genetic association studies&quot; — the original SAIGE paper. Methods nerd day. We&#x27;ll spend the time on how SAIGE handles unbalanced case-control ratios, which is what we&#x27;ll have for every CF-comorbidity phecode. It pairs forward to SAIGE-GENE+ which we previewed in Episode 2. End of episode 3.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> End of run.</p></div></details>
+</main><footer>Generated 2026-05-02 07:18</footer></body></html>
