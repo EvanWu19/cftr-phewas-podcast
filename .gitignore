@@ -1,0 +1,18 @@
+﻿# Build artifacts
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Defensive 鈥?never commit raw paper PDFs, xlsx, audio, or office docs
+*.pdf
+*.xlsx
+*.xlsm
+*.mp3
+*.wav
+*.docx
+*.pptx
