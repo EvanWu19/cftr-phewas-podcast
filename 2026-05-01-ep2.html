@@ -8,10 +8,18 @@
 </head><body>
 <header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
 <main class="wrap">
-<nav class="crumbs"><a href="index.html">← All episodes</a> · <a href="javascript:playAllEpisodes(4)">▶ Play from here</a></nav>
+<nav class="crumbs"><a href="index.html">&#8592; All episodes</a> · <a href="javascript:playAllEpisodes(4)">&#9654; Play from here</a></nav>
 <h1 class="ep">Episode 5 · 2026-05-01 / ep2</h1>
 <p class="ep-date">All of Us Research Program Genomics Investigators 2024</p>
 <audio controls preload="none" src="2026-05-01-ep2.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 16.0 MB · gpt-4o-mini-tts</p>
+<div class="feedback-bar" id="feedback-bar" data-slug="2026-05-01-ep2">
+  <p class="feedback-label">How did this episode land for you?</p>
+  <div class="feedback-btns">
+    <button class="fb-btn fb-blue" data-rating="superficial" onclick="saveFeedback(this)">&#128309; Too superficial &#8212; nothing new</button>
+    <button class="fb-btn fb-green" data-rating="balanced" onclick="saveFeedback(this)">&#128994; Well balanced &#8212; builds on what I know</button>
+    <button class="fb-btn fb-red" data-rating="hard" onclick="saveFeedback(this)">&#128308; Too hard &#8212; lost the connection to existing knowledge</button>
+  </div>
+</div>
 <h2>Blurb</h2>
 <p>The first All of Us Research Program genomic-data release describes 245,388 clinical-grade whole-genome sequences delivered through a cloud-based Researcher Workbench under a &quot;data passport&quot; access model — median 28.6 hours from researcher sign-up to genomic data. AoU is, by design, the most ancestrally diverse large-scale WGS cohort to date: 77% of participants are from communities historically under-represented in biomedical research, 46% self-identify as a racial or ethnic minority, and 51.1% of WGS samples are non-European by computed genetic ancestry — versus roughly 95% European in the UK Biobank. The release identified more than 1 billion variants, including ~275 million previously unreported, and replicated published variant–phenotype associations at rates comparable to single-site EHR-linked biobanks across multiple ancestry groups. For Runyu&#x27;s CFTR PheWAS proposal this paper functions as the obvious external replication cohort for any CFF-derived discovery, and as a methods source for ancestry classification, joint-call QC, and cross-biobank replication benchmarking.</p>
 <h2>Plain-English glossary</h2>
@@ -136,7 +144,7 @@
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow we go from the general-purpose biobank to the CF-specific case. The paper is Zhou twenty twenty-three — the most recent whole-genome-sequencing-based CF lung-disease modifier study on the CFF cohort itself. That&#x27;s the closest published analog to what Runyu would propose, and it&#x27;s our chance to look end-to-end at a CF-specific WGS analysis on data overlapping the cohort he&#x27;d actually use.</p>
 <p class="line jordan"><span class="speaker">JORDAN</span> Takeaway.</p>
 <p class="line alex"><span class="speaker">ALEX</span> AoU is now the obvious replication target for any CFTR-anchored discovery — diverse, large, fast access. The job before any proposal commits to it is to verify the carrier-by-phenotype sample size, secure Workbench access, and confirm phenotype harmonization. See you tomorrow.</p></div></details>
-</main><footer>Generated 2026-05-04 07:03</footer>
+</main><footer>Generated 2026-05-04 13:27</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -224,6 +232,27 @@
       }
     }
   });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('feedback-bar');
+  if (!bar) return;
+  var slug = bar.dataset.slug;
+  var key = 'feedback-' + slug;
+  function applyStored(){
+    var stored = localStorage.getItem(key);
+    document.querySelectorAll('.fb-btn').forEach(function(btn){
+      btn.classList.toggle('fb-active', btn.dataset.rating === stored);
+    });
+  }
+  window.saveFeedback = function(btn){
+    localStorage.setItem(key, btn.dataset.rating);
+    applyStored();
+  };
+  document.addEventListener('DOMContentLoaded', applyStored);
+  // Also apply immediately in case DOMContentLoaded already fired
+  if (document.readyState !== 'loading') applyStored();
 })();
 </script>
 </body></html>

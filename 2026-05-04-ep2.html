@@ -8,10 +8,18 @@
 </head><body>
 <header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
 <main class="wrap">
-<nav class="crumbs"><a href="index.html">← All episodes</a> · <a href="javascript:playAllEpisodes(16)">▶ Play from here</a></nav>
+<nav class="crumbs"><a href="index.html">&#8592; All episodes</a> · <a href="javascript:playAllEpisodes(16)">&#9654; Play from here</a></nav>
 <h1 class="ep">Episode 17 · 2026-05-04 / ep2</h1>
 <p class="ep-date">Denny JC 2010</p>
 <audio controls preload="none" src="2026-05-04-ep2.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 15.0 MB · gpt-4o-mini-tts</p>
+<div class="feedback-bar" id="feedback-bar" data-slug="2026-05-04-ep2">
+  <p class="feedback-label">How did this episode land for you?</p>
+  <div class="feedback-btns">
+    <button class="fb-btn fb-blue" data-rating="superficial" onclick="saveFeedback(this)">&#128309; Too superficial &#8212; nothing new</button>
+    <button class="fb-btn fb-green" data-rating="balanced" onclick="saveFeedback(this)">&#128994; Well balanced &#8212; builds on what I know</button>
+    <button class="fb-btn fb-red" data-rating="hard" onclick="saveFeedback(this)">&#128308; Too hard &#8212; lost the connection to existing knowledge</button>
+  </div>
+</div>
 <h2>Blurb</h2>
 <p>The founding PheWAS paper. Denny and colleagues at Vanderbilt built a translation table mapping ICD-9 billing codes into 776 disease groupings (&quot;phecodes&quot;), then used the first 6,005 European-Americans in BioVU to demonstrate that scanning a single SNP across the phenome — rather than scanning the genome for one trait — was methodologically defensible. They picked five SNPs with seven previously published GWAS associations as positive controls; four of seven replicated at p between 2.8×10⁻⁶ and 0.011, and 19 previously unknown SNP-phecode associations cleared p&lt;0.01. The 2010 paper&#x27;s role in the field is to be the methodology citation in every later PheWAS introduction — and the paper that put &quot;PheWAS&quot; into the literature. For a future CFTR PheWAS, it gives the row-versus-column grid logic; the actual machinery comes from later calibrated tools (SAIGE 2018, SAIGE-GENE+ 2022).</p>
 <h2>Plain-English glossary</h2>
@@ -109,7 +117,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> Tomorrow&#x27;s biobank tee-up?</p>
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow we&#x27;d pick from biobank batch 1 numbers thirteen and fourteen. Number thirteen is Wei et al. 2017, the empirical evaluation of the phecode system Denny 2010 introduced — the natural sequel showing how well phecodes capture true disease status. Number fourteen is Hofmeister et al. 2023 on accurate rare-variant phasing of whole-genome sequence data. Either is a defensible follow-on; the Wei paper is more directly tied to today&#x27;s PheWAS thread.</p>
 <p class="line alex"><span class="speaker">ALEX</span> One-line takeaway. Denny 2010 is the paper that converted ICD-9 billing codes into a usable phenome and proved that EMR-linked biobank PheWAS could replicate known associations; for our project the load-bearing translation question is whether the CFFPR&#x27;s already-curated structured endpoint catalog can substitute for raw ICD phecodes at the row-by-row PheWAS grid level, and that&#x27;s a registry-content question we have to answer before committing.</p></div></details>
-</main><footer>Generated 2026-05-04 07:03</footer>
+</main><footer>Generated 2026-05-04 13:27</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -197,6 +205,27 @@
       }
     }
   });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('feedback-bar');
+  if (!bar) return;
+  var slug = bar.dataset.slug;
+  var key = 'feedback-' + slug;
+  function applyStored(){
+    var stored = localStorage.getItem(key);
+    document.querySelectorAll('.fb-btn').forEach(function(btn){
+      btn.classList.toggle('fb-active', btn.dataset.rating === stored);
+    });
+  }
+  window.saveFeedback = function(btn){
+    localStorage.setItem(key, btn.dataset.rating);
+    applyStored();
+  };
+  document.addEventListener('DOMContentLoaded', applyStored);
+  // Also apply immediately in case DOMContentLoaded already fired
+  if (document.readyState !== 'loading') applyStored();
 })();
 </script>
 </body></html>

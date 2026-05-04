@@ -8,10 +8,18 @@
 </head><body>
 <header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
 <main class="wrap">
-<nav class="crumbs"><a href="index.html">← All episodes</a> · <a href="javascript:playAllEpisodes(15)">▶ Play from here</a></nav>
+<nav class="crumbs"><a href="index.html">&#8592; All episodes</a> · <a href="javascript:playAllEpisodes(15)">&#9654; Play from here</a></nav>
 <h1 class="ep">Episode 16 · 2026-05-04 / ep1</h1>
 <p class="ep-date">Zhou W 2022</p>
 <audio controls preload="none" src="2026-05-04-ep1.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 15.6 MB · gpt-4o-mini-tts</p>
+<div class="feedback-bar" id="feedback-bar" data-slug="2026-05-04-ep1">
+  <p class="feedback-label">How did this episode land for you?</p>
+  <div class="feedback-btns">
+    <button class="fb-btn fb-blue" data-rating="superficial" onclick="saveFeedback(this)">&#128309; Too superficial &#8212; nothing new</button>
+    <button class="fb-btn fb-green" data-rating="balanced" onclick="saveFeedback(this)">&#128994; Well balanced &#8212; builds on what I know</button>
+    <button class="fb-btn fb-red" data-rating="hard" onclick="saveFeedback(this)">&#128308; Too hard &#8212; lost the connection to existing knowledge</button>
+  </div>
+</div>
 <h2>Blurb</h2>
 <p>SAIGE-GENE+ is the corrected successor to SAIGE-GENE for set-based rare-variant association tests. The 2020 SAIGE-GENE worked at MAF less than or equal to 1%, but its variance-component test was inflated when restricted to MAF less than or equal to 0.1% or 0.01% — exactly the ultra-rare regime where most pLOF biology lives. The 2022 plus version fixes the type-I-error inflation at those tighter MAF cutoffs and adds a built-in mechanism for combining evidence across multiple MAF strata and multiple functional-annotation strata in a single per-gene p-value. Demonstrated on UKBB whole-exome sequencing across 30 quantitative and 141 binary traits, yielding 551 gene-phenotype associations. For a future CFTR PheWAS, SAIGE-GENE+ is the natural gene-burden engine for the candidate-modifier-gene scan we&#x27;d run on the ~5,000-person CFF whole-genome cohort — but its calibration at small N and its annotation-file dependencies need explicit verification before adoption.</p>
 <h2>Plain-English glossary</h2>
@@ -110,7 +118,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> Tomorrow?</p>
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow&#x27;s biobank pick is Denny et al. 2010, &quot;PheWAS: demonstrating the feasibility of a phenome-wide scan to discover gene-disease associations,&quot; PMID 20335276 — actually we&#x27;ll start that one today as Episode 2. It&#x27;s the founding PheWAS paper, fifteen years older than anything we&#x27;ve covered, and the one that first turned ICD billing codes into a phenome.</p>
 <p class="line alex"><span class="speaker">ALEX</span> One-line takeaway. SAIGE-GENE+ is the well-calibrated successor to SAIGE-GENE for ultra-rare-variant gene-burden testing at biobank scale; whether it remains well calibrated and adequately powered on a five-thousand-person cohort is an empirical question we would need to answer on the CFF data before adopting it, conditional on first inspecting the variant calls and the modifier-gene rare-variant carrier counts.</p></div></details>
-</main><footer>Generated 2026-05-04 07:03</footer>
+</main><footer>Generated 2026-05-04 13:27</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -198,6 +206,27 @@
       }
     }
   });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('feedback-bar');
+  if (!bar) return;
+  var slug = bar.dataset.slug;
+  var key = 'feedback-' + slug;
+  function applyStored(){
+    var stored = localStorage.getItem(key);
+    document.querySelectorAll('.fb-btn').forEach(function(btn){
+      btn.classList.toggle('fb-active', btn.dataset.rating === stored);
+    });
+  }
+  window.saveFeedback = function(btn){
+    localStorage.setItem(key, btn.dataset.rating);
+    applyStored();
+  };
+  document.addEventListener('DOMContentLoaded', applyStored);
+  // Also apply immediately in case DOMContentLoaded already fired
+  if (document.readyState !== 'loading') applyStored();
 })();
 </script>
 </body></html>

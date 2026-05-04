@@ -8,10 +8,18 @@
 </head><body>
 <header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
 <main class="wrap">
-<nav class="crumbs"><a href="index.html">← All episodes</a> · <a href="javascript:playAllEpisodes(8)">▶ Play from here</a></nav>
+<nav class="crumbs"><a href="index.html">&#8592; All episodes</a> · <a href="javascript:playAllEpisodes(8)">&#9654; Play from here</a></nav>
 <h1 class="ep">Episode 9 · 2026-05-01 / ep6</h1>
 <p class="ep-date">Blackman SM 2013</p>
 <audio controls preload="none" src="2026-05-01-ep6.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 16.1 MB · gpt-4o-mini-tts</p>
+<div class="feedback-bar" id="feedback-bar" data-slug="2026-05-01-ep6">
+  <p class="feedback-label">How did this episode land for you?</p>
+  <div class="feedback-btns">
+    <button class="fb-btn fb-blue" data-rating="superficial" onclick="saveFeedback(this)">&#128309; Too superficial &#8212; nothing new</button>
+    <button class="fb-btn fb-green" data-rating="balanced" onclick="saveFeedback(this)">&#128994; Well balanced &#8212; builds on what I know</button>
+    <button class="fb-btn fb-red" data-rating="hard" onclick="saveFeedback(this)">&#128308; Too hard &#8212; lost the connection to existing knowledge</button>
+  </div>
+</div>
 <h2>Blurb</h2>
 <p>The prequel to Aksit 2020. Blackman and colleagues ran the founding genome-wide association study for cystic-fibrosis-related diabetes (CFRD) — discovery cohort of 3,059 CF patients (644 with CFRD), replication cohort of 694 (124 with CFRD). Two prongs: a candidate-SNP replication of general-population type-2-diabetes loci, and a genome-wide screen for CF-specific modifiers. They confirmed TCF7L2 plus three more type-2-diabetes loci (CDKAL1, CDKN2A/B, IGF2BP2) as also relevant in CFRD, and discovered SLC26A9 — an epithelial chloride/bicarbonate channel that physically interacts with CFTR — as a novel CF-specific CFRD modifier (HR=1.38, P=3.6e-8 discovery; HR=1.47, P=0.007 replication; combined P=9.8e-10). Five loci together: 8.3% variance explained, 68% population attributable risk. This is the paper that started the SLC26A9 story Aksit 2020 later extended.</p>
 <h2>Citation</h2>
@@ -146,7 +154,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> Tomorrow we&#x27;re switching gears.</p>
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow is Karczewski 2020 — the gnomAD constraint paper. We move from CF-specific modifier biology to general-population reference data. The takeaway today — Blackman 2013 is the founding GWAS for CFRD and the paper that introduced SLC26A9 to CF genetics. Five loci, eight percent variance, sixty-eight percent PAR. Most importantly, it set up the SLC26A9 story that Aksit 2020 extended.</p>
 <p class="line jordan"><span class="speaker">JORDAN</span> Origin story complete. See you tomorrow.</p></div></details>
-</main><footer>Generated 2026-05-04 07:03</footer>
+</main><footer>Generated 2026-05-04 13:27</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -234,6 +242,27 @@
       }
     }
   });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('feedback-bar');
+  if (!bar) return;
+  var slug = bar.dataset.slug;
+  var key = 'feedback-' + slug;
+  function applyStored(){
+    var stored = localStorage.getItem(key);
+    document.querySelectorAll('.fb-btn').forEach(function(btn){
+      btn.classList.toggle('fb-active', btn.dataset.rating === stored);
+    });
+  }
+  window.saveFeedback = function(btn){
+    localStorage.setItem(key, btn.dataset.rating);
+    applyStored();
+  };
+  document.addEventListener('DOMContentLoaded', applyStored);
+  // Also apply immediately in case DOMContentLoaded already fired
+  if (document.readyState !== 'loading') applyStored();
 })();
 </script>
 </body></html>
