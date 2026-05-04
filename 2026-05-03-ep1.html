@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<title>Episode 13 · 2026-05-03 / ep1 · CFTR PheWAS Reading Podcast</title>
+<link rel="stylesheet" href="style.css">
+<script>window.EPISODES = [{"num": 1, "title": "Bycroft C 2018", "mp3": "2026-04-30-ep1.mp3", "slug": "2026-04-30-ep1"}, {"num": 2, "title": "Halldorsson BV 2022", "mp3": "2026-04-30-ep2.mp3", "slug": "2026-04-30-ep2"}, {"num": 3, "title": "Aksit MA 2020", "mp3": "2026-04-30-ep3.mp3", "slug": "2026-04-30-ep3"}, {"num": 4, "title": "Taliun D 2021", "mp3": "2026-05-01-ep1.mp3", "slug": "2026-05-01-ep1"}, {"num": 5, "title": "All of Us Research Program Genomics Investigators 2024", "mp3": "2026-05-01-ep2.mp3", "slug": "2026-05-01-ep2"}, {"num": 6, "title": "Zhou YH 2023", "mp3": "2026-05-01-ep3.mp3", "slug": "2026-05-01-ep3"}, {"num": 7, "title": "Backman JD 2021", "mp3": "2026-05-01-ep4.mp3", "slug": "2026-05-01-ep4"}, {"num": 8, "title": "Wang Q 2021", "mp3": "2026-05-01-ep5.mp3", "slug": "2026-05-01-ep5"}, {"num": 9, "title": "Blackman SM 2013", "mp3": "2026-05-01-ep6.mp3", "slug": "2026-05-01-ep6"}, {"num": 10, "title": "Karczewski KJ 2020", "mp3": "2026-05-02-ep1.mp3", "slug": "2026-05-02-ep1"}, {"num": 11, "title": "Karczewski KJ 2022", "mp3": "2026-05-02-ep2.mp3", "slug": "2026-05-02-ep2"}, {"num": 12, "title": "Collaco JM 2016", "mp3": "2026-05-02-ep3.mp3", "slug": "2026-05-02-ep3"}, {"num": 13, "title": "Zhou W 2018", "mp3": "2026-05-03-ep1.mp3", "slug": "2026-05-03-ep1"}, {"num": 14, "title": "Kurki MI 2023", "mp3": "2026-05-03-ep2.mp3", "slug": "2026-05-03-ep2"}, {"num": 15, "title": "Taylor C 2011", "mp3": "2026-05-03-ep3.mp3", "slug": "2026-05-03-ep3"}];</script>
+</head><body>
+<header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="index.html">← All episodes</a> · <a href="javascript:playAllEpisodes(12)">▶ Play from here</a></nav>
+<h1 class="ep">Episode 13 · 2026-05-03 / ep1</h1>
+<p class="ep-date">Zhou W 2018</p>
+<audio controls preload="none" src="2026-05-03-ep1.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 11.5 MB · gpt-4o-mini-tts</p>
+<h2>Blurb</h2>
+<p>SAIGE is a logistic-mixed-model GWAS engine that uses the saddlepoint approximation (SPA) to control type I error in case-control unbalanced PheWAS, plus preconditioned conjugate gradient and a variance-ratio shortcut to make logistic mixed models feasible at biobank scale. For our CFTR PheWAS, it&#x27;s the right engine for the long tail of CFFPR phecodes with case prevalence below ~2% — exactly the rare phenotypes that drive the Gap 1 pitch.</p>
+<h2>Citation</h2>
+<p>Zhou W, Nielsen JB, Fritsche LG, Dey R, Gabrielsen ME, Wolford BN, et al. <strong>Efficiently controlling for case-control imbalance and sample relatedness in large-scale genetic association studies.</strong> <em>Nat Genet.</em> 2018 Sep;50(9):1335–1341.</p>
+<ul>
+<li>PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/30104761/" target="_blank" rel="noopener">30104761</a></li>
+<li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6119127/" target="_blank" rel="noopener">PMC6119127</a></li>
+<li>DOI: <a href="https://doi.org/10.1038/s41588-018-0184-y" target="_blank" rel="noopener">10.1038/s41588-018-0184-y</a></li>
+</ul>
+<h2>Methods to lift (add to methods primer)</h2>
+<ul>
+<li>Two-step null-then-test structure: fit null logistic mixed model once, precompute variance ratio, test all variants with O(N) per-variant cost.</li>
+<li>Saddlepoint approximation (SPA) — uses all cumulants, not just first two moments — for accurate p-values at low MAF and unbalanced case:control.</li>
+<li>Preconditioned conjugate gradient (PCG) for GRM-free linear-system solves; raw genotypes stored as a binary vector.</li>
+<li>Variance-ratio approximation valid for MAC ≥ 20; this is the floor below which to switch to gene-based tests.</li>
+<li>Empirical lambda-by-MAF-by-imbalance calibration grid (their Supplementary Table 4) — reproduce on our cohort as a calibration check.</li>
+</ul>
+<h2>Concept-note paste</h2>
+<blockquote>
+<p>For binary phecodes with case-control imbalance worse than 1:50, single-variant association testing will use SAIGE (Zhou et al., 2018) with the saddlepoint approximation to control type I error at low minor allele counts; the genetic relatedness matrix will be constructed from a high-quality LD-pruned set of common variants and applied via preconditioned conjugate gradient as in the original implementation. For more balanced phecodes, REGENIE step 2 logistic regression with leave-one-chromosome-out will be used as the primary engine.</p>
+</blockquote>
+<h2>Limitations to flag</h2>
+<ul>
+<li>Variance-ratio approximation is only valid for MAC ≥ 20 — for ultra-rare variants in CFF WGS, switch to SAIGE-GENE+ / burden tests.</li>
+<li>2018 SAIGE is single-ancestry; multi-ancestry analyses need ancestry-stratified runs or follow-on multi-population methods.</li>
+<li>Calibrating p-values on a noisy phecode does not fix the phecode — case-definition QC is a separate problem.</li>
+</ul>
+<h2>Numbers worth remembering</h2>
+<ul>
+<li>408,961 white British UKBB samples; 1,403 binary phecodes tested; 1,431/1,688 phecodes (84.8%) have case:control &lt; 1:100.</li>
+<li>Memory: 9.56 GB raw genotype storage vs. 669 GB for an explicit GRM at this N.</li>
+<li>Runtime: SAIGE 517 CPU hours vs. BOLT-LMM 360 CPU hours for 71M variants on 408,458 samples.</li>
+<li>Variance ratio approximately constant for MAC ≥ 20.</li>
+<li>Lambda at p=0.001 percentile: 1.68 (SAIGE-NoSPA) → 0.99 (SAIGE) for MAF&lt;1%, case:control 1:84.</li>
+</ul>
+<h2>Today's papers</h2>
+    <article class="paper-card">
+      <div class="paper-meta">
+        <span class="slot">Biobank #1</span>
+        <span class="tag">SAIGE</span>
+      </div>
+      <h3 class="paper-title">Efficiently controlling for case-control imbalance and sample relatedness in large-scale genetic association studies.</h3>
+      <p class="byline">Zhou W <span class="dot">·</span> <span class="journal">Nature Genetics · 2018</span></p>
+      <div class="links">
+                <a class="btn primary" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6119127/" target="_blank" rel="noopener">PMC full text</a>
+        <a class="btn" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6119127/pdf/" target="_blank" rel="noopener">PDF</a>
+        <a class="btn" href="https://doi.org/10.1038/s41588-018-0184-y" target="_blank" rel="noopener">DOI</a>
+        <a class="btn ghost" href="https://pubmed.ncbi.nlm.nih.gov/30104761/" target="_blank" rel="noopener">PubMed</a>
+      </div>
+    </article>
+<details class="transcript"><summary>Read full transcript (35 turns · ~1503 words)</summary>
+<div class="transcript-body"><p class="line alex"><span class="speaker">ALEX</span> Morning. We are on Zhou et al., Nature Genetics 2018, &quot;Efficiently controlling for case-control imbalance and sample relatedness in large-scale genetic association studies.&quot; This is the SAIGE paper. PMID 30104761. The acronym is Scalable and Accurate Implementation of Generalized mixed model. I want to be careful with the word &quot;efficient&quot; in the title because it&#x27;s doing two jobs at once — computational efficiency and statistical calibration — and you cannot understand the paper without separating them.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Set the stage for me. Why are we reading a 2018 paper for our CFTR PheWAS in 2026?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Two reasons. First, every PheWAS we&#x27;d run on the CFF WGS cohort needs to handle exactly the two pathologies SAIGE was built for — extreme case-control imbalance, and relatedness. Our cohort has the Twin and Sibling Study sub-recruitment baked in. Second, SAIGE is the parent of SAIGE-GENE+, which is what we&#x27;d actually use for rare-variant gene-burden testing. You cannot read the SAIGE-GENE+ paper without knowing what SAIGE itself does.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> So it&#x27;s a foundational read, not a method we&#x27;d lift directly.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Mostly correct. Single-variant GWAS in CFF WGS would still use SAIGE, or REGENIE. Gene-burden tests would use SAIGE-GENE+. But the calibration logic is the same in both cases.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Walk me through the problem they&#x27;re solving.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Picture a PheWAS in the UK Biobank. They had 408,961 white British samples. They tested 1,403 binary phecodes. The paper notes that 1,431 out of 1,688 phecodes — 84.8% — have a case-control ratio worse than 1:100. Many are 1:1000 or worse. Thyroid cancer in their example is 358 cases against 407,399 controls, a 1:1138 ratio.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> And a normal logistic regression breaks down at those ratios.</p>
+<p class="line alex"><span class="speaker">ALEX</span> It is worse than that. Linear mixed models like BOLT-LMM were the standard for handling relatedness in large biobanks. Logistic mixed models like GMMAT existed for binary traits but had two problems. One, GMMAT requires O(MN²) computation and O(N²) memory — at N = 400,000, projected memory is more than 600 gigabytes. They quote SAIGE at 10.3 gigabytes for the same job. Two, both BOLT-LMM and GMMAT have inflated type I error when case-control ratios are unbalanced and the variant is rare. Their Supplementary Table 4 has genomic inflation factor lambda at the 0.001 percentile of 1.68 to 1.71 for MAF below 1% in colorectal cancer at 1:84 ratio. For thyroid cancer at 1:1138, lambda is 4 to 5. That is a four-fold inflation.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> So you&#x27;d be reporting false positives at four times the expected rate.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Worse — at the genome-wide threshold, where you only get to be wrong by a sliver, you are reporting them at five times the rate. Most &quot;novel&quot; loci from a naive logistic mixed model on a rare phenotype will be artifacts.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> How does SAIGE fix that?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Two innovations. First, the saddlepoint approximation, SPA. Score tests in logistic mixed models are usually approximated as Gaussian — first two moments only. SPA uses all the cumulants, which means all the moments. When the case-control ratio is balanced and the variant is common, the Gaussian approximation works fine because the score statistic is approximately normal. When the ratio is extreme and the variant is rare, the score statistic has a heavy, asymmetric tail and the Gaussian approximation falls apart. SPA captures the actual tail. They cite Dey et al. 2017 for the original fastSPA in the SPAtest R package.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> And the computational trick.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Two-step structure. Step 1 fits the null logistic mixed model — no genotypes, just covariates and a genetic relatedness matrix used for variance components. Step 2 tests every variant, using a precomputed variance ratio so you don&#x27;t recompute the GRM-based variance per variant. The variance ratio is the trick — they show analytically and via simulation that for variants with minor allele count above 20, the ratio of score variances with and without random effects is approximately constant. Same idea BOLT-LMM uses, ported to logistic mixed models. They also use preconditioned conjugate gradient — PCG — to solve linear systems without storing the full GRM. They store raw genotypes in a binary vector, dropping memory from 669 gigabytes to 9.56 gigabytes for the GRM step.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s the difference between &quot;this fits in a laptop&quot; and &quot;this requires a small datacenter.&quot;</p>
+<p class="line alex"><span class="speaker">ALEX</span> Right. SAIGE took 517 CPU hours for 71 million variants on 408,458 samples, versus 360 hours for BOLT-LMM. SAIGE is slower than BOLT-LMM but it&#x27;s the only method that calibrates correctly on rare unbalanced binary traits at biobank scale. That&#x27;s the trade.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Let&#x27;s translate this for our CFF WGS cohort. We have around 5,000 patients. None of the traits we&#x27;d test are 1:1000 imbalanced because everyone in the registry has CF — that is the cohort definition.</p>
+<p class="line alex"><span class="speaker">ALEX</span> That is a sharp observation and it&#x27;s the point I want to push on. SAIGE was designed for the population biobank case where most phenotypes have prevalence under 1%. In a within-CF PheWAS, our case-control ratios for things like CFRD or meconium ileus will be more like 1:5 to 1:10. CFRD is roughly 30% prevalence in adults. Pseudomonas chronic infection is roughly 50%. Liver disease is around 5 to 10%. None of these are extreme.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> So we don&#x27;t actually need SAIGE for those phenotypes.</p>
+<p class="line alex"><span class="speaker">ALEX</span> For the common phenotypes, we don&#x27;t need the SPA correction — BOLT-LMM or REGENIE step 2 with standard normal-approximated score tests would be fine. Where we do need SAIGE is the long tail of registry-derived phecodes. If we are running phenome-wide on CFFPR&#x27;s full ICD/phecode set — which is the gap-1 pitch from our gap map — we&#x27;ll hit phenotypes with case counts under 50 in a 5,000-patient cohort. Suicidal ideation, certain malignancies, specific transplant complications. Those will have 1:50 to 1:100 case-control ratios *within CF*, and there SAIGE&#x27;s calibration matters.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> And relatedness?</p>
+<p class="line alex"><span class="speaker">ALEX</span> This is where the CFF cohort departs from a generic biobank. The Twin and Sibling Study sub-recruitment under NCT00676169 deliberately enriched for related individuals. UKBB was 30.3% with at least one third-degree relative; FinnGen was 73.6%. Our cohort, depending on how the WGS sub-cohort was assembled, could be even higher. SAIGE&#x27;s PCG-based GRM handling is exactly what we want, and the GRM is built from a small set of high-quality genotyped variants — SAIGE used 93,511 in UKBB — which is computationally trivial at our scale.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Good. Concept-note bullet?</p>
+<p class="line alex"><span class="speaker">ALEX</span> The concept-note paste for the analysis-plan section: &quot;For binary phecodes with case-control imbalance worse than 1:50, single-variant association testing will use SAIGE (Zhou et al., 2018) with the saddlepoint approximation to control type I error at low minor allele counts; the genetic relatedness matrix will be constructed from a high-quality LD-pruned set of common variants and applied via preconditioned conjugate gradient as in the original implementation. For more balanced phecodes, REGENIE step 2 logistic regression with leave-one-chromosome-out will be used as the primary engine.&quot;</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Methods to lift?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Five things go onto the methods primer. One, two-step null-then-test structure with a precomputed variance ratio. Two, saddlepoint approximation for binary score tests at low MAF. Three, PCG for GRM-free linear-system solves. Four, the practical MAC ≥ 20 threshold below which the variance-ratio approximation breaks down — that has implications for our singleton-mask thresholds. Five, the empirical lambda-by-MAF-by-imbalance grid in Supplementary Table 4, which we should reproduce on our cohort as a calibration check.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Limitations to flag in the proposal?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Three. SAIGE assumes the variance ratio is constant across variants with MAC ≥ 20 — for our rarer-than-MAC-20 variants, all bets are off and we&#x27;d switch to SAIGE-GENE+ or burden tests rather than report single-variant p-values. SAIGE in this 2018 form is single-ancestry — they ran white British UKBB only. Multi-ancestry analyses in CFF will need either ancestry-stratified runs or one of the mixed-ancestry follow-on methods. And the SPA, while excellent for low MAF, doesn&#x27;t help with case definition — if our CFFPR phecode for &quot;anxiety&quot; is noisy, SAIGE will calibrate p-values correctly on a noisy phenotype, which is not the same as discovering biology.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> One concrete artifact?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Add to methods primer: &quot;SAIGE-style saddlepoint correction will be applied to all binary phecode tests with case prevalence below 2% in the analyzed cohort.&quot; That sentence goes into the analysis-plan section verbatim and it justifies a specific software choice with a specific threshold.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Tomorrow we&#x27;re paired with?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Tomorrow&#x27;s biobank slot 1 is Zhou et al. 2022, &quot;SAIGE-GENE+ improves the efficiency and accuracy of set-based rare variant association tests.&quot; PMID 36138231. The natural sequel — what SAIGE does for single-variant testing, SAIGE-GENE+ does for gene-burden testing on ultra-rare variants. That&#x27;s the actual workhorse for our rare-variant CFTR PheWAS.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Takeaway?</p>
+<p class="line alex"><span class="speaker">ALEX</span> The takeaway for today is: SAIGE is overkill for our common-phenotype tests but exactly correct for the long tail of registry-derived phecodes that make Gap 1 of our gap map worth proposing. Claim it explicitly in the analysis plan; don&#x27;t let a reviewer think we&#x27;re applying biobank methods because they&#x27;re fashionable.</p></div></details>
+</main><footer>Generated 2026-05-03 21:39</footer>
+<script>
+(function(){
+  if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
+  function $(id){ return document.getElementById(id); }
+  function build(){
+    var bar = document.createElement('div');
+    bar.id = 'mini-player';
+    bar.style.display = 'none';
+    bar.innerHTML =
+      '<div class="mp-meta">' +
+        '<span class="mp-title" id="mp-title"></span>' +
+        '<span class="mp-counter" id="mp-counter"></span>' +
+      '</div>' +
+      '<div class="mp-controls">' +
+        '<button class="mp-btn" id="mp-prev" title="Previous">&#9194;</button>' +
+        '<audio id="mp-audio" controls preload="none"></audio>' +
+        '<button class="mp-btn" id="mp-next" title="Next">&#9193;</button>' +
+        '<button class="mp-btn" id="mp-close" title="Close">&times;</button>' +
+      '</div>';
+    document.body.appendChild(bar);
+    document.body.style.paddingBottom = '140px';
+    var audio = $('mp-audio');
+    audio.addEventListener('ended', function(){
+      var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
+      if (idx + 1 < window.EPISODES.length) playAt(idx + 1);
+    });
+    audio.addEventListener('timeupdate', function(){
+      sessionStorage.setItem('mp-time', String(audio.currentTime));
+    });
+    $('mp-prev').onclick = function(){
+      var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
+      if (idx > 0) playAt(idx - 1);
+    };
+    $('mp-next').onclick = function(){
+      var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
+      if (idx + 1 < window.EPISODES.length) playAt(idx + 1);
+    };
+    $('mp-close').onclick = function(){
+      audio.pause();
+      sessionStorage.removeItem('mp-idx');
+      sessionStorage.removeItem('mp-time');
+      bar.style.display = 'none';
+      document.body.style.paddingBottom = '';
+    };
+  }
+  function playAt(idx){
+    var ep = window.EPISODES[idx];
+    if (!ep) return;
+    sessionStorage.setItem('mp-idx', String(idx));
+    sessionStorage.setItem('mp-time', '0');
+    var bar = $('mini-player');
+    bar.style.display = 'block';
+    document.body.style.paddingBottom = '140px';
+    $('mp-title').textContent = 'Episode ' + ep.num + ': ' + ep.title;
+    $('mp-counter').textContent = (idx + 1) + ' / ' + window.EPISODES.length;
+    var audio = $('mp-audio');
+    audio.src = ep.mp3;
+    audio.play().catch(function(e){ console.warn('autoplay blocked:', e); });
+  }
+  window.playAllEpisodes = function(startIdx){
+    if (!$('mini-player')) build();
+    playAt(startIdx || 0);
+  };
+  // Resume on page load if a session is active
+  document.addEventListener('DOMContentLoaded', function(){
+    var idx = sessionStorage.getItem('mp-idx');
+    if (idx !== null) {
+      var i = parseInt(idx, 10);
+      if (i >= 0 && i < window.EPISODES.length) {
+        if (!$('mini-player')) build();
+        var ep = window.EPISODES[i];
+        var bar = $('mini-player');
+        bar.style.display = 'block';
+        document.body.style.paddingBottom = '140px';
+        $('mp-title').textContent = 'Episode ' + ep.num + ': ' + ep.title;
+        $('mp-counter').textContent = (i + 1) + ' / ' + window.EPISODES.length;
+        var audio = $('mp-audio');
+        audio.src = ep.mp3;
+        var t = parseFloat(sessionStorage.getItem('mp-time') || '0');
+        if (t > 0) audio.addEventListener('loadedmetadata', function once(){
+          audio.currentTime = t;
+          audio.removeEventListener('loadedmetadata', once);
+        });
+        // Don't auto-play on resume — wait for user gesture
+      }
+    }
+  });
+})();
+</script>
+</body></html>
