@@ -3,13 +3,15 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0f1419">
 <title>Episode 12 · 2026-05-02 / ep3 · CFTR PheWAS Reading Podcast</title>
-<link rel="stylesheet" href="style.css"></head><body>
+<link rel="stylesheet" href="style.css">
+<script>window.EPISODES = [{"num": 1, "title": "Bycroft C 2018", "mp3": "2026-04-30-ep1.mp3", "slug": "2026-04-30-ep1"}, {"num": 2, "title": "Halldorsson BV 2022", "mp3": "2026-04-30-ep2.mp3", "slug": "2026-04-30-ep2"}, {"num": 3, "title": "Aksit MA 2020", "mp3": "2026-04-30-ep3.mp3", "slug": "2026-04-30-ep3"}, {"num": 4, "title": "Taliun D 2021", "mp3": "2026-05-01-ep1.mp3", "slug": "2026-05-01-ep1"}, {"num": 5, "title": "All of Us Research Program Genomics Investigators 2024", "mp3": "2026-05-01-ep2.mp3", "slug": "2026-05-01-ep2"}, {"num": 6, "title": "Zhou YH 2023", "mp3": "2026-05-01-ep3.mp3", "slug": "2026-05-01-ep3"}, {"num": 7, "title": "Backman JD 2021", "mp3": "2026-05-01-ep4.mp3", "slug": "2026-05-01-ep4"}, {"num": 8, "title": "Wang Q 2021", "mp3": "2026-05-01-ep5.mp3", "slug": "2026-05-01-ep5"}, {"num": 9, "title": "Blackman SM 2013", "mp3": "2026-05-01-ep6.mp3", "slug": "2026-05-01-ep6"}, {"num": 10, "title": "Karczewski KJ 2020", "mp3": "2026-05-02-ep1.mp3", "slug": "2026-05-02-ep1"}, {"num": 11, "title": "Karczewski KJ 2022", "mp3": "2026-05-02-ep2.mp3", "slug": "2026-05-02-ep2"}, {"num": 12, "title": "Collaco JM 2016", "mp3": "2026-05-02-ep3.mp3", "slug": "2026-05-02-ep3"}, {"num": 13, "title": "Zhou W 2018", "mp3": "2026-05-03-ep1.mp3", "slug": "2026-05-03-ep1"}, {"num": 14, "title": "Kurki MI 2023", "mp3": "2026-05-03-ep2.mp3", "slug": "2026-05-03-ep2"}, {"num": 15, "title": "Taylor C 2011", "mp3": "2026-05-03-ep3.mp3", "slug": "2026-05-03-ep3"}];</script>
+</head><body>
 <header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
 <main class="wrap">
-<nav class="crumbs"><a href="index.html">← All episodes</a></nav>
+<nav class="crumbs"><a href="index.html">← All episodes</a> · <a href="javascript:playAllEpisodes(11)">▶ Play from here</a></nav>
 <h1 class="ep">Episode 12 · 2026-05-02 / ep3</h1>
 <p class="ep-date">Collaco JM 2016</p>
-
+<audio controls preload="none" src="2026-05-02-ep3.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 14.7 MB · gpt-4o-mini-tts</p>
 <h2>Blurb</h2>
 <p>Collaco et al. (AJRCCM 2016) used nested mixed modeling on 2,639 sweat chloride measurements from 1,761 twins and siblings (CF Twin-Sibling Study, French CF Modifier Gene Study, Canadian Consortium for Genetic Studies — i.e. the same family base that became the CFGP WGS cohort) to partition sweat chloride variation: 56.1% CFTR genotype, 13.8% time-of-test, 13.5% environment, 9.9% residual, 6.8% unique-individual. Critically, modifier-gene heritability is negligible (H²=0; 95% CI 0–0.35). For our CFTR PheWAS, this paper rules sweat chloride <em>out</em> as a modifier-discovery phenotype and supplies a methods template — Collaco-style variance components — that should be applied to <em>every</em> continuous candidate phenotype before inclusion.</p>
 <h2>Citation</h2>
@@ -115,4 +117,94 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s a strong differentiator sentence for the proposal. Logged.</p>
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow we&#x27;re paired with: Zhou 2018, &quot;Efficiently controlling for case-control imbalance and sample relatedness in large-scale genetic association studies&quot; — the original SAIGE paper. Methods nerd day. We&#x27;ll spend the time on how SAIGE handles unbalanced case-control ratios, which is what we&#x27;ll have for every CF-comorbidity phecode. It pairs forward to SAIGE-GENE+ which we previewed in Episode 2. End of episode 3.</p>
 <p class="line jordan"><span class="speaker">JORDAN</span> End of run.</p></div></details>
-</main><footer>Generated 2026-05-02 07:18</footer></body></html>
+</main><footer>Generated 2026-05-03 21:39</footer>
+<script>
+(function(){
+  if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
+  function $(id){ return document.getElementById(id); }
+  function build(){
+    var bar = document.createElement('div');
+    bar.id = 'mini-player';
+    bar.style.display = 'none';
+    bar.innerHTML =
+      '<div class="mp-meta">' +
+        '<span class="mp-title" id="mp-title"></span>' +
+        '<span class="mp-counter" id="mp-counter"></span>' +
+      '</div>' +
+      '<div class="mp-controls">' +
+        '<button class="mp-btn" id="mp-prev" title="Previous">&#9194;</button>' +
+        '<audio id="mp-audio" controls preload="none"></audio>' +
+        '<button class="mp-btn" id="mp-next" title="Next">&#9193;</button>' +
+        '<button class="mp-btn" id="mp-close" title="Close">&times;</button>' +
+      '</div>';
+    document.body.appendChild(bar);
+    document.body.style.paddingBottom = '140px';
+    var audio = $('mp-audio');
+    audio.addEventListener('ended', function(){
+      var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
+      if (idx + 1 < window.EPISODES.length) playAt(idx + 1);
+    });
+    audio.addEventListener('timeupdate', function(){
+      sessionStorage.setItem('mp-time', String(audio.currentTime));
+    });
+    $('mp-prev').onclick = function(){
+      var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
+      if (idx > 0) playAt(idx - 1);
+    };
+    $('mp-next').onclick = function(){
+      var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
+      if (idx + 1 < window.EPISODES.length) playAt(idx + 1);
+    };
+    $('mp-close').onclick = function(){
+      audio.pause();
+      sessionStorage.removeItem('mp-idx');
+      sessionStorage.removeItem('mp-time');
+      bar.style.display = 'none';
+      document.body.style.paddingBottom = '';
+    };
+  }
+  function playAt(idx){
+    var ep = window.EPISODES[idx];
+    if (!ep) return;
+    sessionStorage.setItem('mp-idx', String(idx));
+    sessionStorage.setItem('mp-time', '0');
+    var bar = $('mini-player');
+    bar.style.display = 'block';
+    document.body.style.paddingBottom = '140px';
+    $('mp-title').textContent = 'Episode ' + ep.num + ': ' + ep.title;
+    $('mp-counter').textContent = (idx + 1) + ' / ' + window.EPISODES.length;
+    var audio = $('mp-audio');
+    audio.src = ep.mp3;
+    audio.play().catch(function(e){ console.warn('autoplay blocked:', e); });
+  }
+  window.playAllEpisodes = function(startIdx){
+    if (!$('mini-player')) build();
+    playAt(startIdx || 0);
+  };
+  // Resume on page load if a session is active
+  document.addEventListener('DOMContentLoaded', function(){
+    var idx = sessionStorage.getItem('mp-idx');
+    if (idx !== null) {
+      var i = parseInt(idx, 10);
+      if (i >= 0 && i < window.EPISODES.length) {
+        if (!$('mini-player')) build();
+        var ep = window.EPISODES[i];
+        var bar = $('mini-player');
+        bar.style.display = 'block';
+        document.body.style.paddingBottom = '140px';
+        $('mp-title').textContent = 'Episode ' + ep.num + ': ' + ep.title;
+        $('mp-counter').textContent = (i + 1) + ' / ' + window.EPISODES.length;
+        var audio = $('mp-audio');
+        audio.src = ep.mp3;
+        var t = parseFloat(sessionStorage.getItem('mp-time') || '0');
+        if (t > 0) audio.addEventListener('loadedmetadata', function once(){
+          audio.currentTime = t;
+          audio.removeEventListener('loadedmetadata', once);
+        });
+        // Don't auto-play on resume — wait for user gesture
+      }
+    }
+  });
+})();
+</script>
+</body></html>
