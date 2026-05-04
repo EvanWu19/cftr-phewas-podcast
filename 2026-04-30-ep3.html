@@ -8,10 +8,18 @@
 </head><body>
 <header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
 <main class="wrap">
-<nav class="crumbs"><a href="index.html">← All episodes</a> · <a href="javascript:playAllEpisodes(2)">▶ Play from here</a></nav>
+<nav class="crumbs"><a href="index.html">&#8592; All episodes</a> · <a href="javascript:playAllEpisodes(2)">&#9654; Play from here</a></nav>
 <h1 class="ep">Episode 3 · 2026-04-30 / ep3</h1>
 <p class="ep-date">Aksit MA 2020</p>
 <audio controls preload="none" src="2026-04-30-ep3.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 15.1 MB · gpt-4o-mini-tts</p>
+<div class="feedback-bar" id="feedback-bar" data-slug="2026-04-30-ep3">
+  <p class="feedback-label">How did this episode land for you?</p>
+  <div class="feedback-btns">
+    <button class="fb-btn fb-blue" data-rating="superficial" onclick="saveFeedback(this)">&#128309; Too superficial &#8212; nothing new</button>
+    <button class="fb-btn fb-green" data-rating="balanced" onclick="saveFeedback(this)">&#128994; Well balanced &#8212; builds on what I know</button>
+    <button class="fb-btn fb-red" data-rating="hard" onclick="saveFeedback(this)">&#128308; Too hard &#8212; lost the connection to existing knowledge</button>
+  </div>
+</div>
 <h1>Aksit et al. 2020 — CFRD genetic modifiers and overlap with T2D</h1>
 <h2>Blurb</h2>
 <p>Aksit and colleagues conducted a genome-wide association study (GWAS) for cystic fibrosis-related diabetes (CFRD) onset in 5,740 individuals with CF, drawn from the North American CF Modifier Consortium (Cutting / Knowles / Drumm) and the French CF Modifier Study (Corvol), with statistical leadership from Strug at Toronto. They modeled age at CFRD diagnosis as a survival-style outcome and identified three genome-wide significant loci — PTMA (novel), TCF7L2 (a canonical type 2 diabetes locus), and SLC26A9 (a known CF complication modifier). Polygenic risk scores (PRS) imported from general-population GWAS showed CFRD overlaps T2D strongly along the beta-cell function axis (insulin secretion, postchallenge glucose, fasting plasma glucose), weakly with T1D, inconsistently with insulin sensitivity, and not at all with islet autoimmunity. An 18-variant CFRD PRS, built by combining the GWAS hits with FDR&lt;0.1 variants from the cross-trait scans, replicated in an independent CF population. The discovery cohort is the same CFF-anchored modifier-consortium resource a CFTR PheWAS would draw on, which makes this paper a load-bearing reference for both the saturation analysis and the gap-map of any concept note.</p>
@@ -138,7 +146,7 @@
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow we move out of the CF cohort entirely and into Backman 2021, the UK Biobank exome paper, which is a methods anchor for what large-scale rare-variant association looks like at half a million participants. Different scale, different question, transferable machinery.</p>
 <p class="line jordan"><span class="speaker">JORDAN</span> Takeaway for today?</p>
 <p class="line alex"><span class="speaker">ALEX</span> Aksit closes the CFRD GWAS question and opens the door to a phenome-wide scan of established CF modifier loci. The proposal lives in the inverted direction.</p></div></details>
-</main><footer>Generated 2026-05-04 07:03</footer>
+</main><footer>Generated 2026-05-04 13:27</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -226,6 +234,27 @@
       }
     }
   });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('feedback-bar');
+  if (!bar) return;
+  var slug = bar.dataset.slug;
+  var key = 'feedback-' + slug;
+  function applyStored(){
+    var stored = localStorage.getItem(key);
+    document.querySelectorAll('.fb-btn').forEach(function(btn){
+      btn.classList.toggle('fb-active', btn.dataset.rating === stored);
+    });
+  }
+  window.saveFeedback = function(btn){
+    localStorage.setItem(key, btn.dataset.rating);
+    applyStored();
+  };
+  document.addEventListener('DOMContentLoaded', applyStored);
+  // Also apply immediately in case DOMContentLoaded already fired
+  if (document.readyState !== 'loading') applyStored();
 })();
 </script>
 </body></html>

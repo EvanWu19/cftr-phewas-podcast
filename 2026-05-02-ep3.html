@@ -8,10 +8,18 @@
 </head><body>
 <header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
 <main class="wrap">
-<nav class="crumbs"><a href="index.html">← All episodes</a> · <a href="javascript:playAllEpisodes(11)">▶ Play from here</a></nav>
+<nav class="crumbs"><a href="index.html">&#8592; All episodes</a> · <a href="javascript:playAllEpisodes(11)">&#9654; Play from here</a></nav>
 <h1 class="ep">Episode 12 · 2026-05-02 / ep3</h1>
 <p class="ep-date">Collaco JM 2016</p>
 <audio controls preload="none" src="2026-05-02-ep3.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 15.2 MB · gpt-4o-mini-tts</p>
+<div class="feedback-bar" id="feedback-bar" data-slug="2026-05-02-ep3">
+  <p class="feedback-label">How did this episode land for you?</p>
+  <div class="feedback-btns">
+    <button class="fb-btn fb-blue" data-rating="superficial" onclick="saveFeedback(this)">&#128309; Too superficial &#8212; nothing new</button>
+    <button class="fb-btn fb-green" data-rating="balanced" onclick="saveFeedback(this)">&#128994; Well balanced &#8212; builds on what I know</button>
+    <button class="fb-btn fb-red" data-rating="hard" onclick="saveFeedback(this)">&#128308; Too hard &#8212; lost the connection to existing knowledge</button>
+  </div>
+</div>
 <h2>Blurb</h2>
 <p>Collaco and colleagues pool 2,639 sweat chloride measurements from 1,761 CF twins/siblings across the CF Twin-Sibling Study (Johns Hopkins), French CF Modifier Gene Study (Trousseau), and Canadian Consortium for Genetic Studies (SickKids), then fit a nested mixed model that decomposes total sweat-chloride variance into named buckets. CFTR mutations themselves explain 56.1% of variance; within-subject longitudinal variation 13.8%; shared environment 13.5%; residual/test variability 9.9%; unique-individual factors 6.8%. Twin analysis returns negligible heritability (H^2 = 0; 95% CI 0.0-0.35) for the non-CFTR component — so modifier genes for sweat chloride are below detection. Within a single CF patient, day-to-day fluctuation (58.1%) plus residual noise (41.9%) means single-point measurements are unreliable for tracking response. The variance-decomposition framework is the lift, even though the answer for sweat chloride is &quot;not a modifier-GWAS phenotype.&quot;</p>
 <h2>Plain-English glossary (alphabetical)</h2>
@@ -149,7 +157,7 @@
 <p class="line alex"><span class="speaker">ALEX</span> Three concrete things, none of which require touching genomic data. Pure registry-side feasibility check.</p>
 <p class="line jordan"><span class="speaker">JORDAN</span> And tomorrow?</p>
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow we shift methods. Zhou et al. 2018 — SAIGE, Scalable and Accurate Implementation of Generalized mixed model. This is the paper that solves a different problem — case-control imbalance in biobank-scale association testing. When you have a thousand cases and four hundred thousand controls, standard logistic regression breaks. SAIGE fixes it. It&#x27;s a core method any biobank PheWAS leans on. Today&#x27;s takeaway — sweat chloride&#x27;s variance is mostly CFTR itself, modifier-gene signal is undetectable, and the right question for our project is which other CFFPR biomarkers have heritable variance left to scan.</p></div></details>
-</main><footer>Generated 2026-05-04 07:03</footer>
+</main><footer>Generated 2026-05-04 13:27</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -237,6 +245,27 @@
       }
     }
   });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('feedback-bar');
+  if (!bar) return;
+  var slug = bar.dataset.slug;
+  var key = 'feedback-' + slug;
+  function applyStored(){
+    var stored = localStorage.getItem(key);
+    document.querySelectorAll('.fb-btn').forEach(function(btn){
+      btn.classList.toggle('fb-active', btn.dataset.rating === stored);
+    });
+  }
+  window.saveFeedback = function(btn){
+    localStorage.setItem(key, btn.dataset.rating);
+    applyStored();
+  };
+  document.addEventListener('DOMContentLoaded', applyStored);
+  // Also apply immediately in case DOMContentLoaded already fired
+  if (document.readyState !== 'loading') applyStored();
 })();
 </script>
 </body></html>

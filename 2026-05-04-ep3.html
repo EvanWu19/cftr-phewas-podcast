@@ -8,10 +8,18 @@
 </head><body>
 <header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
 <main class="wrap">
-<nav class="crumbs"><a href="index.html">← All episodes</a> · <a href="javascript:playAllEpisodes(17)">▶ Play from here</a></nav>
+<nav class="crumbs"><a href="index.html">&#8592; All episodes</a> · <a href="javascript:playAllEpisodes(17)">&#9654; Play from here</a></nav>
 <h1 class="ep">Episode 18 · 2026-05-04 / ep3</h1>
 <p class="ep-date">Aksit MA 2022</p>
 <audio controls preload="none" src="2026-05-04-ep3.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 16.1 MB · gpt-4o-mini-tts</p>
+<div class="feedback-bar" id="feedback-bar" data-slug="2026-05-04-ep3">
+  <p class="feedback-label">How did this episode land for you?</p>
+  <div class="feedback-btns">
+    <button class="fb-btn fb-blue" data-rating="superficial" onclick="saveFeedback(this)">&#128309; Too superficial &#8212; nothing new</button>
+    <button class="fb-btn fb-green" data-rating="balanced" onclick="saveFeedback(this)">&#128994; Well balanced &#8212; builds on what I know</button>
+    <button class="fb-btn fb-red" data-rating="hard" onclick="saveFeedback(this)">&#128308; Too hard &#8212; lost the connection to existing knowledge</button>
+  </div>
+</div>
 <h2>Blurb</h2>
 <p>Aksit and colleagues 2022 — the closest published work in the CF-modifier literature to a phenome-wide scan, though formally a bivariate pleiotropy test rather than a true PheWAS. Using the CF Genome Project (CFGP) whole-genome sequencing dataset (the same Hopkins–UNC–Toronto–France–Canada consortium WGS that Zhou 2023 used), they ran two GWAS: one for cystic fibrosis–related diabetes (CFRD, time-to-event), one for meconium ileus (MI, neonatal binary). They identified 11 MI loci (6 novel) and 12 CFRD loci (5 novel). Three loci were pleiotropic: SLC26A9 and CEBPB increase risk for both; PRSS1 acts in opposite directions — the higher-CFRD-risk allele is the lower-MI-risk allele. The paper sets up the twenty-three-locus list against which a registry-anchored phenome-wide extension could be defined; the white space is the non-GI, non-pulmonary, longitudinal, and post-modulator pleiotropy that the bivariate design cannot detect.</p>
 <h2>Plain-English glossary</h2>
@@ -131,7 +139,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> Tomorrow?</p>
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow&#x27;s CFTR-WGS pick from the sheet would naturally be one of the early-2010s candidate-gene-era papers — Li 2011 on population structure of the North American CF cohort, McDougal 2010 on MBL2, or Bronsveld 2000 on residual chloride secretion in twin and sibling pairs — to round out the historical context for the modern WGS-era papers we&#x27;ve been reading. Or, if we want to stay on the GI-pleiotropy thread, Sun 2012 on meconium-ileus susceptibility loci is the original SLC6A14 / SLC26A9 / SLC9A3 paper that Aksit 2022 builds directly on.</p>
 <p class="line alex"><span class="speaker">ALEX</span> One-line takeaway. Aksit 2022 is the closest published work to a CFTR PheWAS, and it tells us where the white space actually is — phenome-wide, longitudinal, post-modulator extension of the twenty-three-locus pleiotropy map this paper sets up — conditional on first inspecting the CFGP variant calls, the CFFPR endpoint catalog, and on confirming that the CFGP investigators are not already running this analysis themselves.</p></div></details>
-</main><footer>Generated 2026-05-04 07:03</footer>
+</main><footer>Generated 2026-05-04 13:27</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -219,6 +227,27 @@
       }
     }
   });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('feedback-bar');
+  if (!bar) return;
+  var slug = bar.dataset.slug;
+  var key = 'feedback-' + slug;
+  function applyStored(){
+    var stored = localStorage.getItem(key);
+    document.querySelectorAll('.fb-btn').forEach(function(btn){
+      btn.classList.toggle('fb-active', btn.dataset.rating === stored);
+    });
+  }
+  window.saveFeedback = function(btn){
+    localStorage.setItem(key, btn.dataset.rating);
+    applyStored();
+  };
+  document.addEventListener('DOMContentLoaded', applyStored);
+  // Also apply immediately in case DOMContentLoaded already fired
+  if (document.readyState !== 'loading') applyStored();
 })();
 </script>
 </body></html>

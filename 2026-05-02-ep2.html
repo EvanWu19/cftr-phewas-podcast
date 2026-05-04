@@ -8,10 +8,18 @@
 </head><body>
 <header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
 <main class="wrap">
-<nav class="crumbs"><a href="index.html">← All episodes</a> · <a href="javascript:playAllEpisodes(10)">▶ Play from here</a></nav>
+<nav class="crumbs"><a href="index.html">&#8592; All episodes</a> · <a href="javascript:playAllEpisodes(10)">&#9654; Play from here</a></nav>
 <h1 class="ep">Episode 11 · 2026-05-02 / ep2</h1>
 <p class="ep-date">Karczewski KJ 2022</p>
 <audio controls preload="none" src="2026-05-02-ep2.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 13.9 MB · gpt-4o-mini-tts</p>
+<div class="feedback-bar" id="feedback-bar" data-slug="2026-05-02-ep2">
+  <p class="feedback-label">How did this episode land for you?</p>
+  <div class="feedback-btns">
+    <button class="fb-btn fb-blue" data-rating="superficial" onclick="saveFeedback(this)">&#128309; Too superficial &#8212; nothing new</button>
+    <button class="fb-btn fb-green" data-rating="balanced" onclick="saveFeedback(this)">&#128994; Well balanced &#8212; builds on what I know</button>
+    <button class="fb-btn fb-red" data-rating="hard" onclick="saveFeedback(this)">&#128308; Too hard &#8212; lost the connection to existing knowledge</button>
+  </div>
+</div>
 <h2>Blurb</h2>
 <p>Karczewski and colleagues took 394,841 UK Biobank exomes, ran SAIGE-GENE gene-burden tests and single-variant tests against 4,529 harmonized phenotypes, and put the entire results matrix on a free public portal called Genebass (app.genebass.org). Earlier UK Biobank exome papers (Backman, Wang) generated similar tables but did not release them as a queryable resource. The contribution here is the resource itself: any researcher can now look up &quot;Has gene X been tested against trait Y in UK Biobank?&quot; in a web browser. For our planning, this means we should browse Genebass for CFTR and known CF modifier genes before proposing any new analysis, so the proposal can cite what is already public and concentrate on the gaps Genebass cannot fill — namely CF-cohort-specific signals and CF-specific phenotypes.</p>
 <h2>Plain-English glossary (alphabetical)</h2>
@@ -121,7 +129,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> What is on tomorrow?</p>
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow we shift gears completely. We pick up Collaco and colleagues, 2016, on sweat chloride variance in cystic fibrosis. Different paper, different scale, but it sets up the modifier-gene side of the conversation. Today&#x27;s takeaway: Genebass turns a class of &quot;has anyone tested this&quot; questions into web lookups, and our first move is to use it to map the existing landscape for CFTR plus modifier genes before proposing any new work.</p>
 <p class="line jordan"><span class="speaker">JORDAN</span> Free baseline before we ask for anything new. Got it. See you tomorrow.</p></div></details>
-</main><footer>Generated 2026-05-04 07:03</footer>
+</main><footer>Generated 2026-05-04 13:27</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -209,6 +217,27 @@
       }
     }
   });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('feedback-bar');
+  if (!bar) return;
+  var slug = bar.dataset.slug;
+  var key = 'feedback-' + slug;
+  function applyStored(){
+    var stored = localStorage.getItem(key);
+    document.querySelectorAll('.fb-btn').forEach(function(btn){
+      btn.classList.toggle('fb-active', btn.dataset.rating === stored);
+    });
+  }
+  window.saveFeedback = function(btn){
+    localStorage.setItem(key, btn.dataset.rating);
+    applyStored();
+  };
+  document.addEventListener('DOMContentLoaded', applyStored);
+  // Also apply immediately in case DOMContentLoaded already fired
+  if (document.readyState !== 'loading') applyStored();
 })();
 </script>
 </body></html>

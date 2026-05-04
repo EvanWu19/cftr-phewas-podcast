@@ -8,10 +8,18 @@
 </head><body>
 <header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
 <main class="wrap">
-<nav class="crumbs"><a href="index.html">← All episodes</a> · <a href="javascript:playAllEpisodes(5)">▶ Play from here</a></nav>
+<nav class="crumbs"><a href="index.html">&#8592; All episodes</a> · <a href="javascript:playAllEpisodes(5)">&#9654; Play from here</a></nav>
 <h1 class="ep">Episode 6 · 2026-05-01 / ep3</h1>
 <p class="ep-date">Zhou YH 2023</p>
 <audio controls preload="none" src="2026-05-01-ep3.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 15.0 MB · gpt-4o-mini-tts</p>
+<div class="feedback-bar" id="feedback-bar" data-slug="2026-05-01-ep3">
+  <p class="feedback-label">How did this episode land for you?</p>
+  <div class="feedback-btns">
+    <button class="fb-btn fb-blue" data-rating="superficial" onclick="saveFeedback(this)">&#128309; Too superficial &#8212; nothing new</button>
+    <button class="fb-btn fb-green" data-rating="balanced" onclick="saveFeedback(this)">&#128994; Well balanced &#8212; builds on what I know</button>
+    <button class="fb-btn fb-red" data-rating="hard" onclick="saveFeedback(this)">&#128308; Too hard &#8212; lost the connection to existing knowledge</button>
+  </div>
+</div>
 <h2>Blurb</h2>
 <p>Zhou and colleagues threw the largest, deepest CF genetic dataset assembled — 4,248 whole-genome-sequenced patients plus 3,592 imputed-array patients, 7,840 total, ~15.9 million SNPs — at the lung-disease modifier question, using the field-standard KNoRMA phenotype on pre-modulator data. They confirmed and finely mapped the previously known SLC9A3/CEP72 (chr5p13) and EHF/APIP (chr11p13) signals, but explicitly reported &quot;no novel primary associations with common single variants or rare variants.&quot; For follow-up work this is a clean negative result: it closes the door on novel common single-variant lung-function modifier discovery in the CF Gene Modifier Consortium WGS at this scale, and points downstream work toward phenome-wide, post-modulator, longitudinal, and rare-variant gene-burden directions.</p>
 <h2>Citation</h2>
@@ -153,7 +161,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> So the takeaway for today, in one line?</p>
 <p class="line alex"><span class="speaker">ALEX</span> Zhou 2023 is the paper that tells you, with a clear conscience, that common single-variant lung-function modifier discovery in the CF Gene Modifier Consortium WGS is largely done — and that the productive next moves are phenome-wide, post-modulator, longitudinal, or rare-variant gene-burden, not another single-variant lung-function GWAS at the same scale.</p>
 <p class="line jordan"><span class="speaker">JORDAN</span> Closed door, four open ones. See everyone tomorrow.</p></div></details>
-</main><footer>Generated 2026-05-04 07:03</footer>
+</main><footer>Generated 2026-05-04 13:27</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -241,6 +249,27 @@
       }
     }
   });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('feedback-bar');
+  if (!bar) return;
+  var slug = bar.dataset.slug;
+  var key = 'feedback-' + slug;
+  function applyStored(){
+    var stored = localStorage.getItem(key);
+    document.querySelectorAll('.fb-btn').forEach(function(btn){
+      btn.classList.toggle('fb-active', btn.dataset.rating === stored);
+    });
+  }
+  window.saveFeedback = function(btn){
+    localStorage.setItem(key, btn.dataset.rating);
+    applyStored();
+  };
+  document.addEventListener('DOMContentLoaded', applyStored);
+  // Also apply immediately in case DOMContentLoaded already fired
+  if (document.readyState !== 'loading') applyStored();
 })();
 </script>
 </body></html>
