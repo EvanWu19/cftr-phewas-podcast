@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<title>Episode 19 · 2026-05-05 / ep1 · CFTR PheWAS Reading Podcast</title>
+<link rel="stylesheet" href="style.css">
+<script>window.EPISODES = [{"num": 1, "title": "Bycroft C 2018", "mp3": "2026-04-30-ep1.mp3", "slug": "2026-04-30-ep1"}, {"num": 2, "title": "Halldorsson BV 2022", "mp3": "2026-04-30-ep2.mp3", "slug": "2026-04-30-ep2"}, {"num": 3, "title": "Aksit MA 2020", "mp3": "2026-04-30-ep3.mp3", "slug": "2026-04-30-ep3"}, {"num": 4, "title": "Taliun D 2021", "mp3": "2026-05-01-ep1.mp3", "slug": "2026-05-01-ep1"}, {"num": 5, "title": "All of Us Research Program Genomics Investigators 2024", "mp3": "2026-05-01-ep2.mp3", "slug": "2026-05-01-ep2"}, {"num": 6, "title": "Zhou YH 2023", "mp3": "2026-05-01-ep3.mp3", "slug": "2026-05-01-ep3"}, {"num": 7, "title": "Backman JD 2021", "mp3": "2026-05-01-ep4.mp3", "slug": "2026-05-01-ep4"}, {"num": 8, "title": "Wang Q 2021", "mp3": "2026-05-01-ep5.mp3", "slug": "2026-05-01-ep5"}, {"num": 9, "title": "Blackman SM 2013", "mp3": "2026-05-01-ep6.mp3", "slug": "2026-05-01-ep6"}, {"num": 10, "title": "Karczewski KJ 2020", "mp3": "2026-05-02-ep1.mp3", "slug": "2026-05-02-ep1"}, {"num": 11, "title": "Karczewski KJ 2022", "mp3": "2026-05-02-ep2.mp3", "slug": "2026-05-02-ep2"}, {"num": 12, "title": "Collaco JM 2016", "mp3": "2026-05-02-ep3.mp3", "slug": "2026-05-02-ep3"}, {"num": 13, "title": "Zhou W 2018", "mp3": "2026-05-03-ep1.mp3", "slug": "2026-05-03-ep1"}, {"num": 14, "title": "Kurki MI 2023", "mp3": "2026-05-03-ep2.mp3", "slug": "2026-05-03-ep2"}, {"num": 15, "title": "Taylor C 2011", "mp3": "2026-05-03-ep3.mp3", "slug": "2026-05-03-ep3"}, {"num": 16, "title": "Zhou W 2022", "mp3": "2026-05-04-ep1.mp3", "slug": "2026-05-04-ep1"}, {"num": 17, "title": "Denny JC 2010", "mp3": "2026-05-04-ep2.mp3", "slug": "2026-05-04-ep2"}, {"num": 18, "title": "Aksit MA 2022", "mp3": "2026-05-04-ep3.mp3", "slug": "2026-05-04-ep3"}, {"num": 19, "title": "Wei WQ 2017", "mp3": "2026-05-05-ep1.mp3", "slug": "2026-05-05-ep1"}, {"num": 20, "title": "Hofmeister RJ 2023", "mp3": "2026-05-05-ep2.mp3", "slug": "2026-05-05-ep2"}, {"num": 21, "title": "Faino AV 2025", "mp3": "2026-05-05-ep3.mp3", "slug": "2026-05-05-ep3"}];</script>
+</head><body>
+<header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="index.html">&#8592; All episodes</a> · <a href="javascript:playAllEpisodes(18)">&#9654; Play from here</a></nav>
+<h1 class="ep">Episode 19 · 2026-05-05 / ep1</h1>
+<p class="ep-date">Wei WQ 2017</p>
+<audio controls preload="none" src="2026-05-05-ep1.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 14.4 MB · gpt-4o-mini-tts</p>
+<div class="feedback-bar" id="feedback-bar" data-slug="2026-05-05-ep1">
+  <p class="feedback-label">How did this episode land for you?</p>
+  <div class="feedback-btns">
+    <button class="fb-btn fb-blue" data-rating="superficial" onclick="saveFeedback(this)">&#128309; Too superficial &#8212; nothing new</button>
+    <button class="fb-btn fb-green" data-rating="balanced" onclick="saveFeedback(this)">&#128994; Well balanced &#8212; builds on what I know</button>
+    <button class="fb-btn fb-red" data-rating="hard" onclick="saveFeedback(this)">&#128308; Too hard &#8212; lost the connection to existing knowledge</button>
+  </div>
+</div>
+<h2>One-paragraph blurb</h2>
+<p>Wei and colleagues at Vanderbilt benchmark three ways of grouping electronic-health-record billing codes into &quot;diseases&quot; for phenome-wide association studies: raw ICD-9-CM codes (~14,000, often too granular), AHRQ&#x27;s Clinical Classification Software CCS (~280 categories, often too coarse), and the manually curated phecode system (~1,700 phenotypes designed specifically for genetic research). On 100 clinical phenotypes drawn from prior GWAS (n=25) and clinician-written problem lists across 189,289 BioVU patients (n=75), phecodes exactly matched 83 phenotypes versus 53 for ICD-9-CM and 32 for CCS. On 440 known SNP-phenotype pairs from the GWAS catalog, phecodes replicated 153 versus 143 (ICD-9-CM) and 139 (CCS), with somewhat stronger odds ratios and lower p-values where all three schemes hit. The proposed direction for our project is, conditional on inspection of the CFF WGS variant calls and CFFPR endpoint linkage, to pre-register a CFFPR-phenotype-to-phecode crosswalk before any modifier-locus PheWAS, with each phecode mapping accompanied by ICD-9 / ICD-10 codes and exclusion-code logic, so any registry-discovered signal can be tested for replication in a biobank using the same disease label. The key open question is whether the 2017 phecode performance generalizes to ICD-10-CM-era CF subspecialty data and whether per-phecode case counts at n≈5,000 are enough for the gene-burden tests we want to run.</p>
+<h2>Plain-English glossary</h2>
+<ul>
+<li><strong>AHRQ</strong> — Agency for Healthcare Research and Quality. U.S. federal agency that publishes the Clinical Classification Software (CCS).</li>
+<li><strong>BioVU</strong> — Vanderbilt&#x27;s biobank, linking de-identified DNA from leftover clinical specimens to the Vanderbilt EHR. The data substrate for this paper.</li>
+<li><strong>CCS (Clinical Classification Software)</strong> — AHRQ scheme that rolls ~14,000 ICD-9-CM codes up into ~280 broad disease categories. Useful for hospital statistics, often too coarse for genetics.</li>
+<li><strong>EHR (Electronic Health Record)</strong> — The hospital&#x27;s clinical and billing system. Captures every encounter, diagnosis, lab, and medication.</li>
+<li><strong>eMERGE</strong> — Electronic Medical Records and Genomics Network. A federally funded U.S. consortium that links biobanks to EHRs across multiple sites.</li>
+<li><strong>GWAS (Genome-Wide Association Study)</strong> — Pick one disease, scan millions of SNPs across the genome, ask which SNP frequencies differ between cases and controls.</li>
+<li><strong>ICD-9-CM</strong> — International Classification of Diseases, Ninth Revision, Clinical Modification. The U.S. billing-code system in force during the period this paper studies; ~14,000 codes, very granular.</li>
+<li><strong>ICD-10-CM</strong> — Successor to ICD-9-CM, in force in the U.S. since 2015. Even more codes; phecode mapping for ICD-10 is newer and less head-to-head benchmarked.</li>
+<li><strong>MAF (Minor Allele Frequency)</strong> — Frequency of the less-common allele in the population. Common = MAF &gt; 1–5%; rare = MAF &lt; 1%.</li>
+<li><strong>OR (Odds Ratio)</strong> — Multiplicative effect size for a binary outcome. OR = 1 means no effect; OR = 2 means twice the odds.</li>
+<li><strong>P-value</strong> — Probability of observing the result if there were no real effect. Genome-wide significance threshold ≈ 5×10⁻⁸.</li>
+<li><strong>Phecode</strong> — Manually curated phenotype-code system from Vanderbilt, grouping ICD codes for genetic research, with explicit exclusion-code logic to reduce false controls. ~1,700 phenotypes in the 2017 version.</li>
+<li><strong>Phecode X</strong> — Newer ICD-10-based extension of the phecode system. Postdates this paper.</li>
+<li><strong>PheWAS (Phenome-Wide Association Study)</strong> — Inverse of GWAS. Pick one SNP or gene, scan thousands of phenotypes for association.</li>
+<li><strong>Phenome</strong> — The full collection of measurable clinical traits about a person; the analog of &quot;genome&quot; for diseases.</li>
+<li><strong>SNP (Single Nucleotide Polymorphism)</strong> — A position in the genome where two or more bases commonly occur.</li>
+</ul>
+<h2>Full citation</h2>
+<p>Wei W-Q, Bastarache LA, Carroll RJ, Marlo JE, Osterman TJ, Gamazon ER, Cox NJ, Roden DM, Denny JC. Evaluating phecodes, clinical classification software, and ICD-9-CM codes for phenome-wide association studies in the electronic health record. <em>PLoS One</em>. 2017;12(7):e0175508.</p>
+<p><a href="https://pubmed.ncbi.nlm.nih.gov/28686612/" target="_blank" rel="noopener">PMID 28686612</a> · <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5501393/" target="_blank" rel="noopener">PMC5501393</a> · <a href="https://doi.org/10.1371/journal.pone.0175508" target="_blank" rel="noopener">DOI 10.1371/journal.pone.0175508</a></p>
+<h2>Methods to lift</h2>
+<ul>
+<li>Phecode crosswalk — replace ICD or CCS aggregation with the curated phecode mapping (Vanderbilt) for any PheWAS-style scan over EHR-derived disease labels. Includes explicit case definitions and per-phecode exclusion codes for control-set hygiene.</li>
+<li>100-phenotype benchmark design — sample candidate phenotypes both from prior GWAS-validated diseases and from free-text problem-list mentions, so the benchmark covers both research-canonical and clinician-real disease vocabulary.</li>
+<li>440 SNP-phenotype replication test — use the published GWAS catalog as a positive-control set when validating any new phenotype-coding scheme. Adopt as a sanity check for any in-house PheWAS pipeline.</li>
+<li>Per-phenotype OR + p-value reporting across schemes — run the same SNP-phenotype test under each candidate coding scheme and report the full table; do not just pick one scheme post-hoc.</li>
+</ul>
+<h2>Proposed direction (conditional)</h2>
+<p>Conditional on inspection of CFF WGS variant calls and registry phenotype linkage: pre-register, before any modifier-locus PheWAS is run, a CFFPR-phenotype-to-phecode crosswalk in which every CFFPR endpoint is paired with (a) the registry-native definition, (b) the corresponding phecode (or set of phecodes), (c) the ICD-9-CM and ICD-10-CM codes that the phecode rolls up, and (d) the exclusion codes per Wei et al.&#x27;s logic. The crosswalk is then the canonical phenotype substrate for any registry-discovered signal that we want to validate by replication in an external biobank cohort.</p>
+<h2>What to verify first</h2>
+<ul>
+<li>Whether the CFFPR endpoint catalog has stable case definitions across the planned follow-up window — registry definitions occasionally change and create artificial period effects.</li>
+<li>What fraction of CFFPR-defined endpoints have a one-to-one phecode crosswalk versus a one-to-many or many-to-one mapping that needs manual curation.</li>
+<li>For each candidate test phecode, whether case counts after exclusion-code filtering are large enough for the gene-burden tests we want to run at n≈5,000 (most CF complication phecodes are likely sparse).</li>
+<li>Whether the 2017 phecode performance generalizes to ICD-10-CM-era CF data — the Phecode 1.2 ICD-10 map and Phecode X are both candidates, but neither has a CF-specific head-to-head benchmark.</li>
+<li>Whether the diagnostic vocabulary in CF subspecialty pulmonology centers (where the data originates) overlaps cleanly with the BioVU vocabulary on which phecodes were validated.</li>
+</ul>
+<h2>Today's papers</h2>
+    <article class="paper-card">
+      <div class="paper-meta">
+        <span class="slot">Biobank #1</span>
+        
+      </div>
+      <h3 class="paper-title">Evaluating phecodes, clinical classification software, and ICD-9-CM codes for phenome-wide association studies in the electronic health record</h3>
+      <p class="byline">Wei WQ <span class="dot">·</span> <span class="journal">PLoS One · 2017</span></p>
+      <div class="links">
+                <a class="btn primary" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5501393/" target="_blank" rel="noopener">PMC full text</a>
+        <a class="btn" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5501393/pdf/" target="_blank" rel="noopener">PDF</a>
+        <a class="btn" href="https://doi.org/10.1371/journal.pone.0175508" target="_blank" rel="noopener">DOI</a>
+        <a class="btn ghost" href="https://pubmed.ncbi.nlm.nih.gov/28686612/" target="_blank" rel="noopener">PubMed</a>
+      </div>
+    </article>
+<details class="transcript"><summary>Read full transcript (47 turns · ~2085 words)</summary>
+<div class="transcript-body"><p class="line alex"><span class="speaker">ALEX</span> Welcome back. Today&#x27;s first paper is Wei, Bastarache, Carroll and colleagues — &quot;Evaluating phecodes, clinical classification software, and ICD-9-CM codes for phenome-wide association studies in the electronic health record,&quot; published in PLoS One in 2017, out of Vanderbilt Biomedical Informatics. Joshua Denny is the senior author — same lab that wrote the founding PheWAS paper we covered three days ago.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> So this is the follow-up that asks: of all the ways you could group billing codes into &quot;diseases&quot; for one of these scans, which way actually works best?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Exactly. It&#x27;s the validation paper, not the founding paper. And the answer turns out to matter enormously for any phenome-wide scan you&#x27;d ever want to run — including the kind we&#x27;d eventually want to run on the cystic fibrosis cohort.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Before we go further, I want to back up. We&#x27;ve used the word &quot;PheWAS&quot; in a couple of episodes now. I still don&#x27;t fully have a feel for it. Walk me through it like you&#x27;ve never said it before.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Fair. PheWAS stands for Phenome-Wide Association Study. The &quot;phenome&quot; is just the full collection of measurable things about a person — every disease they&#x27;ve been diagnosed with, every lab value, every clinical event. A standard genome-wide study, a GWAS, takes one disease and scans the genome — millions of single-letter DNA changes called SNPs — looking for any SNP whose frequency differs between people who have the disease and people who don&#x27;t. PheWAS flips that. You take one SNP, or one gene, and you scan the whole phenome. You ask: across hundreds or thousands of conditions documented in this person&#x27;s chart, which ones light up? It&#x27;s the natural test for pleiotropy — when one gene affects multiple unrelated traits.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> And EHR?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Electronic Health Record. The hospital&#x27;s billing and clinical system. Every time a doctor records a diagnosis, it gets a code attached. In the United States during the period this paper studies, that code came from a system called ICD-9-CM, which stands for International Classification of Diseases, Ninth Revision, Clinical Modification. Roughly fourteen thousand individual codes, very granular. There&#x27;s a code for &quot;fracture of the left ankle, initial encounter, closed&quot; that&#x27;s separate from &quot;fracture of the left ankle, subsequent encounter, closed.&quot; Two different codes for what most clinicians would call the same disease.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s the ICD-9-CM. What were the other two systems they tested?</p>
+<p class="line alex"><span class="speaker">ALEX</span> One is the Clinical Classification Software, CCS, put out by the Agency for Healthcare Research and Quality, which is a U.S. federal agency people abbreviate as AHRQ. CCS rolls those fourteen thousand ICD-9-CM codes up into roughly two hundred and eighty broad categories. So instead of a code per ankle fracture, you might have one CCS category called &quot;fracture of lower limb.&quot; Useful for hospital statistics, but probably too coarse for genetic studies.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> And the third option is the phecode system from this same Vanderbilt group?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Right. Phecodes — short for &quot;phenotype codes&quot; — were hand-curated specifically for genetic research. They take ICD-9-CM, group similar codes that represent the same underlying disease, and they also do something subtle: for each phecode they define a list of &quot;exclusion&quot; codes, meaning conditions that share symptoms but shouldn&#x27;t be lumped in. The 2017 version of phecodes had about seventeen hundred phenotypes. The newer Phecode X system that we&#x27;ll see in later papers expands that further.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> OK, so the question of this paper is really just: of those three ways of slicing the same EHR data, which one gives the most useful phenotypes for genetics?</p>
+<p class="line alex"><span class="speaker">ALEX</span> That is the question. And the answer matters because if you pick the wrong scheme, your PheWAS will either dilute real signals — too many people lumped together who don&#x27;t actually share a disease — or fragment them across multiple codes such that no single category has enough cases to reach statistical significance.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Why was this open in 2017? Hadn&#x27;t people just been using whatever scheme they had at hand?</p>
+<p class="line alex"><span class="speaker">ALEX</span> That&#x27;s the honest backstory. The Vanderbilt group introduced phecodes alongside the original 2010 PheWAS proof-of-concept. But other groups, especially in Europe and at federally funded U.S. consortia, had been using either raw ICD codes or CCS categories. There was no head-to-head comparison. So when somebody published a PheWAS hit and somebody else couldn&#x27;t replicate it, you didn&#x27;t know whether the underlying biology was wrong or whether the two studies had defined the phenotype differently. Wei et al. set out to answer that with a benchmarking paper.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Who&#x27;s in the cohort?</p>
+<p class="line alex"><span class="speaker">ALEX</span> This study leans on BioVU — Vanderbilt&#x27;s biobank, which links DNA samples drawn from leftover clinical specimens to the de-identified Vanderbilt EHR. Roughly one hundred eighty-nine thousand patients are in the descriptive analyses and a smaller European-ancestry subset is used for the genetic replication. Standard biobank-of-convenience design.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> How did they pick the diseases to test?</p>
+<p class="line alex"><span class="speaker">ALEX</span> They selected one hundred clinical phenotypes. Twenty-five of them came from prior published GWAS — well-established disease entities like type 2 diabetes, hypertension, atrial fibrillation, asthma. The other seventy-five they pulled from free-text &quot;problem lists&quot; in the charts of those one hundred eighty-nine thousand patients — meaning the conditions doctors had actually written down as ongoing diagnoses, in unstructured text. So a mix of canonical research phenotypes plus what real clinicians actually call diseases.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> And then?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Then for each of those one hundred phenotypes they asked a deceptively simple question: does any single ICD-9-CM code, any single CCS category, or any single phecode exactly correspond to it? Or do you have to manually combine multiple codes to get to the disease as a clinician would name it? That&#x27;s the first benchmark — granularity match.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> So a phenotype that needs no custom regrouping is a &quot;win&quot; for whichever scheme already grouped it that way.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Yes. And then the second benchmark is the genetic one. They took four hundred and forty SNP-phenotype pairs from the published GWAS catalog — meaning four hundred forty cases where somebody had already shown a particular SNP is associated with a particular disease. They asked: under each coding scheme, can we re-find that association in our BioVU data? That&#x27;s the replication test. If your coding scheme is good for genetic research, it should re-find known biology.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> I&#x27;d push back on one design choice. Of the four hundred forty SNP-phenotype pairs, do they all use the same ancestry, the same statistical model? Because if you&#x27;re testing ICD versus phecode but you&#x27;re also implicitly testing whether the signal travels from the discovery GWAS to BioVU&#x27;s mostly-European cohort, the comparison gets muddied.</p>
+<p class="line alex"><span class="speaker">ALEX</span> That&#x27;s a real critique and the paper does restrict to European-ancestry BioVU samples for the SNP test. But you&#x27;re right that some of the failures-to-replicate are probably &quot;the SNP doesn&#x27;t hit in this cohort&quot; rather than &quot;this coding scheme buried it.&quot; The paper does report odds ratios and p-values per scheme so you can see whether the schemes are quantitatively similar on the SNP-phenotype pairs they all hit, which partly addresses your point. But it&#x27;s a fair caveat.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> OK. What did they actually find?</p>
+<p class="line alex"><span class="speaker">ALEX</span> For the granularity match — phecodes exactly matched eighty-three out of one hundred clinical phenotypes. ICD-9-CM exactly matched fifty-three. CCS exactly matched only thirty-two. Phecodes win that round by a wide margin.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> And the genetic replication?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Of the four hundred forty SNP-phenotype pairs, phecodes recovered one hundred fifty-three at statistical significance. ICD-9-CM recovered one hundred forty-three. CCS recovered one hundred thirty-nine. Phecodes win, but the margin is much narrower than the granularity result. They also report that for the pairs all three schemes hit, phecodes tended to give somewhat stronger odds ratios — meaning a larger apparent effect size — and lower p-values. Modest but consistent.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Did they answer their question?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Yes. They also surfaced a novel signal in passing — a SNP called rs7318369 in a gene called PEPD, peptidase D, came up as associated with gastrointestinal hemorrhage in the phecode-coded scan but not in the others. PEPD is involved in collagen turnover, so a connection to GI bleeding isn&#x27;t crazy biologically, but the main point of the paper is that phecodes surface signals the other schemes miss.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> So the bottom line is: phecodes are better, but they&#x27;re not a revolution — more of a meaningful margin.</p>
+<p class="line alex"><span class="speaker">ALEX</span> That&#x27;s the honest read. The paper&#x27;s conclusion is that all three schemes work for PheWAS-type studies but phecodes give superior results across both granularity and replication. It&#x27;s a careful, well-bounded validation.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Let&#x27;s get to the part I care about. What does this suggest for what we could eventually do with cystic fibrosis data?</p>
+<p class="line alex"><span class="speaker">ALEX</span> One specific direction this paper points to. The CF Foundation Patient Registry, the CFFPR, has its own structured catalog of clinical events — pulmonary exacerbations, microbiology cultures, transplant status, complications. It&#x27;s curated by registry staff using harmonized definitions across centers. So at first glance you might think: we don&#x27;t need phecodes at all, the registry has its own phenotypes. But here&#x27;s the wrinkle. Many CF care centers also push billing-code data into local research repositories, especially through the eMERGE network and the All of Us program, both of which include some CF patients. If we ever want to validate a CFFPR PheWAS hit by re-finding it in a biobank that uses ICD codes, we need a translation layer.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> So a one-line plain-English version of the proposal.</p>
+<p class="line alex"><span class="speaker">ALEX</span> For each CFFPR endpoint we want to use in a PheWAS, define both a registry-native definition and an ICD-to-phecode mapping, so any signal that comes out of the registry can be tested for replication in a biobank cohort using the same disease label. The formal version: pre-register a CFFPR-phenotype-to-phecode crosswalk before any modifier-locus PheWAS is run, with each phecode mapping accompanied by the corresponding ICD-9-CM and ICD-10-CM codes, and apply the Wei et al. exclusion-code logic to control specificity.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s a project, not just a sentence.</p>
+<p class="line alex"><span class="speaker">ALEX</span> It is. Which leads naturally to the gap discussion. If we did this, what would the paper close, and what would it leave wide open?</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> OK, walk me through the close-versus-open list, but be honest about the things we&#x27;d need to verify before we commit.</p>
+<p class="line alex"><span class="speaker">ALEX</span> What this paper closes is the methods question. It tells us we should use phecodes, not raw ICD or CCS, when the substrate is billing codes. That choice is now defensible by citation. What it leaves open is much bigger. First, phecodes were validated in one institution&#x27;s biobank — Vanderbilt. The performance might be different in CF centers because the diagnostic vocabulary used in pediatric pulmonology and CF subspecialty care isn&#x27;t the dominant signal in BioVU. Second, the 2017 phecode set was based on ICD-9-CM. Most CF clinical data after 2015 is in ICD-10-CM. There&#x27;s a Phecode 1.2 to ICD-10-CM map, and a newer Phecode X system based on ICD-10, but the head-to-head benchmark for ICD-10 phecodes against ICD-9 phecodes is still thin. Third, even within phecodes, the population must be large enough that the rare CF complications — distal intestinal obstruction syndrome, CF-related liver disease with portal hypertension, allergic bronchopulmonary aspergillosis — actually accumulate enough cases to test. At our cohort size, many phecodes will be too sparse.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> What would we need to check first?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Three concrete things to verify. We&#x27;d need to check whether the CFFPR endpoint catalog has stable definitions across the years of follow-up we plan to use, since registry definitions sometimes change and that creates artificial period effects. We&#x27;d need to check what fraction of CFFPR-defined endpoints have a clean ICD-to-phecode crosswalk versus a one-to-many or many-to-one mapping that requires manual curation. And we&#x27;d need to check, on a single test phecode, whether the case count after applying exclusion codes is large enough for the gene-burden tests we&#x27;d want to run. None of those are answered yet, and any of them being negative would change the proposal.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Tomorrow&#x27;s paper?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Tomorrow we move from how to define the phenotype to how to phase the genome — Hofmeister et al. 2023, the SHAPEIT5 paper. That one matters because it unlocks compound-heterozygote analysis, which is essential biology for a recessive disease like CF.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> And the one-line takeaway from today?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Phecodes outperform raw ICD and CCS for PheWAS by a real but modest margin, and any CF PheWAS that wants to be replicable in a biobank needs a phecode crosswalk built before the analysis, not after.</p></div></details>
+</main><footer>Generated 2026-05-05 07:03</footer>
+<script>
+(function(){
+  if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
+  function $(id){ return document.getElementById(id); }
+  function build(){
+    var bar = document.createElement('div');
+    bar.id = 'mini-player';
+    bar.style.display = 'none';
+    bar.innerHTML =
+      '<div class="mp-meta">' +
+        '<span class="mp-title" id="mp-title"></span>' +
+        '<span class="mp-counter" id="mp-counter"></span>' +
+      '</div>' +
+      '<div class="mp-controls">' +
+        '<button class="mp-btn" id="mp-prev" title="Previous">&#9194;</button>' +
+        '<audio id="mp-audio" controls preload="none"></audio>' +
+        '<button class="mp-btn" id="mp-next" title="Next">&#9193;</button>' +
+        '<button class="mp-btn" id="mp-close" title="Close">&times;</button>' +
+      '</div>';
+    document.body.appendChild(bar);
+    document.body.style.paddingBottom = '140px';
+    var audio = $('mp-audio');
+    audio.addEventListener('ended', function(){
+      var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
+      if (idx + 1 < window.EPISODES.length) playAt(idx + 1);
+    });
+    audio.addEventListener('timeupdate', function(){
+      sessionStorage.setItem('mp-time', String(audio.currentTime));
+    });
+    $('mp-prev').onclick = function(){
+      var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
+      if (idx > 0) playAt(idx - 1);
+    };
+    $('mp-next').onclick = function(){
+      var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
+      if (idx + 1 < window.EPISODES.length) playAt(idx + 1);
+    };
+    $('mp-close').onclick = function(){
+      audio.pause();
+      sessionStorage.removeItem('mp-idx');
+      sessionStorage.removeItem('mp-time');
+      bar.style.display = 'none';
+      document.body.style.paddingBottom = '';
+    };
+  }
+  function playAt(idx){
+    var ep = window.EPISODES[idx];
+    if (!ep) return;
+    sessionStorage.setItem('mp-idx', String(idx));
+    sessionStorage.setItem('mp-time', '0');
+    var bar = $('mini-player');
+    bar.style.display = 'block';
+    document.body.style.paddingBottom = '140px';
+    $('mp-title').textContent = 'Episode ' + ep.num + ': ' + ep.title;
+    $('mp-counter').textContent = (idx + 1) + ' / ' + window.EPISODES.length;
+    var audio = $('mp-audio');
+    audio.src = ep.mp3;
+    audio.play().catch(function(e){ console.warn('autoplay blocked:', e); });
+  }
+  window.playAllEpisodes = function(startIdx){
+    if (!$('mini-player')) build();
+    playAt(startIdx || 0);
+  };
+  // Resume on page load if a session is active
+  document.addEventListener('DOMContentLoaded', function(){
+    var idx = sessionStorage.getItem('mp-idx');
+    if (idx !== null) {
+      var i = parseInt(idx, 10);
+      if (i >= 0 && i < window.EPISODES.length) {
+        if (!$('mini-player')) build();
+        var ep = window.EPISODES[i];
+        var bar = $('mini-player');
+        bar.style.display = 'block';
+        document.body.style.paddingBottom = '140px';
+        $('mp-title').textContent = 'Episode ' + ep.num + ': ' + ep.title;
+        $('mp-counter').textContent = (i + 1) + ' / ' + window.EPISODES.length;
+        var audio = $('mp-audio');
+        audio.src = ep.mp3;
+        var t = parseFloat(sessionStorage.getItem('mp-time') || '0');
+        if (t > 0) audio.addEventListener('loadedmetadata', function once(){
+          audio.currentTime = t;
+          audio.removeEventListener('loadedmetadata', once);
+        });
+        // Don't auto-play on resume — wait for user gesture
+      }
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('feedback-bar');
+  if (!bar) return;
+  var slug = bar.dataset.slug;
+  var key = 'feedback-' + slug;
+  function applyStored(){
+    var stored = localStorage.getItem(key);
+    document.querySelectorAll('.fb-btn').forEach(function(btn){
+      btn.classList.toggle('fb-active', btn.dataset.rating === stored);
+    });
+  }
+  window.saveFeedback = function(btn){
+    localStorage.setItem(key, btn.dataset.rating);
+    applyStored();
+  };
+  document.addEventListener('DOMContentLoaded', applyStored);
+  // Also apply immediately in case DOMContentLoaded already fired
+  if (document.readyState !== 'loading') applyStored();
+})();
+</script>
+</body></html>
