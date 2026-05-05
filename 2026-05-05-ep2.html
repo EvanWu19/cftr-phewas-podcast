@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<title>Episode 20 · 2026-05-05 / ep2 · CFTR PheWAS Reading Podcast</title>
+<link rel="stylesheet" href="style.css">
+<script>window.EPISODES = [{"num": 1, "title": "Bycroft C 2018", "mp3": "2026-04-30-ep1.mp3", "slug": "2026-04-30-ep1"}, {"num": 2, "title": "Halldorsson BV 2022", "mp3": "2026-04-30-ep2.mp3", "slug": "2026-04-30-ep2"}, {"num": 3, "title": "Aksit MA 2020", "mp3": "2026-04-30-ep3.mp3", "slug": "2026-04-30-ep3"}, {"num": 4, "title": "Taliun D 2021", "mp3": "2026-05-01-ep1.mp3", "slug": "2026-05-01-ep1"}, {"num": 5, "title": "All of Us Research Program Genomics Investigators 2024", "mp3": "2026-05-01-ep2.mp3", "slug": "2026-05-01-ep2"}, {"num": 6, "title": "Zhou YH 2023", "mp3": "2026-05-01-ep3.mp3", "slug": "2026-05-01-ep3"}, {"num": 7, "title": "Backman JD 2021", "mp3": "2026-05-01-ep4.mp3", "slug": "2026-05-01-ep4"}, {"num": 8, "title": "Wang Q 2021", "mp3": "2026-05-01-ep5.mp3", "slug": "2026-05-01-ep5"}, {"num": 9, "title": "Blackman SM 2013", "mp3": "2026-05-01-ep6.mp3", "slug": "2026-05-01-ep6"}, {"num": 10, "title": "Karczewski KJ 2020", "mp3": "2026-05-02-ep1.mp3", "slug": "2026-05-02-ep1"}, {"num": 11, "title": "Karczewski KJ 2022", "mp3": "2026-05-02-ep2.mp3", "slug": "2026-05-02-ep2"}, {"num": 12, "title": "Collaco JM 2016", "mp3": "2026-05-02-ep3.mp3", "slug": "2026-05-02-ep3"}, {"num": 13, "title": "Zhou W 2018", "mp3": "2026-05-03-ep1.mp3", "slug": "2026-05-03-ep1"}, {"num": 14, "title": "Kurki MI 2023", "mp3": "2026-05-03-ep2.mp3", "slug": "2026-05-03-ep2"}, {"num": 15, "title": "Taylor C 2011", "mp3": "2026-05-03-ep3.mp3", "slug": "2026-05-03-ep3"}, {"num": 16, "title": "Zhou W 2022", "mp3": "2026-05-04-ep1.mp3", "slug": "2026-05-04-ep1"}, {"num": 17, "title": "Denny JC 2010", "mp3": "2026-05-04-ep2.mp3", "slug": "2026-05-04-ep2"}, {"num": 18, "title": "Aksit MA 2022", "mp3": "2026-05-04-ep3.mp3", "slug": "2026-05-04-ep3"}, {"num": 19, "title": "Wei WQ 2017", "mp3": "2026-05-05-ep1.mp3", "slug": "2026-05-05-ep1"}, {"num": 20, "title": "Hofmeister RJ 2023", "mp3": "2026-05-05-ep2.mp3", "slug": "2026-05-05-ep2"}, {"num": 21, "title": "Faino AV 2025", "mp3": "2026-05-05-ep3.mp3", "slug": "2026-05-05-ep3"}];</script>
+</head><body>
+<header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1></div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="index.html">&#8592; All episodes</a> · <a href="javascript:playAllEpisodes(19)">&#9654; Play from here</a></nav>
+<h1 class="ep">Episode 20 · 2026-05-05 / ep2</h1>
+<p class="ep-date">Hofmeister RJ 2023</p>
+<audio controls preload="none" src="2026-05-05-ep2.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 13.3 MB · gpt-4o-mini-tts</p>
+<div class="feedback-bar" id="feedback-bar" data-slug="2026-05-05-ep2">
+  <p class="feedback-label">How did this episode land for you?</p>
+  <div class="feedback-btns">
+    <button class="fb-btn fb-blue" data-rating="superficial" onclick="saveFeedback(this)">&#128309; Too superficial &#8212; nothing new</button>
+    <button class="fb-btn fb-green" data-rating="balanced" onclick="saveFeedback(this)">&#128994; Well balanced &#8212; builds on what I know</button>
+    <button class="fb-btn fb-red" data-rating="hard" onclick="saveFeedback(this)">&#128308; Too hard &#8212; lost the connection to existing knowledge</button>
+  </div>
+</div>
+<h2>One-paragraph blurb</h2>
+<p>Hofmeister and colleagues at the Delaneau lab in Lausanne introduce SHAPEIT5, a haplotype-phasing method that quickly and accurately resolves which copy of each chromosome carries which variant in large sequencing cohorts. Applied to the UK Biobank whole-genome and whole-exome data, SHAPEIT5 keeps switch error rates below 5% for variants present in just 1 sample out of 100,000, introduces a method for phasing singletons (less precise but a starting point), shows that using UKB itself as a reference panel improves downstream genotype imputation, and identifies 549 genes in which both copies are knocked out via biallelic loss-of-function in at least one UKB participant — a direct, compound-heterozygote-derived complement to gnomAD constraint-based gene-essentiality estimates. The proposed direction for our project is, conditional on inspection of the CFF WGS variant calls, to phase the cohort with SHAPEIT5 and run a biallelic-LoF screen across CF-modifier candidate genes against curated CF complication endpoints, treating any single-gene biallelic-LoF carrier ≥2 at n≈5,000 as a hypothesis-generating signal. The key open question is whether the SHAPEIT5 accuracy benchmark generalizes to a five-thousand-patient cohort with much smaller in-sample reference-panel size than UKB.</p>
+<h2>Plain-English glossary</h2>
+<ul>
+<li><strong>Biallelic LoF</strong> — Both copies of a gene carry loss-of-function variants. Functionally equivalent to a &quot;natural human knockout&quot; of that gene.</li>
+<li><strong>cis / trans</strong> — Two variants are in <em>cis</em> if they sit on the same chromosome copy; <em>trans</em> if on opposite copies. Phasing is what tells you which.</li>
+<li><strong>Compound heterozygote</strong> — A person carrying two different damaging variants in the same gene, one on each chromosome copy. Both copies are broken even though no single variant is homozygous.</li>
+<li><strong>Genotype</strong> — The pair of bases you carry at a position (e.g., A/G). Doesn&#x27;t say which came from which parent.</li>
+<li><strong>Gene essentiality</strong> — Whether a gene tolerates loss-of-function variants in living humans. Genes essential for life rarely have biallelic-LoF carriers.</li>
+<li><strong>gnomAD</strong> — Genome Aggregation Database. Population reference of allele frequencies and constraint metrics across ~150K WGS + 730K WES participants.</li>
+<li><strong>Haplotype</strong> — The ordered sequence of letters along one inherited chromosome copy. The output of phasing.</li>
+<li><strong>Imputation</strong> — Statistical reconstruction of unmeasured variants by matching measured variants against a phased reference panel.</li>
+<li><strong>LOFTEE (Loss-Of-Function Transcript Effect Estimator)</strong> — VEP plugin that flags high-confidence LoF variants and filters out common false positives (last-exon stop-gains, predicted-rescue splice variants).</li>
+<li><strong>LoF (Loss-of-function)</strong> — A variant that breaks the gene&#x27;s protein product. Stop-gain, frameshift, essential splice-site, or large-effect deletion.</li>
+<li><strong>MAF (Minor Allele Frequency)</strong> — Frequency of the less-common allele in the population.</li>
+<li><strong>Phasing</strong> — Algorithmically assigning each measured variant to one specific physical chromosome copy. Output: haplotypes.</li>
+<li><strong>Reference panel</strong> — A large dataset of fully phased haplotypes (1000 Genomes, HRC, TOPMed, UK Biobank) used as the matching template for imputation and statistical phasing.</li>
+<li><strong>SHAPEIT</strong> — &quot;Segmented HAPlotype Estimation and Imputation Tool.&quot; Family of phasing programs from the Delaneau lab; SHAPEIT5 is the rare-variant-capable successor to SHAPEIT4.</li>
+<li><strong>Singleton</strong> — A variant carried by exactly one chromosome in the entire dataset.</li>
+<li><strong>SNP (Single Nucleotide Polymorphism)</strong> — Position in the genome where two or more bases commonly occur.</li>
+<li><strong>Switch error rate</strong> — Share of consecutive heterozygous positions where phasing assigns alleles to the wrong chromosome relative to truth. Lower is better.</li>
+<li><strong>TOPMed</strong> — Trans-Omics for Precision Medicine. NHLBI sequencing program; &gt;100K diverse genomes; primary alternative reference panel to UKB.</li>
+<li><strong>UKB / UK Biobank</strong> — ~500,000-participant U.K. cohort with linked WGS, WES, and EHR data.</li>
+<li><strong>WGS / WES</strong> — Whole-Genome Sequencing / Whole-Exome Sequencing.</li>
+</ul>
+<h2>Full citation</h2>
+<p>Hofmeister RJ, Ribeiro DM, Rubinacci S, Delaneau O. Accurate rare variant phasing of whole-genome and whole-exome sequencing data in the UK Biobank. <em>Nat Genet</em>. 2023;55(7):1243-1249.</p>
+<p><a href="https://pubmed.ncbi.nlm.nih.gov/37386248/" target="_blank" rel="noopener">PMID 37386248</a> · <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10335929/" target="_blank" rel="noopener">PMC10335929</a> · <a href="https://doi.org/10.1038/s41588-023-01415-w" target="_blank" rel="noopener">DOI 10.1038/s41588-023-01415-w</a></p>
+<h2>Methods to lift</h2>
+<ul>
+<li>SHAPEIT5 — open-source rare-variant-capable haplotype phasing for biobank-scale WGS/WES; the defensible default for any modern cohort.</li>
+<li>Switch-error-rate benchmark across MAF strata — report phasing accuracy at common, rare, ultra-rare, and singleton tiers separately rather than as a single average. Apply when validating any phasing run on the CFF cohort.</li>
+<li>Biallelic-LoF compound-heterozygote screen — iterate over phased haplotypes, identify genes with two LoF variants in trans in the same individual, flag as a candidate natural human knockout. Use LOFTEE high-confidence flag + manual curation of last-exon and splice variants.</li>
+<li>UKB-as-reference-panel imputation — using a within-cohort phased reference improves rare-variant imputation accuracy more than using a generic external panel; relevant whenever cohort-specific phasing exists.</li>
+</ul>
+<h2>Proposed direction (conditional)</h2>
+<p>Conditional on inspection of CFF WGS variant calls and registry phenotype linkage: phase the CFF WGS cohort with SHAPEIT5, generate a biallelic-LoF carrier matrix across a curated list of CF-modifier candidate genes (CFTR-interactome + chr5p13 SLC9A3 / chr11p13 EHF / chr1q32.1 SLC26A9 region + any gene with prior CF GWAS signal), and run Fisher exact tests against case definitions for chronic Pseudomonas infection, CF-related diabetes, meconium ileus, and severe lung-function decline. Treat any single-gene biallelic-LoF carrier count ≥2 at n≈5,000 as hypothesis-generating, not discovery; pre-register the candidate gene list before unblinding.</p>
+<h2>What to verify first</h2>
+<ul>
+<li>Whether the CFF WGS data has already been phased by the original analysis team (CFGP), or whether SHAPEIT5 phasing is something we&#x27;d have to commission separately. Different operational ask.</li>
+<li>Whether LOFTEE-flagged LoF variants in the cohort have been manually reviewed by the original analysts; the universe of candidate modifier genes is broader than CFRD/MI, where Aksit and colleagues did some of this work.</li>
+<li>For each candidate modifier gene: the gnomAD baseline rate of biallelic LoF in the general population, to know whether observed CF-cohort biallelic-LoF counts are CF-enriched or simply population background.</li>
+<li>Whether the CFF cohort&#x27;s in-sample reference-panel size (n≈5,000) is sufficient for SHAPEIT5 accuracy claims, which were benchmarked against UKB at n≈500,000. Likely lower — a separate empirical check.</li>
+<li>Whether replication is feasible in any CF-specific external cohort (CFTR2, CFTR-France) that currently lacks WGS — if not, claims must be hypothesis-generating with no replication path beyond gnomAD constraint.</li>
+</ul>
+<h2>Gap-map: closes / leaves open</h2>
+<ul>
+<li><em>Closes:</em> the methodological case for phasing rare variants in WGS/WES cohorts of CF size or larger. SHAPEIT5 is the defensible default tool with published switch-error benchmarks at extreme rare-allele frequencies.</li>
+<li><em>Closes:</em> the biallelic-LoF discoverability question at biobank scale. UKB returned 549 such genes; the analytical pipeline is reproducible.</li>
+<li><em>Leaves open:</em> phasing accuracy at n≈5,000 with within-cohort reference panel only. SHAPEIT5 was not benchmarked at this scale.</li>
+<li><em>Leaves open:</em> whether biallelic-LoF in CF-modifier candidate genes drives any CF complication phenotype. Power at n=5,000 is too small for a discovery-mode genome-wide biallelic-LoF screen.</li>
+<li><em>Leaves open:</em> the intersection of phased haplotype data with longitudinal phenotypes — SHAPEIT5 produces phased genomes, but the registry phenotype layer (modulator timing, FEV1 trajectory) needs separate longitudinal-modeling infrastructure.</li>
+</ul>
+<h2>Today's papers</h2>
+    <article class="paper-card">
+      <div class="paper-meta">
+        <span class="slot">Biobank #2</span>
+        
+      </div>
+      <h3 class="paper-title">Accurate rare variant phasing of whole-genome and whole-exome sequencing data in the UK Biobank</h3>
+      <p class="byline">Hofmeister RJ <span class="dot">·</span> <span class="journal">Nat Genet · 2023</span></p>
+      <div class="links">
+                <a class="btn primary" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10335929/" target="_blank" rel="noopener">PMC full text</a>
+        <a class="btn" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10335929/pdf/" target="_blank" rel="noopener">PDF</a>
+        <a class="btn" href="https://doi.org/10.1038/s41588-023-01415-w" target="_blank" rel="noopener">DOI</a>
+        <a class="btn ghost" href="https://pubmed.ncbi.nlm.nih.gov/37386248/" target="_blank" rel="noopener">PubMed</a>
+      </div>
+    </article>
+<details class="transcript"><summary>Read full transcript (39 turns · ~1926 words)</summary>
+<div class="transcript-body"><p class="line alex"><span class="speaker">ALEX</span> Episode two for today is Hofmeister, Ribeiro, Rubinacci and Delaneau — &quot;Accurate rare variant phasing of whole-genome and whole-exome sequencing data in the UK Biobank,&quot; published in Nature Genetics in 2023. The lab is Olivier Delaneau&#x27;s group at the University of Lausanne in Switzerland — they&#x27;ve built phasing tools for over a decade. This is the SHAPEIT5 paper.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> We&#x27;re reading it because phasing is one of those quiet pieces of plumbing that sits behind every modern genetics analysis but almost never gets explained.</p>
+<p class="line alex"><span class="speaker">ALEX</span> That&#x27;s exactly why. By the end of this episode you&#x27;ll know what phasing is, why it matters for any cystic fibrosis study, and what concrete new analysis it unlocks for a cohort like the CF Foundation&#x27;s whole-genome sequencing dataset.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Walk me through phasing from zero. I have heard the word a hundred times. I have never had it explained.</p>
+<p class="line alex"><span class="speaker">ALEX</span> OK. Every person inherits two copies of each chromosome — one from each biological parent. So at every position in the genome, you have two letters of DNA, one on each copy. When a sequencing machine reports your genotype at a SNP, it tells you which two letters you have at that position — for instance, A and G — but it does not tell you which letter came from which parent. The two letters are just floating in a pool together.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> And phasing is the process of separating them back out.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Yes. Phasing means assigning each measured variant to one specific physical chromosome copy. The result is a haplotype — a haplotype is the ordered sequence of letters along one inherited chromosome. So instead of a list saying &quot;at position 1 you have A and G, at position 2 you have C and T,&quot; you&#x27;d have two haplotype strings: maternal copy A then T, paternal copy G then C — or maternal A then C, paternal G then T. Those are different haplotypes built from the same raw genotypes.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Why do we care which letter sits on which chromosome? If we know the genotype, why isn&#x27;t that enough?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Three reasons. First, compound heterozygotes. A compound heterozygote is a person who has two different damaging mutations in the same gene, one on each chromosome copy. If both copies of the gene are broken, the protein is gone. If both mutations are on the same chromosome, the other chromosome still makes a functional protein. Same genotypes — totally different biology. The only way to tell those two scenarios apart is phasing. Cystic fibrosis is the textbook example: many CF patients carry F508del — that&#x27;s the single most common CFTR pathogenic variant — on one chromosome and a different damaging variant on the other. That second variant is what we call the trans-allele. Knowing which variants are in cis, meaning on the same copy, versus in trans, meaning on opposite copies, is essential for any CFTR genotype-phenotype analysis.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Second reason?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Imputation. Imputation is the statistical reconstruction of variants you didn&#x27;t directly measure, by matching the variants you did measure against a large reference panel of fully sequenced people. Imputation works much better on phased haplotypes than on unphased genotypes, because the panel itself is phased and matching haplotype-to-haplotype is more accurate than matching genotype clouds.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Third reason?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Population genetics and ancestry inference. Almost every modern method that estimates local ancestry, recombination rates, or selection signals operates on phased haplotypes.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> OK. So phasing has been around forever. What did this paper actually do that&#x27;s new?</p>
+<p class="line alex"><span class="speaker">ALEX</span> It made phasing accurate for rare variants, on huge datasets, fast enough to be practical. That&#x27;s the headline. Earlier versions of SHAPEIT and similar tools — Beagle, Eagle, the previous SHAPEIT4 — were all very accurate for common variants. They struggled at the rare end. Why? Because the algorithm relies on identity-by-descent, meaning shared chromosome chunks inherited from a recent common ancestor. Common variants appear on lots of haplotypes; rare variants appear on few. With few haplotypes carrying the rare allele, the algorithm has fewer reference matches and gets the cis-or-trans assignment wrong more often.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> How much better is SHAPEIT5?</p>
+<p class="line alex"><span class="speaker">ALEX</span> For variants present in just one sample out of one hundred thousand in the UK Biobank exome data, switch error rate stays below five percent. Switch error rate is the share of consecutive heterozygous positions where the algorithm assigns alleles to the wrong chromosome relative to the truth. Below five percent at MAF of one in one hundred thousand is genuinely impressive — earlier methods were closer to twenty or thirty percent at that frequency.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> They also mention phasing singletons. What&#x27;s a singleton?</p>
+<p class="line alex"><span class="speaker">ALEX</span> A singleton is a variant seen in exactly one person in the entire dataset — only one chromosome carries it, period. Phasing a singleton is conceptually hard because there&#x27;s no other carrier to compare against; you&#x27;re working entirely off the surrounding haplotype context. SHAPEIT5 does it, but with much lower accuracy than for variants seen in multiple samples. The honest framing the authors give is: singleton phasing is now possible, not yet reliable, but it&#x27;s a starting point.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> I want to push back on one design choice. They use UK Biobank as the reference panel for some of their imputation benchmarks. Isn&#x27;t that circular? You&#x27;re testing imputation accuracy on UKB samples using UKB itself as the reference.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Good catch. The benchmark uses leave-one-out style holdouts where the test sample is excluded from the reference panel, so it&#x27;s not literally circular. But there is a real issue: a UKB-derived reference panel is overwhelmingly British, white, and middle-aged-and-older, so the imputation gain that they report — and it is large — applies most to populations that look like UKB. For populations that don&#x27;t, you&#x27;d want a more diverse reference, which is one reason TOPMed is competitive even after this paper.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Let&#x27;s get to the headline biology result. The paper screened for compound heterozygote loss-of-function events.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Right. Loss-of-function, abbreviated LoF, means a variant that breaks the gene — typically a stop-gain that ends the protein early, a frameshift that scrambles it, or a splice-site disruption that mis-splices it. By phasing UKB exomes and looking for biallelic LoF, meaning two LoF variants in the same gene with one on each chromosome, they identified five hundred forty-nine genes in which both copies are knocked out in at least one UKB participant. People in whom both copies of a gene are LoF essentially have a natural human knockout of that gene.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> That&#x27;s huge.</p>
+<p class="line alex"><span class="speaker">ALEX</span> It is. Five hundred forty-nine human-knockout genes complements the existing list from gnomAD constraint analyses — Karczewski twenty-twenty, which we covered three days ago — by adding direct compound-heterozygote evidence rather than just frequency-based depletion. Some of those five hundred forty-nine were known to tolerate biallelic loss; some are new candidates for genes that we&#x27;d previously assumed were essential but actually aren&#x27;t.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Did they answer the question they posed?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Yes. They posed: can we phase very rare variants accurately at biobank scale, and does that unlock new biology? The answer is yes on both fronts. They report low switch error rates at extreme rare-allele frequencies, faster runtime than predecessors, an imputation accuracy gain when UKB is the reference, and the five hundred forty-nine biallelic-LoF gene catalog as the demonstration that the phasing is good enough to support compound-heterozygote screens.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Let me try to articulate where this points us for the cystic fibrosis question. CF is recessive, so phasing should be central. But almost all CF cohort papers I&#x27;ve seen talk about CFTR genotype as if it were a single label — F508del homozygote, F508del / G542X compound heterozygote — without making a big deal about phasing.</p>
+<p class="line alex"><span class="speaker">ALEX</span> That&#x27;s because for the two known CFTR pathogenic variants per patient, parental segregation is usually used to confirm trans configuration when family members are available. Phasing matters more for the modifier loci elsewhere in the genome and for non-pathogenic CFTR variants that might modulate residual expression. So one specific direction this paper suggests: if we ever want to do biallelic-modifier-gene screens — meaning, find genes outside of CFTR where two LoF variants together correlate with a CF complication — we&#x27;d need SHAPEIT5-class phasing of the CFF whole-genome sequencing data, and we&#x27;d need to be honest that at our cohort size of roughly five thousand, the per-gene biallelic-LoF carrier counts will be tiny.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> One-line plain-English version of the proposal?</p>
+<p class="line alex"><span class="speaker">ALEX</span> Phase the CF Foundation WGS using SHAPEIT5 and screen for biallelic loss-of-function combinations in genes whose function is plausibly relevant to CF complications, treating any single gene with two or more biallelic-LoF carriers among five thousand sequenced patients as a hypothesis-generating signal rather than a discovery. The formal version: a phased WGS analysis of the CFF cohort, using SHAPEIT5-derived haplotypes, restricted to a curated list of CF-modifier candidate genes, with biallelic LoF carrier enumeration and Fisher exact tests against case definitions for chronic Pseudomonas infection, CF-related diabetes, meconium ileus, and severe lung-function decline.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> Now do the gap. What does this paper close, and what is honestly still open if we tried to do that?</p>
+<p class="line alex"><span class="speaker">ALEX</span> What the paper closes: the methodological case for phasing rare variants in cohorts of CF size or larger is now defensible. SHAPEIT5 is published, validated, open-source, and has an explicit benchmark below five percent switch error at one-in-one-hundred-thousand frequency. So if we say &quot;we phased the CF cohort,&quot; the choice of tool and the expected accuracy are no longer contested. What remains open is more interesting. First, the SHAPEIT5 benchmark was on the UK Biobank, which is half a million samples. At our cohort size of five thousand the reference-panel-based phasing accuracy will degrade because there are simply fewer haplotypes to match against. The paper does not benchmark this directly. Second, the biallelic-LoF screen approach assumes that LoF annotation is reliable. LOFTEE, the standard tool for LoF flagging, has known false-positive rates for splice variants and for last-exon stop-gains, and any biallelic-LoF list needs manual curation. Third, the very small per-gene carrier counts at our N mean that biallelic-LoF analysis is hypothesis-generating, not discovery — we&#x27;d need cross-cohort replication via the CFTR2 or CFTR-France databases, neither of which has WGS at the moment.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> What do we need to verify before committing?</p>
+<p class="line alex"><span class="speaker">ALEX</span> We&#x27;d need to check whether the CFF WGS data has been delivered as joint-called variant calls already phased, or whether phasing is something we&#x27;d have to commission separately. Operationally those are very different asks. We&#x27;d need to check whether LOFTEE-flagged LoF variants in the cohort have been manually reviewed by the original analysts — Aksit and colleagues did some of this for the CFRD and meconium-ileus papers, but the universe of CF-modifier candidate genes is broader. And we&#x27;d need to verify, for any candidate modifier gene we picked, the gnomAD baseline rate of biallelic LoF in the general population, to know whether anything we see in CF is actually CF-enriched versus simply the population background.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> What do we read tomorrow?</p>
+<p class="line alex"><span class="speaker">ALEX</span> A CF-cohort paper. We&#x27;ll cover Faino and colleagues&#x27; twenty-twenty-five paper on CHP2 as a modifier of chronic Pseudomonas infection in the CF Genome Project — a brand-new modifier locus from the same WGS dataset we&#x27;d plug into the kind of pipeline we just sketched.</p>
+<p class="line jordan"><span class="speaker">JORDAN</span> One-line takeaway from today.</p>
+<p class="line alex"><span class="speaker">ALEX</span> Phasing is the silent prerequisite for every recessive-disease analysis, and SHAPEIT5 is now the defensible default — but at a five-thousand-patient cohort, biallelic-knockout screens are hypothesis-generating, not discovery, and we need to plan for it accordingly.</p></div></details>
+</main><footer>Generated 2026-05-05 07:03</footer>
+<script>
+(function(){
+  if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
+  function $(id){ return document.getElementById(id); }
+  function build(){
+    var bar = document.createElement('div');
+    bar.id = 'mini-player';
+    bar.style.display = 'none';
+    bar.innerHTML =
+      '<div class="mp-meta">' +
+        '<span class="mp-title" id="mp-title"></span>' +
+        '<span class="mp-counter" id="mp-counter"></span>' +
+      '</div>' +
+      '<div class="mp-controls">' +
+        '<button class="mp-btn" id="mp-prev" title="Previous">&#9194;</button>' +
+        '<audio id="mp-audio" controls preload="none"></audio>' +
+        '<button class="mp-btn" id="mp-next" title="Next">&#9193;</button>' +
+        '<button class="mp-btn" id="mp-close" title="Close">&times;</button>' +
+      '</div>';
+    document.body.appendChild(bar);
+    document.body.style.paddingBottom = '140px';
+    var audio = $('mp-audio');
+    audio.addEventListener('ended', function(){
+      var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
+      if (idx + 1 < window.EPISODES.length) playAt(idx + 1);
+    });
+    audio.addEventListener('timeupdate', function(){
+      sessionStorage.setItem('mp-time', String(audio.currentTime));
+    });
+    $('mp-prev').onclick = function(){
+      var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
+      if (idx > 0) playAt(idx - 1);
+    };
+    $('mp-next').onclick = function(){
+      var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
+      if (idx + 1 < window.EPISODES.length) playAt(idx + 1);
+    };
+    $('mp-close').onclick = function(){
+      audio.pause();
+      sessionStorage.removeItem('mp-idx');
+      sessionStorage.removeItem('mp-time');
+      bar.style.display = 'none';
+      document.body.style.paddingBottom = '';
+    };
+  }
+  function playAt(idx){
+    var ep = window.EPISODES[idx];
+    if (!ep) return;
+    sessionStorage.setItem('mp-idx', String(idx));
+    sessionStorage.setItem('mp-time', '0');
+    var bar = $('mini-player');
+    bar.style.display = 'block';
+    document.body.style.paddingBottom = '140px';
+    $('mp-title').textContent = 'Episode ' + ep.num + ': ' + ep.title;
+    $('mp-counter').textContent = (idx + 1) + ' / ' + window.EPISODES.length;
+    var audio = $('mp-audio');
+    audio.src = ep.mp3;
+    audio.play().catch(function(e){ console.warn('autoplay blocked:', e); });
+  }
+  window.playAllEpisodes = function(startIdx){
+    if (!$('mini-player')) build();
+    playAt(startIdx || 0);
+  };
+  // Resume on page load if a session is active
+  document.addEventListener('DOMContentLoaded', function(){
+    var idx = sessionStorage.getItem('mp-idx');
+    if (idx !== null) {
+      var i = parseInt(idx, 10);
+      if (i >= 0 && i < window.EPISODES.length) {
+        if (!$('mini-player')) build();
+        var ep = window.EPISODES[i];
+        var bar = $('mini-player');
+        bar.style.display = 'block';
+        document.body.style.paddingBottom = '140px';
+        $('mp-title').textContent = 'Episode ' + ep.num + ': ' + ep.title;
+        $('mp-counter').textContent = (i + 1) + ' / ' + window.EPISODES.length;
+        var audio = $('mp-audio');
+        audio.src = ep.mp3;
+        var t = parseFloat(sessionStorage.getItem('mp-time') || '0');
+        if (t > 0) audio.addEventListener('loadedmetadata', function once(){
+          audio.currentTime = t;
+          audio.removeEventListener('loadedmetadata', once);
+        });
+        // Don't auto-play on resume — wait for user gesture
+      }
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('feedback-bar');
+  if (!bar) return;
+  var slug = bar.dataset.slug;
+  var key = 'feedback-' + slug;
+  function applyStored(){
+    var stored = localStorage.getItem(key);
+    document.querySelectorAll('.fb-btn').forEach(function(btn){
+      btn.classList.toggle('fb-active', btn.dataset.rating === stored);
+    });
+  }
+  window.saveFeedback = function(btn){
+    localStorage.setItem(key, btn.dataset.rating);
+    applyStored();
+  };
+  document.addEventListener('DOMContentLoaded', applyStored);
+  // Also apply immediately in case DOMContentLoaded already fired
+  if (document.readyState !== 'loading') applyStored();
+})();
+</script>
+</body></html>
