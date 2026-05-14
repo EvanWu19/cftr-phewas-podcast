@@ -134,36 +134,109 @@
 <p class="line alex"><span class="speaker">ALEX</span> Closes: the CFRD-onset discovery question for the SLC26A9 locus (definitively, with combined P=9.8×10⁻¹⁰ across 3,753 people from three independent cohorts plus a replication sample); the CFRD-onset replication of TCF7L2 from prior work (yes); the CFRD-T2D shared-genetic-architecture question for TCF7L2, CDKAL1, CDKN2A/B, IGF2BP2 (yes, shared in direction at sub-genome-wide significance); the CF-specificity question for SLC26A9 (yes — no T2D signal at SLC26A9 in DIAGRAM); and the SLC26A9-versus-MI-and-liver-disease independence question (independent of both). Leaves open: pleiotropy of the locked CFRD-modifier-locus list across the rest of the CF complication phenome (lung function, infection, mental health, transplant, modulator response, mortality) — only the MI dimension was added by Aksit 2022, which is now a decade after Blackman 2013 and the gap remains live; the modulator-era persistence of the SLC26A9 effect — Blackman 2013 predates Trikafta entirely, and whether SLC26A9-driven CFRD risk persists in patients on highly-effective modulator therapy is unaddressed; the rare-variant burden architecture at the SLC26A9 locus — Blackman 2013 is a common-variant GWAS on Illumina array data plus imputation; the rare-variant trait-specificity layer that Aksit 2022 added on the WGS substrate is a more recent piece of the story; and the non-European-ancestry generalizability — Blackman 2013 reports 92 percent Caucasian ancestry across the cohorts, with no per-ancestry-stratum analysis. What we would need to check before committing to this framing: whether the SLC26A9 lead variants rs4077468 and rs4077469 have been re-genotyped in the CFGP WGS cohort and whether the same SNP rs-identifiers map to the current GRCh38 reference build; whether the locked CFRD-modifier-locus list as we have it is the right list, or whether subsequent publications between Blackman 2013 and 2026 have added or refined loci that we have not yet read; whether the CFFPR phecode catalog has been pre-mapped from registry-encoded fields to standard phecodes for the lung-function, infection-burden, mental-health, transplant, modulator-response, and mortality endpoints we want to test, and at what case counts; and whether a consortium has already attempted a partial pleiotropy scan on this locked list — for example a SLC26A9 pleiotropy scan beyond the MI dimension — that we would want to build on rather than duplicate. We have not inspected the CFGP variant calls and we have not enumerated the CFFPR phecode coverage, so this remains a research direction rather than a research plan.</p>
 <p class="line jordan"><span class="speaker">JORDAN</span> Tomorrow we move to the next batch of papers. What is the one-line takeaway?</p>
 <p class="line alex"><span class="speaker">ALEX</span> Blackman 2013 is the discovery paper that established SLC26A9 as the first genome-wide-significant CFRD modifier locus, alongside replication of four T2D-pathway candidate loci, on a 3,753-person consortium-pooled cohort — and the locked CFRD-modifier-locus list it produced is the highest-priority seed list for the next-generation CFGP WGS phenome-wide pleiotropy scan that would extend the published CFRD-and-MI work into the rest of the CF complication phenome.</p></div></details>
-</main><footer>Generated 2026-05-13 07:03</footer>
+</main><footer>Generated 2026-05-13 23:25</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
+
+  var LS_EP  = 'cftr_last_episode';
+  var LS_POS = 'cftr_last_position';
+  var _lastSave = 0;   // throttle localStorage writes
+
   function $(id){ return document.getElementById(id); }
+
+  function fmtTime(s){
+    if (!isFinite(s) || s < 0) return '0:00';
+    var m = Math.floor(s / 60), sec = Math.floor(s % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+
   function build(){
     var bar = document.createElement('div');
     bar.id = 'mini-player';
     bar.style.display = 'none';
     bar.innerHTML =
       '<div class="mp-meta">' +
-        '<span class="mp-title" id="mp-title"></span>' +
+        '<span class="mp-title"  id="mp-title"></span>' +
         '<span class="mp-counter" id="mp-counter"></span>' +
       '</div>' +
       '<div class="mp-controls">' +
-        '<button class="mp-btn" id="mp-prev" title="Previous">&#9194;</button>' +
-        '<audio id="mp-audio" controls preload="none"></audio>' +
-        '<button class="mp-btn" id="mp-next" title="Next">&#9193;</button>' +
-        '<button class="mp-btn" id="mp-close" title="Close">&times;</button>' +
-      '</div>';
+        '<button class="mp-btn" id="mp-prev"      title="Previous">&#9194;</button>' +
+        '<button class="mp-btn" id="mp-playpause" title="Play / Pause">&#9654;</button>' +
+        '<button class="mp-btn" id="mp-next"      title="Next">&#9193;</button>' +
+        '<button class="mp-btn" id="mp-close"     title="Close">&times;</button>' +
+      '</div>' +
+      '<div class="mp-seek-row">' +
+        '<input type="range" id="mp-seek" min="0" max="100" value="0" step="0.1">' +
+        '<span class="mp-time" id="mp-time">0:00 / 0:00</span>' +
+      '</div>' +
+      '<audio id="mp-audio" preload="none"></audio>';
     document.body.appendChild(bar);
-    document.body.style.paddingBottom = '140px';
-    var audio = $('mp-audio');
+    document.body.style.paddingBottom = '160px';
+
+    var audio  = $('mp-audio');
+    var seek   = $('mp-seek');
+    var timeEl = $('mp-time');
+    var ppBtn  = $('mp-playpause');
+    var _seeking = false;
+
+    /* ---- audio events ---- */
+    audio.addEventListener('play',  function(){ ppBtn.innerHTML = '&#9646;&#9646;'; });
+    audio.addEventListener('pause', function(){ ppBtn.innerHTML = '&#9654;'; });
     audio.addEventListener('ended', function(){
+      ppBtn.innerHTML = '&#9654;';
       var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
       if (idx + 1 < window.EPISODES.length) playAt(idx + 1);
     });
-    audio.addEventListener('timeupdate', function(){
-      sessionStorage.setItem('mp-time', String(audio.currentTime));
+    audio.addEventListener('loadedmetadata', function(){
+      seek.value = 0;
+      timeEl.textContent = '0:00 / ' + fmtTime(audio.duration);
     });
+    audio.addEventListener('timeupdate', function(){
+      // Update seek bar (skip while user is dragging)
+      if (!_seeking && isFinite(audio.duration) && audio.duration > 0) {
+        seek.value = (audio.currentTime / audio.duration) * 100;
+        timeEl.textContent = fmtTime(audio.currentTime) + ' / ' + fmtTime(audio.duration);
+      }
+      // Persist position to sessionStorage every tick
+      sessionStorage.setItem('mp-time', String(audio.currentTime));
+      // Persist to localStorage every 5 s (throttled)
+      var now = Date.now();
+      if (now - _lastSave > 5000) {
+        _lastSave = now;
+        var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
+        var ep  = window.EPISODES[idx];
+        if (ep && audio.currentTime > 0) {
+          localStorage.setItem(LS_EP,  ep.slug);
+          localStorage.setItem(LS_POS, String(Math.floor(audio.currentTime)));
+        }
+      }
+    });
+
+    /* ---- seekbar interaction ---- */
+    seek.addEventListener('mousedown',  function(){ _seeking = true; });
+    seek.addEventListener('touchstart', function(){ _seeking = true; }, {passive:true});
+    seek.addEventListener('input', function(){
+      // Preview time while dragging, without seeking yet
+      if (isFinite(audio.duration) && audio.duration > 0) {
+        var preview = (seek.value / 100) * audio.duration;
+        timeEl.textContent = fmtTime(preview) + ' / ' + fmtTime(audio.duration);
+      }
+    });
+    seek.addEventListener('change', function(){
+      _seeking = false;
+      if (isFinite(audio.duration) && audio.duration > 0) {
+        audio.currentTime = (seek.value / 100) * audio.duration;
+      }
+    });
+    seek.addEventListener('mouseup',  function(){ _seeking = false; });
+    seek.addEventListener('touchend', function(){ _seeking = false; });
+
+    /* ---- control buttons ---- */
+    ppBtn.onclick = function(){
+      if (audio.paused) audio.play().catch(function(e){ console.warn('autoplay blocked:', e); });
+      else audio.pause();
+    };
     $('mp-prev').onclick = function(){
       var idx = parseInt(sessionStorage.getItem('mp-idx') || '0', 10);
       if (idx > 0) playAt(idx - 1);
@@ -174,52 +247,117 @@
     };
     $('mp-close').onclick = function(){
       audio.pause();
+      // Clear resume state so we don't prompt again
+      localStorage.removeItem(LS_EP);
+      localStorage.removeItem(LS_POS);
       sessionStorage.removeItem('mp-idx');
       sessionStorage.removeItem('mp-time');
       bar.style.display = 'none';
       document.body.style.paddingBottom = '';
+      var banner = $('mp-resume-banner');
+      if (banner) banner.remove();
     };
   }
-  function playAt(idx){
+
+  function playAt(idx, resumePos){
     var ep = window.EPISODES[idx];
     if (!ep) return;
     sessionStorage.setItem('mp-idx', String(idx));
     sessionStorage.setItem('mp-time', '0');
     var bar = $('mini-player');
     bar.style.display = 'block';
-    document.body.style.paddingBottom = '140px';
-    $('mp-title').textContent = 'Episode ' + ep.num + ': ' + ep.title;
+    document.body.style.paddingBottom = '160px';
+    $('mp-title').textContent   = 'Episode ' + ep.num + ': ' + ep.title;
     $('mp-counter').textContent = (idx + 1) + ' / ' + window.EPISODES.length;
     var audio = $('mp-audio');
+    $('mp-seek').value = 0;
+    $('mp-time').textContent = '0:00 / 0:00';
     audio.src = ep.mp3;
+    if (resumePos && resumePos > 0) {
+      audio.addEventListener('loadedmetadata', function once(){
+        audio.currentTime = resumePos;
+        audio.removeEventListener('loadedmetadata', once);
+      });
+    }
     audio.play().catch(function(e){ console.warn('autoplay blocked:', e); });
+    // Update localStorage immediately
+    localStorage.setItem(LS_EP,  ep.slug);
+    localStorage.setItem(LS_POS, String(Math.floor(resumePos || 0)));
+    _lastSave = Date.now();
   }
+
   window.playAllEpisodes = function(startIdx){
     if (!$('mini-player')) build();
+    var banner = $('mp-resume-banner');
+    if (banner) banner.remove();
     playAt(startIdx || 0);
   };
-  // Resume on page load if a session is active
+
+  /* ---- Resume banner ---- */
+  function showResumeBanner(ep, pos){
+    if ($('mp-resume-banner')) return;
+    var banner = document.createElement('div');
+    banner.id        = 'mp-resume-banner';
+    banner.className = 'mp-resume-banner';
+    banner.innerHTML =
+      '<span class="mp-resume-text">&#9654; Resume from ' + fmtTime(pos) +
+      ' — <strong>Episode ' + ep.num + ': ' + ep.title + '</strong></span>' +
+      '<button class="btn primary" id="mp-resume-yes">Resume</button>' +
+      '<button class="btn"         id="mp-resume-no">Dismiss</button>';
+    var playBar = document.querySelector('.play-all-bar');
+    var main    = document.querySelector('main');
+    if (playBar) playBar.parentNode.insertBefore(banner, playBar.nextSibling);
+    else if (main) main.insertBefore(banner, main.firstChild);
+    else document.body.insertBefore(banner, document.body.firstChild);
+
+    $('mp-resume-yes').onclick = function(){
+      banner.remove();
+      var idx = window.EPISODES.findIndex(function(e){ return e.slug === ep.slug; });
+      if (idx < 0) idx = 0;
+      if (!$('mini-player')) build();
+      playAt(idx, pos);
+    };
+    $('mp-resume-no').onclick = function(){
+      banner.remove();
+      localStorage.removeItem(LS_EP);
+      localStorage.removeItem(LS_POS);
+    };
+  }
+
+  /* ---- Page load: restore state ---- */
   document.addEventListener('DOMContentLoaded', function(){
-    var idx = sessionStorage.getItem('mp-idx');
-    if (idx !== null) {
-      var i = parseInt(idx, 10);
+    // Within-tab navigation: sessionStorage wins
+    var ssIdx = sessionStorage.getItem('mp-idx');
+    if (ssIdx !== null) {
+      var i = parseInt(ssIdx, 10);
       if (i >= 0 && i < window.EPISODES.length) {
         if (!$('mini-player')) build();
-        var ep = window.EPISODES[i];
+        var ep  = window.EPISODES[i];
         var bar = $('mini-player');
         bar.style.display = 'block';
-        document.body.style.paddingBottom = '140px';
-        $('mp-title').textContent = 'Episode ' + ep.num + ': ' + ep.title;
+        document.body.style.paddingBottom = '160px';
+        $('mp-title').textContent   = 'Episode ' + ep.num + ': ' + ep.title;
         $('mp-counter').textContent = (i + 1) + ' / ' + window.EPISODES.length;
         var audio = $('mp-audio');
         audio.src = ep.mp3;
         var t = parseFloat(sessionStorage.getItem('mp-time') || '0');
-        if (t > 0) audio.addEventListener('loadedmetadata', function once(){
-          audio.currentTime = t;
-          audio.removeEventListener('loadedmetadata', once);
-        });
-        // Don't auto-play on resume — wait for user gesture
+        if (t > 0) {
+          audio.addEventListener('loadedmetadata', function once(){
+            audio.currentTime = t;
+            $('mp-time').textContent = fmtTime(t) + ' / ' + fmtTime(audio.duration);
+            audio.removeEventListener('loadedmetadata', once);
+          });
+        }
+        return; // don't also show the localStorage banner
       }
+    }
+
+    // Cross-session resume: check localStorage
+    var savedSlug = localStorage.getItem(LS_EP);
+    var savedPos  = parseFloat(localStorage.getItem(LS_POS) || '0');
+    if (savedSlug && savedPos > 5) {
+      var ep = window.EPISODES.find(function(e){ return e.slug === savedSlug; });
+      if (ep) showResumeBanner(ep, savedPos);
     }
   });
 })();
