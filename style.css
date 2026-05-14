@@ -49,9 +49,14 @@ footer{color:var(--muted);font-size:12px;text-align:center;padding:24px 16px}
 #mini-player .mp-title{font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #mini-player .mp-counter{color:var(--muted);font-size:12px}
 #mini-player .mp-controls{display:flex;gap:8px;align-items:center}
-#mini-player audio{flex:1;min-width:160px;height:36px}
+#mini-player audio{display:none}
 #mini-player .mp-btn{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 12px;cursor:pointer;font-size:14px;font:inherit}
 #mini-player .mp-btn:hover{background:var(--accent);color:var(--bg);border-color:transparent}
+#mini-player .mp-seek-row{display:flex;gap:8px;align-items:center;margin-top:6px}
+#mini-player .mp-time{color:var(--muted);font-size:12px;white-space:nowrap;min-width:96px;text-align:right}
+#mini-player input[type=range]{flex:1;accent-color:var(--accent);cursor:pointer;height:4px}
+.mp-resume-banner{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--accent);border-radius:8px;padding:10px 14px;margin:0 0 12px}
+.mp-resume-text{flex:1;font-size:14px;color:var(--text)}
 .feedback-bar{margin:16px 0;padding:14px 16px;background:var(--panel);border:1px solid var(--border);border-radius:10px}
 .feedback-label{color:var(--muted);font-size:13px;margin:0 0 10px;font-weight:600}
 .feedback-btns{display:flex;flex-direction:column;gap:8px}
