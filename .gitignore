@@ -15,3 +15,8 @@ Thumbs.db
 *.wav
 *.docx
 *.pptx
+
+# Audio now hosted on Cloudflare R2 (see 08_podcast/R2_SETUP.md); streamed by
+# the in-page player and the RSS feed. Keep mp3s out of the repo so GitHub Pages
+# builds stay fast. Local copies remain on disk as the rclone-upload + feed-size source.
+*.mp3
