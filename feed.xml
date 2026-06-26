@@ -1,0 +1,1583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CFTR PheWAS Reading Podcast</title>
+    <link>https://evanwu19.github.io/cftr-phewas-podcast/</link>
+    <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Jun 2026 15:19:05 +0000</lastBuildDate>
+    <itunes:author>Runyu</itunes:author>
+    <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:category text="Science"/>
+    <item>
+      <title>Ep 174: Raynal C 2020</title>
+      <description>Raynal C 2020</description>
+      <guid isPermaLink="false">2026-06-26-ep3</guid>
+      <pubDate>Fri, 26 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-26-ep3.mp3" length="25521765" type="audio/mpeg"/>
+      <itunes:title>Ep 174: Raynal C 2020</itunes:title>
+      <itunes:episode>174</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 173: Wornow M 2023</title>
+      <description>Wornow M 2023</description>
+      <guid isPermaLink="false">2026-06-26-ep2</guid>
+      <pubDate>Fri, 26 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-26-ep2.mp3" length="18471909" type="audio/mpeg"/>
+      <itunes:title>Ep 173: Wornow M 2023</itunes:title>
+      <itunes:episode>173</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 172: Raraigh KS 2018</title>
+      <description>Raraigh KS 2018</description>
+      <guid isPermaLink="false">2026-06-26-ep1</guid>
+      <pubDate>Fri, 26 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-26-ep1.mp3" length="20517957" type="audio/mpeg"/>
+      <itunes:title>Ep 172: Raraigh KS 2018</itunes:title>
+      <itunes:episode>172</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 171: Lin YC 2021</title>
+      <description>Lin YC 2021</description>
+      <guid isPermaLink="false">2026-06-25-ep3</guid>
+      <pubDate>Thu, 25 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-25-ep3.mp3" length="25553565" type="audio/mpeg"/>
+      <itunes:title>Ep 171: Lin YC 2021</itunes:title>
+      <itunes:episode>171</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 170: Singhal K 2023</title>
+      <description>Singhal K 2023</description>
+      <guid isPermaLink="false">2026-06-25-ep2</guid>
+      <pubDate>Thu, 25 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-25-ep2.mp3" length="28285485" type="audio/mpeg"/>
+      <itunes:title>Ep 170: Singhal K 2023</itunes:title>
+      <itunes:episode>170</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 169: Sosnay PR 2013</title>
+      <description>Sosnay PR 2013</description>
+      <guid isPermaLink="false">2026-06-25-ep1</guid>
+      <pubDate>Thu, 25 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-25-ep1.mp3" length="25642893" type="audio/mpeg"/>
+      <itunes:title>Ep 169: Sosnay PR 2013</itunes:title>
+      <itunes:episode>169</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 168: Corvol H 2018</title>
+      <description>Corvol H 2018</description>
+      <guid isPermaLink="false">2026-06-24-ep3</guid>
+      <pubDate>Wed, 24 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-24-ep3.mp3" length="21820509" type="audio/mpeg"/>
+      <itunes:title>Ep 168: Corvol H 2018</itunes:title>
+      <itunes:episode>168</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 167: Yang X 2022</title>
+      <description>Yang X 2022</description>
+      <guid isPermaLink="false">2026-06-24-ep2</guid>
+      <pubDate>Wed, 24 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-24-ep2.mp3" length="25424205" type="audio/mpeg"/>
+      <itunes:title>Ep 167: Yang X 2022</itunes:title>
+      <itunes:episode>167</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 166: Pejaver V 2022</title>
+      <description>Pejaver V 2022</description>
+      <guid isPermaLink="false">2026-06-24-ep1</guid>
+      <pubDate>Wed, 24 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-24-ep1.mp3" length="28942125" type="audio/mpeg"/>
+      <itunes:title>Ep 166: Pejaver V 2022</itunes:title>
+      <itunes:episode>166</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 165: Mercier J 2022</title>
+      <description>Mercier J 2022</description>
+      <guid isPermaLink="false">2026-06-23-ep3</guid>
+      <pubDate>Tue, 23 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-23-ep3.mp3" length="27231021" type="audio/mpeg"/>
+      <itunes:title>Ep 165: Mercier J 2022</itunes:title>
+      <itunes:episode>165</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 164: Shickel B 2018</title>
+      <description>Shickel B 2018</description>
+      <guid isPermaLink="false">2026-06-23-ep2</guid>
+      <pubDate>Tue, 23 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-23-ep2.mp3" length="26182317" type="audio/mpeg"/>
+      <itunes:title>Ep 164: Shickel B 2018</itunes:title>
+      <itunes:episode>164</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 163: Ioannidis NM 2016</title>
+      <description>Ioannidis NM 2016</description>
+      <guid isPermaLink="false">2026-06-23-ep1</guid>
+      <pubDate>Tue, 23 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-23-ep1.mp3" length="26966925" type="audio/mpeg"/>
+      <itunes:title>Ep 163: Ioannidis NM 2016</itunes:title>
+      <itunes:episode>163</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 162: Sun Q 2022</title>
+      <description>Sun Q 2022</description>
+      <guid isPermaLink="false">2026-06-22-ep3</guid>
+      <pubDate>Mon, 22 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-22-ep3.mp3" length="26427933" type="audio/mpeg"/>
+      <itunes:title>Ep 162: Sun Q 2022</itunes:title>
+      <itunes:episode>162</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 161: Rasmy L 2021</title>
+      <description>Rasmy L 2021</description>
+      <guid isPermaLink="false">2026-06-22-ep2</guid>
+      <pubDate>Mon, 22 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-22-ep2.mp3" length="26635677" type="audio/mpeg"/>
+      <itunes:title>Ep 161: Rasmy L 2021</itunes:title>
+      <itunes:episode>161</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 160: Jaganathan K 2019</title>
+      <description>Jaganathan K 2019</description>
+      <guid isPermaLink="false">2026-06-22-ep1</guid>
+      <pubDate>Mon, 22 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-22-ep1.mp3" length="28410525" type="audio/mpeg"/>
+      <itunes:title>Ep 160: Jaganathan K 2019</itunes:title>
+      <itunes:episode>160</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 159: Blackman SM 2009</title>
+      <description>Blackman SM 2009</description>
+      <guid isPermaLink="false">2026-06-21-ep3</guid>
+      <pubDate>Sun, 21 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-21-ep3.mp3" length="14263485" type="audio/mpeg"/>
+      <itunes:title>Ep 159: Blackman SM 2009</itunes:title>
+      <itunes:episode>159</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 158: Zhang Y 2019</title>
+      <description>Zhang Y 2019</description>
+      <guid isPermaLink="false">2026-06-21-ep2</guid>
+      <pubDate>Sun, 21 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-21-ep2.mp3" length="13433661" type="audio/mpeg"/>
+      <itunes:title>Ep 158: Zhang Y 2019</itunes:title>
+      <itunes:episode>158</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 157: Rentzsch P 2021</title>
+      <description>Rentzsch P 2021</description>
+      <guid isPermaLink="false">2026-06-21-ep1</guid>
+      <pubDate>Sun, 21 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-21-ep1.mp3" length="13399389" type="audio/mpeg"/>
+      <itunes:title>Ep 157: Rentzsch P 2021</itunes:title>
+      <itunes:episode>157</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 156: Raraigh KS 2022</title>
+      <description>Raraigh KS 2022</description>
+      <guid isPermaLink="false">2026-06-20-ep3</guid>
+      <pubDate>Sat, 20 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-20-ep3.mp3" length="17283501" type="audio/mpeg"/>
+      <itunes:title>Ep 156: Raraigh KS 2022</itunes:title>
+      <itunes:episode>156</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 155: Blacketer C 2021</title>
+      <description>Blacketer C 2021</description>
+      <guid isPermaLink="false">2026-06-20-ep2</guid>
+      <pubDate>Sat, 20 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-20-ep2.mp3" length="16278333" type="audio/mpeg"/>
+      <itunes:title>Ep 155: Blacketer C 2021</itunes:title>
+      <itunes:episode>155</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 154: Sundaram L 2018</title>
+      <description>Sundaram L 2018</description>
+      <guid isPermaLink="false">2026-06-20-ep1</guid>
+      <pubDate>Sat, 20 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-20-ep1.mp3" length="12958317" type="audio/mpeg"/>
+      <itunes:title>Ep 154: Sundaram L 2018</itunes:title>
+      <itunes:episode>154</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 153: Darrah RJ 2019</title>
+      <description>Darrah RJ 2019</description>
+      <guid isPermaLink="false">2026-06-19-ep3</guid>
+      <pubDate>Fri, 19 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-19-ep3.mp3" length="13794141" type="audio/mpeg"/>
+      <itunes:title>Ep 153: Darrah RJ 2019</itunes:title>
+      <itunes:episode>153</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 152: Naimi AI 2017</title>
+      <description>Naimi AI 2017</description>
+      <guid isPermaLink="false">2026-06-19-ep2</guid>
+      <pubDate>Fri, 19 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-19-ep2.mp3" length="12404541" type="audio/mpeg"/>
+      <itunes:title>Ep 152: Naimi AI 2017</itunes:title>
+      <itunes:episode>152</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 151: Brandes N 2023</title>
+      <description>Brandes N 2023</description>
+      <guid isPermaLink="false">2026-06-19-ep1</guid>
+      <pubDate>Fri, 19 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-19-ep1.mp3" length="14085069" type="audio/mpeg"/>
+      <itunes:title>Ep 151: Brandes N 2023</itunes:title>
+      <itunes:episode>151</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 150: Eastman AC 2021</title>
+      <description>Eastman AC 2021</description>
+      <guid isPermaLink="false">2026-06-18-ep3</guid>
+      <pubDate>Thu, 18 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-18-ep3.mp3" length="14093517" type="audio/mpeg"/>
+      <itunes:title>Ep 150: Eastman AC 2021</itunes:title>
+      <itunes:episode>150</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 149: Gayoso A 2022</title>
+      <description>Gayoso A 2022</description>
+      <guid isPermaLink="false">2026-06-18-ep2</guid>
+      <pubDate>Thu, 18 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-18-ep2.mp3" length="13200861" type="audio/mpeg"/>
+      <itunes:title>Ep 149: Gayoso A 2022</itunes:title>
+      <itunes:episode>149</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 148: Cheng J 2023</title>
+      <description>Cheng J 2023</description>
+      <guid isPermaLink="false">2026-06-18-ep1</guid>
+      <pubDate>Thu, 18 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-18-ep1.mp3" length="13991469" type="audio/mpeg"/>
+      <itunes:title>Ep 148: Cheng J 2023</itunes:title>
+      <itunes:episode>148</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 147: Mekus F 2000</title>
+      <description>Mekus F 2000</description>
+      <guid isPermaLink="false">2026-06-17-ep3</guid>
+      <pubDate>Wed, 17 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-17-ep3.mp3" length="12823533" type="audio/mpeg"/>
+      <itunes:title>Ep 147: Mekus F 2000</itunes:title>
+      <itunes:episode>147</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 146: Ewels PA 2020</title>
+      <description>Ewels PA 2020</description>
+      <guid isPermaLink="false">2026-06-17-ep2</guid>
+      <pubDate>Wed, 17 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-17-ep2.mp3" length="12278541" type="audio/mpeg"/>
+      <itunes:title>Ep 146: Ewels PA 2020</itunes:title>
+      <itunes:episode>146</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 145: Frazer J 2021</title>
+      <description>Frazer J 2021</description>
+      <guid isPermaLink="false">2026-06-17-ep1</guid>
+      <pubDate>Wed, 17 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-17-ep1.mp3" length="12497901" type="audio/mpeg"/>
+      <itunes:title>Ep 145: Frazer J 2021</itunes:title>
+      <itunes:episode>145</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 144: Bronsveld I 2000</title>
+      <description>Bronsveld I 2000</description>
+      <guid isPermaLink="false">2026-06-16-ep3</guid>
+      <pubDate>Tue, 16 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-16-ep3.mp3" length="15651741" type="audio/mpeg"/>
+      <itunes:title>Ep 144: Bronsveld I 2000</itunes:title>
+      <itunes:episode>144</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 143: Di Tommaso P 2017</title>
+      <description>Di Tommaso P 2017</description>
+      <guid isPermaLink="false">2026-06-16-ep2</guid>
+      <pubDate>Tue, 16 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-16-ep2.mp3" length="14083773" type="audio/mpeg"/>
+      <itunes:title>Ep 143: Di Tommaso P 2017</itunes:title>
+      <itunes:episode>143</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 142: Jumper J 2021</title>
+      <description>Jumper J 2021</description>
+      <guid isPermaLink="false">2026-06-16-ep1</guid>
+      <pubDate>Tue, 16 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-16-ep1.mp3" length="14188701" type="audio/mpeg"/>
+      <itunes:title>Ep 142: Jumper J 2021</itunes:title>
+      <itunes:episode>142</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 141: Miller MR 2015</title>
+      <description>Miller MR 2015</description>
+      <guid isPermaLink="false">2026-06-15-ep3</guid>
+      <pubDate>Mon, 15 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-15-ep3.mp3" length="14971821" type="audio/mpeg"/>
+      <itunes:title>Ep 141: Miller MR 2015</itunes:title>
+      <itunes:episode>141</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 140: Li Z 2026</title>
+      <description>Li Z 2026</description>
+      <guid isPermaLink="false">2026-06-15-ep2</guid>
+      <pubDate>Mon, 15 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-15-ep2.mp3" length="13441965" type="audio/mpeg"/>
+      <itunes:title>Ep 140: Li Z 2026</itunes:title>
+      <itunes:episode>140</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 139: Johansson I 2025</title>
+      <description>Johansson I 2025</description>
+      <guid isPermaLink="false">2026-06-15-ep1</guid>
+      <pubDate>Mon, 15 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-15-ep1.mp3" length="12574653" type="audio/mpeg"/>
+      <itunes:title>Ep 139: Johansson I 2025</itunes:title>
+      <itunes:episode>139</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 138: Nagao G 2026</title>
+      <description>Nagao G 2026</description>
+      <guid isPermaLink="false">2026-06-14-ep3</guid>
+      <pubDate>Sun, 14 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-14-ep3.mp3" length="13664349" type="audio/mpeg"/>
+      <itunes:title>Ep 138: Nagao G 2026</itunes:title>
+      <itunes:episode>138</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 137: Lee H 2025</title>
+      <description>Lee H 2025</description>
+      <guid isPermaLink="false">2026-06-14-ep2</guid>
+      <pubDate>Sun, 14 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-14-ep2.mp3" length="13106013" type="audio/mpeg"/>
+      <itunes:title>Ep 137: Lee H 2025</itunes:title>
+      <itunes:episode>137</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 136: Lin YJ 2026</title>
+      <description>Lin YJ 2026</description>
+      <guid isPermaLink="false">2026-06-14-ep1</guid>
+      <pubDate>Sun, 14 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-14-ep1.mp3" length="13939917" type="audio/mpeg"/>
+      <itunes:title>Ep 136: Lin YJ 2026</itunes:title>
+      <itunes:episode>136</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 135: Stanke F 2006</title>
+      <description>Stanke F 2006</description>
+      <guid isPermaLink="false">2026-06-12-ep3</guid>
+      <pubDate>Fri, 12 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-12-ep3.mp3" length="13267461" type="audio/mpeg"/>
+      <itunes:title>Ep 135: Stanke F 2006</itunes:title>
+      <itunes:episode>135</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 134: Pimplaskar A 2026</title>
+      <description>Pimplaskar A 2026</description>
+      <guid isPermaLink="false">2026-06-12-ep2</guid>
+      <pubDate>Fri, 12 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-12-ep2.mp3" length="13599477" type="audio/mpeg"/>
+      <itunes:title>Ep 134: Pimplaskar A 2026</itunes:title>
+      <itunes:episode>134</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 133: Winters AH 2026</title>
+      <description>Winters AH 2026</description>
+      <guid isPermaLink="false">2026-06-12-ep1</guid>
+      <pubDate>Fri, 12 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-12-ep1.mp3" length="13363557" type="audio/mpeg"/>
+      <itunes:title>Ep 133: Winters AH 2026</itunes:title>
+      <itunes:episode>133</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 132: von Kanel T 2013</title>
+      <description>von Kanel T 2013</description>
+      <guid isPermaLink="false">2026-06-11-ep3</guid>
+      <pubDate>Thu, 11 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-11-ep3.mp3" length="12769821" type="audio/mpeg"/>
+      <itunes:title>Ep 132: von Kanel T 2013</itunes:title>
+      <itunes:episode>132</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 131: Winters A 2026</title>
+      <description>Winters A 2026</description>
+      <guid isPermaLink="false">2026-06-11-ep2</guid>
+      <pubDate>Thu, 11 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-11-ep2.mp3" length="12565533" type="audio/mpeg"/>
+      <itunes:title>Ep 131: Winters A 2026</itunes:title>
+      <itunes:episode>131</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 130: Korutla R 2026</title>
+      <description>Korutla R 2026</description>
+      <guid isPermaLink="false">2026-06-11-ep1</guid>
+      <pubDate>Thu, 11 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-11-ep1.mp3" length="12652701" type="audio/mpeg"/>
+      <itunes:title>Ep 130: Korutla R 2026</itunes:title>
+      <itunes:episode>130</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 129: Henderson LB 2012</title>
+      <description>Henderson LB 2012</description>
+      <guid isPermaLink="false">2026-06-10-ep3</guid>
+      <pubDate>Wed, 10 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-10-ep3.mp3" length="13083981" type="audio/mpeg"/>
+      <itunes:title>Ep 129: Henderson LB 2012</itunes:title>
+      <itunes:episode>129</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 128: Hawkes G 2026</title>
+      <description>Hawkes G 2026</description>
+      <guid isPermaLink="false">2026-06-10-ep2</guid>
+      <pubDate>Wed, 10 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-10-ep2.mp3" length="12490845" type="audio/mpeg"/>
+      <itunes:title>Ep 128: Hawkes G 2026</itunes:title>
+      <itunes:episode>128</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 127: Wen S 2025</title>
+      <description>Wen S 2025</description>
+      <guid isPermaLink="false">2026-06-10-ep1</guid>
+      <pubDate>Wed, 10 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-10-ep1.mp3" length="12792285" type="audio/mpeg"/>
+      <itunes:title>Ep 127: Wen S 2025</itunes:title>
+      <itunes:episode>127</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 126: Schamschula E 2021</title>
+      <description>Schamschula E 2021</description>
+      <guid isPermaLink="false">2026-06-09-ep3</guid>
+      <pubDate>Tue, 09 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-09-ep3.mp3" length="12560277" type="audio/mpeg"/>
+      <itunes:title>Ep 126: Schamschula E 2021</itunes:title>
+      <itunes:episode>126</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 125: Ma Y 2025</title>
+      <description>Ma Y 2025</description>
+      <guid isPermaLink="false">2026-06-09-ep2</guid>
+      <pubDate>Tue, 09 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-09-ep2.mp3" length="12601989" type="audio/mpeg"/>
+      <itunes:title>Ep 125: Ma Y 2025</itunes:title>
+      <itunes:episode>125</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 124: Zhu J 2026</title>
+      <description>Zhu J 2026</description>
+      <guid isPermaLink="false">2026-06-09-ep1</guid>
+      <pubDate>Tue, 09 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-09-ep1.mp3" length="12766725" type="audio/mpeg"/>
+      <itunes:title>Ep 124: Zhu J 2026</itunes:title>
+      <itunes:episode>124</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 123: Fischer S 2021</title>
+      <description>Fischer S 2021</description>
+      <guid isPermaLink="false">2026-06-08-ep3</guid>
+      <pubDate>Mon, 08 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-08-ep3.mp3" length="12566493" type="audio/mpeg"/>
+      <itunes:title>Ep 123: Fischer S 2021</itunes:title>
+      <itunes:episode>123</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 122: Shugg T 2025</title>
+      <description>Shugg T 2025</description>
+      <guid isPermaLink="false">2026-06-08-ep2</guid>
+      <pubDate>Mon, 08 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-08-ep2.mp3" length="12861885" type="audio/mpeg"/>
+      <itunes:title>Ep 122: Shugg T 2025</itunes:title>
+      <itunes:episode>122</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 121: Barr PB 2026</title>
+      <description>Barr PB 2026</description>
+      <guid isPermaLink="false">2026-06-08-ep1</guid>
+      <pubDate>Mon, 08 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-08-ep1.mp3" length="13423917" type="audio/mpeg"/>
+      <itunes:title>Ep 121: Barr PB 2026</itunes:title>
+      <itunes:episode>121</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 120: Raraigh KS 2022</title>
+      <description>Raraigh KS 2022</description>
+      <guid isPermaLink="false">2026-06-07-ep3</guid>
+      <pubDate>Sun, 07 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-07-ep3.mp3" length="13702893" type="audio/mpeg"/>
+      <itunes:title>Ep 120: Raraigh KS 2022</itunes:title>
+      <itunes:episode>120</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 119: Bar L 2026</title>
+      <description>Bar L 2026</description>
+      <guid isPermaLink="false">2026-06-07-ep2</guid>
+      <pubDate>Sun, 07 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-07-ep2.mp3" length="13476957" type="audio/mpeg"/>
+      <itunes:title>Ep 119: Bar L 2026</itunes:title>
+      <itunes:episode>119</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 118: Yu M 2026</title>
+      <description>Yu M 2026</description>
+      <guid isPermaLink="false">2026-06-07-ep1</guid>
+      <pubDate>Sun, 07 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-07-ep1.mp3" length="13471725" type="audio/mpeg"/>
+      <itunes:title>Ep 118: Yu M 2026</itunes:title>
+      <itunes:episode>118</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 117: McCague AF 2019</title>
+      <description>McCague AF 2019</description>
+      <guid isPermaLink="false">2026-06-06-ep3</guid>
+      <pubDate>Sat, 06 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-06-ep3.mp3" length="12673533" type="audio/mpeg"/>
+      <itunes:title>Ep 117: McCague AF 2019</itunes:title>
+      <itunes:episode>117</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 116: Ma Y 2025</title>
+      <description>Ma Y 2025</description>
+      <guid isPermaLink="false">2026-06-06-ep2</guid>
+      <pubDate>Sat, 06 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-06-ep2.mp3" length="15086925" type="audio/mpeg"/>
+      <itunes:title>Ep 116: Ma Y 2025</itunes:title>
+      <itunes:episode>116</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 115: Balvert M 2024</title>
+      <description>Balvert M 2024</description>
+      <guid isPermaLink="false">2026-06-06-ep1</guid>
+      <pubDate>Sat, 06 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-06-ep1.mp3" length="12724077" type="audio/mpeg"/>
+      <itunes:title>Ep 115: Balvert M 2024</itunes:title>
+      <itunes:episode>115</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 114: Dang H 2020</title>
+      <description>Dang H 2020</description>
+      <guid isPermaLink="false">2026-06-05-ep3</guid>
+      <pubDate>Fri, 05 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-05-ep3.mp3" length="12386445" type="audio/mpeg"/>
+      <itunes:title>Ep 114: Dang H 2020</itunes:title>
+      <itunes:episode>114</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 113: Stamp J 2025</title>
+      <description>Stamp J 2025</description>
+      <guid isPermaLink="false">2026-06-05-ep2</guid>
+      <pubDate>Fri, 05 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-05-ep2.mp3" length="13100157" type="audio/mpeg"/>
+      <itunes:title>Ep 113: Stamp J 2025</itunes:title>
+      <itunes:episode>113</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 112: Fu B 2025</title>
+      <description>Fu B 2025</description>
+      <guid isPermaLink="false">2026-06-05-ep1</guid>
+      <pubDate>Fri, 05 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-05-ep1.mp3" length="12951549" type="audio/mpeg"/>
+      <itunes:title>Ep 112: Fu B 2025</itunes:title>
+      <itunes:episode>112</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 111: Stonebraker JR 2024</title>
+      <description>Stonebraker JR 2024</description>
+      <guid isPermaLink="false">2026-06-04-ep3</guid>
+      <pubDate>Thu, 04 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-04-ep3.mp3" length="13874781" type="audio/mpeg"/>
+      <itunes:title>Ep 111: Stonebraker JR 2024</itunes:title>
+      <itunes:episode>111</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 110: Fan Y 2025</title>
+      <description>Fan Y 2025</description>
+      <guid isPermaLink="false">2026-06-04-ep2</guid>
+      <pubDate>Thu, 04 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-04-ep2.mp3" length="13558221" type="audio/mpeg"/>
+      <itunes:title>Ep 110: Fan Y 2025</itunes:title>
+      <itunes:episode>110</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 109: Kang JO 2025</title>
+      <description>Kang JO 2025</description>
+      <guid isPermaLink="false">2026-06-04-ep1</guid>
+      <pubDate>Thu, 04 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-04-ep1.mp3" length="12139629" type="audio/mpeg"/>
+      <itunes:title>Ep 109: Kang JO 2025</itunes:title>
+      <itunes:episode>109</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 108: Schamschula E 2022</title>
+      <description>Schamschula E 2022</description>
+      <guid isPermaLink="false">2026-06-03-ep3</guid>
+      <pubDate>Wed, 03 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-03-ep3.mp3" length="13719789" type="audio/mpeg"/>
+      <itunes:title>Ep 108: Schamschula E 2022</itunes:title>
+      <itunes:episode>108</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 107: Kentistou KA 2025</title>
+      <description>Kentistou KA 2025</description>
+      <guid isPermaLink="false">2026-06-03-ep2</guid>
+      <pubDate>Wed, 03 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-03-ep2.mp3" length="13579245" type="audio/mpeg"/>
+      <itunes:title>Ep 107: Kentistou KA 2025</itunes:title>
+      <itunes:episode>107</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 106: Riccio C 2025</title>
+      <description>Riccio C 2025</description>
+      <guid isPermaLink="false">2026-06-03-ep1</guid>
+      <pubDate>Wed, 03 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-03-ep1.mp3" length="13101165" type="audio/mpeg"/>
+      <itunes:title>Ep 106: Riccio C 2025</itunes:title>
+      <itunes:episode>106</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 105: Kolbe EW 2013</title>
+      <description>Kolbe EW 2013</description>
+      <guid isPermaLink="false">2026-06-02-ep3</guid>
+      <pubDate>Tue, 02 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-02-ep3.mp3" length="13479117" type="audio/mpeg"/>
+      <itunes:title>Ep 105: Kolbe EW 2013</itunes:title>
+      <itunes:episode>105</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 104: Namjou B 2026</title>
+      <description>Namjou B 2026</description>
+      <guid isPermaLink="false">2026-06-02-ep2</guid>
+      <pubDate>Tue, 02 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-02-ep2.mp3" length="13256013" type="audio/mpeg"/>
+      <itunes:title>Ep 104: Namjou B 2026</itunes:title>
+      <itunes:episode>104</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 103: Yang Z 2026</title>
+      <description>Yang Z 2026</description>
+      <guid isPermaLink="false">2026-06-02-ep1</guid>
+      <pubDate>Tue, 02 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-02-ep1.mp3" length="13608525" type="audio/mpeg"/>
+      <itunes:title>Ep 103: Yang Z 2026</itunes:title>
+      <itunes:episode>103</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 102: Lin B 2024</title>
+      <description>Lin B 2024</description>
+      <guid isPermaLink="false">2026-06-01-ep3</guid>
+      <pubDate>Mon, 01 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-01-ep3.mp3" length="14374077" type="audio/mpeg"/>
+      <itunes:title>Ep 102: Lin B 2024</itunes:title>
+      <itunes:episode>102</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 101: Zou XZ 2026</title>
+      <description>Zou XZ 2026</description>
+      <guid isPermaLink="false">2026-06-01-ep2</guid>
+      <pubDate>Mon, 01 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-01-ep2.mp3" length="15916173" type="audio/mpeg"/>
+      <itunes:title>Ep 101: Zou XZ 2026</itunes:title>
+      <itunes:episode>101</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 100: Chiles JW 2026</title>
+      <description>Chiles JW 2026</description>
+      <guid isPermaLink="false">2026-06-01-ep1</guid>
+      <pubDate>Mon, 01 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-01-ep1.mp3" length="16060269" type="audio/mpeg"/>
+      <itunes:title>Ep 100: Chiles JW 2026</itunes:title>
+      <itunes:episode>100</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 99: Gong J 2019</title>
+      <description>Gong J 2019</description>
+      <guid isPermaLink="false">2026-05-31-ep3</guid>
+      <pubDate>Sun, 31 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-31-ep3.mp3" length="10761357" type="audio/mpeg"/>
+      <itunes:title>Ep 99: Gong J 2019</itunes:title>
+      <itunes:episode>99</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 98: Jumentier B 2026</title>
+      <description>Jumentier B 2026</description>
+      <guid isPermaLink="false">2026-05-31-ep2</guid>
+      <pubDate>Sun, 31 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-31-ep2.mp3" length="11712525" type="audio/mpeg"/>
+      <itunes:title>Ep 98: Jumentier B 2026</itunes:title>
+      <itunes:episode>98</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 97: Khajouei E 2025</title>
+      <description>Khajouei E 2025</description>
+      <guid isPermaLink="false">2026-05-31-ep1</guid>
+      <pubDate>Sun, 31 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-31-ep1.mp3" length="13908861" type="audio/mpeg"/>
+      <itunes:title>Ep 97: Khajouei E 2025</itunes:title>
+      <itunes:episode>97</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 96: Sun Q 2022</title>
+      <description>Sun Q 2022</description>
+      <guid isPermaLink="false">2026-05-30-ep3</guid>
+      <pubDate>Sat, 30 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-30-ep3.mp3" length="16333725" type="audio/mpeg"/>
+      <itunes:title>Ep 96: Sun Q 2022</itunes:title>
+      <itunes:episode>96</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 95: Lee CH 2025</title>
+      <description>Lee CH 2025</description>
+      <guid isPermaLink="false">2026-05-30-ep2</guid>
+      <pubDate>Sat, 30 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-30-ep2.mp3" length="13746717" type="audio/mpeg"/>
+      <itunes:title>Ep 95: Lee CH 2025</itunes:title>
+      <itunes:episode>95</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 94: Zheutlin AB 2019</title>
+      <description>Zheutlin AB 2019</description>
+      <guid isPermaLink="false">2026-05-30-ep1</guid>
+      <pubDate>Sat, 30 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-30-ep1.mp3" length="14658429" type="audio/mpeg"/>
+      <itunes:title>Ep 94: Zheutlin AB 2019</itunes:title>
+      <itunes:episode>94</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 93: Atteih SE 2020</title>
+      <description>Atteih SE 2020</description>
+      <guid isPermaLink="false">2026-05-29-ep3</guid>
+      <pubDate>Fri, 29 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-29-ep3.mp3" length="14744589" type="audio/mpeg"/>
+      <itunes:title>Ep 93: Atteih SE 2020</itunes:title>
+      <itunes:episode>93</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 92: Bastarache L 2021</title>
+      <description>Bastarache L 2021</description>
+      <guid isPermaLink="false">2026-05-29-ep2</guid>
+      <pubDate>Fri, 29 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-29-ep2.mp3" length="15932877" type="audio/mpeg"/>
+      <itunes:title>Ep 92: Bastarache L 2021</itunes:title>
+      <itunes:episode>92</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 91: Vlasschaert C 2023</title>
+      <description>Vlasschaert C 2023</description>
+      <guid isPermaLink="false">2026-05-29-ep1</guid>
+      <pubDate>Fri, 29 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-29-ep1.mp3" length="13830621" type="audio/mpeg"/>
+      <itunes:title>Ep 91: Vlasschaert C 2023</itunes:title>
+      <itunes:episode>91</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 90: Collaco JM 2010</title>
+      <description>Collaco JM 2010</description>
+      <guid isPermaLink="false">2026-05-28-ep3</guid>
+      <pubDate>Thu, 28 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-28-ep3.mp3" length="14062221" type="audio/mpeg"/>
+      <itunes:title>Ep 90: Collaco JM 2010</itunes:title>
+      <itunes:episode>90</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 89: All of Us Research Program Investigators (Denny JC, Rutter JL, et al.) 2019</title>
+      <description>All of Us Research Program Investigators (Denny JC, Rutter JL, et al.) 2019</description>
+      <guid isPermaLink="false">2026-05-28-ep2</guid>
+      <pubDate>Thu, 28 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-28-ep2.mp3" length="16560909" type="audio/mpeg"/>
+      <itunes:title>Ep 89: All of Us Research Program Investigators (Denny JC, Rutter JL, et al.) 2019</itunes:title>
+      <itunes:episode>89</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 88: Coleman JRI 2020</title>
+      <description>Coleman JRI 2020</description>
+      <guid isPermaLink="false">2026-05-28-ep1</guid>
+      <pubDate>Thu, 28 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-28-ep1.mp3" length="13508589" type="audio/mpeg"/>
+      <itunes:title>Ep 88: Coleman JRI 2020</itunes:title>
+      <itunes:episode>88</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 87: Collaco JM 2011</title>
+      <description>Collaco JM 2011</description>
+      <guid isPermaLink="false">2026-05-27-ep3</guid>
+      <pubDate>Wed, 27 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-27-ep3.mp3" length="13231821" type="audio/mpeg"/>
+      <itunes:title>Ep 87: Collaco JM 2011</itunes:title>
+      <itunes:episode>87</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 86: Lian J 2026</title>
+      <description>Lian J 2026</description>
+      <guid isPermaLink="false">2026-05-27-ep2</guid>
+      <pubDate>Wed, 27 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-27-ep2.mp3" length="17063229" type="audio/mpeg"/>
+      <itunes:title>Ep 86: Lian J 2026</itunes:title>
+      <itunes:episode>86</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 85: Sng LMF 2025</title>
+      <description>Sng LMF 2025</description>
+      <guid isPermaLink="false">2026-05-27-ep1</guid>
+      <pubDate>Wed, 27 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-27-ep1.mp3" length="14155149" type="audio/mpeg"/>
+      <itunes:title>Ep 85: Sng LMF 2025</itunes:title>
+      <itunes:episode>85</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 84: Labenski H 2011</title>
+      <description>Labenski H 2011</description>
+      <guid isPermaLink="false">2026-05-26-ep3</guid>
+      <pubDate>Tue, 26 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-26-ep3.mp3" length="16485837" type="audio/mpeg"/>
+      <itunes:title>Ep 84: Labenski H 2011</itunes:title>
+      <itunes:episode>84</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 83: Wang F 2025</title>
+      <description>Wang F 2025</description>
+      <guid isPermaLink="false">2026-05-26-ep2</guid>
+      <pubDate>Tue, 26 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-26-ep2.mp3" length="13625277" type="audio/mpeg"/>
+      <itunes:title>Ep 83: Wang F 2025</itunes:title>
+      <itunes:episode>83</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 82: Mastromatteo S 2023</title>
+      <description>Mastromatteo S 2023</description>
+      <guid isPermaLink="false">2026-05-26-ep1</guid>
+      <pubDate>Tue, 26 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-26-ep1.mp3" length="15031821" type="audio/mpeg"/>
+      <itunes:title>Ep 82: Mastromatteo S 2023</itunes:title>
+      <itunes:episode>82</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 81: Polineni D 2018</title>
+      <description>Polineni D 2018</description>
+      <guid isPermaLink="false">2026-05-25-ep3</guid>
+      <pubDate>Mon, 25 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-25-ep3.mp3" length="18427845" type="audio/mpeg"/>
+      <itunes:title>Ep 81: Polineni D 2018</itunes:title>
+      <itunes:episode>81</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 80: Wang F 2022</title>
+      <description>Wang F 2022</description>
+      <guid isPermaLink="false">2026-05-25-ep2</guid>
+      <pubDate>Mon, 25 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-25-ep2.mp3" length="18120525" type="audio/mpeg"/>
+      <itunes:title>Ep 80: Wang F 2022</itunes:title>
+      <itunes:episode>80</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 79: Virolainen SJ 2023</title>
+      <description>Virolainen SJ 2023</description>
+      <guid isPermaLink="false">2026-05-25-ep1</guid>
+      <pubDate>Mon, 25 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-25-ep1.mp3" length="16636365" type="audio/mpeg"/>
+      <itunes:title>Ep 79: Virolainen SJ 2023</itunes:title>
+      <itunes:episode>79</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 78: Kumar V 2008</title>
+      <description>Kumar V 2008</description>
+      <guid isPermaLink="false">2026-05-24-ep3</guid>
+      <pubDate>Sun, 24 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-24-ep3.mp3" length="15073197" type="audio/mpeg"/>
+      <itunes:title>Ep 78: Kumar V 2008</itunes:title>
+      <itunes:episode>78</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 77: Varona L 2018</title>
+      <description>Varona L 2018</description>
+      <guid isPermaLink="false">2026-05-24-ep2</guid>
+      <pubDate>Sun, 24 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-24-ep2.mp3" length="12722493" type="audio/mpeg"/>
+      <itunes:title>Ep 77: Varona L 2018</itunes:title>
+      <itunes:episode>77</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 76: Kingdom R 2022</title>
+      <description>Kingdom R 2022</description>
+      <guid isPermaLink="false">2026-05-24-ep1</guid>
+      <pubDate>Sun, 24 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-24-ep1.mp3" length="13670925" type="audio/mpeg"/>
+      <itunes:title>Ep 76: Kingdom R 2022</itunes:title>
+      <itunes:episode>76</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 75: Sun L 2012</title>
+      <description>Sun L 2012</description>
+      <guid isPermaLink="false">2026-05-23-ep3</guid>
+      <pubDate>Sat, 23 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-23-ep3.mp3" length="16258125" type="audio/mpeg"/>
+      <itunes:title>Ep 75: Sun L 2012</itunes:title>
+      <itunes:episode>75</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 74: Rahit KMTH 2020</title>
+      <description>Rahit KMTH 2020</description>
+      <guid isPermaLink="false">2026-05-23-ep2</guid>
+      <pubDate>Sat, 23 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-23-ep2.mp3" length="14027469" type="audio/mpeg"/>
+      <itunes:title>Ep 74: Rahit KMTH 2020</itunes:title>
+      <itunes:episode>74</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 73: Hess JL 2021</title>
+      <description>Hess JL 2021</description>
+      <guid isPermaLink="false">2026-05-23-ep1</guid>
+      <pubDate>Sat, 23 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-23-ep1.mp3" length="13324941" type="audio/mpeg"/>
+      <itunes:title>Ep 73: Hess JL 2021</itunes:title>
+      <itunes:episode>73</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 72: Wright FA 2011</title>
+      <description>Wright FA 2011</description>
+      <guid isPermaLink="false">2026-05-22-ep3</guid>
+      <pubDate>Fri, 22 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-22-ep3.mp3" length="15332973" type="audio/mpeg"/>
+      <itunes:title>Ep 72: Wright FA 2011</itunes:title>
+      <itunes:episode>72</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 71: Giri A 2019</title>
+      <description>Giri A 2019</description>
+      <guid isPermaLink="false">2026-05-22-ep2</guid>
+      <pubDate>Fri, 22 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-22-ep2.mp3" length="15117789" type="audio/mpeg"/>
+      <itunes:title>Ep 71: Giri A 2019</itunes:title>
+      <itunes:episode>71</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 70: Gerasimavicius L 2022</title>
+      <description>Gerasimavicius L 2022</description>
+      <guid isPermaLink="false">2026-05-22-ep1</guid>
+      <pubDate>Fri, 22 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-22-ep1.mp3" length="13942173" type="audio/mpeg"/>
+      <itunes:title>Ep 70: Gerasimavicius L 2022</itunes:title>
+      <itunes:episode>70</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 69: Ling H 2024</title>
+      <description>Ling H 2024</description>
+      <guid isPermaLink="false">2026-05-21-ep3</guid>
+      <pubDate>Thu, 21 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-21-ep3.mp3" length="14718477" type="audio/mpeg"/>
+      <itunes:title>Ep 69: Ling H 2024</itunes:title>
+      <itunes:episode>69</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 68: Collins RL 2020</title>
+      <description>Collins RL 2020</description>
+      <guid isPermaLink="false">2026-05-21-ep2</guid>
+      <pubDate>Thu, 21 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-21-ep2.mp3" length="14221581" type="audio/mpeg"/>
+      <itunes:title>Ep 68: Collins RL 2020</itunes:title>
+      <itunes:episode>68</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 67: Zheng J 2020</title>
+      <description>Zheng J 2020</description>
+      <guid isPermaLink="false">2026-05-21-ep1</guid>
+      <pubDate>Thu, 21 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-21-ep1.mp3" length="15981357" type="audio/mpeg"/>
+      <itunes:title>Ep 67: Zheng J 2020</itunes:title>
+      <itunes:episode>67</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 66: Morrow CB 2014</title>
+      <description>Morrow CB 2014</description>
+      <guid isPermaLink="false">2026-05-20-ep3</guid>
+      <pubDate>Wed, 20 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-20-ep3.mp3" length="13574253" type="audio/mpeg"/>
+      <itunes:title>Ep 66: Morrow CB 2014</itunes:title>
+      <itunes:episode>66</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 65: Mapes BM 2020</title>
+      <description>Mapes BM 2020</description>
+      <guid isPermaLink="false">2026-05-20-ep2</guid>
+      <pubDate>Wed, 20 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-20-ep2.mp3" length="12973053" type="audio/mpeg"/>
+      <itunes:title>Ep 65: Mapes BM 2020</itunes:title>
+      <itunes:episode>65</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 64: Ottensmann L 2023</title>
+      <description>Ottensmann L 2023</description>
+      <guid isPermaLink="false">2026-05-20-ep1</guid>
+      <pubDate>Wed, 20 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-20-ep1.mp3" length="15989805" type="audio/mpeg"/>
+      <itunes:title>Ep 64: Ottensmann L 2023</itunes:title>
+      <itunes:episode>64</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 63: Bradley GM 2012</title>
+      <description>Bradley GM 2012</description>
+      <guid isPermaLink="false">2026-05-19-ep3</guid>
+      <pubDate>Tue, 19 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-19-ep3.mp3" length="17512797" type="audio/mpeg"/>
+      <itunes:title>Ep 63: Bradley GM 2012</itunes:title>
+      <itunes:episode>63</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 62: Cavazos TB 2021</title>
+      <description>Cavazos TB 2021</description>
+      <guid isPermaLink="false">2026-05-19-ep2</guid>
+      <pubDate>Tue, 19 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-19-ep2.mp3" length="15495549" type="audio/mpeg"/>
+      <itunes:title>Ep 62: Cavazos TB 2021</itunes:title>
+      <itunes:episode>62</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 61: Sinnott-Armstrong N 2021</title>
+      <description>Sinnott-Armstrong N 2021</description>
+      <guid isPermaLink="false">2026-05-19-ep1</guid>
+      <pubDate>Tue, 19 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-19-ep1.mp3" length="17957757" type="audio/mpeg"/>
+      <itunes:title>Ep 61: Sinnott-Armstrong N 2021</itunes:title>
+      <itunes:episode>61</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 60: Stanke F 2014</title>
+      <description>Stanke F 2014</description>
+      <guid isPermaLink="false">2026-05-18-ep3</guid>
+      <pubDate>Mon, 18 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-18-ep3.mp3" length="17589213" type="audio/mpeg"/>
+      <itunes:title>Ep 60: Stanke F 2014</itunes:title>
+      <itunes:episode>60</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 59: Ge T 2019</title>
+      <description>Ge T 2019</description>
+      <guid isPermaLink="false">2026-05-18-ep2</guid>
+      <pubDate>Mon, 18 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-18-ep2.mp3" length="14617821" type="audio/mpeg"/>
+      <itunes:title>Ep 59: Ge T 2019</itunes:title>
+      <itunes:episode>59</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 58: Bessonova L 2018</title>
+      <description>Bessonova L 2018</description>
+      <guid isPermaLink="false">2026-05-18-ep1</guid>
+      <pubDate>Mon, 18 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-18-ep1.mp3" length="15594717" type="audio/mpeg"/>
+      <itunes:title>Ep 58: Bessonova L 2018</itunes:title>
+      <itunes:episode>58</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 57: Boëlle PY 2019</title>
+      <description>Boëlle PY 2019</description>
+      <guid isPermaLink="false">2026-05-17-ep3</guid>
+      <pubDate>Sun, 17 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-17-ep3.mp3" length="14991693" type="audio/mpeg"/>
+      <itunes:title>Ep 57: Boëlle PY 2019</itunes:title>
+      <itunes:episode>57</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 56: Ideozu JE 2024</title>
+      <description>Ideozu JE 2024</description>
+      <guid isPermaLink="false">2026-05-17-ep2</guid>
+      <pubDate>Sun, 17 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-17-ep2.mp3" length="15068877" type="audio/mpeg"/>
+      <itunes:title>Ep 56: Ideozu JE 2024</itunes:title>
+      <itunes:episode>56</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 55: Jacobs BM 2020</title>
+      <description>Jacobs BM 2020</description>
+      <guid isPermaLink="false">2026-05-17-ep1</guid>
+      <pubDate>Sun, 17 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-17-ep1.mp3" length="14689869" type="audio/mpeg"/>
+      <itunes:title>Ep 55: Jacobs BM 2020</itunes:title>
+      <itunes:episode>55</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 54: Aksit MA 2022</title>
+      <description>Aksit MA 2022</description>
+      <guid isPermaLink="false">2026-05-16-ep3</guid>
+      <pubDate>Sat, 16 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-16-ep3.mp3" length="15845949" type="audio/mpeg"/>
+      <itunes:title>Ep 54: Aksit MA 2022</itunes:title>
+      <itunes:episode>54</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 53: Virolainen SJ 2023</title>
+      <description>Virolainen SJ 2023</description>
+      <guid isPermaLink="false">2026-05-16-ep2</guid>
+      <pubDate>Sat, 16 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-16-ep2.mp3" length="14699565" type="audio/mpeg"/>
+      <itunes:title>Ep 53: Virolainen SJ 2023</itunes:title>
+      <itunes:episode>53</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 52: Guindo-Martínez M 2021</title>
+      <description>Guindo-Martínez M 2021</description>
+      <guid isPermaLink="false">2026-05-16-ep1</guid>
+      <pubDate>Sat, 16 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-16-ep1.mp3" length="13701933" type="audio/mpeg"/>
+      <itunes:title>Ep 52: Guindo-Martínez M 2021</itunes:title>
+      <itunes:episode>52</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 51: Blackman SM 2009</title>
+      <description>Blackman SM 2009</description>
+      <guid isPermaLink="false">2026-05-15-ep3</guid>
+      <pubDate>Fri, 15 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-15-ep3.mp3" length="14016333" type="audio/mpeg"/>
+      <itunes:title>Ep 51: Blackman SM 2009</itunes:title>
+      <itunes:episode>51</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 50: Tanigawa Y 2020</title>
+      <description>Tanigawa Y 2020</description>
+      <guid isPermaLink="false">2026-05-15-ep2</guid>
+      <pubDate>Fri, 15 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-15-ep2.mp3" length="16212381" type="audio/mpeg"/>
+      <itunes:title>Ep 50: Tanigawa Y 2020</itunes:title>
+      <itunes:episode>50</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 49: Li YR 2020</title>
+      <description>Li YR 2020</description>
+      <guid isPermaLink="false">2026-05-15-ep1</guid>
+      <pubDate>Fri, 15 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-15-ep1.mp3" length="16023565" type="audio/mpeg"/>
+      <itunes:title>Ep 49: Li YR 2020</itunes:title>
+      <itunes:episode>49</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 48: Collaco JM 2008</title>
+      <description>Collaco JM 2008</description>
+      <guid isPermaLink="false">2026-05-14-ep3</guid>
+      <pubDate>Thu, 14 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-14-ep3.mp3" length="17294973" type="audio/mpeg"/>
+      <itunes:title>Ep 48: Collaco JM 2008</itunes:title>
+      <itunes:episode>48</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 47: DeBoever C 2018</title>
+      <description>DeBoever C 2018</description>
+      <guid isPermaLink="false">2026-05-14-ep2</guid>
+      <pubDate>Thu, 14 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-14-ep2.mp3" length="18038781" type="audio/mpeg"/>
+      <itunes:title>Ep 47: DeBoever C 2018</itunes:title>
+      <itunes:episode>47</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 46: Sun BB 2022</title>
+      <description>Sun BB 2022</description>
+      <guid isPermaLink="false">2026-05-14-ep1</guid>
+      <pubDate>Thu, 14 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-14-ep1.mp3" length="15572829" type="audio/mpeg"/>
+      <itunes:title>Ep 46: Sun BB 2022</itunes:title>
+      <itunes:episode>46</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 45: McDougal KE 2010</title>
+      <description>McDougal KE 2010</description>
+      <guid isPermaLink="false">2026-05-13-ep3</guid>
+      <pubDate>Wed, 13 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-13-ep3.mp3" length="17071245" type="audio/mpeg"/>
+      <itunes:title>Ep 45: McDougal KE 2010</itunes:title>
+      <itunes:episode>45</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 44: Lumsden AL 2020</title>
+      <description>Lumsden AL 2020</description>
+      <guid isPermaLink="false">2026-05-13-ep2</guid>
+      <pubDate>Wed, 13 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-13-ep2.mp3" length="13979949" type="audio/mpeg"/>
+      <itunes:title>Ep 44: Lumsden AL 2020</itunes:title>
+      <itunes:episode>44</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 43: Ghoussaini M 2021</title>
+      <description>Ghoussaini M 2021</description>
+      <guid isPermaLink="false">2026-05-13-ep1</guid>
+      <pubDate>Wed, 13 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-13-ep1.mp3" length="14134557" type="audio/mpeg"/>
+      <itunes:title>Ep 43: Ghoussaini M 2021</itunes:title>
+      <itunes:episode>43</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 42: Uden A 2025</title>
+      <description>Uden A 2025</description>
+      <guid isPermaLink="false">2026-05-12-ep3</guid>
+      <pubDate>Tue, 12 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-12-ep3.mp3" length="20833005" type="audio/mpeg"/>
+      <itunes:title>Ep 42: Uden A 2025</itunes:title>
+      <itunes:episode>42</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 41: Wu P 2019</title>
+      <description>Wu P 2019</description>
+      <guid isPermaLink="false">2026-05-12-ep2</guid>
+      <pubDate>Tue, 12 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-12-ep2.mp3" length="17811165" type="audio/mpeg"/>
+      <itunes:title>Ep 41: Wu P 2019</itunes:title>
+      <itunes:episode>41</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 40: Lennon NJ 2024</title>
+      <description>Lennon NJ 2024</description>
+      <guid isPermaLink="false">2026-05-12-ep1</guid>
+      <pubDate>Tue, 12 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-12-ep1.mp3" length="16429821" type="audio/mpeg"/>
+      <itunes:title>Ep 40: Lennon NJ 2024</itunes:title>
+      <itunes:episode>40</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 39: Faino AV 2025</title>
+      <description>Faino AV 2025</description>
+      <guid isPermaLink="false">2026-05-11-ep3</guid>
+      <pubDate>Mon, 11 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-11-ep3.mp3" length="16360269" type="audio/mpeg"/>
+      <itunes:title>Ep 39: Faino AV 2025</itunes:title>
+      <itunes:episode>39</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 38: Mahmoud M 2024</title>
+      <description>Mahmoud M 2024</description>
+      <guid isPermaLink="false">2026-05-11-ep2</guid>
+      <pubDate>Mon, 11 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-11-ep2.mp3" length="14596653" type="audio/mpeg"/>
+      <itunes:title>Ep 38: Mahmoud M 2024</itunes:title>
+      <itunes:episode>38</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 37: Vuckovic D 2020</title>
+      <description>Vuckovic D 2020</description>
+      <guid isPermaLink="false">2026-05-11-ep1</guid>
+      <pubDate>Mon, 11 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-11-ep1.mp3" length="14409261" type="audio/mpeg"/>
+      <itunes:title>Ep 37: Vuckovic D 2020</itunes:title>
+      <itunes:episode>37</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 36: Corvol H 2015</title>
+      <description>Corvol H 2015</description>
+      <guid isPermaLink="false">2026-05-10-ep3</guid>
+      <pubDate>Sun, 10 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-10-ep3.mp3" length="16124013" type="audio/mpeg"/>
+      <itunes:title>Ep 36: Corvol H 2015</itunes:title>
+      <itunes:episode>36</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 35: Ramirez AH 2022</title>
+      <description>Ramirez AH 2022</description>
+      <guid isPermaLink="false">2026-05-10-ep2</guid>
+      <pubDate>Sun, 10 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-10-ep2.mp3" length="14982381" type="audio/mpeg"/>
+      <itunes:title>Ep 35: Ramirez AH 2022</itunes:title>
+      <itunes:episode>35</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 34: Littlejohns TJ 2020</title>
+      <description>Littlejohns TJ 2020</description>
+      <guid isPermaLink="false">2026-05-10-ep1</guid>
+      <pubDate>Sun, 10 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-10-ep1.mp3" length="12878541" type="audio/mpeg"/>
+      <itunes:title>Ep 34: Littlejohns TJ 2020</itunes:title>
+      <itunes:episode>34</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 33: Blackman SM 2013</title>
+      <description>Blackman SM 2013</description>
+      <guid isPermaLink="false">2026-05-09-ep3</guid>
+      <pubDate>Sat, 09 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-09-ep3.mp3" length="18271677" type="audio/mpeg"/>
+      <itunes:title>Ep 33: Blackman SM 2013</itunes:title>
+      <itunes:episode>33</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 32: Sun BB 2023</title>
+      <description>Sun BB 2023</description>
+      <guid isPermaLink="false">2026-05-09-ep2</guid>
+      <pubDate>Sat, 09 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-09-ep2.mp3" length="16482237" type="audio/mpeg"/>
+      <itunes:title>Ep 32: Sun BB 2023</itunes:title>
+      <itunes:episode>32</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 31: Van Hout CV 2020</title>
+      <description>Van Hout CV 2020</description>
+      <guid isPermaLink="false">2026-05-09-ep1</guid>
+      <pubDate>Sat, 09 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-09-ep1.mp3" length="15842493" type="audio/mpeg"/>
+      <itunes:title>Ep 31: Van Hout CV 2020</itunes:title>
+      <itunes:episode>31</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 30: Li W 2011</title>
+      <description>Li W 2011</description>
+      <guid isPermaLink="false">2026-05-08-ep3</guid>
+      <pubDate>Fri, 08 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-08-ep3.mp3" length="14856621" type="audio/mpeg"/>
+      <itunes:title>Ep 30: Li W 2011</itunes:title>
+      <itunes:episode>30</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 29: Kar SP 2022</title>
+      <description>Kar SP 2022</description>
+      <guid isPermaLink="false">2026-05-08-ep2</guid>
+      <pubDate>Fri, 08 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-08-ep2.mp3" length="14953917" type="audio/mpeg"/>
+      <itunes:title>Ep 29: Kar SP 2022</itunes:title>
+      <itunes:episode>29</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 28: Kalyta K 2023</title>
+      <description>Kalyta K 2023</description>
+      <guid isPermaLink="false">2026-05-08-ep1</guid>
+      <pubDate>Fri, 08 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-08-ep1.mp3" length="13634109" type="audio/mpeg"/>
+      <itunes:title>Ep 28: Kalyta K 2023</itunes:title>
+      <itunes:episode>28</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 27: Wright FA 2011</title>
+      <description>Wright FA 2011</description>
+      <guid isPermaLink="false">2026-05-07-ep3</guid>
+      <pubDate>Thu, 07 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-07-ep3.mp3" length="13822269" type="audio/mpeg"/>
+      <itunes:title>Ep 27: Wright FA 2011</itunes:title>
+      <itunes:episode>27</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 26: Aamer W 2024</title>
+      <description>Aamer W 2024</description>
+      <guid isPermaLink="false">2026-05-07-ep2</guid>
+      <pubDate>Thu, 07 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-07-ep2.mp3" length="13836477" type="audio/mpeg"/>
+      <itunes:title>Ep 26: Aamer W 2024</itunes:title>
+      <itunes:episode>26</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 25: Gudmundsson S 2022</title>
+      <description>Gudmundsson S 2022</description>
+      <guid isPermaLink="false">2026-05-07-ep1</guid>
+      <pubDate>Thu, 07 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-07-ep1.mp3" length="13737261" type="audio/mpeg"/>
+      <itunes:title>Ep 25: Gudmundsson S 2022</itunes:title>
+      <itunes:episode>25</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 24: ? 2018</title>
+      <description>? 2018</description>
+      <guid isPermaLink="false">2026-05-06-ep3</guid>
+      <pubDate>Wed, 06 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-06-ep3.mp3" length="11736093" type="audio/mpeg"/>
+      <itunes:title>Ep 24: ? 2018</itunes:title>
+      <itunes:episode>24</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 23: ? 2024</title>
+      <description>? 2024</description>
+      <guid isPermaLink="false">2026-05-06-ep2</guid>
+      <pubDate>Wed, 06 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-06-ep2.mp3" length="12424701" type="audio/mpeg"/>
+      <itunes:title>Ep 23: ? 2024</itunes:title>
+      <itunes:episode>23</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 22: ? 2022</title>
+      <description>? 2022</description>
+      <guid isPermaLink="false">2026-05-06-ep1</guid>
+      <pubDate>Wed, 06 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-06-ep1.mp3" length="12309789" type="audio/mpeg"/>
+      <itunes:title>Ep 22: ? 2022</itunes:title>
+      <itunes:episode>22</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 21: Faino AV 2025</title>
+      <description>Faino AV 2025</description>
+      <guid isPermaLink="false">2026-05-05-ep3</guid>
+      <pubDate>Tue, 05 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-05-ep3.mp3" length="14687853" type="audio/mpeg"/>
+      <itunes:title>Ep 21: Faino AV 2025</itunes:title>
+      <itunes:episode>21</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 20: Hofmeister RJ 2023</title>
+      <description>Hofmeister RJ 2023</description>
+      <guid isPermaLink="false">2026-05-05-ep2</guid>
+      <pubDate>Tue, 05 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-05-ep2.mp3" length="13935741" type="audio/mpeg"/>
+      <itunes:title>Ep 20: Hofmeister RJ 2023</itunes:title>
+      <itunes:episode>20</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 19: Wei WQ 2017</title>
+      <description>Wei WQ 2017</description>
+      <guid isPermaLink="false">2026-05-05-ep1</guid>
+      <pubDate>Tue, 05 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-05-ep1.mp3" length="15131709" type="audio/mpeg"/>
+      <itunes:title>Ep 19: Wei WQ 2017</itunes:title>
+      <itunes:episode>19</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 18: Aksit MA 2022</title>
+      <description>Aksit MA 2022</description>
+      <guid isPermaLink="false">2026-05-04-ep3</guid>
+      <pubDate>Mon, 04 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-04-ep3.mp3" length="16862781" type="audio/mpeg"/>
+      <itunes:title>Ep 18: Aksit MA 2022</itunes:title>
+      <itunes:episode>18</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 17: Denny JC 2010</title>
+      <description>Denny JC 2010</description>
+      <guid isPermaLink="false">2026-05-04-ep2</guid>
+      <pubDate>Mon, 04 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-04-ep2.mp3" length="15722205" type="audio/mpeg"/>
+      <itunes:title>Ep 17: Denny JC 2010</itunes:title>
+      <itunes:episode>17</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 16: Zhou W 2022</title>
+      <description>Zhou W 2022</description>
+      <guid isPermaLink="false">2026-05-04-ep1</guid>
+      <pubDate>Mon, 04 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-04-ep1.mp3" length="16378221" type="audio/mpeg"/>
+      <itunes:title>Ep 16: Zhou W 2022</itunes:title>
+      <itunes:episode>16</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 15: Taylor C 2011</title>
+      <description>Taylor C 2011</description>
+      <guid isPermaLink="false">2026-05-03-ep3</guid>
+      <pubDate>Sun, 03 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-03-ep3.mp3" length="19617261" type="audio/mpeg"/>
+      <itunes:title>Ep 15: Taylor C 2011</itunes:title>
+      <itunes:episode>15</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 14: Kurki MI 2023</title>
+      <description>Kurki MI 2023</description>
+      <guid isPermaLink="false">2026-05-03-ep2</guid>
+      <pubDate>Sun, 03 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-03-ep2.mp3" length="14565309" type="audio/mpeg"/>
+      <itunes:title>Ep 14: Kurki MI 2023</itunes:title>
+      <itunes:episode>14</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 13: Zhou W 2018</title>
+      <description>Zhou W 2018</description>
+      <guid isPermaLink="false">2026-05-03-ep1</guid>
+      <pubDate>Sun, 03 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-03-ep1.mp3" length="15661341" type="audio/mpeg"/>
+      <itunes:title>Ep 13: Zhou W 2018</itunes:title>
+      <itunes:episode>13</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 12: Collaco JM 2016</title>
+      <description>Collaco JM 2016</description>
+      <guid isPermaLink="false">2026-05-02-ep3</guid>
+      <pubDate>Sat, 02 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-02-ep3.mp3" length="15978381" type="audio/mpeg"/>
+      <itunes:title>Ep 12: Collaco JM 2016</itunes:title>
+      <itunes:episode>12</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 11: Karczewski KJ 2022</title>
+      <description>Karczewski KJ 2022</description>
+      <guid isPermaLink="false">2026-05-02-ep2</guid>
+      <pubDate>Sat, 02 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-02-ep2.mp3" length="14563461" type="audio/mpeg"/>
+      <itunes:title>Ep 11: Karczewski KJ 2022</itunes:title>
+      <itunes:episode>11</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 10: Karczewski KJ 2020</title>
+      <description>Karczewski KJ 2020</description>
+      <guid isPermaLink="false">2026-05-02-ep1</guid>
+      <pubDate>Sat, 02 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-02-ep1.mp3" length="15950325" type="audio/mpeg"/>
+      <itunes:title>Ep 10: Karczewski KJ 2020</itunes:title>
+      <itunes:episode>10</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 9: Blackman SM 2013</title>
+      <description>Blackman SM 2013</description>
+      <guid isPermaLink="false">2026-05-01-ep6</guid>
+      <pubDate>Fri, 01 May 2026 07:06:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-01-ep6.mp3" length="16905813" type="audio/mpeg"/>
+      <itunes:title>Ep 9: Blackman SM 2013</itunes:title>
+      <itunes:episode>9</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 8: Wang Q 2021</title>
+      <description>Wang Q 2021</description>
+      <guid isPermaLink="false">2026-05-01-ep5</guid>
+      <pubDate>Fri, 01 May 2026 07:05:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-01-ep5.mp3" length="16558365" type="audio/mpeg"/>
+      <itunes:title>Ep 8: Wang Q 2021</itunes:title>
+      <itunes:episode>8</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 7: Backman JD 2021</title>
+      <description>Backman JD 2021</description>
+      <guid isPermaLink="false">2026-05-01-ep4</guid>
+      <pubDate>Fri, 01 May 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-01-ep4.mp3" length="14916189" type="audio/mpeg"/>
+      <itunes:title>Ep 7: Backman JD 2021</itunes:title>
+      <itunes:episode>7</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 6: Zhou YH 2023</title>
+      <description>Zhou YH 2023</description>
+      <guid isPermaLink="false">2026-05-01-ep3</guid>
+      <pubDate>Fri, 01 May 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-01-ep3.mp3" length="15767301" type="audio/mpeg"/>
+      <itunes:title>Ep 6: Zhou YH 2023</itunes:title>
+      <itunes:episode>6</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 5: All of Us Research Program Genomics Investigators 2024</title>
+      <description>All of Us Research Program Genomics Investigators 2024</description>
+      <guid isPermaLink="false">2026-05-01-ep2</guid>
+      <pubDate>Fri, 01 May 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-01-ep2.mp3" length="16780173" type="audio/mpeg"/>
+      <itunes:title>Ep 5: All of Us Research Program Genomics Investigators 2024</itunes:title>
+      <itunes:episode>5</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 4: Taliun D 2021</title>
+      <description>Taliun D 2021</description>
+      <guid isPermaLink="false">2026-05-01-ep1</guid>
+      <pubDate>Fri, 01 May 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-01-ep1.mp3" length="15700173" type="audio/mpeg"/>
+      <itunes:title>Ep 4: Taliun D 2021</itunes:title>
+      <itunes:episode>4</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 3: Aksit MA 2020</title>
+      <description>Aksit MA 2020</description>
+      <guid isPermaLink="false">2026-04-30-ep3</guid>
+      <pubDate>Thu, 30 Apr 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-04-30-ep3.mp3" length="15821133" type="audio/mpeg"/>
+      <itunes:title>Ep 3: Aksit MA 2020</itunes:title>
+      <itunes:episode>3</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 2: Halldorsson BV 2022</title>
+      <description>Halldorsson BV 2022</description>
+      <guid isPermaLink="false">2026-04-30-ep2</guid>
+      <pubDate>Thu, 30 Apr 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-04-30-ep2.mp3" length="14554293" type="audio/mpeg"/>
+      <itunes:title>Ep 2: Halldorsson BV 2022</itunes:title>
+      <itunes:episode>2</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 1: Bycroft C 2018</title>
+      <description>Bycroft C 2018</description>
+      <guid isPermaLink="false">2026-04-30-ep1</guid>
+      <pubDate>Thu, 30 Apr 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-04-30-ep1.mp3" length="18457005" type="audio/mpeg"/>
+      <itunes:title>Ep 1: Bycroft C 2018</itunes:title>
+      <itunes:episode>1</itunes:episode>
+    </item>
+  </channel>
+</rss>
