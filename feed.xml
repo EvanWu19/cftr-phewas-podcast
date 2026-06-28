@@ -8,11 +8,38 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jun 2026 11:18:04 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jun 2026 11:08:05 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 180: Han ST 2018</title>
+      <description>Han ST 2018</description>
+      <guid isPermaLink="false">2026-06-28-ep3</guid>
+      <pubDate>Sun, 28 Jun 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-28-ep3.mp3" length="24435645" type="audio/mpeg"/>
+      <itunes:title>Ep 180: Han ST 2018</itunes:title>
+      <itunes:episode>180</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 179: Jee J 2024</title>
+      <description>Jee J 2024</description>
+      <guid isPermaLink="false">2026-06-28-ep2</guid>
+      <pubDate>Sun, 28 Jun 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-28-ep2.mp3" length="25433205" type="audio/mpeg"/>
+      <itunes:title>Ep 179: Jee J 2024</itunes:title>
+      <itunes:episode>179</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 178: Raraigh KS 2022</title>
+      <description>Raraigh KS 2022</description>
+      <guid isPermaLink="false">2026-06-28-ep1</guid>
+      <pubDate>Sun, 28 Jun 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-28-ep1.mp3" length="25570749" type="audio/mpeg"/>
+      <itunes:title>Ep 178: Raraigh KS 2022</itunes:title>
+      <itunes:episode>178</itunes:episode>
+    </item>
     <item>
       <title>Ep 177: O'Neal WK 2015</title>
       <description>O'Neal WK 2015</description>
