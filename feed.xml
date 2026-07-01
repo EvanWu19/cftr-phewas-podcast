@@ -8,11 +8,29 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Jun 2026 11:05:04 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 11:06:12 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 188: Scapolatiello A 2025</title>
+      <description>Scapolatiello A 2025</description>
+      <guid isPermaLink="false">2026-07-01-ep2</guid>
+      <pubDate>Wed, 01 Jul 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-01-ep2.mp3" length="26439309" type="audio/mpeg"/>
+      <itunes:title>Ep 188: Scapolatiello A 2025</itunes:title>
+      <itunes:episode>188</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 187: Parsons MT 2024</title>
+      <description>Parsons MT 2024</description>
+      <guid isPermaLink="false">2026-07-01-ep1</guid>
+      <pubDate>Wed, 01 Jul 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-01-ep1.mp3" length="26373021" type="audio/mpeg"/>
+      <itunes:title>Ep 187: Parsons MT 2024</itunes:title>
+      <itunes:episode>187</itunes:episode>
+    </item>
     <item>
       <title>Ep 186: Minso R 2020</title>
       <description>Minso R 2020</description>
