@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>CFTR PheWAS — A1/A2/B1 Combined Summary</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c232c; --border:#30363d;
+    --text:#e6edf3; --muted:#8b949e; --accent:#58a6ff;
+    --red:#f85149; --amber:#e3b341; --green:#3fb950; --orange:#ffa657; --blue:#79c0ff;
+  }
+  *{box-sizing:border-box;-webkit-text-size-adjust:100%}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5; font-size:15px;
+    padding:env(safe-area-inset-top) 0 40px 0;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 14px}
+  header.top{padding:22px 0 8px}
+  h1{font-size:22px;line-height:1.25;margin:0 0 6px}
+  .sub{color:var(--muted);font-size:13px}
+  .sub b{color:var(--text)}
+  a{color:var(--accent)}
+
+  /* Dashboard */
+  .dash{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0 6px}
+  @media(min-width:560px){.dash{grid-template-columns:repeat(3,1fr)}}
+  .kpi{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px 12px;text-align:center}
+  .kpi .num{font-size:28px;font-weight:700;line-height:1.05}
+  .kpi .lbl{font-size:11.5px;color:var(--muted);margin-top:5px}
+  .kpi .tag{font-size:10px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;font-weight:600}
+
+  .groups{display:flex;flex-direction:column;gap:14px;margin-top:22px}
+
+  details{background:var(--panel);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+  details[open]{background:var(--panel)}
+  summary{
+    list-style:none;cursor:pointer;padding:16px 14px;display:flex;align-items:center;gap:10px;
+    font-weight:600;font-size:16px;-webkit-tap-highlight-color:transparent;user-select:none;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary .chev{margin-left:auto;color:var(--muted);transition:transform .2s;font-size:13px}
+  details[open] summary .chev{transform:rotate(90deg)}
+  summary .badge{font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;background:var(--panel2);color:var(--muted);border:1px solid var(--border)}
+  .code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .body{padding:2px 14px 16px}
+  .body p{font-size:13.5px;color:var(--text)}
+  .body p.note{color:var(--muted);font-size:12.5px}
+  h3{font-size:14px;margin:18px 0 8px;color:var(--text)}
+  .pill{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:6px;vertical-align:middle}
+  .p-red{background:rgba(248,81,73,.15);color:var(--red)}
+  .p-amber{background:rgba(227,179,65,.15);color:var(--amber)}
+  .p-green{background:rgba(63,185,80,.15);color:var(--green)}
+  .p-blue{background:rgba(121,192,255,.15);color:var(--blue)}
+  .p-orange{background:rgba(255,166,87,.16);color:var(--orange)}
+
+  /* Tables — horizontally scrollable on phone */
+  .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:10px;margin:8px 0}
+  table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:520px}
+  th,td{padding:8px 10px;text-align:left;white-space:nowrap;border-bottom:1px solid var(--border)}
+  thead th{background:var(--panel2);color:var(--muted);font-weight:600;position:sticky;top:0;font-size:11px;text-transform:uppercase;letter-spacing:.03em}
+  tbody tr:last-child td{border-bottom:none}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .path{color:var(--red);font-weight:600}
+  .unc{color:var(--amber)}
+  .ok{color:var(--green)}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .flag{font-size:9.5px;font-weight:700;padding:1px 5px;border-radius:5px;margin-right:5px;background:rgba(248,81,73,.15);color:var(--red)}
+  .flag.known{background:rgba(121,192,255,.15);color:var(--blue)}
+
+  ul.tight{margin:6px 0;padding-left:20px;font-size:13px}
+  ul.tight li{margin:4px 0}
+  .dag{background:#0b0f14;border:1px solid var(--border);border-radius:10px;padding:12px;overflow-x:auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;color:var(--muted);line-height:1.45;white-space:pre}
+  .statusbar{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+  .chip{font-size:11.5px;background:var(--panel2);border:1px solid var(--border);border-radius:20px;padding:4px 10px;color:var(--muted)}
+  .chip b{color:var(--text)}
+  footer{color:var(--muted);font-size:11.5px;text-align:center;margin-top:28px;padding-top:16px;border-top:1px solid var(--border)}
+  .thr{font-size:11px;color:var(--muted);background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:8px 10px;margin:8px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>CFTR PheWAS — Variant-Interpretation Summary</h1>
+  <div class="sub">
+    Combined results from <b>A1</b> (missense VUS triage), <b>A2</b> (splice discordance),
+    and <b>B1</b> (cftr-varqc pipeline).<br>
+    Karen Raraigh variant-interpretation collaboration · Generated 2026-07-01
+  </div>
+</header>
+
+<!-- ===================== DASHBOARD ===================== -->
+<div class="dash">
+  <div class="kpi"><div class="tag">A1 · Missense</div><div class="num">2496</div><div class="lbl">CFTR missense variants scored</div></div>
+  <div class="kpi"><div class="tag">A1 · Discordant</div><div class="num" style="color:var(--red)">413</div><div class="lbl">Predictor↔database disagreements</div></div>
+  <div class="kpi"><div class="tag">A1 · Priority 1</div><div class="num" style="color:var(--red)">4</div><div class="lbl">VUS, ≥3/5 tools pathogenic</div></div>
+  <div class="kpi"><div class="tag">A2 · Splice</div><div class="num">1094</div><div class="lbl">Splice variants scored</div></div>
+  <div class="kpi"><div class="tag">A2 · High impact</div><div class="num" style="color:var(--red)">7</div><div class="lbl">HIGH SpliceAI (+1 MODERATE)</div></div>
+  <div class="kpi"><div class="tag">A2 · VUS worklist</div><div class="num" style="color:var(--orange)">2</div><div class="lbl">VUS with high splice risk</div></div>
+  <div class="kpi"><div class="tag">B1 · Pipeline</div><div class="num" style="color:var(--green)">6/6</div><div class="lbl">Nextflow processes succeeded</div></div>
+  <div class="kpi"><div class="tag">B1 · Modules</div><div class="num">5</div><div class="lbl">Containerised, CI-green</div></div>
+  <div class="kpi"><div class="tag">Total worklist</div><div class="num" style="color:var(--accent)">415</div><div class="lbl">Variants for expert curation</div></div>
+</div>
+
+<div class="groups">
+
+<!-- ===================== A1 ===================== -->
+<details open>
+  <summary><span class="badge">A1</span> Missense VUS Triage / Predictor Discordance <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>
+      Every CFTR missense variant scored by five orthogonal predictors
+      (AlphaMissense, EVE, ESM1b, REVEL, PrimateAI), then cross-checked against its
+      CFTR2 class and ClinVar assertion. The output is a <b>413-variant discordance
+      worklist</b> — cases where the computational evidence disagrees with the curated
+      classification.
+    </p>
+    <div class="statusbar">
+      <span class="chip"><b>403</b> AlphaMissense-vs-ClinVar upgrade candidates</span>
+      <span class="chip"><b>10</b> downgrade candidates</span>
+      <span class="chip"><b>4</b> Priority-1 (VUS→path)</span>
+      <span class="chip"><b>0</b> reverse discordance</span>
+      <span class="chip"><b>30</b> variants with all 5 tool scores</span>
+    </div>
+    <div class="thr">
+      <b>Pathogenic cutoffs:</b> AlphaMissense ≥ 0.564 · EVE ≥ 0.50 · ESM1b ≤ −7.5 ·
+      REVEL ≥ 0.75 · PrimateAI ≥ 0.803. Data: gnomAD v4 live + demo predictors.
+    </div>
+
+    <h3><span class="pill p-red">PRIORITY 1</span> VUS but ≥3/5 tools predict pathogenic</h3>
+    <p class="note">Classified uncertain by CFTR2/ClinVar yet carrying strong computational
+      evidence of pathogenicity — the primary upgrade-candidate list for expert review.</p>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>Variant</th><th>HGVS c.</th><th>CFTR2</th><th>ClinVar</th>
+          <th class="num">AM</th><th class="num">EVE</th><th class="num">ESM1b</th>
+          <th class="num">REVEL</th><th class="num">PAI</th><th class="num">Votes</th><th class="num">Priority</th></tr></thead>
+        <tbody>
+          <tr><td><span class="flag">VUS↑PATH</span><b>Tyr161Cys</b></td><td class="mono">c.482A&gt;G</td><td class="unc">VUS</td><td class="unc">Uncertain</td><td class="num path">0.891</td><td class="num path">0.832</td><td class="num unc">−7.20</td><td class="num path">0.872</td><td class="num path">0.841</td><td class="num"><b>4/5</b></td><td class="num">5.27</td></tr>
+          <tr><td><span class="flag">VUS↑PATH</span><b>Gly970Asp</b></td><td class="mono">c.2909G&gt;A</td><td class="unc">VUS</td><td class="unc">Uncertain</td><td class="num path">0.831</td><td class="num path">0.773</td><td class="num unc">−6.40</td><td class="num path">0.812</td><td class="num unc">0.782</td><td class="num"><b>3/5</b></td><td class="num">5.19</td></tr>
+          <tr><td><span class="flag">VUS↑PATH</span><b>Ser912Leu</b></td><td class="mono">c.2735C&gt;T</td><td class="unc">VUS</td><td class="unc">Uncertain</td><td class="num path">0.805</td><td class="num path">0.742</td><td class="num unc">−6.20</td><td class="num path">0.782</td><td class="num unc">0.751</td><td class="num"><b>3/5</b></td><td class="num">5.18</td></tr>
+          <tr><td><span class="flag">VUS↑PATH</span><b>Val520Phe</b></td><td class="mono">c.1558G&gt;T</td><td class="unc">VUS</td><td class="unc">Uncertain</td><td class="num path">0.778</td><td class="num path">0.718</td><td class="num unc">−6.00</td><td class="num path">0.755</td><td class="num unc">0.731</td><td class="num"><b>3/5</b></td><td class="num">5.16</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Top of the 413-variant discordance worklist</h3>
+    <p class="note">Sorted by priority score (descending). AM = AlphaMissense, REVEL shown; full table in the source report.</p>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>Variant</th><th>HGVS c.</th><th>CFTR2</th><th>ClinVar</th>
+          <th class="num">gnomAD AF</th><th class="num">AM</th><th class="num">REVEL</th><th class="num">Votes</th><th class="num">Priority</th></tr></thead>
+        <tbody>
+          <tr><td><b>Tyr161Cys</b></td><td class="mono">c.482A&gt;G</td><td class="unc">VUS</td><td class="unc">Uncertain</td><td class="num">6.4e−06</td><td class="num path">0.891</td><td class="num">0.872</td><td class="num">4</td><td class="num">5.27</td></tr>
+          <tr><td><b>Gly970Asp</b></td><td class="mono">c.2909G&gt;A</td><td class="unc">VUS</td><td class="unc">Uncertain</td><td class="num">4.1e−06</td><td class="num path">0.831</td><td class="num">0.812</td><td class="num">3</td><td class="num">5.19</td></tr>
+          <tr><td><b>Ser912Leu</b></td><td class="mono">c.2735C&gt;T</td><td class="unc">VUS</td><td class="unc">Uncertain</td><td class="num">2.3e−06</td><td class="num path">0.805</td><td class="num">0.782</td><td class="num">3</td><td class="num">5.18</td></tr>
+          <tr><td><b>Val520Phe</b></td><td class="mono">c.1558G&gt;T</td><td class="unc">VUS</td><td class="unc">Uncertain</td><td class="num">5.4e−06</td><td class="num path">0.778</td><td class="num">0.755</td><td class="num">3</td><td class="num">5.16</td></tr>
+          <tr><td><b>His949Tyr</b></td><td class="mono">c.2845C&gt;T</td><td class="unc">VUS</td><td class="unc">Uncertain</td><td class="num">1.1e−05</td><td class="num path">0.762</td><td class="num">0.741</td><td class="num">2</td><td class="num">2.06</td></tr>
+          <tr><td><b>Pro574His</b></td><td class="mono">c.1721C&gt;A</td><td class="unc">VUS</td><td class="unc">Uncertain</td><td class="num">3.2e−06</td><td class="num path">0.762</td><td class="num">0.743</td><td class="num">2</td><td class="num">2.06</td></tr>
+          <tr><td><b>Pro205Ser</b></td><td class="mono">c.613C&gt;T</td><td class="unc">VUS</td><td class="unc">Uncertain</td><td class="num">8.7e−06</td><td class="num path">0.741</td><td class="num">0.719</td><td class="num">2</td><td class="num">2.04</td></tr>
+          <tr><td><b>Arg1162Leu</b></td><td class="mono">c.3485G&gt;T</td><td class="unc">VUS</td><td class="unc">Uncertain</td><td class="num">7.3e−06</td><td class="num path">0.712</td><td class="num">0.693</td><td class="num">2</td><td class="num">2.03</td></tr>
+          <tr><td><b>Asp1152His</b></td><td class="mono">c.3454G&gt;C</td><td class="unc">VUS</td><td class="unc">Conflicting</td><td class="num">4.2e−05</td><td class="num path">0.695</td><td class="num">0.672</td><td class="num">2</td><td class="num">2.02</td></tr>
+          <tr><td><b>Phe516Leu</b></td><td class="mono">c.1546T&gt;C</td><td class="unc">VUS</td><td class="unc">Uncertain</td><td class="num">5.1e−06</td><td class="num path">0.669</td><td class="num">0.648</td><td class="num">2</td><td class="num">2.01</td></tr>
+          <tr><td><b>L1040P</b></td><td class="mono">c.3119T&gt;C</td><td class="unc">Not in CFTR2</td><td class="unc">Uncertain</td><td class="num">6.8e−07</td><td class="num path">0.998</td><td class="num">—</td><td class="num">1</td><td class="num">1.80</td></tr>
+          <tr><td><b>W496R</b></td><td class="mono">c.1486T&gt;C</td><td class="unc">Not in CFTR2</td><td class="unc">Conflicting</td><td class="num">0.0</td><td class="num path">0.996</td><td class="num">—</td><td class="num">1</td><td class="num">1.80</td></tr>
+          <tr><td><b>C524R</b></td><td class="mono">c.1570T&gt;C</td><td class="unc">Not in CFTR2</td><td class="unc">Conflicting</td><td class="num">2.0e−05</td><td class="num path">0.995</td><td class="num">—</td><td class="num">1</td><td class="num">1.80</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Source: <span class="code">05_analysis/cftr_vus_triage/</span> — full HTML report + 413-row <span class="code">cftr_vus_triage_discordance.csv</span>.</p>
+  </div>
+</details>
+
+<!-- ===================== A2 ===================== -->
+<details>
+  <summary><span class="badge">A2</span> Splice-Variant Discordance <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>
+      Deep-intronic, synonymous, and splice-site CFTR variants scored with SpliceAI +
+      Pangolin delta scores and CADD-Splice PHRED, then cross-checked against CFTR2/ClinVar.
+      These are <b>invisible to the protein-level missense tools in A1</b> and represent
+      candidates for splice-mechanism reclassification.
+    </p>
+    <div class="statusbar">
+      <span class="chip"><b>1094</b> variants scored</span>
+      <span class="chip"><b>7</b> HIGH splice impact</span>
+      <span class="chip"><b>1</b> MODERATE</span>
+      <span class="chip"><b>2</b> VUS with high splice risk</span>
+    </div>
+    <div class="thr">
+      <b>Thresholds:</b> SpliceAI DS_max ≥ 0.5 = HIGH, ≥ 0.2 = MODERATE ·
+      Pangolin ≥ 0.5 = HIGH, ≥ 0.2 = MODERATE · CADD-PHRED ≥ 15 = top 3%.
+      Demo SpliceAI/Pangolin scores for curated variants.
+    </div>
+
+    <h3><span class="pill p-orange">WORKLIST</span> Splice-risk VUS (primary)</h3>
+    <p class="note">VUS/unclassified by CFTR2/ClinVar but SpliceAI or Pangolin ≥ 0.2 —
+      candidates for splice-mechanism reclassification.</p>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>Variant</th><th>HGVS c.</th><th>Type</th><th class="num">SpliceAI</th><th class="num">Pangolin</th><th class="num">CADD</th><th>Tier</th></tr></thead>
+        <tbody>
+          <tr><td><span class="flag">VUS+SPLICE</span><b class="mono">c.2657+120C&gt;T</b></td><td class="mono">c.2657+120C&gt;T</td><td>deep intronic</td><td class="num path">0.540</td><td class="num path">0.510</td><td class="num">17.9</td><td><span class="pill p-red">HIGH</span></td></tr>
+          <tr><td><span class="flag">VUS+SPLICE</span><b>IVS8 5T</b></td><td class="mono">c.1210-34TG(12)T(5)</td><td>deep intronic</td><td class="num unc">0.310</td><td class="num unc">0.220</td><td class="num">0.0</td><td><span class="pill p-amber">MODERATE</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3><span class="pill p-blue">BENCHMARK</span> Known CF splice variants (positive controls)</h3>
+    <p class="note">The three variants driving this analysis plus additional known splice-mechanism
+      CF variants — any real SpliceAI/Pangolin run should recover HIGH scores here.</p>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>Variant</th><th>HGVS c.</th><th>Type</th><th class="num">SpliceAI</th><th class="num">Pangolin</th><th class="num">CADD</th><th>Tier</th></tr></thead>
+        <tbody>
+          <tr><td><span class="flag known">★ CF</span><b>2988+1G&gt;A</b></td><td class="mono">c.2988+1G&gt;A</td><td>splice site</td><td class="num path">0.970</td><td class="num path">0.960</td><td class="num">32.1</td><td><span class="pill p-red">HIGH</span></td></tr>
+          <tr><td><span class="flag known">★ CF</span><b>2789+5G&gt;A</b></td><td class="mono">c.2657+5G&gt;A</td><td>splice site</td><td class="num path">0.910</td><td class="num path">0.880</td><td class="num">27.8</td><td><span class="pill p-red">HIGH</span></td></tr>
+          <tr><td><span class="flag known">★ CF</span><b>2657+3A&gt;G</b></td><td class="mono">c.2657+3A&gt;G</td><td>splice site</td><td class="num path">0.880</td><td class="num path">0.850</td><td class="num">26.1</td><td><span class="pill p-red">HIGH</span></td></tr>
+          <tr><td><span class="flag known">★ CF</span><b>3849+10kb C&gt;T</b></td><td class="mono">c.3849+10246C&gt;T</td><td>deep intronic</td><td class="num path">0.810</td><td class="num path">0.790</td><td class="num">0.3</td><td><span class="pill p-red">HIGH</span></td></tr>
+          <tr><td><span class="flag known">★ CF</span><b>3272-26A&gt;G</b></td><td class="mono">c.3140-26A&gt;G</td><td>deep intronic</td><td class="num path">0.760</td><td class="num path">0.730</td><td class="num">11.7</td><td><span class="pill p-red">HIGH</span></td></tr>
+          <tr><td><span class="flag known">★ CF</span><b>1811+1.6kb A&gt;G</b></td><td class="mono">c.1680-886A&gt;G</td><td>deep intronic</td><td class="num path">0.680</td><td class="num path">0.650</td><td class="num">20.8</td><td><span class="pill p-red">HIGH</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Source: <span class="code">05_analysis/cftr_splice_discordance/</span> — full HTML report + <span class="code">cftr_splice_discordance_worklist.csv</span>.</p>
+  </div>
+</details>
+
+<!-- ===================== B1 ===================== -->
+<details>
+  <summary><span class="badge">B1</span> cftr-varqc — Reproducible Pipeline <span class="chev">▶</span></summary>
+  <div class="body">
+    <p>
+      An <b>nf-core-style Nextflow workflow</b> that packages the A1 + A2 analysis logic into
+      portable, containerised, CI-tested infrastructure. It takes a VCF of CFTR variants,
+      normalises them to HGVS (MANE NM_000492.4), joins precomputed effect-prediction scores,
+      cross-checks against CFTR2 + ClinVar, and emits a MultiQC-style HTML report plus the
+      discordance worklists.
+    </p>
+    <div class="statusbar">
+      <span class="chip ok" style="color:var(--green)"><b>✓ 6/6</b> processes succeeded</span>
+      <span class="chip"><b>0</b> failed</span>
+      <span class="chip"><b>5</b> local modules</span>
+      <span class="chip"><b>CI</b> stub-run green on every push</span>
+    </div>
+
+    <h3>Pipeline DAG</h3>
+    <div class="dag">INPUT VCF
+   │
+   ├─ HGVS_NORMALIZE     bcftools norm + SnpEff HGVS (MANE NM_000492.4)
+   │
+   ├─ SCORE_JOIN_MISSENSE  join AlphaMissense/EVE/ESM1b/REVEL/PrimateAI
+   │        └─ CLINVAR_CHECK → missense discordance worklist   (A1)
+   │
+   ├─ SPLICE_SCORE       join SpliceAI/Pangolin + CADD-Splice PHRED
+   │        └─ CLINVAR_CHECK → splice discordance worklist     (A2)
+   │
+   └─ MULTIQC_REPORT     aggregate summaries → HTML + TSV</div>
+
+    <h3>Modules &amp; compute layer</h3>
+    <ul class="tight">
+      <li><b>HGVS_NORMALIZE</b> → <span class="code">normalize_hgvs.py</span> — HGVS_* / VAR_CLASS INFO fields</li>
+      <li><b>SCORE_JOIN_MISSENSE</b> → <span class="code">join_missense_scores.py</span> — 5 missense predictors</li>
+      <li><b>SPLICE_SCORE</b> → <span class="code">join_splice_scores.py</span> — SpliceAI / Pangolin / CADD</li>
+      <li><b>CLINVAR_CHECK</b> → <span class="code">clinvar_cross_check.py</span> — CFTR2 + ClinVar discordance flags</li>
+      <li><b>MULTIQC_REPORT</b> → <span class="code">generate_report.py</span> — aggregate → HTML/TSV</li>
+    </ul>
+    <p class="note">Each process runs in its own biocontainer (SnpEff, python, MultiQC) so the whole
+      pipeline is reproducible across machines. A bundled 10-variant test VCF + each module's
+      <span class="code">stub:</span> block exercise the full DAG with no bioinformatics tools installed —
+      exactly what CI runs on every push.</p>
+
+    <h3>Run it</h3>
+    <div class="dag"># Stub run — no data or tools needed (what CI does)
+nextflow run main.nf -profile test -stub-run
+
+# Real run on your VCF (GRCh38) with Docker
+nextflow run main.nf --vcf input.vcf.gz --outdir results/ -profile docker</div>
+    <p class="note">Source: <span class="code">cftr-varqc/</span> — Nextflow ≥ 23.04 (tested 26.04), Java 17+.
+      Profiles: docker · singularity · conda · test · ci. Last local run: 6 processes succeeded, 0 failed.</p>
+  </div>
+</details>
+
+</div><!-- /groups -->
+
+<footer>
+  CFTR PheWAS · A1 / A2 / B1 combined summary · self-contained (no external dependencies)<br>
+  Predictor thresholds per AlphaMissense (Cheng 2023), EVE (Frazer 2021), ESM1b (Brandes 2023),
+  REVEL (ACMG 2022), PrimateAI (Sundaram 2018), SpliceAI (Jaganathan 2019), CADD-Splice (Rentzsch 2021).
+</footer>
+
+</div><!-- /wrap -->
+</body>
+</html>
