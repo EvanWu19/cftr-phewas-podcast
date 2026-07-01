@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<title>To-Do Board · CFTR PheWAS Reading Podcast</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.board-intro{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin:8px 0 16px}
+.board-intro p{margin:6px 0}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:10px 0}
+.legend .lg{font-size:12.5px;color:var(--muted);flex:1;min-width:200px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 10px}
+.legend .lg b{color:var(--text)}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+.controls . filt{font-size:13px}
+.chip{font-size:12px;padding:5px 11px;border-radius:999px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font:inherit}
+.chip.active{background:var(--accent);color:var(--bg);border-color:transparent;font-weight:600}
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:8px 0}
+table.todo{border-collapse:collapse;width:100%;font-size:13.5px;min-width:760px}
+table.todo th,table.todo td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+table.todo thead th{background:var(--panel);position:sticky;top:0;cursor:pointer;white-space:nowrap;font-size:12.5px;letter-spacing:.3px}
+table.todo thead th .arr{color:var(--muted);font-size:10px;margin-left:3px}
+table.todo tbody tr:hover{background:var(--panel)}
+.todo-name{font-weight:600;min-width:230px}
+.todo-name .sub{font-weight:400;color:var(--muted);font-size:12px;display:block;margin-top:3px;line-height:1.4}
+.lane-pill{font-size:10px;text-transform:uppercase;letter-spacing:.4px;padding:2px 8px;border-radius:999px;font-weight:600;white-space:nowrap;display:inline-block}
+.lane-A{background:#1e3a5f;color:#c9e4ff}.lane-B{background:#3a2a1a;color:#ffd9a8}.lane-C{background:#1a3a1a;color:#b3f5b3}.lane-X{background:#2c2336;color:#e0c8ff}
+@media (prefers-color-scheme:light){.lane-A{background:#dbeafe;color:#1e40af}.lane-B{background:#fde7c8;color:#9a4a00}.lane-C{background:#dcfce7;color:#166534}.lane-X{background:#ede0fb;color:#5b2a8c}}
+.score{display:inline-block;min-width:22px;text-align:center;font-weight:700;padding:2px 6px;border-radius:6px;font-size:13px}
+.s5{background:#1a3a1a;color:#7ee787}.s4{background:#23381f;color:#9ad97f}.s3{background:#3a3520;color:#e3d27a}.s2{background:#3a2a1a;color:#f0b384}.s1{background:#3a1a1a;color:#ff9b94}
+.hard5{background:#3a1a1a;color:#ff9b94}.hard4{background:#3a2a1a;color:#f0b384}.hard3{background:#3a3520;color:#e3d27a}.hard2{background:#23381f;color:#9ad97f}.hard1{background:#1a3a1a;color:#7ee787}
+@media (prefers-color-scheme:light){
+.s5{background:#dcfce7;color:#15803d}.s4{background:#e6f6dc;color:#3f7d22}.s3{background:#fdf6d0;color:#856404}.s2{background:#fde7c8;color:#9a4a00}.s1{background:#fee2e2;color:#b91c1c}
+.hard5{background:#fee2e2;color:#b91c1c}.hard4{background:#fde7c8;color:#9a4a00}.hard3{background:#fdf6d0;color:#856404}.hard2{background:#e6f6dc;color:#3f7d22}.hard1{background:#dcfce7;color:#15803d}}
+.prio{font-weight:800;font-size:14px}
+.prog{font-size:11px;padding:3px 9px;border-radius:999px;border:1px dashed var(--border);color:var(--muted);white-space:nowrap}
+.srcs a{font-size:11.5px;margin-right:2px;white-space:nowrap}
+.note{color:var(--muted);font-size:12.5px}
+details.appendix{margin:22px 0}
+details.appendix summary{cursor:pointer;padding:11px 14px;background:var(--panel);border:1px solid var(--border);border-radius:8px;font-weight:600;list-style:none}
+details.appendix summary::-webkit-details-marker{display:none}
+.appendix table{border-collapse:collapse;width:100%;font-size:12.5px;margin-top:10px}
+.appendix th,.appendix td{padding:7px 9px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.appendix thead th{background:var(--panel)}
+.stamp{background:var(--panel);border:1px solid var(--accent);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:13px}
+</style>
+</head><body>
+<header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1>
+<div class="sub">Daily 1-paper-per-episode digest · variant interpretation + AI tooling + CF modifiers</div></div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="index.html">&#8592; All episodes</a> · <b>To-Do Board</b></nav>
+
+<h1 class="ep">To-Do Board</h1>
+<p class="ep-date">Buildable artifacts surfaced across 160+ episodes, consolidated and scored · post-Liz-pivot framing</p>
+
+<div class="stamp" id="stamp">
+<b>Last evaluated:</b> <span id="evaldate">2026-06-24</span> · <b>Cadence:</b> re-score weekly (Mondays).
+A <b>Progress</b> column is reserved for future sessions — start a session and say "attack the to-do list" to update status and re-score.
+</div>
+
+<div class="board-intro">
+<p><b>What this is.</b> Every episode ends with a "buildable artifact" — the concrete thing worth building off that paper. After the CFGP/WGS door closed and the project re-centered on Liz-sponsored data work + the Karen Raraigh genetics collaboration as the warm near-term move, these collapse into a small set of distinct, mostly public-data-only deliverables. The 29 raw mentions are consolidated into <b>19 distinct to-dos</b> below (full source list in the appendix).</p>
+<div class="legend">
+<div class="lg"><b>Importance (1–5)</b> — weight to career. 5 = directly breaks the bottleneck (Karen collaboration / AI-on-registry-depth positioning). Higher is better.</div>
+<div class="lg"><b>Feasibility / Access (1–5)</b> — can you start now with what you have? 5 = inputs are all public, no gated data or GPU. Higher is better.</div>
+<div class="lg"><b>Hardness (1–5)</b> — effort to push to visible output (a shared, citable artifact). 5 = very hard. <b>Lower is better.</b></div>
+<div class="lg"><b>Priority</b> = Importance + Feasibility + (6 − Hardness). Range 3–15. A quick-win ranking, not destiny — sort on any column.</div>
+</div>
+</div>
+
+<div class="controls">
+<span class="note">Filter lane:</span>
+<button class="chip active" data-lane="all" onclick="setFilter('all',this)">All</button>
+<button class="chip" data-lane="A" onclick="setFilter('A',this)">A · Karen / variant interp</button>
+<button class="chip" data-lane="B" onclick="setFilter('B',this)">B · AI tooling / career</button>
+<button class="chip" data-lane="C" onclick="setFilter('C',this)">C · Modifiers / Liz data-quality</button>
+<button class="chip" data-lane="X" onclick="setFilter('X',this)">X · Cross-cutting methods</button>
+</div>
+
+<div class="tablewrap">
+<table class="todo" id="tbl">
+<thead><tr>
+<th data-k="id" onclick="sortBy('id')">#<span class="arr"></span></th>
+<th data-k="name" onclick="sortBy('name')">To-do<span class="arr"></span></th>
+<th data-k="lane" onclick="sortBy('lane')">Lane<span class="arr"></span></th>
+<th data-k="imp" onclick="sortBy('imp')">Import.<span class="arr"></span></th>
+<th data-k="feas" onclick="sortBy('feas')">Feas./Access<span class="arr"></span></th>
+<th data-k="hard" onclick="sortBy('hard')">Hardness<span class="arr"></span></th>
+<th data-k="prio" onclick="sortBy('prio')">Priority<span class="arr">&#9660;</span></th>
+<th data-k="prog" onclick="sortBy('prog')">Progress<span class="arr"></span></th>
+<th>Sources</th>
+</tr></thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+<p class="note">Default sort: Priority (quick-win bets first). Click any header to re-sort.</p>
+
+<details class="appendix">
+<summary>Raw appendix — all 29 source mentions (every episode that proposed a build)</summary>
+<div style="overflow-x:auto"><table id="apxtbl">
+<thead><tr><th>Episode</th><th>Paper / topic</th><th>Track</th><th>Proposed artifact</th><th>Diff.</th><th>→ To-do</th></tr></thead>
+<tbody id="apxbody"></tbody>
+</table></div>
+</details>
+
+<footer>CFTR PheWAS Reading Podcast · To-Do Board · scores are judgment calls, re-evaluated weekly · <a href="index.html">back to episodes</a></footer>
+</main>
+
+<script>
+// ---- consolidated to-dos ----
+// imp/feas: higher better; hard: higher = harder. prio computed.
+const T = [
+{id:"A1",lane:"A",name:"CFTR missense VUS triage / predictor-discordance notebook",
+ sub:"Join precomputed REVEL + EVE + AlphaMissense + ESM1b + PrimateAI scores to CFTR2 class + ClinVar + gnomAD; rank discordances. The recurring core artifact — a multi-predictor concordance view.",
+ imp:5,feas:5,hard:2,prog:"Not started",
+ srcs:[["EVE","2026-06-17-ep1"],["AlphaMissense","2026-06-18-ep1"],["ESM1b","2026-06-19-ep1"],["PrimateAI","2026-06-20-ep1"],["REVEL","2026-06-23-ep1"]]},
+{id:"A2",lane:"A",name:"CFTR splice-variant discordance notebook",
+ sub:"CADD-Splice + SpliceAI/Pangolin deltas for deep-intronic/synonymous variants invisible to protein scores (3849+10kb C>T, 2789+5G>A, 3272-26A>G). Flags benign/VUS-by-coding but high splice-delta.",
+ imp:4,feas:5,hard:2,prog:"Not started",
+ srcs:[["CADD-Splice","2026-06-21-ep1"],["SpliceAI","2026-06-22-ep1"]]},
+{id:"A3",lane:"A",name:"CFTR variant structural-context annotator",
+ sub:"Map missense onto the AlphaFold CFTR model; report pLDDT, burial, domain, distance to ATP pocket / nearest pathogenic residue. Sits beside the score table.",
+ imp:4,feas:4,hard:3,prog:"Not started",
+ srcs:[["AlphaFold","2026-06-16-ep1"]]},
+{id:"A4",lane:"A",name:"ClinGen PP3/BP4 calibration layer",
+ sub:"Turn raw predictor scores into formal ACMG evidence strengths via Pejaver thresholds. Stretch (publishable): CFTR-specific local-LR recalibration using CFTR2 labels.",
+ imp:5,feas:5,hard:3,prog:"Not started",
+ srcs:[["ClinGen PP3/BP4","2026-06-24-ep1"]]},
+{id:"A5",lane:"A",name:"CFTR modulator-eligibility annotation layer (phase-aware)",
+ sub:"FDA approval status + CFTR2 class + which of 4 caution categories (non-CF-causing / VUS / mis-splicing / in-cis-with-null) + phase flag for two-variant genotypes.",
+ imp:4,feas:4,hard:2,prog:"Not started",
+ srcs:[["CFTR2 panel","2026-06-20-ep3"]]},
+{id:"A6",lane:"A",name:"CFTR variant-label provenance auditor",
+ sub:"Flag circular / curation-biased labels: 'pathogenic' calls at implausibly common AF; unanimous in-silico agreement among tools sharing training lineage.",
+ imp:3,feas:4,hard:3,prog:"Not started",
+ srcs:[["PrimateAI","2026-06-20-ep1"]]},
+{id:"B1",lane:"B",name:"Reproducible CFTR variant-QC pipeline (nf-core-style)",
+ sub:"cftr-varqc: VCF → HGVS norm → effect-score join → CFTR2/ClinVar cross-check → MultiQC report. Containerized, CI-tested, -resume. Wraps A1/A2 into portfolio-grade infra.",
+ imp:5,feas:5,hard:3,prog:"Not started",
+ srcs:[["Nextflow","2026-06-16-ep2"],["nf-core","2026-06-17-ep2"]]},
+{id:"B2",lane:"B",name:"Registry foundation-embedding module",
+ sub:"Transformer (Med-BERT-style) on per-person coded-event sequences → reusable embeddings + fine-tuning head. Build skip-gram baseline first; scvi-tools-style Lightning scaffold. Central AI-on-registry-depth bet.",
+ imp:5,feas:2,hard:4,prog:"Not started",
+ srcs:[["scvi-tools","2026-06-18-ep2"],["Med-BERT","2026-06-22-ep2"],["Deep EHR survey","2026-06-23-ep2"]]},
+{id:"B3",lane:"B",name:"Schema-driven data-quality harness for a longitudinal registry",
+ sub:"OHDSI DQD-style: parameterized conformance/completeness/plausibility SQL templates → HTML+JSON report, editable thresholds, inline query. Career + the explicit Liz data-quality lane.",
+ imp:4,feas:3,hard:3,prog:"Not started",
+ srcs:[["OHDSI DQD","2026-06-20-ep2"]]},
+{id:"B4",lane:"B",name:"PheCAP-style semi-supervised phenotyping harness",
+ sub:"SAFE surrogate-assisted feature selection + orthogonalization + adaptive elastic-net; validate on a public MIMIC-derived phenotype with ~100–200 gold labels. Liz phenotype lane + career method.",
+ imp:4,feas:3,hard:3,prog:"Not started",
+ srcs:[["PheCAP","2026-06-21-ep2"]]},
+{id:"B5",lane:"B",name:"Clinical-narrative information-extraction service (GatorTron)",
+ sub:"Fine-tune GatorTron-base for concept/relation extraction from notes. Lower priority — CFFPR is largely structured, and notes + GPU are hard to access.",
+ imp:2,feas:2,hard:4,prog:"Not started",
+ srcs:[["GatorTron","2026-06-24-ep2"]]},
+{id:"C1",lane:"C",name:"Composite CF-severity index + within-genotype variance profiler",
+ sub:"Standardized DELTA/SaKnorm-style severity index; genotype-matched discordant-extreme (DIS/CON±) selection; within-F508del-homozygous variance decomposition. Reusable phenotyping for Liz.",
+ imp:4,feas:3,hard:2,prog:"Not started",
+ srcs:[["Bronsveld twin","2026-06-16-ep3"],["DELTA twin","2026-06-17-ep3"]]},
+{id:"C2",lane:"C",name:"Tissue-specific colocalization notebook for modifier loci",
+ sub:"coloc at SLC26A9 / SLC6A14: CF-modifier GWAS sumstats × GTEx eQTL pancreas vs lung. Reusable per-locus template — but Zhou full sumstats aren't public.",
+ imp:3,feas:2,hard:3,prog:"Not started",
+ srcs:[["Eastman SLC26A9","2026-06-18-ep3"],["Mercier SLC6A14","2026-06-23-ep3"]]},
+{id:"C3",lane:"C",name:"Modifier-locus pleiotropy / PheWAS-scan design notebooks",
+ sub:"AGTR2 + TCF7L2/CFRD: pre-specified phenome scans with effect modifiers (steroid status) and X-chr / sex-aware handling pre-registered. A design/scaffold artifact you can write now.",
+ imp:3,feas:3,hard:2,prog:"Not started",
+ srcs:[["AGTR2","2026-06-19-ep3"],["TCF7L2/CFRD","2026-06-21-ep3"]]},
+{id:"C4",lane:"C",name:"Pre-flight QC checkers for modifier signals",
+ sub:"Tissue-aware eQTL-coverage checker + ancestry LD tag-vs-causal divergence checker — guardrails (against GTEx lung mis-sampling and ancestry sign-flips) before any colocalization. GTEx + LD panels are public.",
+ imp:3,feas:4,hard:2,prog:"Not started",
+ srcs:[["SLC6A14/GTEx","2026-06-23-ep3"],["Corvol sign-flip","2026-06-24-ep3"]]},
+{id:"C5",lane:"C",name:"Rare-variant imputation-quality re-scoring filter",
+ sub:"MagicalRsq over CF modifier regions → per-variant keep/drop flags. Long-game WGS — depends on imputed-dosage/WGS access, which is currently closed.",
+ imp:2,feas:1,hard:3,prog:"Blocked (WGS access closed)",
+ srcs:[["MagicalRsq","2026-06-22-ep3"]]},
+{id:"C6",lane:"C",name:"Running CF modifier-gene catalog",
+ sub:"The structured living catalog (locus → mechanism → tissue → druggability) that feeds C2/C3/C4. Already partly built via the podcast + biobank index. Field is saturated, so modest standalone visibility.",
+ imp:3,feas:5,hard:2,prog:"In progress (podcast feed)",
+ srcs:[["AGTR2","2026-06-19-ep3"],["TCF7L2","2026-06-21-ep3"],["SLC6A14","2026-06-23-ep3"]]},
+{id:"X1",lane:"X",name:"Causal-inference reference notebook (g-methods)",
+ sub:"g-formula vs IPW/MSM vs g-estimation, validated on simulated longitudinal data with a known effect; stabilized-weight diagnostics. Validate code against a known answer before touching real registry data.",
+ imp:3,feas:5,hard:3,prog:"Not started",
+ srcs:[["g-methods","2026-06-19-ep2"]]},
+{id:"X2",lane:"X",name:"Ancestry-stratified CFTR-modifier PheWAS design",
+ sub:"Non-European CF subgroups as primary (not sensitivity) analyses, at gene/pathway level; sex-stratified replication check (CFF cohort ~50/50). Equity differentiator, but needs ancestry-resolved cohort data.",
+ imp:3,feas:2,hard:3,prog:"Not started",
+ srcs:[["MVP/Verma","2026-05-06-ep2"],["multi-ancestry","2026-05-22-ep2"]]},
+];
+
+// ---- raw appendix (29 source mentions) ----
+const APX = [
+["2026-05-06-ep1","Verma 2022 (MVP multi-ancestry)","C","Ancestry-stratified CF modifier PheWAS at gene/pathway level","—","X2"],
+["2026-05-22-ep2","Multi-ancestry BP GWAS","C","Multi-cohort discovery+replication template; sex-stratified check","—","X2"],
+["2026-06-16-ep1","AlphaFold2 (Jumper 2021)","A","CFTR variant structural-context annotator (pLDDT, ATP-pocket dist.)","S–M","A3"],
+["2026-06-16-ep2","Nextflow (Di Tommaso 2017)","B","cftr-annot-nf: resumable containerized annotation pipeline","M","B1"],
+["2026-06-16-ep3","CF Twin & Sibling Cl- secretion (Bronsveld 2000)","C","within_genotype_variance profiler","S","C1"],
+["2026-06-17-ep1","EVE (Frazer 2021)","A","CFTR VUS triage notebook (EVE vs CFTR2 + ClinVar)","S–M","A1"],
+["2026-06-17-ep2","nf-core (Ewels 2020)","B","Scaffold nf-core-style cftr-varqc pipeline","M","B1"],
+["2026-06-17-ep3","DELTA severity / twin heritability","C","Composite CF-severity index + discordant-extreme selection","S–M","C1"],
+["2026-06-18-ep1","AlphaMissense (Cheng 2023)","A","CFTR variant evidence table (discordances)","S","A1"],
+["2026-06-18-ep2","scvi-tools (Gayoso 2022)","B","Longitudinal-cohort modeling scaffold (Lightning)","M","B2"],
+["2026-06-18-ep3","SLC26A9 null (Eastman 2021)","C","Tissue-specific colocalization notebook","M","C2"],
+["2026-06-19-ep1","ESM1b (Brandes 2023)","A","CFTR missense discordance notebook (3-predictor view)","S–M","A1"],
+["2026-06-19-ep2","g-methods (Naimi 2017)","X","g-formula vs IPW reference notebook (simulated)","M","X1"],
+["2026-06-19-ep3","AGTR2 (Darrah 2019)","C","AGTR2 pleiotropy-scan design notebook (X-chr aware)","S–M","C3"],
+["2026-06-20-ep1","PrimateAI (Sundaram 2018)","A","CFTR variant-label provenance auditor","M","A6"],
+["2026-06-20-ep2","OHDSI DQD","B","Schema-driven data-quality harness","M","B3"],
+["2026-06-20-ep3","CFTR2 modulator panel (Raraigh 2022)","A","Modulator-eligibility annotation layer (phase-aware)","S–M","A5"],
+["2026-06-21-ep1","CADD-Splice (Rentzsch 2021)","A","CFTR splice-variant annotation/discordance notebook","S–M","A2"],
+["2026-06-21-ep2","PheCAP (Zhang 2019)","B","Portable SAFE phenotyping harness","M","B4"],
+["2026-06-21-ep3","TCF7L2/CFRD (Blackman 2009)","C","TCF7L2/CFRD pleiotropy + GxE scan design notebook","S–M","C3"],
+["2026-06-22-ep1","SpliceAI (Jaganathan 2019)","A","CFTR splice-variant evidence/discordance table","S–M","A2"],
+["2026-06-22-ep2","Med-BERT (Rasmy 2021)","B","Registry foundation-embedding module","M–L","B2"],
+["2026-06-22-ep3","MagicalRsq (Sun 2022)","C","Rare-variant imputation-quality re-scoring filter","M","C5"],
+["2026-06-23-ep1","REVEL (Ioannidis 2016)","A","CFTR missense triage table (REVEL vs CFTR2 + ClinVar)","S","A1"],
+["2026-06-23-ep2","Deep EHR survey (Shickel 2018)","B","Skip-gram code-embedding baseline (pre-Med-BERT)","M","B2"],
+["2026-06-23-ep3","SLC6A14 (Mercier 2022)","C","Tissue-aware eQTL-coverage checker + coloc","S–M","C4"],
+["2026-06-24-ep1","ClinGen PP3/BP4 (Pejaver 2022)","A","Calibrated ACMG-evidence-strength layer for CFTR","S","A4"],
+["2026-06-24-ep2","GatorTron (Yang 2022)","B","Clinical-narrative information-extraction service","M","B5"],
+["2026-06-24-ep3","SLC26A9/ivacaftor (Corvol 2018)","C","Ancestry LD tag-vs-causal divergence checker","S–M","C4"],
+];
+
+// episodes proposed but not yet published as site HTML (link would 404). Refreshed at weekly re-eval.
+const UNPUB=new Set(["2026-06-22-ep1","2026-06-22-ep2","2026-06-22-ep3","2026-06-24-ep1","2026-06-24-ep2","2026-06-24-ep3"]);
+function epLink(slug,label){return UNPUB.has(slug)?('<span class="note" title="episode page not yet published">'+label+'</span>'):('<a href="'+slug+'.html" title="'+slug+'">'+label+'</a>');}
+const laneName={A:"A · Karen / variant interp",B:"B · AI tooling / career",C:"C · Modifiers / Liz data-quality",X:"X · Cross-cutting methods"};
+T.forEach(t=>t.prio=t.imp+t.feas+(6-t.hard));
+let curFilter="all", sortKey="prio", sortDir=-1;
+
+function scoreCell(v,isHard){const cls=isHard?("hard"+v):("s"+v);return '<span class="score '+cls+'">'+v+'</span>';}
+function render(){
+  let rows=T.filter(t=>curFilter==="all"||t.lane===curFilter);
+  rows.sort((a,b)=>{let x=a[sortKey],y=b[sortKey];if(typeof x==="string"){x=x.toLowerCase();y=y.toLowerCase();}return x<y?-1*sortDir:x>y?1*sortDir:0;});
+  const tb=document.getElementById("tbody");tb.innerHTML="";
+  rows.forEach(t=>{
+    const src=t.srcs.map(s=>epLink(s[1],s[0])).join(" · ");
+    tb.insertAdjacentHTML("beforeend",
+      '<tr>'+
+      '<td><b>'+t.id+'</b></td>'+
+      '<td class="todo-name">'+t.name+'<span class="sub">'+t.sub+'</span></td>'+
+      '<td><span class="lane-pill lane-'+t.lane+'">'+t.lane+'</span></td>'+
+      '<td>'+scoreCell(t.imp,false)+'</td>'+
+      '<td>'+scoreCell(t.feas,false)+'</td>'+
+      '<td>'+scoreCell(t.hard,true)+'</td>'+
+      '<td class="prio">'+t.prio+'</td>'+
+      '<td><span class="prog">'+t.prog+'</span></td>'+
+      '<td class="srcs">'+src+'</td>'+
+      '</tr>');
+  });
+  document.querySelectorAll("thead th .arr").forEach(a=>a.innerHTML="");
+  const th=document.querySelector('thead th[data-k="'+sortKey+'"] .arr');if(th)th.innerHTML=sortDir<0?"&#9660;":"&#9650;";
+}
+function sortBy(k){if(sortKey===k){sortDir*=-1;}else{sortKey=k;sortDir=(k==="hard"||k==="id"||k==="name"||k==="lane"||k==="prog")?1:-1;}render();}
+function setFilter(l,el){curFilter=l;document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));el.classList.add("active");render();}
+
+function renderApx(){
+  const tb=document.getElementById("apxbody");
+  APX.forEach(r=>{
+    tb.insertAdjacentHTML("beforeend",
+      '<tr><td>'+epLink(r[0],r[0])+'</td><td>'+r[1]+'</td>'+
+      '<td><span class="lane-pill lane-'+r[2]+'">'+r[2]+'</span></td>'+
+      '<td>'+r[3]+'</td><td>'+r[4]+'</td><td><b>'+r[5]+'</b></td></tr>');
+  });
+}
+render();renderApx();
+</script>
+</body></html>
