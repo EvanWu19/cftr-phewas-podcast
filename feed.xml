@@ -8,11 +8,38 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Jul 2026 11:09:18 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 11:08:14 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 207: Snowball J 2026</title>
+      <description>Snowball J 2026</description>
+      <guid isPermaLink="false">2026-07-07-ep3</guid>
+      <pubDate>Tue, 07 Jul 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-07-ep3.mp3" length="23094309" type="audio/mpeg"/>
+      <itunes:title>Ep 207: Snowball J 2026</itunes:title>
+      <itunes:episode>207</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 206: Hernan MA 2022</title>
+      <description>Hernan MA 2022</description>
+      <guid isPermaLink="false">2026-07-07-ep2</guid>
+      <pubDate>Tue, 07 Jul 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-07-ep2.mp3" length="23924853" type="audio/mpeg"/>
+      <itunes:title>Ep 206: Hernan MA 2022</itunes:title>
+      <itunes:episode>206</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 205: de Sainte Agathe JM 2023</title>
+      <description>de Sainte Agathe JM 2023</description>
+      <guid isPermaLink="false">2026-07-07-ep1</guid>
+      <pubDate>Tue, 07 Jul 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-07-ep1.mp3" length="25667205" type="audio/mpeg"/>
+      <itunes:title>Ep 205: de Sainte Agathe JM 2023</itunes:title>
+      <itunes:episode>205</itunes:episode>
+    </item>
     <item>
       <title>Ep 204: Wu M (with Bianco ME, Blackman SM) 2026</title>
       <description>Wu M (with Bianco ME, Blackman SM) 2026</description>
