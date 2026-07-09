@@ -8,11 +8,38 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Jul 2026 11:09:03 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2026 11:09:23 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 213: Arpini LDSB 2026</title>
+      <description>Arpini LDSB 2026</description>
+      <guid isPermaLink="false">2026-07-09-ep3</guid>
+      <pubDate>Thu, 09 Jul 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-09-ep3.mp3" length="29407749" type="audio/mpeg"/>
+      <itunes:title>Ep 213: Arpini LDSB 2026</itunes:title>
+      <itunes:episode>213</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 212: Reich C 2024</title>
+      <description>Reich C 2024</description>
+      <guid isPermaLink="false">2026-07-09-ep2</guid>
+      <pubDate>Thu, 09 Jul 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-09-ep2.mp3" length="28422621" type="audio/mpeg"/>
+      <itunes:title>Ep 212: Reich C 2024</itunes:title>
+      <itunes:episode>212</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 211: Gao H 2023</title>
+      <description>Gao H 2023</description>
+      <guid isPermaLink="false">2026-07-09-ep1</guid>
+      <pubDate>Thu, 09 Jul 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-09-ep1.mp3" length="27437517" type="audio/mpeg"/>
+      <itunes:title>Ep 211: Gao H 2023</itunes:title>
+      <itunes:episode>211</itunes:episode>
+    </item>
     <item>
       <title>Ep 210: Ghaeninejhad 2026</title>
       <description>Ghaeninejhad 2026</description>
