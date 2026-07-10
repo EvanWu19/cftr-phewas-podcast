@@ -29,7 +29,7 @@
     <p class="convo-hint">Ask about whatever&#39;s playing &#8212; the answer knows this episode. Your questions also shape future episodes.</p>
   </section>
 </main>
-<footer>Generated 2026-07-10 07:11</footer>
+<footer>Generated 2026-07-10 08:28</footer>
 <script>
 (function(){
   var EPS = window.EPISODES || [];
@@ -85,20 +85,27 @@
     logEl.style.display = 'block';
     logEl.scrollTop = logEl.scrollHeight;
   }
+  function cachedApi(){ try { return localStorage.getItem('convoApi'); } catch(e){ return null; } }
   function getApi(){
     if (apiPromise) return apiPromise;
-    try {
-      var q = qp.get('api');
-      if (q){ localStorage.setItem('convoApi', q.replace(/\/+$/, '')); }
-      var stored = localStorage.getItem('convoApi');
-      if (stored){ apiPromise = Promise.resolve(stored); return apiPromise; }
-    } catch(e){}
+    // Explicit ?api=<url> override wins for this load.
+    var q = qp.get('api');
+    if (q){ var u0 = q.replace(/\/+$/, ''); try { localStorage.setItem('convoApi', u0); } catch(e){}
+            apiPromise = Promise.resolve(u0); return apiPromise; }
+    // PRIMARY: the fresh URL published to R2 (CORS-enabled). A cached localStorage
+    // value is only a fallback when R2 is unreachable — it must NEVER shadow R2,
+    // or a stale (rotated/dead) tunnel URL keeps getting used. That was the
+    // "Network error" bug: an old ?api= URL stuck in localStorage.
     var ctrl = new AbortController();
     var to = setTimeout(function(){ ctrl.abort(); }, 6000);
     apiPromise = fetch((window.AUDIO_BASE || '') + 'convo_api.json', {cache:'no-store', signal: ctrl.signal})
       .then(function(r){ return r.ok ? r.json() : null; })
-      .then(function(j){ clearTimeout(to); return (j && j.api) ? j.api.replace(/\/+$/, '') : null; })
-      .catch(function(){ clearTimeout(to); return null; });
+      .then(function(j){ clearTimeout(to);
+        var u = (j && j.api) ? j.api.replace(/\/+$/, '') : null;
+        if (u){ try { localStorage.setItem('convoApi', u); } catch(e){} return u; }
+        return cachedApi();
+      })
+      .catch(function(){ clearTimeout(to); return cachedApi(); });
     return apiPromise;
   }
   async function start(){
