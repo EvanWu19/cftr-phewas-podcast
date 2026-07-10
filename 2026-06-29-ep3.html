@@ -12,6 +12,15 @@
 <h1 class="ep">Episode 183 · 2026-06-29 / ep3</h1>
 <p class="ep-date">Dupuis A 2016</p>
 <audio controls preload="none" src="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-29-ep3.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 24.3 MB · gpt-4o-mini-tts</p>
+<section id="convo" class="convo" data-slug="2026-06-29-ep3">
+  <div class="convo-row">
+    <button id="convo-btn" type="button" class="convo-btn">&#127908; Ask about this episode</button>
+    <span id="convo-status" class="convo-status"></span>
+  </div>
+  <div id="convo-log" class="convo-log"></div>
+  <audio id="convo-answer" class="convo-answer"></audio>
+  <p class="convo-hint">Speak a question, hear an answer &#8212; your questions are saved to shape future episodes.</p>
+</section>
 <div class="feedback-bar" id="feedback-bar" data-slug="2026-06-29-ep3">
   <p class="feedback-label">How did this episode land for you?</p>
   <div class="feedback-btns">
@@ -90,7 +99,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> Quick one — why a BMI z-score instead of just BMI? 快速问一句——为什么用 BMI 的 z 分数而不是直接用 BMI？ ALEX: Because much of this cohort is children, and a raw BMI is meaningless without an age-and-sex reference. 因为这个队列里很大一部分是儿童，而脱离了年龄和性别的参照，原始 BMI 是没有意义的。 A z-score expresses how far a child sits from the expected value for their age and sex, so it makes a two-year-old and a fifteen-year-old comparable on one nutritional axis. z 分数表达的是一个孩子离其同龄同性别期望值有多远，所以它让一个两岁孩子和一个十五岁孩子在同一条营养轴上可比。 That normalization is mundane but load-bearing — without it the lung-and-nutrition association with MIP could be confounded by the age mix of who carries which mutation. 这种标准化看似平常却是承重的——没有它，肺部与营养跟 MIP 的关联就可能被&quot;谁携带哪个突变&quot;背后的年龄构成所混淆。 JORDAN: What would we need to verify before trusting a MIP-style score? 在信任一个 MIP 式的分数之前，我们需要核查什么？</p>
 <p class="line alex"><span class="speaker">ALEX</span> First, the denominator problem: a prevalence score is unstable for any mutation carried by only a handful of patients, so we&#x27;d set a minimum-count cutoff and carry confidence intervals rather than reporting bare point estimates. 第一，分母问题：对任何只有寥寥几名病人携带的突变，患病率分数都是不稳定的，所以我们会设一个最小计数阈值，并带上置信区间，而不是报告光秃秃的点估计。 Second, ascertainment: the abstract shows MI prevalence ranging thirteen to twenty-one percent across registries, so absolute scores aren&#x27;t portable between populations — only the within-registry ranking is, and we&#x27;d verify the ranking replicates before trusting it. 第二，病例确认：摘要显示 MI 患病率在各登记库间从百分之十三到二十一不等，所以绝对分数在不同人群之间不可移植——只有登记库内部的排序才可移植，而我们要先核实这个排序能复现再去信任它。 Third, the modifier confound: meconium ileus has heritable contributions beyond CFTR, so a MIP score is partly capturing modifier-gene background — which means it ranks genotype severity only to the extent that modifier background is balanced across mutation groups, something we&#x27;d have to check, not assume. 第三，修饰基因的混杂：胎粪性肠梗阻在 CFTR 之外有可遗传的贡献，所以 MIP 分数部分捕捉的是修饰基因背景——这意味着它给基因型严重程度排序，只在修饰基因背景在各突变组之间平衡的范围内成立，而这是我们必须核查、不能假设的。 Fourth, this is abstract-only, so any second-order detail — exact MIP formula, adjustment for sex or birth cohort, how borderline pancreatic status was handled — we&#x27;d confirm against the full text before building. 第四，这一篇只读了摘要，所以任何二阶细节——确切的 MIP 公式、对性别或出生队列的校正、临界胰腺状态如何处理——我们都要在搭建之前对照全文确认。</p>
 <p class="line alex"><span class="speaker">ALEX</span> That modifier point is also the catalog hook: this paper names no new modifier gene, but it operationally demonstrates that MI severity has structure beyond the CFTR allele, which is exactly the door to summary-stats colocalization at known MI modifier loci down the line. 这个修饰基因的点也是写入目录的接口：这篇论文没有点名任何新的修饰基因，但它在操作层面证明了 MI 严重程度在 CFTR 等位基因之外还有结构，而这正是日后在已知 MI 修饰位点上做 summary-stats（汇总统计量）共定位的那道门。 Tomorrow we&#x27;ll look for a Track C paper that actually names the modifier loci behind a phenotype like this. 明天我们会去找一篇真正点名了这类表型背后修饰位点的 Track C 论文。 The one-line takeaway: an early, near-environment-free phenotype like meconium ileus can be turned into a per-mutation prevalence score that ranks CFTR variants by severity and forecasts later lung and nutritional outcomes — a clean, stealable design for genotype-anchored severity ranking. 一句话总结：像胎粪性肠梗阻这样一个早期、几乎不受环境影响的表型，可以被转化为一个按突变划分的患病率分数，用来给 CFTR 变异按严重程度排序、并预报日后的肺部和营养结局——这是一种干净、值得借鉴的、以基因型为锚的严重程度排序设计。</p></div></details>
-</main><footer>Generated 2026-07-09 07:09</footer>
+</main><footer>Generated 2026-07-09 20:22</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -340,6 +349,102 @@
   document.addEventListener('DOMContentLoaded', applyStored);
   // Also apply immediately in case DOMContentLoaded already fired
   if (document.readyState !== 'loading') applyStored();
+})();
+</script>
+<script>
+(function(){
+  var box = document.getElementById('convo');
+  if (!box) return;
+  var slug = box.dataset.slug;
+  var btn = document.getElementById('convo-btn');
+  var statusEl = document.getElementById('convo-status');
+  var logEl = document.getElementById('convo-log');
+  var player = document.getElementById('convo-answer');
+  var epAudio = document.querySelector('main audio');
+  var recorder = null, chunks = [], recording = false, apiPromise = null;
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function setStatus(t){ statusEl.textContent = t || ''; }
+  function addTurn(role, text){
+    var p = document.createElement('p');
+    p.className = 'convo-turn convo-' + role;
+    p.innerHTML = '<span class="convo-role">' + (role === 'you' ? 'You' : 'Host') + '</span> '
+      + esc(text).replace(/\n/g, '<br>');
+    logEl.appendChild(p);
+    logEl.style.display = 'block';
+  }
+  function getApi(){
+    if (apiPromise) return apiPromise;
+    // 1. ?api=<tunnel-url> in the page URL — persisted so you paste it only once.
+    try {
+      var q = new URLSearchParams(location.search).get('api');
+      if (q){ localStorage.setItem('convoApi', q.replace(/\/+$/, '')); }
+      var stored = localStorage.getItem('convoApi');
+      if (stored){ apiPromise = Promise.resolve(stored); return apiPromise; }
+    } catch(e){}
+    // 2. fall back to convo_api.json published on R2 by `run_tunnel.bat publish`.
+    //    Timeout so a slow/blocked lookup fails fast to the offline message
+    //    instead of leaving the button hanging with no feedback.
+    var ctrl = new AbortController();
+    var to = setTimeout(function(){ ctrl.abort(); }, 6000);
+    apiPromise = fetch((window.AUDIO_BASE || '') + 'convo_api.json', {cache:'no-store', signal: ctrl.signal})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){ clearTimeout(to); return (j && j.api) ? j.api.replace(/\/+$/, '') : null; })
+      .catch(function(){ clearTimeout(to); return null; });
+    return apiPromise;
+  }
+
+  async function start(){
+    setStatus('Connecting…');
+    var api = await getApi();
+    if (!api){ setStatus('Voice Q&A is offline right now. Add ?api=<your tunnel URL> to the page URL.'); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder){ setStatus('Mic not supported in this browser.'); return; }
+    var stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+    catch(e){ setStatus('Microphone permission denied.'); return; }
+    if (epAudio && !epAudio.paused){ epAudio.pause(); box.dataset.resume = '1'; }
+    chunks = [];
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = function(e){ if (e.data && e.data.size) chunks.push(e.data); };
+    recorder.onstop = function(){
+      stream.getTracks().forEach(function(t){ t.stop(); });
+      send(api, new Blob(chunks, {type: (recorder && recorder.mimeType) || 'audio/webm'}));
+    };
+    recorder.start();
+    recording = true;
+    btn.textContent = '⏹ Stop & send';
+    btn.classList.add('convo-rec');
+    setStatus('Listening… tap stop when done.');
+  }
+  function stop(){
+    recording = false;
+    btn.textContent = '🎙️ Ask about this episode';
+    btn.classList.remove('convo-rec');
+    setStatus('Thinking…');
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+  }
+  async function send(api, blob){
+    var fd = new FormData();
+    fd.append('slug', slug);
+    if (epAudio) fd.append('t', String(Math.floor(epAudio.currentTime || 0)));
+    fd.append('audio', blob, 'q.webm');
+    try {
+      var r = await fetch(api + '/ask', {method:'POST', body: fd});
+      var j = await r.json();
+      if (!r.ok || j.error){ setStatus('Error: ' + (j.error || r.status)); return; }
+      addTurn('you', j.question);
+      addTurn('host', j.answer);
+      setStatus('');
+      if (j.audio_b64){
+        player.src = 'data:' + (j.audio_mime || 'audio/mpeg') + ';base64,' + j.audio_b64;
+        player.onended = function(){
+          if (box.dataset.resume === '1' && epAudio){ epAudio.play(); box.dataset.resume = ''; }
+        };
+        player.play();
+      }
+    } catch(e){ setStatus('Network error — is the backend running?'); }
+  }
+  btn.addEventListener('click', function(){ recording ? stop() : start(); });
 })();
 </script>
 </body></html>

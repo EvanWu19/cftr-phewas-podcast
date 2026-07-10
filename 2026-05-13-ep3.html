@@ -12,6 +12,15 @@
 <h1 class="ep">Episode 45 · 2026-05-13 / ep3</h1>
 <p class="ep-date">McDougal KE 2010</p>
 <audio controls preload="none" src="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-05-13-ep3.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 16.3 MB · gpt-4o-mini-tts</p>
+<section id="convo" class="convo" data-slug="2026-05-13-ep3">
+  <div class="convo-row">
+    <button id="convo-btn" type="button" class="convo-btn">&#127908; Ask about this episode</button>
+    <span id="convo-status" class="convo-status"></span>
+  </div>
+  <div id="convo-log" class="convo-log"></div>
+  <audio id="convo-answer" class="convo-answer"></audio>
+  <p class="convo-hint">Speak a question, hear an answer &#8212; your questions are saved to shape future episodes.</p>
+</section>
 <div class="feedback-bar" id="feedback-bar" data-slug="2026-05-13-ep3">
   <p class="feedback-label">How did this episode land for you?</p>
   <div class="feedback-btns">
@@ -119,7 +128,7 @@
 <p class="line alex"><span class="speaker">ALEX</span> What this paper closes — the question of whether MBL2 is a real CF modifier on Pa-related phenotypes is essentially settled in the affirmative for the high-versus-low dichotomy. We don&#x27;t need to re-prove it. What it leaves open — first, whether the MBL2 effect persists in the modulator era. The McDougal 2010 cohort predates Trikafta and ivacaftor by years; Pa epidemiology and mucoid-conversion timing have shifted substantially in the post-2019 modulator-treated CF population. Second, whether the genotype dichotomy is the right resolution — diplotype-aware analysis might surface effect-size heterogeneity within the &quot;low-MBL&quot; group that the binary collapse obscures. Third, whether MBL2 effects extend beyond Pa into other airway-infection phenotypes — Staphylococcus aureus, Burkholderia cepacia complex, non-tuberculous mycobacteria — that share innate-immune-recognition dependence with Pa. Fourth, whether geographic and environmental drivers of Pa acquisition vary in a way that interacts with MBL2 genotype — a gene-by-environment effect that this paper&#x27;s cohort-level analysis cannot detect. Fifth, whether the cohort&#x27;s ancestry distribution influences the result — MBL2 allele frequencies vary substantially by population, and an MBL2-CF-modifier effect estimated on a predominantly European-ancestry cohort may not generalize. What we&#x27;d need to check before committing to the proposed Pa-acquisition-plus-mucoid-conversion two-stage design: that the CFFPR records first-Pa-positive culture date and first-mucoid-Pa-positive culture date as separate fields with sufficient resolution for time-to-event analysis; that censoring is handled correctly for patients who never converted to mucoid Pa during follow-up; that the cohort case-counts at both transitions support adequate power at modifier-locus effect sizes in the 1.9-to-2.7-years-earlier range; and that we can replicate the McDougal modeling framework&#x27;s confounding-adjustment logic on the CFGP-CFFPR substrate without re-introducing the bias the framework was designed to eliminate.</p>
 <p class="line jordan"><span class="speaker">JORDAN</span> One concrete thing this week?</p>
 <p class="line alex"><span class="speaker">ALEX</span> Find the CFFPR data dictionary&#x27;s encoding of first-Pa-positive-culture-date and first-mucoid-Pa-positive-culture-date and verify both fields exist with date-level resolution. If they&#x27;re only present as binary &quot;ever-versus-never colonized&quot; flags, the McDougal two-stage design isn&#x27;t directly portable and we&#x27;d need a different endpoint strategy. If both fields are present and clean, the McDougal two-stage design plus the CHP2 chr16p12.2 modifier signal together define a tight, well-motivated, low-multiple-testing-burden infection-phenotype module for the eventual PheWAS — a much more disciplined entry point than scanning every chronic-infection endpoint blindly. Tomorrow&#x27;s tee-up — we are working back through the modifier-gene-era CF cohort papers, so the next CFTR-WGS slot will be another candidate-gene paper. Today&#x27;s one-line takeaway: MBL2 is a real but modest modifier of when CF patients acquire and convert to mucoid Pa, not whether they get worse afterward — and the right CFTR PheWAS endpoint design respects that two-stage structure.</p></div></details>
-</main><footer>Generated 2026-07-09 07:09</footer>
+</main><footer>Generated 2026-07-09 20:22</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -369,6 +378,102 @@
   document.addEventListener('DOMContentLoaded', applyStored);
   // Also apply immediately in case DOMContentLoaded already fired
   if (document.readyState !== 'loading') applyStored();
+})();
+</script>
+<script>
+(function(){
+  var box = document.getElementById('convo');
+  if (!box) return;
+  var slug = box.dataset.slug;
+  var btn = document.getElementById('convo-btn');
+  var statusEl = document.getElementById('convo-status');
+  var logEl = document.getElementById('convo-log');
+  var player = document.getElementById('convo-answer');
+  var epAudio = document.querySelector('main audio');
+  var recorder = null, chunks = [], recording = false, apiPromise = null;
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function setStatus(t){ statusEl.textContent = t || ''; }
+  function addTurn(role, text){
+    var p = document.createElement('p');
+    p.className = 'convo-turn convo-' + role;
+    p.innerHTML = '<span class="convo-role">' + (role === 'you' ? 'You' : 'Host') + '</span> '
+      + esc(text).replace(/\n/g, '<br>');
+    logEl.appendChild(p);
+    logEl.style.display = 'block';
+  }
+  function getApi(){
+    if (apiPromise) return apiPromise;
+    // 1. ?api=<tunnel-url> in the page URL — persisted so you paste it only once.
+    try {
+      var q = new URLSearchParams(location.search).get('api');
+      if (q){ localStorage.setItem('convoApi', q.replace(/\/+$/, '')); }
+      var stored = localStorage.getItem('convoApi');
+      if (stored){ apiPromise = Promise.resolve(stored); return apiPromise; }
+    } catch(e){}
+    // 2. fall back to convo_api.json published on R2 by `run_tunnel.bat publish`.
+    //    Timeout so a slow/blocked lookup fails fast to the offline message
+    //    instead of leaving the button hanging with no feedback.
+    var ctrl = new AbortController();
+    var to = setTimeout(function(){ ctrl.abort(); }, 6000);
+    apiPromise = fetch((window.AUDIO_BASE || '') + 'convo_api.json', {cache:'no-store', signal: ctrl.signal})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){ clearTimeout(to); return (j && j.api) ? j.api.replace(/\/+$/, '') : null; })
+      .catch(function(){ clearTimeout(to); return null; });
+    return apiPromise;
+  }
+
+  async function start(){
+    setStatus('Connecting…');
+    var api = await getApi();
+    if (!api){ setStatus('Voice Q&A is offline right now. Add ?api=<your tunnel URL> to the page URL.'); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder){ setStatus('Mic not supported in this browser.'); return; }
+    var stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+    catch(e){ setStatus('Microphone permission denied.'); return; }
+    if (epAudio && !epAudio.paused){ epAudio.pause(); box.dataset.resume = '1'; }
+    chunks = [];
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = function(e){ if (e.data && e.data.size) chunks.push(e.data); };
+    recorder.onstop = function(){
+      stream.getTracks().forEach(function(t){ t.stop(); });
+      send(api, new Blob(chunks, {type: (recorder && recorder.mimeType) || 'audio/webm'}));
+    };
+    recorder.start();
+    recording = true;
+    btn.textContent = '⏹ Stop & send';
+    btn.classList.add('convo-rec');
+    setStatus('Listening… tap stop when done.');
+  }
+  function stop(){
+    recording = false;
+    btn.textContent = '🎙️ Ask about this episode';
+    btn.classList.remove('convo-rec');
+    setStatus('Thinking…');
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+  }
+  async function send(api, blob){
+    var fd = new FormData();
+    fd.append('slug', slug);
+    if (epAudio) fd.append('t', String(Math.floor(epAudio.currentTime || 0)));
+    fd.append('audio', blob, 'q.webm');
+    try {
+      var r = await fetch(api + '/ask', {method:'POST', body: fd});
+      var j = await r.json();
+      if (!r.ok || j.error){ setStatus('Error: ' + (j.error || r.status)); return; }
+      addTurn('you', j.question);
+      addTurn('host', j.answer);
+      setStatus('');
+      if (j.audio_b64){
+        player.src = 'data:' + (j.audio_mime || 'audio/mpeg') + ';base64,' + j.audio_b64;
+        player.onended = function(){
+          if (box.dataset.resume === '1' && epAudio){ epAudio.play(); box.dataset.resume = ''; }
+        };
+        player.play();
+      }
+    } catch(e){ setStatus('Network error — is the backend running?'); }
+  }
+  btn.addEventListener('click', function(){ recording ? stop() : start(); });
 })();
 </script>
 </body></html>

@@ -12,6 +12,15 @@
 <h1 class="ep">Episode 174 · 2026-06-26 / ep3</h1>
 <p class="ep-date">Raynal C 2020</p>
 <audio controls preload="none" src="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-26-ep3.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 24.3 MB · gpt-4o-mini-tts</p>
+<section id="convo" class="convo" data-slug="2026-06-26-ep3">
+  <div class="convo-row">
+    <button id="convo-btn" type="button" class="convo-btn">&#127908; Ask about this episode</button>
+    <span id="convo-status" class="convo-status"></span>
+  </div>
+  <div id="convo-log" class="convo-log"></div>
+  <audio id="convo-answer" class="convo-answer"></audio>
+  <p class="convo-hint">Speak a question, hear an answer &#8212; your questions are saved to shape future episodes.</p>
+</section>
 <div class="feedback-bar" id="feedback-bar" data-slug="2026-06-26-ep3">
   <p class="feedback-label">How did this episode land for you?</p>
   <div class="feedback-btns">
@@ -82,7 +91,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> What would we need to verify before trusting that table? 在相信那张表之前，我们需要核实什么？ ALEX: First, notation completeness: HGVS normalization fails silently on complex variants like large deletions and deep-intronic changes, so we&#x27;d want to check what fraction of CFTR variants round-trip cleanly before reporting any concordance rate. 首先是命名的完整性：HGVS 规范化在复杂变异上会无声地失败，比如大片段缺失和深内含子变异，所以在报告任何一致性比率之前，我们得核实有多大比例的 CFTR 变异能干净地往返转换。 Second, version and access: CFTR2 updates over time and CFTR1 and CFTR-France have their own access terms, so we&#x27;d want to confirm we&#x27;re comparing current, license-compatible snapshots rather than stale or restricted copies. 其次是版本和获取权限：CFTR2 会随时间更新，而 CFTR1 和 CFTR-France 有各自的使用条款，所以我们得确认我们比较的是当前的、许可兼容的快照，而不是过时或受限的副本。 Third, what &quot;disagreement&quot; means: a difference might be a real classification conflict or just a difference in how each database bins severity, so we&#x27;d want to define the comparison categories carefully before calling anything a true discordance. 第三是&quot;分歧&quot;的含义：一个差异可能是真正的分类冲突，也可能只是各数据库划分严重程度方式的不同，所以在把任何东西称作真正的不一致之前，我们得仔细定义比较的类别。 JORDAN: Is there a risk this concordance table just re-surfaces noise rather than real disagreement? 有没有可能这张一致性表只是重新翻出噪声，而不是真正的分歧？ ALEX: That&#x27;s the right worry, and the guard is to separate three cases: a true classification conflict, a difference in granularity, and a stale entry that one database simply hasn&#x27;t updated. 这个担心是对的，防范的办法是把三种情况分开：真正的分类冲突、粒度上的差别、以及某个数据库只是没更新的过时条目。 Only the first is scientifically interesting; the other two are bookkeeping. 只有第一种在科学上有意思；另外两种是记账问题。 JORDAN: So the deliverable should rank by confidence that a disagreement is real, not just by its existence. 所以这个成果应该按&quot;分歧是真实的&quot;这一置信度来排序，而不只是按它存不存在。 ALEX: Right, and that ranking is itself the judgment a geneticist&#x27;s time is best spent on. 对，而那个排序本身，正是最值得遗传学家花时间去判断的东西。</p>
 <p class="line jordan"><span class="speaker">JORDAN</span> And as always, none of this touches how any particular registry stores its own genotype data. 而且一如既往，这一切都不涉及任何特定登记库如何存储自己的基因型数据。 ALEX: Correct — these are all public, external resources. 对——这些全都是公开的、外部的资源。</p>
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow on Track C we&#x27;ll go back to a primary CFF-cohort study with hard numbers — likely the O&#x27;Neal gene-expression work on meconium-ileus modifiers — to keep feeding the catalog with specific loci. 明天的 C 线，我们会回到一篇有硬数据的原始 CFF 队列研究——大概率是 O&#x27;Neal 关于胎粪性肠梗阻修饰因子的基因表达工作——继续用具体位点喂养我们的目录。 One-line takeaway: CFTR has three overlapping variant databases and at least four non-CFTR severity dials, so the highest-value first build is a cross-database concordance table that surfaces exactly where the classifications disagree. 一句话总结：CFTR 有三个互相重叠的变异数据库，外加至少四个 CFTR 之外的严重程度旋钮，所以最有价值的第一个工程，是一张跨数据库一致性表，精确地暴露分类在哪里出现分歧。 JORDAN: Reconcile the sources of truth first. 先把真值来源对齐。 See you tomorrow. 明天见。</p></div></details>
-</main><footer>Generated 2026-07-09 07:09</footer>
+</main><footer>Generated 2026-07-09 20:22</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -332,6 +341,102 @@
   document.addEventListener('DOMContentLoaded', applyStored);
   // Also apply immediately in case DOMContentLoaded already fired
   if (document.readyState !== 'loading') applyStored();
+})();
+</script>
+<script>
+(function(){
+  var box = document.getElementById('convo');
+  if (!box) return;
+  var slug = box.dataset.slug;
+  var btn = document.getElementById('convo-btn');
+  var statusEl = document.getElementById('convo-status');
+  var logEl = document.getElementById('convo-log');
+  var player = document.getElementById('convo-answer');
+  var epAudio = document.querySelector('main audio');
+  var recorder = null, chunks = [], recording = false, apiPromise = null;
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function setStatus(t){ statusEl.textContent = t || ''; }
+  function addTurn(role, text){
+    var p = document.createElement('p');
+    p.className = 'convo-turn convo-' + role;
+    p.innerHTML = '<span class="convo-role">' + (role === 'you' ? 'You' : 'Host') + '</span> '
+      + esc(text).replace(/\n/g, '<br>');
+    logEl.appendChild(p);
+    logEl.style.display = 'block';
+  }
+  function getApi(){
+    if (apiPromise) return apiPromise;
+    // 1. ?api=<tunnel-url> in the page URL — persisted so you paste it only once.
+    try {
+      var q = new URLSearchParams(location.search).get('api');
+      if (q){ localStorage.setItem('convoApi', q.replace(/\/+$/, '')); }
+      var stored = localStorage.getItem('convoApi');
+      if (stored){ apiPromise = Promise.resolve(stored); return apiPromise; }
+    } catch(e){}
+    // 2. fall back to convo_api.json published on R2 by `run_tunnel.bat publish`.
+    //    Timeout so a slow/blocked lookup fails fast to the offline message
+    //    instead of leaving the button hanging with no feedback.
+    var ctrl = new AbortController();
+    var to = setTimeout(function(){ ctrl.abort(); }, 6000);
+    apiPromise = fetch((window.AUDIO_BASE || '') + 'convo_api.json', {cache:'no-store', signal: ctrl.signal})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){ clearTimeout(to); return (j && j.api) ? j.api.replace(/\/+$/, '') : null; })
+      .catch(function(){ clearTimeout(to); return null; });
+    return apiPromise;
+  }
+
+  async function start(){
+    setStatus('Connecting…');
+    var api = await getApi();
+    if (!api){ setStatus('Voice Q&A is offline right now. Add ?api=<your tunnel URL> to the page URL.'); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder){ setStatus('Mic not supported in this browser.'); return; }
+    var stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+    catch(e){ setStatus('Microphone permission denied.'); return; }
+    if (epAudio && !epAudio.paused){ epAudio.pause(); box.dataset.resume = '1'; }
+    chunks = [];
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = function(e){ if (e.data && e.data.size) chunks.push(e.data); };
+    recorder.onstop = function(){
+      stream.getTracks().forEach(function(t){ t.stop(); });
+      send(api, new Blob(chunks, {type: (recorder && recorder.mimeType) || 'audio/webm'}));
+    };
+    recorder.start();
+    recording = true;
+    btn.textContent = '⏹ Stop & send';
+    btn.classList.add('convo-rec');
+    setStatus('Listening… tap stop when done.');
+  }
+  function stop(){
+    recording = false;
+    btn.textContent = '🎙️ Ask about this episode';
+    btn.classList.remove('convo-rec');
+    setStatus('Thinking…');
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+  }
+  async function send(api, blob){
+    var fd = new FormData();
+    fd.append('slug', slug);
+    if (epAudio) fd.append('t', String(Math.floor(epAudio.currentTime || 0)));
+    fd.append('audio', blob, 'q.webm');
+    try {
+      var r = await fetch(api + '/ask', {method:'POST', body: fd});
+      var j = await r.json();
+      if (!r.ok || j.error){ setStatus('Error: ' + (j.error || r.status)); return; }
+      addTurn('you', j.question);
+      addTurn('host', j.answer);
+      setStatus('');
+      if (j.audio_b64){
+        player.src = 'data:' + (j.audio_mime || 'audio/mpeg') + ';base64,' + j.audio_b64;
+        player.onended = function(){
+          if (box.dataset.resume === '1' && epAudio){ epAudio.play(); box.dataset.resume = ''; }
+        };
+        player.play();
+      }
+    } catch(e){ setStatus('Network error — is the backend running?'); }
+  }
+  btn.addEventListener('click', function(){ recording ? stop() : start(); });
 })();
 </script>
 </body></html>

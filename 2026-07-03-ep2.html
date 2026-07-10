@@ -12,6 +12,15 @@
 <h1 class="ep">Episode 194 · 2026-07-03 / ep2</h1>
 <p class="ep-date">Kim TH 2022</p>
 <audio controls preload="none" src="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-03-ep2.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 23.8 MB · gpt-4o-mini-tts</p>
+<section id="convo" class="convo" data-slug="2026-07-03-ep2">
+  <div class="convo-row">
+    <button id="convo-btn" type="button" class="convo-btn">&#127908; Ask about this episode</button>
+    <span id="convo-status" class="convo-status"></span>
+  </div>
+  <div id="convo-log" class="convo-log"></div>
+  <audio id="convo-answer" class="convo-answer"></audio>
+  <p class="convo-hint">Speak a question, hear an answer &#8212; your questions are saved to shape future episodes.</p>
+</section>
 <div class="feedback-bar" id="feedback-bar" data-slug="2026-07-03-ep2">
   <p class="feedback-label">How did this episode land for you?</p>
   <div class="feedback-btns">
@@ -89,7 +98,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> What would you check before trusting it? 在信任它之前你要核对什么？</p>
 <p class="line alex"><span class="speaker">ALEX</span> A few things, phrased as what we&#x27;d need to check. 几件事，用&quot;我们需要核对什么&quot;来表述。First, get the full text before copying their ETL &quot;compensation&quot; — we need to see whether missing values are derived or imputed, and design ours to be derivation-only-and-labeled. 第一，在照搬他们ETL的&quot;补偿&quot;之前先拿到全文——我们要看清缺失值是推导还是填补，并把我们的设计成&quot;只推导且带标注&quot;。Second, the RadLex mapping was 5,753 terms at one institution; a variant-notation mapping has its own hard cases — indels, structural variants, build liftover — so mapping coverage will be lower and the failures more consequential than a mislabeled scan protocol. 第二，RadLex映射是在一个机构映射的5,753个术语；而变异书写映射有它自己的难点——插入缺失、结构变异、版本转换(liftover)——所以映射覆盖率会更低，失败的后果也比一个贴错标签的扫描协议更严重。Third, their clinical validation was one disease at one center; a genomic DQ linter&#x27;s plausibility rules need testing against a known-good reference set before you trust the flags. 第三，他们的临床验证是在一个中心、针对一种疾病；一个基因DQ linter的合理性规则，在你信任它的标记之前，需要拿一个已知良好的参照集来检验。Fourth — the usual line — this is an external tooling exercise on the public data-model layer and says nothing about any registry&#x27;s internal genotype data. 第四——照例那句——这是在公开数据模型层上的外部工具练习，对任何登记库的内部基因型数据只字不提。</p>
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow Track B moves to the next tooling paper in the queue; today&#x27;s takeaway is a portfolio pattern, not a fact. 明天Track B转到队列里下一篇工具论文；今天的收获是一个作品集模式，而不是一个事实。One line: when you extend a data model into a modality it doesn&#x27;t cover, ship the data-quality tool in the same box — and never let the pipeline that fills a missing field also grade it. 一句话：当你把数据模型扩展到它没覆盖的模态时，把数据质量工具装进同一个盒子里——并且永远别让那条填补缺失字段的流水线同时给它打分。</p></div></details>
-</main><footer>Generated 2026-07-09 07:09</footer>
+</main><footer>Generated 2026-07-09 20:22</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -339,6 +348,102 @@
   document.addEventListener('DOMContentLoaded', applyStored);
   // Also apply immediately in case DOMContentLoaded already fired
   if (document.readyState !== 'loading') applyStored();
+})();
+</script>
+<script>
+(function(){
+  var box = document.getElementById('convo');
+  if (!box) return;
+  var slug = box.dataset.slug;
+  var btn = document.getElementById('convo-btn');
+  var statusEl = document.getElementById('convo-status');
+  var logEl = document.getElementById('convo-log');
+  var player = document.getElementById('convo-answer');
+  var epAudio = document.querySelector('main audio');
+  var recorder = null, chunks = [], recording = false, apiPromise = null;
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function setStatus(t){ statusEl.textContent = t || ''; }
+  function addTurn(role, text){
+    var p = document.createElement('p');
+    p.className = 'convo-turn convo-' + role;
+    p.innerHTML = '<span class="convo-role">' + (role === 'you' ? 'You' : 'Host') + '</span> '
+      + esc(text).replace(/\n/g, '<br>');
+    logEl.appendChild(p);
+    logEl.style.display = 'block';
+  }
+  function getApi(){
+    if (apiPromise) return apiPromise;
+    // 1. ?api=<tunnel-url> in the page URL — persisted so you paste it only once.
+    try {
+      var q = new URLSearchParams(location.search).get('api');
+      if (q){ localStorage.setItem('convoApi', q.replace(/\/+$/, '')); }
+      var stored = localStorage.getItem('convoApi');
+      if (stored){ apiPromise = Promise.resolve(stored); return apiPromise; }
+    } catch(e){}
+    // 2. fall back to convo_api.json published on R2 by `run_tunnel.bat publish`.
+    //    Timeout so a slow/blocked lookup fails fast to the offline message
+    //    instead of leaving the button hanging with no feedback.
+    var ctrl = new AbortController();
+    var to = setTimeout(function(){ ctrl.abort(); }, 6000);
+    apiPromise = fetch((window.AUDIO_BASE || '') + 'convo_api.json', {cache:'no-store', signal: ctrl.signal})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){ clearTimeout(to); return (j && j.api) ? j.api.replace(/\/+$/, '') : null; })
+      .catch(function(){ clearTimeout(to); return null; });
+    return apiPromise;
+  }
+
+  async function start(){
+    setStatus('Connecting…');
+    var api = await getApi();
+    if (!api){ setStatus('Voice Q&A is offline right now. Add ?api=<your tunnel URL> to the page URL.'); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder){ setStatus('Mic not supported in this browser.'); return; }
+    var stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+    catch(e){ setStatus('Microphone permission denied.'); return; }
+    if (epAudio && !epAudio.paused){ epAudio.pause(); box.dataset.resume = '1'; }
+    chunks = [];
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = function(e){ if (e.data && e.data.size) chunks.push(e.data); };
+    recorder.onstop = function(){
+      stream.getTracks().forEach(function(t){ t.stop(); });
+      send(api, new Blob(chunks, {type: (recorder && recorder.mimeType) || 'audio/webm'}));
+    };
+    recorder.start();
+    recording = true;
+    btn.textContent = '⏹ Stop & send';
+    btn.classList.add('convo-rec');
+    setStatus('Listening… tap stop when done.');
+  }
+  function stop(){
+    recording = false;
+    btn.textContent = '🎙️ Ask about this episode';
+    btn.classList.remove('convo-rec');
+    setStatus('Thinking…');
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+  }
+  async function send(api, blob){
+    var fd = new FormData();
+    fd.append('slug', slug);
+    if (epAudio) fd.append('t', String(Math.floor(epAudio.currentTime || 0)));
+    fd.append('audio', blob, 'q.webm');
+    try {
+      var r = await fetch(api + '/ask', {method:'POST', body: fd});
+      var j = await r.json();
+      if (!r.ok || j.error){ setStatus('Error: ' + (j.error || r.status)); return; }
+      addTurn('you', j.question);
+      addTurn('host', j.answer);
+      setStatus('');
+      if (j.audio_b64){
+        player.src = 'data:' + (j.audio_mime || 'audio/mpeg') + ';base64,' + j.audio_b64;
+        player.onended = function(){
+          if (box.dataset.resume === '1' && epAudio){ epAudio.play(); box.dataset.resume = ''; }
+        };
+        player.play();
+      }
+    } catch(e){ setStatus('Network error — is the backend running?'); }
+  }
+  btn.addEventListener('click', function(){ recording ? stop() : start(); });
 })();
 </script>
 </body></html>

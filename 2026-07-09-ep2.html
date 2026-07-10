@@ -12,6 +12,15 @@
 <h1 class="ep">Episode 212 · 2026-07-09 / ep2</h1>
 <p class="ep-date">Reich C 2024</p>
 <audio controls preload="none" src="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-09-ep2.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 27.1 MB · gpt-4o-mini-tts</p>
+<section id="convo" class="convo" data-slug="2026-07-09-ep2">
+  <div class="convo-row">
+    <button id="convo-btn" type="button" class="convo-btn">&#127908; Ask about this episode</button>
+    <span id="convo-status" class="convo-status"></span>
+  </div>
+  <div id="convo-log" class="convo-log"></div>
+  <audio id="convo-answer" class="convo-answer"></audio>
+  <p class="convo-hint">Speak a question, hear an answer &#8212; your questions are saved to shape future episodes.</p>
+</section>
 <div class="feedback-bar" id="feedback-bar" data-slug="2026-07-09-ep2">
   <p class="feedback-label">How did this episode land for you?</p>
   <div class="feedback-btns">
@@ -99,7 +108,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> What would we need to check before leaning on this? 在依赖它之前我们需要核实什么？</p>
 <p class="line alex"><span class="speaker">ALEX</span> First, mapping is never fully automatic: only 66.8% of source concepts have a &quot;Maps to&quot; edge, and many mappings are many-to-one, so a naive join loses or collapses meaning. 第一，映射从来不是全自动的：只有 66.8% 的源概念有&quot;映射到&quot;的边，而且许多映射是多对一，所以天真的连接会丢失或压扁含义。 A human curator has to adjudicate candidates — the tool proposes, a person disposes. 必须由人工整理者裁定候选——工具提议，人来定夺。 Second, the Measurement domain is where CF phenotype variables mostly live, and its mappings are unusually messy: the paper&#x27;s own table shows Measurement has the highest share of one-to-many and many-to-many &quot;Maps to&quot; relationships, so lab and lung-function variables need extra scrutiny. 第二，CF 表型变量大多落在测量域，而它的映射异常混乱：论文自己的表格显示测量域的一对多和多对多&quot;映射到&quot;关系占比最高，所以化验和肺功能变量需要额外审查。 Third, units and value sets have to be modeled too, not just the concept — a measurement concept without correct units is a trap. 第三，单位和取值集也必须建模，而不只是概念本身——一个没有正确单位的测量概念是个陷阱。 Fourth, we&#x27;d want to confirm the license and versioning discipline: because content is stable across releases you get interoperability, but you still need to pin a vocabulary version for reproducibility. 第四，我们会想确认许可和版本管理纪律：因为内容在各版本间稳定，你能获得互通性，但为了可复现，你仍需锁定一个词表版本。 And to be explicit: everything here is external method and public vocabulary — no assumptions about any registry&#x27;s internal genotype or data structures. 而且要讲明白：这里的一切都是外部方法和公开词表——不对任何登记系统的内部基因型或数据结构做任何假设。</p>
 <p class="line alex"><span class="speaker">ALEX</span> One-line takeaway: the OHDSI vocabulary is the shared dictionary that makes cross-cohort research reproducible, and a scriptable, LLM-assisted variable-to-concept mapper is a high-leverage, credential-building tool for the RWE-times-genomics career target. 一句话总结：OHDSI 词表是让跨队列研究可复现的共享字典，而一个可脚本化、有大语言模型辅助的&quot;变量到概念&quot;映射器，是一个高杠杆、能积累资历的工具，正对&quot;真实世界证据 × 基因组学&quot;的职业目标。 Tomorrow on Track B we&#x27;ll look at a foundation/representation model for clinical data, so we can contrast the ontology-mapping approach against learned embeddings. 明天的 Track B 我们会看一个用于临床数据的基础/表示模型，好把本体映射的方法与学习到的嵌入作对比。 See you then. 明天见。</p></div></details>
-</main><footer>Generated 2026-07-09 07:09</footer>
+</main><footer>Generated 2026-07-09 20:22</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -349,6 +358,102 @@
   document.addEventListener('DOMContentLoaded', applyStored);
   // Also apply immediately in case DOMContentLoaded already fired
   if (document.readyState !== 'loading') applyStored();
+})();
+</script>
+<script>
+(function(){
+  var box = document.getElementById('convo');
+  if (!box) return;
+  var slug = box.dataset.slug;
+  var btn = document.getElementById('convo-btn');
+  var statusEl = document.getElementById('convo-status');
+  var logEl = document.getElementById('convo-log');
+  var player = document.getElementById('convo-answer');
+  var epAudio = document.querySelector('main audio');
+  var recorder = null, chunks = [], recording = false, apiPromise = null;
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function setStatus(t){ statusEl.textContent = t || ''; }
+  function addTurn(role, text){
+    var p = document.createElement('p');
+    p.className = 'convo-turn convo-' + role;
+    p.innerHTML = '<span class="convo-role">' + (role === 'you' ? 'You' : 'Host') + '</span> '
+      + esc(text).replace(/\n/g, '<br>');
+    logEl.appendChild(p);
+    logEl.style.display = 'block';
+  }
+  function getApi(){
+    if (apiPromise) return apiPromise;
+    // 1. ?api=<tunnel-url> in the page URL — persisted so you paste it only once.
+    try {
+      var q = new URLSearchParams(location.search).get('api');
+      if (q){ localStorage.setItem('convoApi', q.replace(/\/+$/, '')); }
+      var stored = localStorage.getItem('convoApi');
+      if (stored){ apiPromise = Promise.resolve(stored); return apiPromise; }
+    } catch(e){}
+    // 2. fall back to convo_api.json published on R2 by `run_tunnel.bat publish`.
+    //    Timeout so a slow/blocked lookup fails fast to the offline message
+    //    instead of leaving the button hanging with no feedback.
+    var ctrl = new AbortController();
+    var to = setTimeout(function(){ ctrl.abort(); }, 6000);
+    apiPromise = fetch((window.AUDIO_BASE || '') + 'convo_api.json', {cache:'no-store', signal: ctrl.signal})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){ clearTimeout(to); return (j && j.api) ? j.api.replace(/\/+$/, '') : null; })
+      .catch(function(){ clearTimeout(to); return null; });
+    return apiPromise;
+  }
+
+  async function start(){
+    setStatus('Connecting…');
+    var api = await getApi();
+    if (!api){ setStatus('Voice Q&A is offline right now. Add ?api=<your tunnel URL> to the page URL.'); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder){ setStatus('Mic not supported in this browser.'); return; }
+    var stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+    catch(e){ setStatus('Microphone permission denied.'); return; }
+    if (epAudio && !epAudio.paused){ epAudio.pause(); box.dataset.resume = '1'; }
+    chunks = [];
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = function(e){ if (e.data && e.data.size) chunks.push(e.data); };
+    recorder.onstop = function(){
+      stream.getTracks().forEach(function(t){ t.stop(); });
+      send(api, new Blob(chunks, {type: (recorder && recorder.mimeType) || 'audio/webm'}));
+    };
+    recorder.start();
+    recording = true;
+    btn.textContent = '⏹ Stop & send';
+    btn.classList.add('convo-rec');
+    setStatus('Listening… tap stop when done.');
+  }
+  function stop(){
+    recording = false;
+    btn.textContent = '🎙️ Ask about this episode';
+    btn.classList.remove('convo-rec');
+    setStatus('Thinking…');
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+  }
+  async function send(api, blob){
+    var fd = new FormData();
+    fd.append('slug', slug);
+    if (epAudio) fd.append('t', String(Math.floor(epAudio.currentTime || 0)));
+    fd.append('audio', blob, 'q.webm');
+    try {
+      var r = await fetch(api + '/ask', {method:'POST', body: fd});
+      var j = await r.json();
+      if (!r.ok || j.error){ setStatus('Error: ' + (j.error || r.status)); return; }
+      addTurn('you', j.question);
+      addTurn('host', j.answer);
+      setStatus('');
+      if (j.audio_b64){
+        player.src = 'data:' + (j.audio_mime || 'audio/mpeg') + ';base64,' + j.audio_b64;
+        player.onended = function(){
+          if (box.dataset.resume === '1' && epAudio){ epAudio.play(); box.dataset.resume = ''; }
+        };
+        player.play();
+      }
+    } catch(e){ setStatus('Network error — is the backend running?'); }
+  }
+  btn.addEventListener('click', function(){ recording ? stop() : start(); });
 })();
 </script>
 </body></html>

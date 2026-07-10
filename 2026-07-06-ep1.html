@@ -12,6 +12,15 @@
 <h1 class="ep">Episode 202 · 2026-07-06 / ep1</h1>
 <p class="ep-date">Dunham 2023</p>
 <audio controls preload="none" src="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-06-ep1.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 23.8 MB · gpt-4o-mini-tts</p>
+<section id="convo" class="convo" data-slug="2026-07-06-ep1">
+  <div class="convo-row">
+    <button id="convo-btn" type="button" class="convo-btn">&#127908; Ask about this episode</button>
+    <span id="convo-status" class="convo-status"></span>
+  </div>
+  <div id="convo-log" class="convo-log"></div>
+  <audio id="convo-answer" class="convo-answer"></audio>
+  <p class="convo-hint">Speak a question, hear an answer &#8212; your questions are saved to shape future episodes.</p>
+</section>
 <div class="feedback-bar" id="feedback-bar" data-slug="2026-07-06-ep1">
   <p class="feedback-label">How did this episode land for you?</p>
   <div class="feedback-btns">
@@ -91,7 +100,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> What would we need to verify before trusting any of that? 在信任这一切之前，我们需要核实什么？</p>
 <p class="line alex"><span class="speaker">ALEX</span> First, the structural bias. 首先是结构偏差。 Because the model was trained on PDB-solved proteins and CFTR is a large multidomain membrane transporter, we would need to check whether its CFTR scores hold up against CFTR-specific functional data before leaning on them. 因为模型是在有 PDB 结构的蛋白质上训练的，而 CFTR 是一个大型多结构域膜转运体，我们需要先检验它在 CFTR 上的打分能否对得上 CFTR 特异的功能数据，再去依赖它。 Second, calibration versus ranking — an AUC of 0.73 tells you the model orders variants reasonably, but it does not give you a probability calibrated to an ACMG evidence strength, so we would treat the output as a triage rank, not a classification. 第二是校准与排序之别——AUC 0.73 说明模型能把变异排出合理次序，但它并不给你一个校准到 ACMG（变异分类的证据框架）证据强度的概率，所以我们会把输出当作分诊排名，而不是分类。 Third, leakage — some CFTR variants sit in ClinVar, so an honest CFTR evaluation should test on variants added after the model&#x27;s training cutoff or on orthogonal functional assays. 第三是数据泄漏——有些 CFTR 变异就在 ClinVar 里，所以诚实的 CFTR 评估应当在模型训练截止日期之后新增的变异上、或在正交的功能实验上测试。 And to be clear, none of this touches registry internals — this is an external sequence-model method we would map onto CFTR, nothing about our own data. 需要说清楚的是，这一切都不触及登记库内部——这是一个我们把它映射到 CFTR 上的外部序列模型方法，与我们自己的数据无关。 Phrased carefully, these are things we would need to check, not settled facts. 谨慎地说，这些是我们需要核实的事项，而非已成定论的事实。</p>
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow we stay in Track A and keep circling the missense-and-splicing predictor landscape, because the funnel needs both lanes before it is real. 明天我们留在 Track A，继续绕着错义与剪接预测器的版图走，因为这个漏斗需要两条通道齐备才算真正成形。 One-line takeaway: Sequence UNET buys you laptop-speed, whole-protein variant scoring at a small accuracy cost — perfect as the cheap first pass in a CFTR VUS triage funnel, not as the final call. 一句话总结：Sequence UNET 用很小的准确率代价换来笔记本级、覆盖全蛋白的变异打分——非常适合当 CFTR 意义未明变异分诊漏斗里那便宜的第一道，而不是最终裁决。</p></div></details>
-</main><footer>Generated 2026-07-09 07:09</footer>
+</main><footer>Generated 2026-07-09 20:22</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -341,6 +350,102 @@
   document.addEventListener('DOMContentLoaded', applyStored);
   // Also apply immediately in case DOMContentLoaded already fired
   if (document.readyState !== 'loading') applyStored();
+})();
+</script>
+<script>
+(function(){
+  var box = document.getElementById('convo');
+  if (!box) return;
+  var slug = box.dataset.slug;
+  var btn = document.getElementById('convo-btn');
+  var statusEl = document.getElementById('convo-status');
+  var logEl = document.getElementById('convo-log');
+  var player = document.getElementById('convo-answer');
+  var epAudio = document.querySelector('main audio');
+  var recorder = null, chunks = [], recording = false, apiPromise = null;
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function setStatus(t){ statusEl.textContent = t || ''; }
+  function addTurn(role, text){
+    var p = document.createElement('p');
+    p.className = 'convo-turn convo-' + role;
+    p.innerHTML = '<span class="convo-role">' + (role === 'you' ? 'You' : 'Host') + '</span> '
+      + esc(text).replace(/\n/g, '<br>');
+    logEl.appendChild(p);
+    logEl.style.display = 'block';
+  }
+  function getApi(){
+    if (apiPromise) return apiPromise;
+    // 1. ?api=<tunnel-url> in the page URL — persisted so you paste it only once.
+    try {
+      var q = new URLSearchParams(location.search).get('api');
+      if (q){ localStorage.setItem('convoApi', q.replace(/\/+$/, '')); }
+      var stored = localStorage.getItem('convoApi');
+      if (stored){ apiPromise = Promise.resolve(stored); return apiPromise; }
+    } catch(e){}
+    // 2. fall back to convo_api.json published on R2 by `run_tunnel.bat publish`.
+    //    Timeout so a slow/blocked lookup fails fast to the offline message
+    //    instead of leaving the button hanging with no feedback.
+    var ctrl = new AbortController();
+    var to = setTimeout(function(){ ctrl.abort(); }, 6000);
+    apiPromise = fetch((window.AUDIO_BASE || '') + 'convo_api.json', {cache:'no-store', signal: ctrl.signal})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){ clearTimeout(to); return (j && j.api) ? j.api.replace(/\/+$/, '') : null; })
+      .catch(function(){ clearTimeout(to); return null; });
+    return apiPromise;
+  }
+
+  async function start(){
+    setStatus('Connecting…');
+    var api = await getApi();
+    if (!api){ setStatus('Voice Q&A is offline right now. Add ?api=<your tunnel URL> to the page URL.'); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder){ setStatus('Mic not supported in this browser.'); return; }
+    var stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+    catch(e){ setStatus('Microphone permission denied.'); return; }
+    if (epAudio && !epAudio.paused){ epAudio.pause(); box.dataset.resume = '1'; }
+    chunks = [];
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = function(e){ if (e.data && e.data.size) chunks.push(e.data); };
+    recorder.onstop = function(){
+      stream.getTracks().forEach(function(t){ t.stop(); });
+      send(api, new Blob(chunks, {type: (recorder && recorder.mimeType) || 'audio/webm'}));
+    };
+    recorder.start();
+    recording = true;
+    btn.textContent = '⏹ Stop & send';
+    btn.classList.add('convo-rec');
+    setStatus('Listening… tap stop when done.');
+  }
+  function stop(){
+    recording = false;
+    btn.textContent = '🎙️ Ask about this episode';
+    btn.classList.remove('convo-rec');
+    setStatus('Thinking…');
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+  }
+  async function send(api, blob){
+    var fd = new FormData();
+    fd.append('slug', slug);
+    if (epAudio) fd.append('t', String(Math.floor(epAudio.currentTime || 0)));
+    fd.append('audio', blob, 'q.webm');
+    try {
+      var r = await fetch(api + '/ask', {method:'POST', body: fd});
+      var j = await r.json();
+      if (!r.ok || j.error){ setStatus('Error: ' + (j.error || r.status)); return; }
+      addTurn('you', j.question);
+      addTurn('host', j.answer);
+      setStatus('');
+      if (j.audio_b64){
+        player.src = 'data:' + (j.audio_mime || 'audio/mpeg') + ';base64,' + j.audio_b64;
+        player.onended = function(){
+          if (box.dataset.resume === '1' && epAudio){ epAudio.play(); box.dataset.resume = ''; }
+        };
+        player.play();
+      }
+    } catch(e){ setStatus('Network error — is the backend running?'); }
+  }
+  btn.addEventListener('click', function(){ recording ? stop() : start(); });
 })();
 </script>
 </body></html>

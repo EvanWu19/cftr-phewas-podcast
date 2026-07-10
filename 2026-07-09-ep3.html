@@ -12,6 +12,15 @@
 <h1 class="ep">Episode 213 · 2026-07-09 / ep3</h1>
 <p class="ep-date">Arpini LDSB 2026</p>
 <audio controls preload="none" src="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-09-ep3.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 28.0 MB · gpt-4o-mini-tts</p>
+<section id="convo" class="convo" data-slug="2026-07-09-ep3">
+  <div class="convo-row">
+    <button id="convo-btn" type="button" class="convo-btn">&#127908; Ask about this episode</button>
+    <span id="convo-status" class="convo-status"></span>
+  </div>
+  <div id="convo-log" class="convo-log"></div>
+  <audio id="convo-answer" class="convo-answer"></audio>
+  <p class="convo-hint">Speak a question, hear an answer &#8212; your questions are saved to shape future episodes.</p>
+</section>
 <div class="feedback-bar" id="feedback-bar" data-slug="2026-07-09-ep3">
   <p class="feedback-label">How did this episode land for you?</p>
   <div class="feedback-btns">
@@ -101,7 +110,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> And what would we need to verify before trusting the labeler? 在信任这个标注器之前，我们需要核实什么？</p>
 <p class="line alex"><span class="speaker">ALEX</span> First, variant-class assignment is not settled for every variant — CFTR2 covers the common ones well, but rare and novel variants may lack a functional class, so the &quot;unclassified&quot; bucket has to be explicit and counted, not silently dropped. 第一，变异类别的赋值并非对每个变异都已确定——CFTR2 对常见变异覆盖良好，但罕见和新发变异可能没有功能类别，所以&quot;未分类&quot;桶必须是明确的、要计数的，而不是被悄悄丢弃。 Second, notation normalization is a real hazard: the same variant appears as F508del, p.Phe508del, and c.1521_1523delCTT, and a labeler that doesn&#x27;t harmonize notation will miscount — which, not coincidentally, ties straight back to the HGVS harmonization work in the Karen collaboration. 第二，记法规范化是一个真实的隐患：同一个变异会以 F508del、p.Phe508del 和 c.1521_1523delCTT 出现，一个不统一记法的标注器会数错——这并非巧合地直接连回 Karen 合作中的 HGVS 统一工作。 Third, this abstract is a single-center pediatric cohort of 110, so the specific p-values shouldn&#x27;t be imported as priors; only the severity-ordering method transfers, and any analysis in a larger cohort would need its own age and covariate adjustment. 第三，这份摘要是一个单中心、110 人的儿童队列，所以具体的 p 值不应作为先验被搬用；只有&quot;严重程度排序&quot;的方法可迁移，任何更大队列中的分析都需要它自己的年龄和协变量校正。 And the whole thing is external method — the class tables and CFTR2 are public references, and none of this asserts anything about how a registry holds its own genotype data. 而且整件事都是外部方法——类别表和 CFTR2 是公开参考，这里没有任何内容断言登记系统如何保存它自己的基因型数据。</p>
 <p class="line alex"><span class="speaker">ALEX</span> One-line takeaway: a small Brazilian pediatric cohort reproduces the classic CF severity gradient — two minimal-function variants worse for the pancreas, F508del worse for the lung — and the transferable asset is a clean, notation-robust CFTR genotype-to-severity-group labeler. 一句话总结：一个巴西小型儿童队列重现了经典的 CF 严重程度梯度——两个最小功能变异对胰腺更差、F508del 对肺更差——而可迁移的资产是一个干净、对记法稳健的&quot;CFTR 基因型到严重程度组&quot;标注器。 Tomorrow on Track C we&#x27;ll pull the next CF-cohort paper and keep filling the modifier and severity catalog. 明天的 Track C 我们会取下一篇 CF 队列论文，继续填充修饰基因与严重程度目录。 See you in the reading room. 读paper时间，我们明天见。</p></div></details>
-</main><footer>Generated 2026-07-09 07:09</footer>
+</main><footer>Generated 2026-07-09 20:22</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -351,6 +360,102 @@
   document.addEventListener('DOMContentLoaded', applyStored);
   // Also apply immediately in case DOMContentLoaded already fired
   if (document.readyState !== 'loading') applyStored();
+})();
+</script>
+<script>
+(function(){
+  var box = document.getElementById('convo');
+  if (!box) return;
+  var slug = box.dataset.slug;
+  var btn = document.getElementById('convo-btn');
+  var statusEl = document.getElementById('convo-status');
+  var logEl = document.getElementById('convo-log');
+  var player = document.getElementById('convo-answer');
+  var epAudio = document.querySelector('main audio');
+  var recorder = null, chunks = [], recording = false, apiPromise = null;
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function setStatus(t){ statusEl.textContent = t || ''; }
+  function addTurn(role, text){
+    var p = document.createElement('p');
+    p.className = 'convo-turn convo-' + role;
+    p.innerHTML = '<span class="convo-role">' + (role === 'you' ? 'You' : 'Host') + '</span> '
+      + esc(text).replace(/\n/g, '<br>');
+    logEl.appendChild(p);
+    logEl.style.display = 'block';
+  }
+  function getApi(){
+    if (apiPromise) return apiPromise;
+    // 1. ?api=<tunnel-url> in the page URL — persisted so you paste it only once.
+    try {
+      var q = new URLSearchParams(location.search).get('api');
+      if (q){ localStorage.setItem('convoApi', q.replace(/\/+$/, '')); }
+      var stored = localStorage.getItem('convoApi');
+      if (stored){ apiPromise = Promise.resolve(stored); return apiPromise; }
+    } catch(e){}
+    // 2. fall back to convo_api.json published on R2 by `run_tunnel.bat publish`.
+    //    Timeout so a slow/blocked lookup fails fast to the offline message
+    //    instead of leaving the button hanging with no feedback.
+    var ctrl = new AbortController();
+    var to = setTimeout(function(){ ctrl.abort(); }, 6000);
+    apiPromise = fetch((window.AUDIO_BASE || '') + 'convo_api.json', {cache:'no-store', signal: ctrl.signal})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){ clearTimeout(to); return (j && j.api) ? j.api.replace(/\/+$/, '') : null; })
+      .catch(function(){ clearTimeout(to); return null; });
+    return apiPromise;
+  }
+
+  async function start(){
+    setStatus('Connecting…');
+    var api = await getApi();
+    if (!api){ setStatus('Voice Q&A is offline right now. Add ?api=<your tunnel URL> to the page URL.'); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder){ setStatus('Mic not supported in this browser.'); return; }
+    var stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+    catch(e){ setStatus('Microphone permission denied.'); return; }
+    if (epAudio && !epAudio.paused){ epAudio.pause(); box.dataset.resume = '1'; }
+    chunks = [];
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = function(e){ if (e.data && e.data.size) chunks.push(e.data); };
+    recorder.onstop = function(){
+      stream.getTracks().forEach(function(t){ t.stop(); });
+      send(api, new Blob(chunks, {type: (recorder && recorder.mimeType) || 'audio/webm'}));
+    };
+    recorder.start();
+    recording = true;
+    btn.textContent = '⏹ Stop & send';
+    btn.classList.add('convo-rec');
+    setStatus('Listening… tap stop when done.');
+  }
+  function stop(){
+    recording = false;
+    btn.textContent = '🎙️ Ask about this episode';
+    btn.classList.remove('convo-rec');
+    setStatus('Thinking…');
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+  }
+  async function send(api, blob){
+    var fd = new FormData();
+    fd.append('slug', slug);
+    if (epAudio) fd.append('t', String(Math.floor(epAudio.currentTime || 0)));
+    fd.append('audio', blob, 'q.webm');
+    try {
+      var r = await fetch(api + '/ask', {method:'POST', body: fd});
+      var j = await r.json();
+      if (!r.ok || j.error){ setStatus('Error: ' + (j.error || r.status)); return; }
+      addTurn('you', j.question);
+      addTurn('host', j.answer);
+      setStatus('');
+      if (j.audio_b64){
+        player.src = 'data:' + (j.audio_mime || 'audio/mpeg') + ';base64,' + j.audio_b64;
+        player.onended = function(){
+          if (box.dataset.resume === '1' && epAudio){ epAudio.play(); box.dataset.resume = ''; }
+        };
+        player.play();
+      }
+    } catch(e){ setStatus('Network error — is the backend running?'); }
+  }
+  btn.addEventListener('click', function(){ recording ? stop() : start(); });
 })();
 </script>
 </body></html>

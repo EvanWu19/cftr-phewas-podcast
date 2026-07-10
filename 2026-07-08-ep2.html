@@ -12,6 +12,15 @@
 <h1 class="ep">Episode 209 · 2026-07-08 / ep2</h1>
 <p class="ep-date">Liu 2025</p>
 <audio controls preload="none" src="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-08-ep2.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 26.8 MB · gpt-4o-mini-tts</p>
+<section id="convo" class="convo" data-slug="2026-07-08-ep2">
+  <div class="convo-row">
+    <button id="convo-btn" type="button" class="convo-btn">&#127908; Ask about this episode</button>
+    <span id="convo-status" class="convo-status"></span>
+  </div>
+  <div id="convo-log" class="convo-log"></div>
+  <audio id="convo-answer" class="convo-answer"></audio>
+  <p class="convo-hint">Speak a question, hear an answer &#8212; your questions are saved to shape future episodes.</p>
+</section>
 <div class="feedback-bar" id="feedback-bar" data-slug="2026-07-08-ep2">
   <p class="feedback-label">How did this episode land for you?</p>
   <div class="feedback-btns">
@@ -88,7 +97,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> Before we trust any of this, what needs checking? 在信任这一切之前，需要核查什么？</p>
 <p class="line alex"><span class="speaker">ALEX</span> First, the private-data problem: the headline EHR accuracies rest on records available only on request, so treat them as promising-but-unreplicated until the open benchmarks alone reproduce the gap. 首先是私有数据问题：那些亮眼的 EHR 准确率建立在只能按需索取的记录上，所以在仅凭公开基准就能复现这个差距之前，把它们当作&quot;有希望但未被复现&quot;。 Second, the −2 to +2 rubric is only as good as its raters — we&#x27;d want multiple graders, an inter-rater agreement number, and a pre-registered rubric so the uplift isn&#x27;t a grading artifact. 第二，−2 到 +2 的评分标准好坏全看打分人——我们会想要多位评分者、一个评分者间一致性数值，以及一个预先注册的评分标准，好让&quot;提升&quot;不是打分方式带来的假象。 Third, the &quot;minimal structuring&quot; claim deserves scrutiny, because how the raw EHRs were actually cleaned and tokenized is where hidden labor and hidden leakage both hide. 第三，&quot;极少结构化&quot;的论断值得推敲，因为原始 EHR 究竟是怎么清洗和分词的，正是隐藏人力和隐藏泄漏都会藏身的地方。 Fourth, decision transparency: the authors concede the model doesn&#x27;t explain its reasoning, which is a real barrier in high-stakes care and a reason the eval harness, not the black box, is the safer first deliverable. 第四，决策透明度：作者自己承认模型不解释其推理，这在高风险医疗中是一个真实障碍，也正是为什么评估工具、而非黑箱，才是更安全的第一交付物。 And to be clear, every method here is external — none of it describes or assumes anything about registry data internals. 需要说明的是，这里的每一种方法都是外部的——没有一处描述或假设登记库数据的内部情况。</p>
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow we stay in Track B and likely hit an OMOP or vocabulary-harmonization paper — the structured-data plumbing MetaGP tries to skip. 明天我们留在 Track B，很可能碰到一篇 OMOP 或词表协调的论文——也就是 MetaGP 试图跳过的那层结构化数据管道。 One-line takeaway: the reusable win from MetaGP isn&#x27;t the 32B model, it&#x27;s the open continual-pretrain-then-fine-tune pattern plus an experience-stratified human-AI uplift harness you can build first and reuse for every model that follows. 一句话总结：MetaGP 可复用的胜利不是那个 320 亿参数模型，而是那套开放的&quot;持续预训练再微调&quot;模式，加上一个按经验分层的&quot;人—AI 提升&quot;评估工具——你可以先把它建起来，并为之后每一个模型反复复用。</p></div></details>
-</main><footer>Generated 2026-07-09 07:09</footer>
+</main><footer>Generated 2026-07-09 20:22</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -338,6 +347,102 @@
   document.addEventListener('DOMContentLoaded', applyStored);
   // Also apply immediately in case DOMContentLoaded already fired
   if (document.readyState !== 'loading') applyStored();
+})();
+</script>
+<script>
+(function(){
+  var box = document.getElementById('convo');
+  if (!box) return;
+  var slug = box.dataset.slug;
+  var btn = document.getElementById('convo-btn');
+  var statusEl = document.getElementById('convo-status');
+  var logEl = document.getElementById('convo-log');
+  var player = document.getElementById('convo-answer');
+  var epAudio = document.querySelector('main audio');
+  var recorder = null, chunks = [], recording = false, apiPromise = null;
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function setStatus(t){ statusEl.textContent = t || ''; }
+  function addTurn(role, text){
+    var p = document.createElement('p');
+    p.className = 'convo-turn convo-' + role;
+    p.innerHTML = '<span class="convo-role">' + (role === 'you' ? 'You' : 'Host') + '</span> '
+      + esc(text).replace(/\n/g, '<br>');
+    logEl.appendChild(p);
+    logEl.style.display = 'block';
+  }
+  function getApi(){
+    if (apiPromise) return apiPromise;
+    // 1. ?api=<tunnel-url> in the page URL — persisted so you paste it only once.
+    try {
+      var q = new URLSearchParams(location.search).get('api');
+      if (q){ localStorage.setItem('convoApi', q.replace(/\/+$/, '')); }
+      var stored = localStorage.getItem('convoApi');
+      if (stored){ apiPromise = Promise.resolve(stored); return apiPromise; }
+    } catch(e){}
+    // 2. fall back to convo_api.json published on R2 by `run_tunnel.bat publish`.
+    //    Timeout so a slow/blocked lookup fails fast to the offline message
+    //    instead of leaving the button hanging with no feedback.
+    var ctrl = new AbortController();
+    var to = setTimeout(function(){ ctrl.abort(); }, 6000);
+    apiPromise = fetch((window.AUDIO_BASE || '') + 'convo_api.json', {cache:'no-store', signal: ctrl.signal})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){ clearTimeout(to); return (j && j.api) ? j.api.replace(/\/+$/, '') : null; })
+      .catch(function(){ clearTimeout(to); return null; });
+    return apiPromise;
+  }
+
+  async function start(){
+    setStatus('Connecting…');
+    var api = await getApi();
+    if (!api){ setStatus('Voice Q&A is offline right now. Add ?api=<your tunnel URL> to the page URL.'); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder){ setStatus('Mic not supported in this browser.'); return; }
+    var stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+    catch(e){ setStatus('Microphone permission denied.'); return; }
+    if (epAudio && !epAudio.paused){ epAudio.pause(); box.dataset.resume = '1'; }
+    chunks = [];
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = function(e){ if (e.data && e.data.size) chunks.push(e.data); };
+    recorder.onstop = function(){
+      stream.getTracks().forEach(function(t){ t.stop(); });
+      send(api, new Blob(chunks, {type: (recorder && recorder.mimeType) || 'audio/webm'}));
+    };
+    recorder.start();
+    recording = true;
+    btn.textContent = '⏹ Stop & send';
+    btn.classList.add('convo-rec');
+    setStatus('Listening… tap stop when done.');
+  }
+  function stop(){
+    recording = false;
+    btn.textContent = '🎙️ Ask about this episode';
+    btn.classList.remove('convo-rec');
+    setStatus('Thinking…');
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+  }
+  async function send(api, blob){
+    var fd = new FormData();
+    fd.append('slug', slug);
+    if (epAudio) fd.append('t', String(Math.floor(epAudio.currentTime || 0)));
+    fd.append('audio', blob, 'q.webm');
+    try {
+      var r = await fetch(api + '/ask', {method:'POST', body: fd});
+      var j = await r.json();
+      if (!r.ok || j.error){ setStatus('Error: ' + (j.error || r.status)); return; }
+      addTurn('you', j.question);
+      addTurn('host', j.answer);
+      setStatus('');
+      if (j.audio_b64){
+        player.src = 'data:' + (j.audio_mime || 'audio/mpeg') + ';base64,' + j.audio_b64;
+        player.onended = function(){
+          if (box.dataset.resume === '1' && epAudio){ epAudio.play(); box.dataset.resume = ''; }
+        };
+        player.play();
+      }
+    } catch(e){ setStatus('Network error — is the backend running?'); }
+  }
+  btn.addEventListener('click', function(){ recording ? stop() : start(); });
 })();
 </script>
 </body></html>

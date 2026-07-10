@@ -12,6 +12,15 @@
 <h1 class="ep">Episode 187 · 2026-07-01 / ep1</h1>
 <p class="ep-date">Parsons MT 2024</p>
 <audio controls preload="none" src="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-01-ep1.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 25.2 MB · gpt-4o-mini-tts</p>
+<section id="convo" class="convo" data-slug="2026-07-01-ep1">
+  <div class="convo-row">
+    <button id="convo-btn" type="button" class="convo-btn">&#127908; Ask about this episode</button>
+    <span id="convo-status" class="convo-status"></span>
+  </div>
+  <div id="convo-log" class="convo-log"></div>
+  <audio id="convo-answer" class="convo-answer"></audio>
+  <p class="convo-hint">Speak a question, hear an answer &#8212; your questions are saved to shape future episodes.</p>
+</section>
 <div class="feedback-bar" id="feedback-bar" data-slug="2026-07-01-ep1">
   <p class="feedback-label">How did this episode land for you?</p>
   <div class="feedback-btns">
@@ -76,7 +85,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> So where does this land for us? 那这对我们意味着什么落点？ ALEX: This lands squarely on the Karen collaboration — CFTR variant interpretation. 这直接落在 Karen 合作上——CFTR 变异解读。 There is a real ClinGen CFTR VCEP and the CFTR2 project already publishes CFTR-tuned classification rules, so the exact object this paper describes for BRCA exists for CFTR too. 确实存在一个 ClinGen CFTR VCEP，而且 CFTR2 项目已经发布了针对 CFTR 调优的分类规则，所以这篇论文为 BRCA 描述的那个对象，对 CFTR 也存在。 The transferable method is: take the gene-specific evidence codes and their calibrated strengths, encode them as a machine-readable ruleset, and run a batch of CFTR variants through it. 可迁移的方法是：把基因特异性证据代码及其校准强度，编码成一套机器可读的规则集，再把一批 CFTR 变异跑过去。 JORDAN: What&#x27;s the buildable artifact? 可构建的产物是什么？ ALEX: A CFTR ACMG/AMP criteria worklist. 一个 CFTR ACMG/AMP 标准工作清单。 MVP: input a list of CFTR variants in normalized HGVS with whatever evidence annotations you already have — population frequency, functional-assay result, computational scores, segregation. 最小可行产品：输入一份用规范化 HGVS（HGVS，变异命名的标准化书写规范）写好的 CFTR 变异列表，附上你已有的证据标注——人群频率、功能实验结果、计算预测分数、家系共分离。 The tool applies each CFTR-specific evidence code at its calibrated strength, sums the points, and outputs a provisional class per variant — but the real payload is the second column: for each remaining VUS, which single piece of missing evidence would tip it, and how strong that evidence would need to be. 该工具按校准强度应用每一条 CFTR 特异性证据代码，累加点数，为每个变异输出一个暂定分类——但真正的价值在第二列：对每个仍是 VUS 的变异，指出还差哪一项证据就能定性、以及那项证据需要多强。 That turns a static pile into a ranked to-do list — the variants that are one functional assay or one segregation away from resolution. 这就把一个静态的堆积变成了一个排好序的待办清单——那些只差一次功能实验、或一次共分离就能定性的变异。 Difficulty: medium. 难度：中等。 That&#x27;s exactly the worklist a curation collaboration runs on. 这正是一个审编合作赖以运转的工作清单。 JORDAN: Does this connect to the calibration notebook we sketched earlier this week? 这和我们本周早些时候勾画的那个校准notebook有联系吗？ ALEX: Directly — think of them as two layers of one stack. 直接相关——把它们想成一个技术栈的两层。 The calibration notebook decides the numeric thresholds for a single evidence type, like where a computational score crosses from supporting to moderate strength for CFTR. 校准notebook负责决定单一证据类型的数字阈值，比如某个计算分数在 CFTR 里从&quot;支持性&quot;跨到&quot;中等&quot;强度的界线在哪。 This worklist is the layer above it: it consumes those calibrated thresholds across all the evidence types at once, applies them to a whole variant list, and produces the ranked backlog. 这个工作清单是它上面的一层：它一次性地消费所有证据类型的那些校准阈值，把它们应用到整份变异列表上，产出排好序的待处理清单。 One decides how hard each lever pushes; the other pulls all the levers and reads off the result. 一个决定每根杠杆推得多用力；另一个把所有杠杆一起拉动、读出结果。 Built together, they&#x27;re the reusable curation engine, not a one-off analysis. 合在一起构建，它们就是一个可复用的审编引擎，而不是一次性的分析。</p>
 <p class="line jordan"><span class="speaker">JORDAN</span> What would we need to check before trusting any of this? 在信任这套东西之前，我们需要核查什么？ ALEX: First, the obvious one — this was abstract-only for us, so before building anything we&#x27;d need the full specification tables, the actual code-by-code strength assignments, and the calibration methods, not the summary. 第一，最明显的——这篇我们只有摘要，所以在动手之前，我们需要拿到完整的规格表、逐条代码的强度赋值、以及校准方法，而不是概要。 Second, the strengths are gene-specific by design, so we&#x27;d need CFTR&#x27;s own calibration — the BRCA numbers do not transfer. 第二，这些强度按设计就是基因特异的，所以我们需要 CFTR 自己的校准——BRCA 的数字不能照搬。 We&#x27;d pull the published CFTR VCEP specifications rather than reusing anything from this paper&#x27;s numbers. 我们会去调取已发布的 CFTR VCEP 规格，而不是复用这篇论文里的任何数字。 Third, circularity: many evidence types are calibrated against ClinVar labels, and if those same labels seed our test set we&#x27;d be grading the tool on its own answer key. 第三，循环性：许多证据类型是对着 ClinVar 标签校准的，如果同一批标签又用来做我们的测试集，那我们就是在用工具自己的答案册给它打分。 We&#x27;d need an independent labeled set to measure real resolution rate. 我们需要一个独立的标注集来测量真实的解决率。 Fourth — and I&#x27;d phrase all of this as what we&#x27;d need to check, not as settled — the missense-heavy evidence codes don&#x27;t cover splicing, so a full CFTR worklist has to route splice-region variants through a separate track. 第四——我要把这一切都表述为&quot;我们需要核查的东西&quot;，而非定论——偏重错义变异（missense variant，改变一个氨基酸的变异）的证据代码不覆盖剪接，所以一份完整的 CFTR 工作清单必须把剪接区变异导入一条单独的通道。</p>
 <p class="line alex"><span class="speaker">ALEX</span> Tomorrow on Track A we stay in the calibration neighborhood. 明天的 Track A 我们继续待在校准这一带。 The one-line takeaway: the durable asset here isn&#x27;t the BRCA answers, it&#x27;s the recipe — take the generic classification codes, decide which ones your gene keeps, drops, or bends, calibrate each to a numeric strength, and the VUS pile starts to move. 一句话总结：这里持久的资产不是 BRCA 的答案，而是那份配方——拿起通用的分类代码，决定你的基因保留、舍弃或弯折哪些，把每一条校准成一个数字化的强度，VUS 的堆积就开始松动了。 That recipe is the Karen worklist, waiting to be pointed at CFTR. 那份配方就是 Karen 的工作清单，只等被对准 CFTR。</p></div></details>
-</main><footer>Generated 2026-07-09 07:09</footer>
+</main><footer>Generated 2026-07-09 20:22</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -326,6 +335,102 @@
   document.addEventListener('DOMContentLoaded', applyStored);
   // Also apply immediately in case DOMContentLoaded already fired
   if (document.readyState !== 'loading') applyStored();
+})();
+</script>
+<script>
+(function(){
+  var box = document.getElementById('convo');
+  if (!box) return;
+  var slug = box.dataset.slug;
+  var btn = document.getElementById('convo-btn');
+  var statusEl = document.getElementById('convo-status');
+  var logEl = document.getElementById('convo-log');
+  var player = document.getElementById('convo-answer');
+  var epAudio = document.querySelector('main audio');
+  var recorder = null, chunks = [], recording = false, apiPromise = null;
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function setStatus(t){ statusEl.textContent = t || ''; }
+  function addTurn(role, text){
+    var p = document.createElement('p');
+    p.className = 'convo-turn convo-' + role;
+    p.innerHTML = '<span class="convo-role">' + (role === 'you' ? 'You' : 'Host') + '</span> '
+      + esc(text).replace(/\n/g, '<br>');
+    logEl.appendChild(p);
+    logEl.style.display = 'block';
+  }
+  function getApi(){
+    if (apiPromise) return apiPromise;
+    // 1. ?api=<tunnel-url> in the page URL — persisted so you paste it only once.
+    try {
+      var q = new URLSearchParams(location.search).get('api');
+      if (q){ localStorage.setItem('convoApi', q.replace(/\/+$/, '')); }
+      var stored = localStorage.getItem('convoApi');
+      if (stored){ apiPromise = Promise.resolve(stored); return apiPromise; }
+    } catch(e){}
+    // 2. fall back to convo_api.json published on R2 by `run_tunnel.bat publish`.
+    //    Timeout so a slow/blocked lookup fails fast to the offline message
+    //    instead of leaving the button hanging with no feedback.
+    var ctrl = new AbortController();
+    var to = setTimeout(function(){ ctrl.abort(); }, 6000);
+    apiPromise = fetch((window.AUDIO_BASE || '') + 'convo_api.json', {cache:'no-store', signal: ctrl.signal})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){ clearTimeout(to); return (j && j.api) ? j.api.replace(/\/+$/, '') : null; })
+      .catch(function(){ clearTimeout(to); return null; });
+    return apiPromise;
+  }
+
+  async function start(){
+    setStatus('Connecting…');
+    var api = await getApi();
+    if (!api){ setStatus('Voice Q&A is offline right now. Add ?api=<your tunnel URL> to the page URL.'); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder){ setStatus('Mic not supported in this browser.'); return; }
+    var stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+    catch(e){ setStatus('Microphone permission denied.'); return; }
+    if (epAudio && !epAudio.paused){ epAudio.pause(); box.dataset.resume = '1'; }
+    chunks = [];
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = function(e){ if (e.data && e.data.size) chunks.push(e.data); };
+    recorder.onstop = function(){
+      stream.getTracks().forEach(function(t){ t.stop(); });
+      send(api, new Blob(chunks, {type: (recorder && recorder.mimeType) || 'audio/webm'}));
+    };
+    recorder.start();
+    recording = true;
+    btn.textContent = '⏹ Stop & send';
+    btn.classList.add('convo-rec');
+    setStatus('Listening… tap stop when done.');
+  }
+  function stop(){
+    recording = false;
+    btn.textContent = '🎙️ Ask about this episode';
+    btn.classList.remove('convo-rec');
+    setStatus('Thinking…');
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+  }
+  async function send(api, blob){
+    var fd = new FormData();
+    fd.append('slug', slug);
+    if (epAudio) fd.append('t', String(Math.floor(epAudio.currentTime || 0)));
+    fd.append('audio', blob, 'q.webm');
+    try {
+      var r = await fetch(api + '/ask', {method:'POST', body: fd});
+      var j = await r.json();
+      if (!r.ok || j.error){ setStatus('Error: ' + (j.error || r.status)); return; }
+      addTurn('you', j.question);
+      addTurn('host', j.answer);
+      setStatus('');
+      if (j.audio_b64){
+        player.src = 'data:' + (j.audio_mime || 'audio/mpeg') + ';base64,' + j.audio_b64;
+        player.onended = function(){
+          if (box.dataset.resume === '1' && epAudio){ epAudio.play(); box.dataset.resume = ''; }
+        };
+        player.play();
+      }
+    } catch(e){ setStatus('Network error — is the backend running?'); }
+  }
+  btn.addEventListener('click', function(){ recording ? stop() : start(); });
 })();
 </script>
 </body></html>

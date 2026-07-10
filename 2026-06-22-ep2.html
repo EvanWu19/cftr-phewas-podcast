@@ -12,6 +12,15 @@
 <h1 class="ep">Episode 161 · 2026-06-22 / ep2</h1>
 <p class="ep-date">Rasmy L 2021</p>
 <audio controls preload="none" src="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-06-22-ep2.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 25.4 MB · gpt-4o-mini-tts</p>
+<section id="convo" class="convo" data-slug="2026-06-22-ep2">
+  <div class="convo-row">
+    <button id="convo-btn" type="button" class="convo-btn">&#127908; Ask about this episode</button>
+    <span id="convo-status" class="convo-status"></span>
+  </div>
+  <div id="convo-log" class="convo-log"></div>
+  <audio id="convo-answer" class="convo-answer"></audio>
+  <p class="convo-hint">Speak a question, hear an answer &#8212; your questions are saved to shape future episodes.</p>
+</section>
 <div class="feedback-bar" id="feedback-bar" data-slug="2026-06-22-ep2">
   <p class="feedback-label">How did this episode land for you?</p>
   <div class="feedback-btns">
@@ -88,7 +97,7 @@
 <p class="line jordan"><span class="speaker">JORDAN</span> What would we need to check before trusting it on real registry-shaped data? 在真实的、登记库形态的数据上信任它之前，我们需要核查什么？</p>
 <p class="line alex"><span class="speaker">ALEX</span> First, vocabulary and coding drift — Med-BERT was trained on ICD-9 and ICD-10 diagnosis codes, and any setting with different code systems, mixed versions, or local coding habits would need its own vocabulary and very likely its own pretraining, not a transfer of their weights. 第一，词表和编码漂移——Med-BERT 是在 ICD-9 和 ICD-10 诊断代码上训练的，任何使用不同代码系统、版本混杂或有本地编码习惯的环境，都会需要自己的词表，而且很可能需要自己重新预训练，而不是迁移他们的权重。 Second, their pretraining objective embeds US utilization patterns, so we&#x27;d want to check that the second self-supervised task is appropriate before assuming the embeddings are clinically neutral. 第二，他们的预训练目标嵌入了美国的医疗使用模式，所以在假设这些嵌入临床中立之前，我们会想核查第二个自监督任务是否合适。 Third, the reported gains concentrate in the small-data regime, so we&#x27;d want to verify there is an actual win on the specific cohort sizes and prevalence we&#x27;d face, rather than assuming the 20 percent figure transfers. 第三，报告的收益集中在小数据情形，所以我们会想验证：在我们实际面对的具体队列规模和患病率下，确实有收益，而不是假定那个 20% 的数字能迁移过来。 Fourth, calibration and subgroup fairness — an AUC lift says nothing about whether predicted probabilities are calibrated or whether the lift is uniform across ancestry and age subgroups, which we would need to measure directly. 第四，校准和子组公平性——AUC 的提升完全没说明预测概率是否校准、提升在不同祖源和年龄子组之间是否均匀，这些我们需要直接测量。 None of that is decided — it&#x27;s the checklist before this earns a place in a pipeline. 这些都还没有定论——这是它在一条流程里赢得位置之前的核查清单。</p>
 <p class="line alex"><span class="speaker">ALEX</span> That&#x27;s our Track B build for today. 这就是我们今天的 Track B 搭建。 One-line takeaway: pretraining on coded clinical sequences pays off most when labels are scarce, and a forkable registry foundation-embedding module is the portfolio piece. 一句话总结：在编码化的临床序列上做预训练，在标签稀缺时回报最大，而一个可 fork 的登记库基础嵌入模块就是那件作品集成果。 Tomorrow on Track B we look at whether these foundation-model claims hold up under scrutiny — a skeptic&#x27;s paper. 明天的 Track B 我们看看这些基础模型的主张经不经得起推敲——一篇唱反调的论文。 Bring your skepticism. 带上你的怀疑。</p></div></details>
-</main><footer>Generated 2026-07-09 07:09</footer>
+</main><footer>Generated 2026-07-09 20:22</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -338,6 +347,102 @@
   document.addEventListener('DOMContentLoaded', applyStored);
   // Also apply immediately in case DOMContentLoaded already fired
   if (document.readyState !== 'loading') applyStored();
+})();
+</script>
+<script>
+(function(){
+  var box = document.getElementById('convo');
+  if (!box) return;
+  var slug = box.dataset.slug;
+  var btn = document.getElementById('convo-btn');
+  var statusEl = document.getElementById('convo-status');
+  var logEl = document.getElementById('convo-log');
+  var player = document.getElementById('convo-answer');
+  var epAudio = document.querySelector('main audio');
+  var recorder = null, chunks = [], recording = false, apiPromise = null;
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function setStatus(t){ statusEl.textContent = t || ''; }
+  function addTurn(role, text){
+    var p = document.createElement('p');
+    p.className = 'convo-turn convo-' + role;
+    p.innerHTML = '<span class="convo-role">' + (role === 'you' ? 'You' : 'Host') + '</span> '
+      + esc(text).replace(/\n/g, '<br>');
+    logEl.appendChild(p);
+    logEl.style.display = 'block';
+  }
+  function getApi(){
+    if (apiPromise) return apiPromise;
+    // 1. ?api=<tunnel-url> in the page URL — persisted so you paste it only once.
+    try {
+      var q = new URLSearchParams(location.search).get('api');
+      if (q){ localStorage.setItem('convoApi', q.replace(/\/+$/, '')); }
+      var stored = localStorage.getItem('convoApi');
+      if (stored){ apiPromise = Promise.resolve(stored); return apiPromise; }
+    } catch(e){}
+    // 2. fall back to convo_api.json published on R2 by `run_tunnel.bat publish`.
+    //    Timeout so a slow/blocked lookup fails fast to the offline message
+    //    instead of leaving the button hanging with no feedback.
+    var ctrl = new AbortController();
+    var to = setTimeout(function(){ ctrl.abort(); }, 6000);
+    apiPromise = fetch((window.AUDIO_BASE || '') + 'convo_api.json', {cache:'no-store', signal: ctrl.signal})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){ clearTimeout(to); return (j && j.api) ? j.api.replace(/\/+$/, '') : null; })
+      .catch(function(){ clearTimeout(to); return null; });
+    return apiPromise;
+  }
+
+  async function start(){
+    setStatus('Connecting…');
+    var api = await getApi();
+    if (!api){ setStatus('Voice Q&A is offline right now. Add ?api=<your tunnel URL> to the page URL.'); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder){ setStatus('Mic not supported in this browser.'); return; }
+    var stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+    catch(e){ setStatus('Microphone permission denied.'); return; }
+    if (epAudio && !epAudio.paused){ epAudio.pause(); box.dataset.resume = '1'; }
+    chunks = [];
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = function(e){ if (e.data && e.data.size) chunks.push(e.data); };
+    recorder.onstop = function(){
+      stream.getTracks().forEach(function(t){ t.stop(); });
+      send(api, new Blob(chunks, {type: (recorder && recorder.mimeType) || 'audio/webm'}));
+    };
+    recorder.start();
+    recording = true;
+    btn.textContent = '⏹ Stop & send';
+    btn.classList.add('convo-rec');
+    setStatus('Listening… tap stop when done.');
+  }
+  function stop(){
+    recording = false;
+    btn.textContent = '🎙️ Ask about this episode';
+    btn.classList.remove('convo-rec');
+    setStatus('Thinking…');
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+  }
+  async function send(api, blob){
+    var fd = new FormData();
+    fd.append('slug', slug);
+    if (epAudio) fd.append('t', String(Math.floor(epAudio.currentTime || 0)));
+    fd.append('audio', blob, 'q.webm');
+    try {
+      var r = await fetch(api + '/ask', {method:'POST', body: fd});
+      var j = await r.json();
+      if (!r.ok || j.error){ setStatus('Error: ' + (j.error || r.status)); return; }
+      addTurn('you', j.question);
+      addTurn('host', j.answer);
+      setStatus('');
+      if (j.audio_b64){
+        player.src = 'data:' + (j.audio_mime || 'audio/mpeg') + ';base64,' + j.audio_b64;
+        player.onended = function(){
+          if (box.dataset.resume === '1' && epAudio){ epAudio.play(); box.dataset.resume = ''; }
+        };
+        player.play();
+      }
+    } catch(e){ setStatus('Network error — is the backend running?'); }
+  }
+  btn.addEventListener('click', function(){ recording ? stop() : start(); });
 })();
 </script>
 </body></html>

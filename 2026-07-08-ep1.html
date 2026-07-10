@@ -12,6 +12,15 @@
 <h1 class="ep">Episode 208 · 2026-07-08 / ep1</h1>
 <p class="ep-date">Molotkov 2024</p>
 <audio controls preload="none" src="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-08-ep1.mp3" style="width:100%;margin:8px 0 8px;"></audio><p style="color:var(--muted);font-size:12px;margin:-6px 0 16px;">Audio · 26.7 MB · gpt-4o-mini-tts</p>
+<section id="convo" class="convo" data-slug="2026-07-08-ep1">
+  <div class="convo-row">
+    <button id="convo-btn" type="button" class="convo-btn">&#127908; Ask about this episode</button>
+    <span id="convo-status" class="convo-status"></span>
+  </div>
+  <div id="convo-log" class="convo-log"></div>
+  <audio id="convo-answer" class="convo-answer"></audio>
+  <p class="convo-hint">Speak a question, hear an answer &#8212; your questions are saved to shape future episodes.</p>
+</section>
 <div class="feedback-bar" id="feedback-bar" data-slug="2026-07-08-ep1">
   <p class="feedback-label">How did this episode land for you?</p>
   <div class="feedback-btns">
@@ -89,7 +98,7 @@
 <p class="line alex"><span class="speaker">ALEX</span> The review closes on two structural gaps in the field, and both matter for the Karen work. 综述最后指出了这个领域两个结构性缺口，两个都对 Karen 的工作有意义。 The first is interpretability: these deep models give you a number but no mechanism, so a genetic analyst can&#x27;t see why a variant scored high. 第一个是可解释性：这些深度模型给你一个数字却不给机理，所以遗传分析人员看不出一个变异为什么得分高。 The second is phenotype-specificity: almost every tool predicts pathogenicity in a general sense, and only a few — the review names CAVaLRi — bring the patient&#x27;s actual phenotype into the prediction. 第二个是表型特异性：几乎每个工具都在泛泛地预测致病性，只有少数——综述点名了 CAVaLRi——把病人实际的表型带进预测。 That gap is why a variant can be &quot;correctly pathogenic&quot; and still clinically misleading if it doesn&#x27;t match the phenotype in front of you. 正是这个缺口，使得一个变异可以&quot;正确地被判为致病&quot;，却在它与你眼前的表型不匹配时仍然造成临床误导。 In CF terms, a CFTR variant&#x27;s score means little until you ask pathogenic for which manifestation — pancreatic, pulmonary, sweat-gland, or CFTR-related rather than classic CF. 用 CF 的话来说，一个 CFTR 变异的分数没什么意义，除非你追问&quot;对哪个表现而言致病&quot;——胰腺、肺、汗腺，还是属于 CFTR 相关疾病而非经典型 CF。 So the review&#x27;s forward-looking ask — build interpretable, phenotype-aware predictors — is the same direction the registry work naturally pushes, because that&#x27;s where the phenotype depth actually lives. 所以综述面向未来的诉求——构建可解释、表型感知的预测器——和登记库工作自然推进的方向是一致的，因为表型深度恰恰就在那里。</p>
 <p class="line jordan"><span class="speaker">JORDAN</span> Tomorrow&#x27;s tee-up? 明天预告？</p>
 <p class="line alex"><span class="speaker">ALEX</span> We stay in Track A and keep pulling on the VUS thread — likely a predictor that tries to bake in the disease- or phenotype-specificity this review says the field is missing. 我们留在 Track A，继续拉扯 VUS 这条线——很可能是一个试图把这篇综述所说、领域里缺失的疾病或表型特异性直接内建进去的预测器。 The one-line takeaway: an in-silico score tells you a variant might break the protein, not that it causes CF — so for CFTR, recalibrate per-gene, audit the discordances, and keep the wet lab as the arbiter. 一句话总结：计算分数告诉你的是某个变异也许会破坏蛋白质，而不是它导致了 CF——所以对 CFTR，要按基因重校准、审计不一致之处，并把湿实验留作最终仲裁者。</p></div></details>
-</main><footer>Generated 2026-07-09 07:09</footer>
+</main><footer>Generated 2026-07-09 20:22</footer>
 <script>
 (function(){
   if (!window.EPISODES || !Array.isArray(window.EPISODES) || window.EPISODES.length === 0) return;
@@ -339,6 +348,102 @@
   document.addEventListener('DOMContentLoaded', applyStored);
   // Also apply immediately in case DOMContentLoaded already fired
   if (document.readyState !== 'loading') applyStored();
+})();
+</script>
+<script>
+(function(){
+  var box = document.getElementById('convo');
+  if (!box) return;
+  var slug = box.dataset.slug;
+  var btn = document.getElementById('convo-btn');
+  var statusEl = document.getElementById('convo-status');
+  var logEl = document.getElementById('convo-log');
+  var player = document.getElementById('convo-answer');
+  var epAudio = document.querySelector('main audio');
+  var recorder = null, chunks = [], recording = false, apiPromise = null;
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function setStatus(t){ statusEl.textContent = t || ''; }
+  function addTurn(role, text){
+    var p = document.createElement('p');
+    p.className = 'convo-turn convo-' + role;
+    p.innerHTML = '<span class="convo-role">' + (role === 'you' ? 'You' : 'Host') + '</span> '
+      + esc(text).replace(/\n/g, '<br>');
+    logEl.appendChild(p);
+    logEl.style.display = 'block';
+  }
+  function getApi(){
+    if (apiPromise) return apiPromise;
+    // 1. ?api=<tunnel-url> in the page URL — persisted so you paste it only once.
+    try {
+      var q = new URLSearchParams(location.search).get('api');
+      if (q){ localStorage.setItem('convoApi', q.replace(/\/+$/, '')); }
+      var stored = localStorage.getItem('convoApi');
+      if (stored){ apiPromise = Promise.resolve(stored); return apiPromise; }
+    } catch(e){}
+    // 2. fall back to convo_api.json published on R2 by `run_tunnel.bat publish`.
+    //    Timeout so a slow/blocked lookup fails fast to the offline message
+    //    instead of leaving the button hanging with no feedback.
+    var ctrl = new AbortController();
+    var to = setTimeout(function(){ ctrl.abort(); }, 6000);
+    apiPromise = fetch((window.AUDIO_BASE || '') + 'convo_api.json', {cache:'no-store', signal: ctrl.signal})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){ clearTimeout(to); return (j && j.api) ? j.api.replace(/\/+$/, '') : null; })
+      .catch(function(){ clearTimeout(to); return null; });
+    return apiPromise;
+  }
+
+  async function start(){
+    setStatus('Connecting…');
+    var api = await getApi();
+    if (!api){ setStatus('Voice Q&A is offline right now. Add ?api=<your tunnel URL> to the page URL.'); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder){ setStatus('Mic not supported in this browser.'); return; }
+    var stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+    catch(e){ setStatus('Microphone permission denied.'); return; }
+    if (epAudio && !epAudio.paused){ epAudio.pause(); box.dataset.resume = '1'; }
+    chunks = [];
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = function(e){ if (e.data && e.data.size) chunks.push(e.data); };
+    recorder.onstop = function(){
+      stream.getTracks().forEach(function(t){ t.stop(); });
+      send(api, new Blob(chunks, {type: (recorder && recorder.mimeType) || 'audio/webm'}));
+    };
+    recorder.start();
+    recording = true;
+    btn.textContent = '⏹ Stop & send';
+    btn.classList.add('convo-rec');
+    setStatus('Listening… tap stop when done.');
+  }
+  function stop(){
+    recording = false;
+    btn.textContent = '🎙️ Ask about this episode';
+    btn.classList.remove('convo-rec');
+    setStatus('Thinking…');
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+  }
+  async function send(api, blob){
+    var fd = new FormData();
+    fd.append('slug', slug);
+    if (epAudio) fd.append('t', String(Math.floor(epAudio.currentTime || 0)));
+    fd.append('audio', blob, 'q.webm');
+    try {
+      var r = await fetch(api + '/ask', {method:'POST', body: fd});
+      var j = await r.json();
+      if (!r.ok || j.error){ setStatus('Error: ' + (j.error || r.status)); return; }
+      addTurn('you', j.question);
+      addTurn('host', j.answer);
+      setStatus('');
+      if (j.audio_b64){
+        player.src = 'data:' + (j.audio_mime || 'audio/mpeg') + ';base64,' + j.audio_b64;
+        player.onended = function(){
+          if (box.dataset.resume === '1' && epAudio){ epAudio.play(); box.dataset.resume = ''; }
+        };
+        player.play();
+      }
+    } catch(e){ setStatus('Network error — is the backend running?'); }
+  }
+  btn.addEventListener('click', function(){ recording ? stop() : start(); });
 })();
 </script>
 </body></html>
