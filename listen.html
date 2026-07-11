@@ -29,7 +29,7 @@
     <p class="convo-hint">Ask about whatever&#39;s playing &#8212; the answer knows this episode. Your questions also shape future episodes.</p>
   </section>
 </main>
-<footer>Generated 2026-07-11 07:10</footer>
+<footer>Generated 2026-07-11 08:28</footer>
 <script>
 (function(){
   var EPS = window.EPISODES || [];
@@ -58,7 +58,19 @@
     sel.value = idx;
     counter.textContent = (idx + 1) + ' / ' + EPS.length;
     try { localStorage.setItem('listenIdx', idx); } catch(e2){}
+    updateMediaSession();
     if (autoplay) audio.play().catch(function(){});
+  }
+  function updateMediaSession(){
+    if (!('mediaSession' in navigator)) return;
+    var e = EPS[idx];
+    try {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: 'Episode ' + e.num + ' · ' + e.title,
+        artist: 'CFTR PheWAS Reading Podcast',
+        album: 'Double-tap = Ask · Triple-tap = Previous'
+      });
+    } catch(e3){}
   }
   document.getElementById('np-prev').addEventListener('click', function(){ load(idx - 1, true); });
   document.getElementById('np-next').addEventListener('click', function(){ load(idx + 1, true); });
@@ -157,6 +169,25 @@
     } catch(e){ setStatus('Network error — is the backend running?'); }
   }
   btn.addEventListener('click', function(){ recording ? stop() : start(); });
+
+  // ---- Bluetooth earbud / media-key control via the Media Session API ----
+  // single-tap = play/pause (default), DOUBLE-tap (nexttrack) = Ask about this
+  // episode, triple-tap (previoustrack) = previous episode. Without these
+  // handlers the double/triple taps do nothing (that's why they seemed dead).
+  if ('mediaSession' in navigator) {
+    var ms = navigator.mediaSession;
+    var setH = function(action, fn){ try { ms.setActionHandler(action, fn); } catch(e){} };
+    setH('play',  function(){ audio.play().catch(function(){}); });
+    setH('pause', function(){ audio.pause(); });
+    setH('nexttrack',     function(){ recording ? stop() : start(); });   // double-tap -> Ask
+    setH('previoustrack', function(){ load(idx - 1, true); });            // triple-tap -> previous ep
+    audio.addEventListener('timeupdate', function(){
+      if (ms.setPositionState && audio.duration && isFinite(audio.duration)) {
+        try { ms.setPositionState({ duration: audio.duration, position: audio.currentTime,
+                                    playbackRate: audio.playbackRate || 1 }); } catch(e){}
+      }
+    });
+  }
 })();
 </script>
 </body></html>
