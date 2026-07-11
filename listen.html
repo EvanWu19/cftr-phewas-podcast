@@ -29,7 +29,7 @@
     <p class="convo-hint">Ask about whatever&#39;s playing &#8212; the answer knows this episode. Your questions also shape future episodes.</p>
   </section>
 </main>
-<footer>Generated 2026-07-11 08:28</footer>
+<footer>Generated 2026-07-11 08:46</footer>
 <script>
 (function(){
   var EPS = window.EPISODES || [];
@@ -85,6 +85,36 @@
   var logEl = document.getElementById('convo-log');
   var answer = document.getElementById('convo-answer');
   var recorder = null, chunks = [], recording = false, apiPromise = null;
+  var _audioCtx = null, _vadTimer = null, _maxTimer = null;
+
+  // Auto-stop: send as soon as the listener stops talking. Needed because a
+  // second earbud double-tap can't reach the page while recording (the episode
+  // audio is paused, so the media session is inactive and media keys aren't
+  // routed here). Uses the Web Audio API to watch the mic level.
+  function startVAD(stream){
+    try {
+      _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      var src = _audioCtx.createMediaStreamSource(stream);
+      var an = _audioCtx.createAnalyser(); an.fftSize = 512;
+      src.connect(an);
+      var buf = new Uint8Array(an.fftSize);
+      var spoke = false, lastLoud = Date.now();
+      _vadTimer = setInterval(function(){
+        if (!recording) return;
+        an.getByteTimeDomainData(buf);
+        var s = 0; for (var i = 0; i < buf.length; i++){ var v = (buf[i] - 128) / 128; s += v * v; }
+        if (Math.sqrt(s / buf.length) > 0.045){ spoke = true; lastLoud = Date.now(); }
+        if (spoke && (Date.now() - lastLoud) > 1400){ stop(); }   // ~1.4s of silence
+      }, 100);
+      _maxTimer = setTimeout(function(){ if (recording) stop(); }, 30000);  // hard cap
+    } catch(e){}
+  }
+  function stopVAD(){
+    if (_vadTimer){ clearInterval(_vadTimer); _vadTimer = null; }
+    if (_maxTimer){ clearTimeout(_maxTimer); _maxTimer = null; }
+    try { if (_audioCtx) _audioCtx.close(); } catch(e){}
+    _audioCtx = null;
+  }
 
   function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
   function setStatus(t){ statusEl.textContent = t || ''; }
@@ -140,10 +170,13 @@
     recording = true;
     btn.textContent = '⏹ Stop & send';
     btn.classList.add('convo-rec');
-    setStatus('Listening about “' + EPS[idx].title + '”… tap stop when done.');
+    setStatus('Listening… I’ll send automatically when you stop talking.');
+    startVAD(stream);
   }
   function stop(){
+    if (!recording) return;
     recording = false;
+    stopVAD();
     btn.textContent = '🎤 Ask about this episode';
     btn.classList.remove('convo-rec');
     setStatus('Thinking…');
@@ -169,6 +202,22 @@
     } catch(e){ setStatus('Network error — is the backend running?'); }
   }
   btn.addEventListener('click', function(){ recording ? stop() : start(); });
+
+  // Keep the screen awake while an episode is playing. A browser blocks mic
+  // access when the page is hidden / the screen is off (a security rule we can't
+  // override), so without this the earbud "Ask" can't start recording once the
+  // screen sleeps. This stops the auto-off; a manual power-button press still
+  // hides the page (then only play/pause/next work, not Ask).
+  var _wake = null;
+  async function acquireWake(){
+    try { if ('wakeLock' in navigator) _wake = await navigator.wakeLock.request('screen'); } catch(e){}
+  }
+  function releaseWake(){ try { if (_wake){ _wake.release(); _wake = null; } } catch(e){} }
+  audio.addEventListener('play', acquireWake);
+  audio.addEventListener('pause', releaseWake);
+  document.addEventListener('visibilitychange', function(){
+    if (document.visibilityState === 'visible' && !audio.paused) acquireWake();
+  });
 
   // ---- Bluetooth earbud / media-key control via the Media Session API ----
   // single-tap = play/pause (default), DOUBLE-tap (nexttrack) = Ask about this
