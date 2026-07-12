@@ -8,11 +8,38 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jul 2026 11:10:45 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 11:08:50 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 224: Canitez Y 2026</title>
+      <description>Canitez Y 2026</description>
+      <guid isPermaLink="false">2026-07-12-ep3</guid>
+      <pubDate>Sun, 12 Jul 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-12-ep3.mp3" length="26059893" type="audio/mpeg"/>
+      <itunes:title>Ep 224: Canitez Y 2026</itunes:title>
+      <itunes:episode>224</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 223: Nigo M 2024</title>
+      <description>Nigo M 2024</description>
+      <guid isPermaLink="false">2026-07-12-ep2</guid>
+      <pubDate>Sun, 12 Jul 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-12-ep2.mp3" length="27076197" type="audio/mpeg"/>
+      <itunes:title>Ep 223: Nigo M 2024</itunes:title>
+      <itunes:episode>223</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 222: You N 2024</title>
+      <description>You N 2024</description>
+      <guid isPermaLink="false">2026-07-12-ep1</guid>
+      <pubDate>Sun, 12 Jul 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-12-ep1.mp3" length="27554805" type="audio/mpeg"/>
+      <itunes:title>Ep 222: You N 2024</itunes:title>
+      <itunes:episode>222</itunes:episode>
+    </item>
     <item>
       <title>Ep 221: Cohen-Cymberknoh M 2026</title>
       <description>Cohen-Cymberknoh M 2026</description>
