@@ -30,6 +30,10 @@ hr{border:0;border-top:1px solid var(--border);margin:24px 0}
 .convo-host{border-left:3px solid var(--alex)}
 .convo-role{font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);margin-right:6px}
 .convo-hint{color:var(--muted);font-size:11px;margin:8px 0 0}
+.convo-typerow{display:flex;gap:8px;margin-top:10px}
+.convo-input{flex:1;min-width:0;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font:inherit;font-size:15px}
+.convo-input:focus{outline:none;border-color:var(--accent)}
+.convo-send{flex:0 0 auto;padding:10px 16px}
 ul.episodes{list-style:none;padding:0}
 ul.episodes li{padding:14px 0;border-bottom:1px solid var(--border)}
 ul.episodes a.ep-link{display:block;color:var(--text);text-decoration:none}

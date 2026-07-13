@@ -25,11 +25,15 @@
       <span id="convo-status" class="convo-status"></span>
     </div>
     <div id="convo-log" class="convo-log"></div>
+    <div class="convo-typerow">
+      <input id="convo-text" class="convo-input" type="text" placeholder="…or type your question" autocomplete="off" enterkeyhint="send">
+      <button id="convo-send" type="button" class="convo-btn convo-send">Send</button>
+    </div>
     <audio id="convo-answer" class="convo-answer"></audio>
-    <p class="convo-hint">Ask about whatever&#39;s playing &#8212; the answer knows this episode. Your questions also shape future episodes.</p>
+    <p class="convo-hint">Speak (&#127908;) or type &#8212; the answer knows this episode. Your questions also shape future episodes.</p>
   </section>
 </main>
-<footer>Generated 2026-07-13 10:17</footer>
+<footer>Generated 2026-07-13 19:28</footer>
 <script>
 (function(){
   var EPS = window.EPISODES || [];
@@ -84,6 +88,8 @@
   var statusEl = document.getElementById('convo-status');
   var logEl = document.getElementById('convo-log');
   var answer = document.getElementById('convo-answer');
+  var textInput = document.getElementById('convo-text');
+  var sendBtn = document.getElementById('convo-send');
   var recorder = null, chunks = [], recording = false, apiPromise = null;
   var _audioCtx = null, _vadTimer = null, _maxTimer = null;
 
@@ -202,6 +208,32 @@
     } catch(e){ setStatus('Network error — is the backend running?'); }
   }
   btn.addEventListener('click', function(){ recording ? stop() : start(); });
+
+  // ---- typed question (text) -> same /ask, but speak=false (no TTS/audio) ----
+  async function sendText(){
+    var q = textInput.value.trim();
+    if (!q) return;
+    setStatus('Connecting…');
+    var api = await getApi();
+    if (!api){ setStatus('Voice Q&A is offline right now. Add ?api=<your tunnel URL> to the page URL.'); return; }
+    textInput.value = '';
+    addTurn('you', q);
+    setStatus('Thinking…');
+    var fd = new FormData();
+    fd.append('slug', EPS[idx].slug);
+    fd.append('t', String(Math.floor(audio.currentTime || 0)));
+    fd.append('text', q);
+    fd.append('speak', 'false');
+    try {
+      var r = await fetch(api + '/ask', {method:'POST', body: fd});
+      var j = await r.json();
+      if (!r.ok || j.error){ setStatus('Error: ' + (j.error || r.status)); return; }
+      addTurn('host', j.answer);
+      setStatus('');
+    } catch(e){ setStatus('Network error — is the backend running?'); }
+  }
+  sendBtn.addEventListener('click', sendText);
+  textInput.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); sendText(); } });
 
   // Keep the screen awake while an episode is playing. A browser blocks mic
   // access when the page is hidden / the screen is off (a security rule we can't
