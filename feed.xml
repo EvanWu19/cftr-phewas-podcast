@@ -8,11 +8,29 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jul 2026 11:07:53 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jul 2026 11:04:28 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 235: Gaber CE 2024 (Cancer Medicine, Dec 2024)</title>
+      <description>Gaber CE 2024 (Cancer Medicine, Dec 2024)</description>
+      <guid isPermaLink="false">2026-07-16-ep2</guid>
+      <pubDate>Thu, 16 Jul 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-16-ep2.mp3" length="25997901" type="audio/mpeg"/>
+      <itunes:title>Ep 235: Gaber CE 2024 (Cancer Medicine, Dec 2024)</itunes:title>
+      <itunes:episode>235</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 234: Wilcox EH 2025 (Genet Med Open, publ. online Apr 2025)</title>
+      <description>Wilcox EH 2025 (Genet Med Open, publ. online Apr 2025)</description>
+      <guid isPermaLink="false">2026-07-16-ep1</guid>
+      <pubDate>Thu, 16 Jul 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-16-ep1.mp3" length="26482101" type="audio/mpeg"/>
+      <itunes:title>Ep 234: Wilcox EH 2025 (Genet Med Open, publ. online Apr 2025)</itunes:title>
+      <itunes:episode>234</itunes:episode>
+    </item>
     <item>
       <title>Ep 233: Lin Y 2026 (Genome Research, publ. online Jun 2026)</title>
       <description>Lin Y 2026 (Genome Research, publ. online Jun 2026)</description>
