@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jul 2026 11:09:45 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 11:13:59 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 253: Ward A 2025</title>
+      <description>Ward A 2025</description>
+      <guid isPermaLink="false">2026-07-21-ep3</guid>
+      <pubDate>Tue, 21 Jul 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-21-ep3.mp3" length="34914597" type="audio/mpeg"/>
+      <itunes:title>Ep 253: Ward A 2025</itunes:title>
+      <itunes:episode>253</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 252: Pala D 2026</title>
+      <description>Pala D 2026</description>
+      <guid isPermaLink="false">2026-07-21-ep2</guid>
+      <pubDate>Tue, 21 Jul 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-21-ep2.mp3" length="25294197" type="audio/mpeg"/>
+      <itunes:title>Ep 252: Pala D 2026</itunes:title>
+      <itunes:episode>252</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 251: Krusinski A 2026</title>
+      <description>Krusinski A 2026</description>
+      <guid isPermaLink="false">2026-07-21-ep1</guid>
+      <pubDate>Tue, 21 Jul 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-21-ep1.mp3" length="35014197" type="audio/mpeg"/>
+      <itunes:title>Ep 251: Krusinski A 2026</itunes:title>
+      <itunes:episode>251</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 250: Mailbag</title>
+      <description>Mailbag</description>
+      <guid isPermaLink="false">2026-07-21-ep0-mailbag</guid>
+      <pubDate>Tue, 21 Jul 2026 07:00:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-21-ep0-mailbag.mp3" length="9550941" type="audio/mpeg"/>
+      <itunes:title>Ep 250: Mailbag</itunes:title>
+      <itunes:episode>250</itunes:episode>
+    </item>
     <item>
       <title>Ep 249: Gramegna A 2026</title>
       <description>Gramegna A 2026</description>
