@@ -8,11 +8,38 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Jul 2026 11:13:59 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 11:08:44 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 256: Wang C 2025</title>
+      <description>Wang C 2025</description>
+      <guid isPermaLink="false">2026-07-22-ep3</guid>
+      <pubDate>Wed, 22 Jul 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-22-ep3.mp3" length="25114773" type="audio/mpeg"/>
+      <itunes:title>Ep 256: Wang C 2025</itunes:title>
+      <itunes:episode>256</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 255: Hager P 2024</title>
+      <description>Hager P 2024</description>
+      <guid isPermaLink="false">2026-07-22-ep2</guid>
+      <pubDate>Wed, 22 Jul 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-22-ep2.mp3" length="25857285" type="audio/mpeg"/>
+      <itunes:title>Ep 255: Hager P 2024</itunes:title>
+      <itunes:episode>255</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 254: Lin JH 2026</title>
+      <description>Lin JH 2026</description>
+      <guid isPermaLink="false">2026-07-22-ep1</guid>
+      <pubDate>Wed, 22 Jul 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-22-ep1.mp3" length="26387421" type="audio/mpeg"/>
+      <itunes:title>Ep 254: Lin JH 2026</itunes:title>
+      <itunes:episode>254</itunes:episode>
+    </item>
     <item>
       <title>Ep 253: Ward A 2025</title>
       <description>Ward A 2025</description>
