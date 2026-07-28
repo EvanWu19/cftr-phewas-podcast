@@ -8,11 +8,38 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jul 2026 11:08:19 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 11:08:44 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 274: (review) 2026</title>
+      <description>(review) 2026</description>
+      <guid isPermaLink="false">2026-07-28-ep3</guid>
+      <pubDate>Tue, 28 Jul 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-28-ep3.mp3" length="26145885" type="audio/mpeg"/>
+      <itunes:title>Ep 274: (review) 2026</itunes:title>
+      <itunes:episode>274</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 273: Di Tommaso P 2017</title>
+      <description>Di Tommaso P 2017</description>
+      <guid isPermaLink="false">2026-07-28-ep2</guid>
+      <pubDate>Tue, 28 Jul 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-28-ep2.mp3" length="25914717" type="audio/mpeg"/>
+      <itunes:title>Ep 273: Di Tommaso P 2017</itunes:title>
+      <itunes:episode>273</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 272: Zhuo X 2026</title>
+      <description>Zhuo X 2026</description>
+      <guid isPermaLink="false">2026-07-28-ep1</guid>
+      <pubDate>Tue, 28 Jul 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-07-28-ep1.mp3" length="26986461" type="audio/mpeg"/>
+      <itunes:title>Ep 272: Zhuo X 2026</itunes:title>
+      <itunes:episode>272</itunes:episode>
+    </item>
     <item>
       <title>Ep 271: Cooney AL 2026</title>
       <description>Cooney AL 2026</description>
