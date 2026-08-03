@@ -8,11 +8,38 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Aug 2026 11:08:24 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2026 11:08:46 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 292: Sorrentino U 2024</title>
+      <description>Sorrentino U 2024</description>
+      <guid isPermaLink="false">2026-08-03-ep3</guid>
+      <pubDate>Mon, 03 Aug 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-03-ep3.mp3" length="25805517" type="audio/mpeg"/>
+      <itunes:title>Ep 292: Sorrentino U 2024</itunes:title>
+      <itunes:episode>292</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 291: Zelko JS 2025</title>
+      <description>Zelko JS 2025</description>
+      <guid isPermaLink="false">2026-08-03-ep2</guid>
+      <pubDate>Mon, 03 Aug 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-03-ep2.mp3" length="26728053" type="audio/mpeg"/>
+      <itunes:title>Ep 291: Zelko JS 2025</itunes:title>
+      <itunes:episode>291</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 290: Li K 2026</title>
+      <description>Li K 2026</description>
+      <guid isPermaLink="false">2026-08-03-ep1</guid>
+      <pubDate>Mon, 03 Aug 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-03-ep1.mp3" length="25190589" type="audio/mpeg"/>
+      <itunes:title>Ep 290: Li K 2026</itunes:title>
+      <itunes:episode>290</itunes:episode>
+    </item>
     <item>
       <title>Ep 289: Yildiz CA 2024</title>
       <description>Yildiz CA 2024</description>
