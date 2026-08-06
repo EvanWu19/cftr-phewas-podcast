@@ -8,11 +8,38 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Aug 2026 11:14:45 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Aug 2026 11:09:58 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 301: Kim S 2025</title>
+      <description>Kim S 2025</description>
+      <guid isPermaLink="false">2026-08-06-ep3</guid>
+      <pubDate>Thu, 06 Aug 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-06-ep3.mp3" length="31206621" type="audio/mpeg"/>
+      <itunes:title>Ep 301: Kim S 2025</itunes:title>
+      <itunes:episode>301</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 300: Tekumalla R 2024</title>
+      <description>Tekumalla R 2024</description>
+      <guid isPermaLink="false">2026-08-06-ep2</guid>
+      <pubDate>Thu, 06 Aug 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-06-ep2.mp3" length="26883309" type="audio/mpeg"/>
+      <itunes:title>Ep 300: Tekumalla R 2024</itunes:title>
+      <itunes:episode>300</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 299: Ortuzar Menendez M 2026</title>
+      <description>Ortuzar Menendez M 2026</description>
+      <guid isPermaLink="false">2026-08-06-ep1</guid>
+      <pubDate>Thu, 06 Aug 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-06-ep1.mp3" length="28674669" type="audio/mpeg"/>
+      <itunes:title>Ep 299: Ortuzar Menendez M 2026</itunes:title>
+      <itunes:episode>299</itunes:episode>
+    </item>
     <item>
       <title>Ep 298: Ward A 2024</title>
       <description>Ward A 2024</description>
