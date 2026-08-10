@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Aug 2026 11:09:01 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 11:11:35 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 314: Phan HTT 2020</title>
+      <description>Phan HTT 2020</description>
+      <guid isPermaLink="false">2026-08-10-ep4</guid>
+      <pubDate>Mon, 10 Aug 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-10-ep4.mp3" length="22173309" type="audio/mpeg"/>
+      <itunes:title>Ep 314: Phan HTT 2020</itunes:title>
+      <itunes:episode>314</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 313: Daymont C 2017</title>
+      <description>Daymont C 2017</description>
+      <guid isPermaLink="false">2026-08-10-ep3</guid>
+      <pubDate>Mon, 10 Aug 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-10-ep3.mp3" length="20480781" type="audio/mpeg"/>
+      <itunes:title>Ep 313: Daymont C 2017</itunes:title>
+      <itunes:episode>313</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 312: Dixon BE 2020</title>
+      <description>Dixon BE 2020</description>
+      <guid isPermaLink="false">2026-08-10-ep2</guid>
+      <pubDate>Mon, 10 Aug 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-10-ep2.mp3" length="26755581" type="audio/mpeg"/>
+      <itunes:title>Ep 312: Dixon BE 2020</itunes:title>
+      <itunes:episode>312</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 311: Lansdon LA 2026</title>
+      <description>Lansdon LA 2026</description>
+      <guid isPermaLink="false">2026-08-10-ep1</guid>
+      <pubDate>Mon, 10 Aug 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-10-ep1.mp3" length="27704445" type="audio/mpeg"/>
+      <itunes:title>Ep 311: Lansdon LA 2026</itunes:title>
+      <itunes:episode>311</itunes:episode>
+    </item>
     <item>
       <title>Ep 310: Luo S 2024</title>
       <description>Luo S 2024</description>
