@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Aug 2026 11:12:16 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 11:10:35 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 326: Lawman HG 2015</title>
+      <description>Lawman HG 2015</description>
+      <guid isPermaLink="false">2026-08-13-ep4</guid>
+      <pubDate>Thu, 13 Aug 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-13-ep4.mp3" length="19721757" type="audio/mpeg"/>
+      <itunes:title>Ep 326: Lawman HG 2015</itunes:title>
+      <itunes:episode>326</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 325: Yang S 2016</title>
+      <description>Yang S 2016</description>
+      <guid isPermaLink="false">2026-08-13-ep3</guid>
+      <pubDate>Thu, 13 Aug 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-13-ep3.mp3" length="19412181" type="audio/mpeg"/>
+      <itunes:title>Ep 325: Yang S 2016</itunes:title>
+      <itunes:episode>325</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 324: Garcia BT 2025</title>
+      <description>Garcia BT 2025</description>
+      <guid isPermaLink="false">2026-08-13-ep2</guid>
+      <pubDate>Thu, 13 Aug 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-13-ep2.mp3" length="25153221" type="audio/mpeg"/>
+      <itunes:title>Ep 324: Garcia BT 2025</itunes:title>
+      <itunes:episode>324</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 323: Ngo K 2026</title>
+      <description>Ngo K 2026</description>
+      <guid isPermaLink="false">2026-08-13-ep1</guid>
+      <pubDate>Thu, 13 Aug 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-13-ep1.mp3" length="25150077" type="audio/mpeg"/>
+      <itunes:title>Ep 323: Ngo K 2026</itunes:title>
+      <itunes:episode>323</itunes:episode>
+    </item>
     <item>
       <title>Ep 322: de Mello E Silva JF 2024</title>
       <description>de Mello E Silva JF 2024</description>
