@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Aug 2026 11:11:56 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2026 11:11:53 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 342: Martinez-Millana A 2018</title>
+      <description>Martinez-Millana A 2018</description>
+      <guid isPermaLink="false">2026-08-17-ep4</guid>
+      <pubDate>Mon, 17 Aug 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-17-ep4.mp3" length="21859341" type="audio/mpeg"/>
+      <itunes:title>Ep 342: Martinez-Millana A 2018</itunes:title>
+      <itunes:episode>342</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 341: Jin X 2025</title>
+      <description>Jin X 2025</description>
+      <guid isPermaLink="false">2026-08-17-ep3</guid>
+      <pubDate>Mon, 17 Aug 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-17-ep3.mp3" length="23972205" type="audio/mpeg"/>
+      <itunes:title>Ep 341: Jin X 2025</itunes:title>
+      <itunes:episode>341</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 340: Di Leo D 2025</title>
+      <description>Di Leo D 2025</description>
+      <guid isPermaLink="false">2026-08-17-ep2</guid>
+      <pubDate>Mon, 17 Aug 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-17-ep2.mp3" length="27043605" type="audio/mpeg"/>
+      <itunes:title>Ep 340: Di Leo D 2025</itunes:title>
+      <itunes:episode>340</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 339: Gu YJ 2025</title>
+      <description>Gu YJ 2025</description>
+      <guid isPermaLink="false">2026-08-17-ep1</guid>
+      <pubDate>Mon, 17 Aug 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-17-ep1.mp3" length="26374365" type="audio/mpeg"/>
+      <itunes:title>Ep 339: Gu YJ 2025</itunes:title>
+      <itunes:episode>339</itunes:episode>
+    </item>
     <item>
       <title>Ep 338: Kahn MG 2016</title>
       <description>Kahn MG 2016</description>
