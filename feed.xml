@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Aug 2026 11:12:49 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2026 11:11:02 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 362: Ng DK 2023</title>
+      <description>Ng DK 2023</description>
+      <guid isPermaLink="false">2026-08-22-ep4</guid>
+      <pubDate>Sat, 22 Aug 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-22-ep4.mp3" length="22977477" type="audio/mpeg"/>
+      <itunes:title>Ep 362: Ng DK 2023</itunes:title>
+      <itunes:episode>362</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 361: Rigby RA 2014</title>
+      <description>Rigby RA 2014</description>
+      <guid isPermaLink="false">2026-08-22-ep3</guid>
+      <pubDate>Sat, 22 Aug 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-22-ep3.mp3" length="21058149" type="audio/mpeg"/>
+      <itunes:title>Ep 361: Rigby RA 2014</itunes:title>
+      <itunes:episode>361</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 360: Cashin AG 2025</title>
+      <description>Cashin AG 2025</description>
+      <guid isPermaLink="false">2026-08-22-ep2</guid>
+      <pubDate>Sat, 22 Aug 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-22-ep2.mp3" length="25196013" type="audio/mpeg"/>
+      <itunes:title>Ep 360: Cashin AG 2025</itunes:title>
+      <itunes:episode>360</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 359: El Makhzen N 2026</title>
+      <description>El Makhzen N 2026</description>
+      <guid isPermaLink="false">2026-08-22-ep1</guid>
+      <pubDate>Sat, 22 Aug 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-22-ep1.mp3" length="28245597" type="audio/mpeg"/>
+      <itunes:title>Ep 359: El Makhzen N 2026</itunes:title>
+      <itunes:episode>359</itunes:episode>
+    </item>
     <item>
       <title>Ep 358: Cole TJ 2010</title>
       <description>Cole TJ 2010</description>
