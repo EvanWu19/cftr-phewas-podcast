@@ -8,11 +8,38 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Aug 2026 11:11:02 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2026 11:09:31 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 365: Mramba LK 2024</title>
+      <description>Mramba LK 2024</description>
+      <guid isPermaLink="false">2026-08-23-ep3</guid>
+      <pubDate>Sun, 23 Aug 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-23-ep3.mp3" length="27095421" type="audio/mpeg"/>
+      <itunes:title>Ep 365: Mramba LK 2024</itunes:title>
+      <itunes:episode>365</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 364: Lam M 2020</title>
+      <description>Lam M 2020</description>
+      <guid isPermaLink="false">2026-08-23-ep2</guid>
+      <pubDate>Sun, 23 Aug 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-23-ep2.mp3" length="28702629" type="audio/mpeg"/>
+      <itunes:title>Ep 364: Lam M 2020</itunes:title>
+      <itunes:episode>364</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 363: McDonald EF 2024</title>
+      <description>McDonald EF 2024</description>
+      <guid isPermaLink="false">2026-08-23-ep1</guid>
+      <pubDate>Sun, 23 Aug 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-23-ep1.mp3" length="28713765" type="audio/mpeg"/>
+      <itunes:title>Ep 363: McDonald EF 2024</itunes:title>
+      <itunes:episode>363</itunes:episode>
+    </item>
     <item>
       <title>Ep 362: Ng DK 2023</title>
       <description>Ng DK 2023</description>
