@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Aug 2026 11:21:57 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 11:22:24 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 374: Mariam A 2024</title>
+      <description>Mariam A 2024</description>
+      <guid isPermaLink="false">2026-08-25-ep4</guid>
+      <pubDate>Tue, 25 Aug 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-25-ep4.mp3" length="22625901" type="audio/mpeg"/>
+      <itunes:title>Ep 374: Mariam A 2024</itunes:title>
+      <itunes:episode>374</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 373: Stausberg J 2023</title>
+      <description>Stausberg J 2023</description>
+      <guid isPermaLink="false">2026-08-25-ep3</guid>
+      <pubDate>Tue, 25 Aug 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-25-ep3.mp3" length="20619957" type="audio/mpeg"/>
+      <itunes:title>Ep 373: Stausberg J 2023</itunes:title>
+      <itunes:episode>373</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 372: Bosilj M 2024</title>
+      <description>Bosilj M 2024</description>
+      <guid isPermaLink="false">2026-08-25-ep2</guid>
+      <pubDate>Tue, 25 Aug 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-25-ep2.mp3" length="25709757" type="audio/mpeg"/>
+      <itunes:title>Ep 372: Bosilj M 2024</itunes:title>
+      <itunes:episode>372</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 371: Liu J 2024</title>
+      <description>Liu J 2024</description>
+      <guid isPermaLink="false">2026-08-25-ep1</guid>
+      <pubDate>Tue, 25 Aug 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-25-ep1.mp3" length="27731517" type="audio/mpeg"/>
+      <itunes:title>Ep 371: Liu J 2024</itunes:title>
+      <itunes:episode>371</itunes:episode>
+    </item>
     <item>
       <title>Ep 370: Malenka DJ 2022</title>
       <description>Malenka DJ 2022</description>
