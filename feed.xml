@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Aug 2026 11:22:24 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 11:21:52 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 378: Buchanan ZV 2025</title>
+      <description>Buchanan ZV 2025</description>
+      <guid isPermaLink="false">2026-08-26-ep4</guid>
+      <pubDate>Wed, 26 Aug 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-26-ep4.mp3" length="23533365" type="audio/mpeg"/>
+      <itunes:title>Ep 378: Buchanan ZV 2025</itunes:title>
+      <itunes:episode>378</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 377: Huang J 2024</title>
+      <description>Huang J 2024</description>
+      <guid isPermaLink="false">2026-08-26-ep3</guid>
+      <pubDate>Wed, 26 Aug 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-26-ep3.mp3" length="22562541" type="audio/mpeg"/>
+      <itunes:title>Ep 377: Huang J 2024</itunes:title>
+      <itunes:episode>377</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 376: Wiest IC 2025</title>
+      <description>Wiest IC 2025</description>
+      <guid isPermaLink="false">2026-08-26-ep2</guid>
+      <pubDate>Wed, 26 Aug 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-26-ep2.mp3" length="27064365" type="audio/mpeg"/>
+      <itunes:title>Ep 376: Wiest IC 2025</itunes:title>
+      <itunes:episode>376</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 375: Lee DB 2026</title>
+      <description>Lee DB 2026</description>
+      <guid isPermaLink="false">2026-08-26-ep1</guid>
+      <pubDate>Wed, 26 Aug 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-26-ep1.mp3" length="28622253" type="audio/mpeg"/>
+      <itunes:title>Ep 375: Lee DB 2026</itunes:title>
+      <itunes:episode>375</itunes:episode>
+    </item>
     <item>
       <title>Ep 374: Mariam A 2024</title>
       <description>Mariam A 2024</description>
