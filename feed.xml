@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Aug 2026 11:21:52 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2026 11:21:32 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 382: Boone-Heinonen J 2019</title>
+      <description>Boone-Heinonen J 2019</description>
+      <guid isPermaLink="false">2026-08-27-ep4</guid>
+      <pubDate>Thu, 27 Aug 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-27-ep4.mp3" length="21837429" type="audio/mpeg"/>
+      <itunes:title>Ep 382: Boone-Heinonen J 2019</itunes:title>
+      <itunes:episode>382</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 381: Woolley CSC 2020</title>
+      <description>Woolley CSC 2020</description>
+      <guid isPermaLink="false">2026-08-27-ep3</guid>
+      <pubDate>Thu, 27 Aug 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-27-ep3.mp3" length="23747613" type="audio/mpeg"/>
+      <itunes:title>Ep 381: Woolley CSC 2020</itunes:title>
+      <itunes:episode>381</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 380: Shashikumar SP 2025</title>
+      <description>Shashikumar SP 2025</description>
+      <guid isPermaLink="false">2026-08-27-ep2</guid>
+      <pubDate>Thu, 27 Aug 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-27-ep2.mp3" length="26036181" type="audio/mpeg"/>
+      <itunes:title>Ep 380: Shashikumar SP 2025</itunes:title>
+      <itunes:episode>380</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 379: Gelman S 2026</title>
+      <description>Gelman S 2026</description>
+      <guid isPermaLink="false">2026-08-27-ep1</guid>
+      <pubDate>Thu, 27 Aug 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-27-ep1.mp3" length="26685837" type="audio/mpeg"/>
+      <itunes:title>Ep 379: Gelman S 2026</itunes:title>
+      <itunes:episode>379</itunes:episode>
+    </item>
     <item>
       <title>Ep 378: Buchanan ZV 2025</title>
       <description>Buchanan ZV 2025</description>
