@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Aug 2026 11:21:39 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2026 11:21:36 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 394: Santos IKSD 2024</title>
+      <description>Santos IKSD 2024</description>
+      <guid isPermaLink="false">2026-08-30-ep4</guid>
+      <pubDate>Sun, 30 Aug 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-30-ep4.mp3" length="23640813" type="audio/mpeg"/>
+      <itunes:title>Ep 394: Santos IKSD 2024</itunes:title>
+      <itunes:episode>394</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 393: Ozonze O 2023</title>
+      <description>Ozonze O 2023</description>
+      <guid isPermaLink="false">2026-08-30-ep3</guid>
+      <pubDate>Sun, 30 Aug 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-30-ep3.mp3" length="21490869" type="audio/mpeg"/>
+      <itunes:title>Ep 393: Ozonze O 2023</itunes:title>
+      <itunes:episode>393</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 392: Rashid 2024</title>
+      <description>Rashid 2024</description>
+      <guid isPermaLink="false">2026-08-30-ep2</guid>
+      <pubDate>Sun, 30 Aug 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-30-ep2.mp3" length="27446205" type="audio/mpeg"/>
+      <itunes:title>Ep 392: Rashid 2024</itunes:title>
+      <itunes:episode>392</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 391: Smith 2023</title>
+      <description>Smith 2023</description>
+      <guid isPermaLink="false">2026-08-30-ep1</guid>
+      <pubDate>Sun, 30 Aug 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-30-ep1.mp3" length="26883573" type="audio/mpeg"/>
+      <itunes:title>Ep 391: Smith 2023</itunes:title>
+      <itunes:episode>391</itunes:episode>
+    </item>
     <item>
       <title>Ep 390: Leosdottir M 2025</title>
       <description>Leosdottir M 2025</description>
