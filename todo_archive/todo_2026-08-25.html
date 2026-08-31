@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<title>To-Do Board · CFTR PheWAS Reading Podcast</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.board-intro{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin:8px 0 16px}
+.board-intro p{margin:6px 0}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:10px 0}
+.legend .lg{font-size:12.5px;color:var(--muted);flex:1;min-width:200px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 10px}
+.legend .lg b{color:var(--text)}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+.controls . filt{font-size:13px}
+.chip{font-size:12px;padding:5px 11px;border-radius:999px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font:inherit}
+.chip.active{background:var(--accent);color:var(--bg);border-color:transparent;font-weight:600}
+.tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:8px 0}
+table.todo{border-collapse:collapse;width:100%;font-size:13.5px;min-width:760px}
+table.todo th,table.todo td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+table.todo thead th{background:var(--panel);position:sticky;top:0;cursor:pointer;white-space:nowrap;font-size:12.5px;letter-spacing:.3px}
+table.todo thead th .arr{color:var(--muted);font-size:10px;margin-left:3px}
+table.todo tbody tr:hover{background:var(--panel)}
+.todo-name{font-weight:600;min-width:230px}
+.todo-name .sub{font-weight:400;color:var(--muted);font-size:12px;display:block;margin-top:3px;line-height:1.4}
+.lane-pill{font-size:10px;text-transform:uppercase;letter-spacing:.4px;padding:2px 8px;border-radius:999px;font-weight:600;white-space:nowrap;display:inline-block}
+.lane-A{background:#1e3a5f;color:#c9e4ff}.lane-B{background:#3a2a1a;color:#ffd9a8}.lane-C{background:#1a3a1a;color:#b3f5b3}.lane-X{background:#2c2336;color:#e0c8ff}
+@media (prefers-color-scheme:light){.lane-A{background:#dbeafe;color:#1e40af}.lane-B{background:#fde7c8;color:#9a4a00}.lane-C{background:#dcfce7;color:#166534}.lane-X{background:#ede0fb;color:#5b2a8c}}
+.score{display:inline-block;min-width:22px;text-align:center;font-weight:700;padding:2px 6px;border-radius:6px;font-size:13px}
+.s5{background:#1a3a1a;color:#7ee787}.s4{background:#23381f;color:#9ad97f}.s3{background:#3a3520;color:#e3d27a}.s2{background:#3a2a1a;color:#f0b384}.s1{background:#3a1a1a;color:#ff9b94}
+.hard5{background:#3a1a1a;color:#ff9b94}.hard4{background:#3a2a1a;color:#f0b384}.hard3{background:#3a3520;color:#e3d27a}.hard2{background:#23381f;color:#9ad97f}.hard1{background:#1a3a1a;color:#7ee787}
+@media (prefers-color-scheme:light){
+.s5{background:#dcfce7;color:#15803d}.s4{background:#e6f6dc;color:#3f7d22}.s3{background:#fdf6d0;color:#856404}.s2{background:#fde7c8;color:#9a4a00}.s1{background:#fee2e2;color:#b91c1c}
+.hard5{background:#fee2e2;color:#b91c1c}.hard4{background:#fde7c8;color:#9a4a00}.hard3{background:#fdf6d0;color:#856404}.hard2{background:#e6f6dc;color:#3f7d22}.hard1{background:#dcfce7;color:#15803d}}
+.prio{font-weight:800;font-size:14px}
+.prog{font-size:11px;padding:3px 9px;border-radius:999px;border:1px dashed var(--border);color:var(--muted);white-space:nowrap}
+.srcs a{font-size:11.5px;margin-right:2px;white-space:nowrap}
+.note{color:var(--muted);font-size:12.5px}
+details.appendix{margin:22px 0}
+details.appendix summary{cursor:pointer;padding:11px 14px;background:var(--panel);border:1px solid var(--border);border-radius:8px;font-weight:600;list-style:none}
+details.appendix summary::-webkit-details-marker{display:none}
+.appendix table{border-collapse:collapse;width:100%;font-size:12.5px;margin-top:10px}
+.appendix th,.appendix td{padding:7px 9px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.appendix thead th{background:var(--panel)}
+.stamp{background:var(--panel);border:1px solid var(--accent);border-radius:8px;padding:10px 14px;margin:14px 0;font-size:13px}
+</style>
+</head><body>
+<header class="site"><div class="wrap"><h1><a href="index.html">CFTR PheWAS Reading Podcast</a></h1>
+<div class="sub">Daily 1-paper-per-episode digest · variant interpretation + AI tooling + CF modifiers</div></div></header>
+<main class="wrap">
+<nav class="crumbs"><a href="index.html">&#8592; All episodes</a> · <b>To-Do Board</b></nav>
+
+<h1 class="ep">To-Do Board</h1>
+<p class="ep-date">Buildable artifacts surfaced across 330+ episodes, consolidated and scored · post-Liz-pivot framing</p>
+
+<div class="stamp" id="stamp">
+<b>Last evaluated:</b> <span id="evaldate">2026-08-25</span> · <b>Cadence:</b> re-score weekly (Mondays).
+A <b>Progress</b> column is reserved for future sessions — start a session and say "attack the to-do list" to update status and re-score.
+</div>
+
+<div class="board-intro">
+<p><b>What this is.</b> Every episode ends with a "buildable artifact" — the concrete thing worth building off that paper. After the CFGP/WGS door closed and the project re-centered on Liz-sponsored data work + the Karen Raraigh genetics collaboration as the warm near-term move, these collapse into a small set of distinct, mostly public-data-only deliverables. 231 raw mentions across 370 episodes (plus signals from the listener Q&amp;A feedback log) are consolidated into <b>21 distinct to-dos</b> below (full source list in the appendix). Auto-updated weekly by a scheduled task that archives the prior version to <code>todo_archive/</code> before rewriting.</p>
+<div class="legend">
+<div class="lg"><b>Importance (1–5)</b> — weight to career. 5 = directly breaks the bottleneck (Karen collaboration / AI-on-registry-depth positioning). Higher is better.</div>
+<div class="lg"><b>Feasibility / Access (1–5)</b> — can you start now with what you have? 5 = inputs are all public, no gated data or GPU. Higher is better.</div>
+<div class="lg"><b>Hardness (1–5)</b> — effort to push to visible output (a shared, citable artifact). 5 = very hard. <b>Lower is better.</b></div>
+<div class="lg"><b>Priority</b> = Importance + Feasibility + (6 − Hardness). Range 3–15. A quick-win ranking, not destiny — sort on any column.</div>
+</div>
+</div>
+
+<div class="controls">
+<span class="note">Filter lane:</span>
+<button class="chip active" data-lane="all" onclick="setFilter('all',this)">All</button>
+<button class="chip" data-lane="A" onclick="setFilter('A',this)">A · Karen / variant interp</button>
+<button class="chip" data-lane="B" onclick="setFilter('B',this)">B · AI tooling / career</button>
+<button class="chip" data-lane="C" onclick="setFilter('C',this)">C · Modifiers / Liz data-quality</button>
+<button class="chip" data-lane="X" onclick="setFilter('X',this)">X · Cross-cutting methods</button>
+</div>
+
+<div class="tablewrap">
+<table class="todo" id="tbl">
+<thead><tr>
+<th data-k="id" onclick="sortBy('id')">#<span class="arr"></span></th>
+<th data-k="name" onclick="sortBy('name')">To-do<span class="arr"></span></th>
+<th data-k="lane" onclick="sortBy('lane')">Lane<span class="arr"></span></th>
+<th data-k="imp" onclick="sortBy('imp')">Import.<span class="arr"></span></th>
+<th data-k="feas" onclick="sortBy('feas')">Feas./Access<span class="arr"></span></th>
+<th data-k="hard" onclick="sortBy('hard')">Hardness<span class="arr"></span></th>
+<th data-k="prio" onclick="sortBy('prio')">Priority<span class="arr">&#9660;</span></th>
+<th data-k="prog" onclick="sortBy('prog')">Progress<span class="arr"></span></th>
+<th>Sources</th>
+</tr></thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+<p class="note">Default sort: Priority (quick-win bets first). Click any header to re-sort.</p>
+
+<details class="appendix">
+<summary>Raw appendix — all 231 source mentions (every episode that proposed a build)</summary>
+<div style="overflow-x:auto"><table id="apxtbl">
+<thead><tr><th>Episode</th><th>Paper / topic</th><th>Track</th><th>Proposed artifact</th><th>Diff.</th><th>→ To-do</th></tr></thead>
+<tbody id="apxbody"></tbody>
+</table></div>
+</details>
+
+<footer>CFTR PheWAS Reading Podcast · To-Do Board · scores are judgment calls, re-evaluated weekly · <a href="index.html">back to episodes</a></footer>
+</main>
+
+<script>
+// ---- consolidated to-dos ----
+// imp/feas: higher better; hard: higher = harder. prio computed.
+const T = [
+{id:"A1",lane:"A",name:"CFTR missense VUS triage / predictor-discordance notebook",
+ sub:"Join precomputed REVEL + EVE + AlphaMissense + ESM1b + PrimateAI + VESM-3B scores to CFTR2 class + ClinVar + gnomAD; rank discordances. The recurring core artifact — a multi-predictor concordance view. Listener has repeatedly asked live to add new predictors (VESM-3B, TT3/TT4) to a personal toolkit repo — this is already the most-used item on the board.",
+ imp:5,feas:5,hard:2,prog:"In progress (listener's ad hoc toolkit repo)",
+ srcs:[["EVE","2026-06-17-ep1"],["AlphaMissense","2026-06-18-ep1"],["ESM1b","2026-06-19-ep1"],["PrimateAI","2026-06-20-ep1"],["REVEL","2026-06-23-ep1"],["2026-06-25","2026-06-25-ep1"],["VariPred","2026-07-05-ep1"],["The landscape of tolerated genetic variation…","2026-07-09-ep1"],["2026-07-13","2026-07-13-ep1"],["2026-07-14","2026-07-14-ep1"],["Spectrum and Classification of CFTR and ADGRG2…","2026-07-18-ep1"],["Deciphering gain-of-function from…","2026-07-23-ep1"],["Compressing the collective knowledge of ESM…","2026-07-24-ep1"],["2026-07-25","2026-07-25-ep1"],["2026-07-26","2026-07-26-ep1"],["2026-07-27","2026-07-27-ep1"],["ProteoCast (Abakarova 2026)","2026-08-04-ep1"],["Ancestry-stratified panel gap (Ortuzar Menendez 2026)","2026-08-06-ep1"],["MARRVEL-MCP (Everton/Botas 2026)","2026-08-09-ep1"],["cftr-hgvs-linter (Lansdon 2026)","2026-08-10-ep1"],["Turkish CFTR cohort genotype-phenotype (Canitez 2026)","2026-08-15-ep1"],["Gene-specific predictor benchmarking design, CHD2 (Gu 2025)","2026-08-17-ep1"],["VarCard.io cardiac PLM benchmark (Hochstadt 2024)","2026-08-21-ep1"],["Moroccan CFTR long-read + VUS triage (El Makhzen 2026)","2026-08-22-ep1"]]},
+{id:"A2",lane:"A",name:"CFTR splice-variant discordance notebook",
+ sub:"CADD-Splice + SpliceAI/Pangolin/SPiP/SpliceSelectNet/SpTransformer deltas for deep-intronic/synonymous variants invisible to protein scores (3849+10kb C>T, 2789+5G>A, 3272-26A>G). Flags benign/VUS-by-coding but high splice-delta. Listener has live-requested adding SPiP and SpTransformer to a personal toolkit repo.",
+ imp:4,feas:5,hard:2,prog:"In progress (listener's ad hoc toolkit repo)",
+ srcs:[["CADD-Splice","2026-06-21-ep1"],["SpliceAI","2026-06-22-ep1"],["2026-07-02","2026-07-02-ep1"],["SpliceAI-visual (de Sainte Agathe et al., 2023)","2026-07-07-ep1"],["SHINE","2026-07-10-ep1"],["SPiP, the splicing predictor that names the…","2026-07-11-ep1"],["Track A (CFTR variant interpretation &…","2026-07-12-ep1"],["2026-07-22","2026-07-22-ep1"],["AI-CURA","2026-07-29-ep1"],["SpliceSelectNet","2026-08-01-ep1"],["2026-08-02","2026-08-02-ep1"],["2026-08-03","2026-08-03-ep1"],["Splicing variant functional validation (Hersent 2026)","2026-08-11-ep1"]]},
+{id:"A3",lane:"A",name:"CFTR variant structural-context annotator",
+ sub:"Map missense onto the AlphaFold CFTR model; report pLDDT, burial, domain, distance to ATP pocket / nearest pathogenic residue. Sits beside the score table.",
+ imp:4,feas:4,hard:3,prog:"Not started",
+ srcs:[["AlphaFold","2026-06-16-ep1"],["Complete CFTR gene sequencing in 5,058…","2026-06-28-ep1"],["Cross-protein transfer learning for missense…","2026-07-04-ep1"],["Mechanism of CFTR correction by type I folding…","2026-07-17-ep1"],["2026-07-21","2026-07-21-ep1"],["VUStruct (Moth et al. 2026)","2026-08-05-ep1"],["Disordered-proteome variant characterization (Hubrich 2026)","2026-08-12-ep1"],["BoltzOmics variant-drug-binding docking (Ngo 2026)","2026-08-13-ep1"],["SSEP substrate-specific effect predictor (Park 2026)","2026-08-16-ep1"],["CYP tunnel/cofactor pathogenicity gradient (Špačková 2025)","2026-08-18-ep1"],["MAVISp structure-based variant framework (Arnaudi 2026)","2026-08-20-ep1"]]},
+{id:"A4",lane:"A",name:"ClinGen PP3/BP4 calibration layer",
+ sub:"Turn raw predictor scores into formal ACMG evidence strengths via Pejaver thresholds. Stretch (publishable): CFTR-specific local-LR recalibration using CFTR2 labels.",
+ imp:5,feas:5,hard:3,prog:"Not started",
+ srcs:[["ClinGen PP3/BP4","2026-06-24-ep1"],["Functional Assays Are Essential for…","2026-06-26-ep1"],["ClinVar: improving access to variant…","2026-06-27-ep1"],["2026-06-30","2026-06-30-ep1"],["Gene-specific ACMG/AMP: the ClinGen ENIGMA…","2026-07-01-ep1"],["2026-07-03","2026-07-03-ep1"],["Sequence UNET (Dunham et al. 2023)","2026-07-06-ep1"],["Making sense of missense (Molotkov 2024)","2026-07-08-ep1"],["2026-07-15","2026-07-15-ep1"],["2026-07-16","2026-07-16-ep1"],["Distinct CFTR Mutation Spectrum in Chinese…","2026-07-19-ep1"],["Calibrating ML predictors for missense VUS…","2026-07-28-ep1"],["2026-07-30","2026-07-30-ep1"],["In silico predictor performance is…","2026-07-31-ep1"],["CFTR neighbor-precedent worksheet (Meneses 2024)","2026-08-04-ep3"],["KCNQ1 mechanism classifier (Chang-Gonzalez 2026)","2026-08-07-ep1"],["MEN1 VUS reclassification worklist template (Bindra 2026)","2026-08-14-ep1"],["Lilace FACS-DMS statistical model (Freudenberg 2026)","2026-08-19-ep1"],["AlphaMissense vs CFTR2 stress test (McDonald 2024)","2026-08-23-ep1"]]},
+{id:"A5",lane:"A",name:"CFTR modulator-eligibility annotation layer (phase-aware)",
+ sub:"FDA approval status + CFTR2 class + which of 4 caution categories (non-CF-causing / VUS / mis-splicing / in-cis-with-null) + phase flag for two-variant genotypes.",
+ imp:4,feas:4,hard:2,prog:"Not started",
+ srcs:[["CFTR2 panel","2026-06-20-ep3"],["Residual function of CF mutants predicts…","2026-06-28-ep3"],["Anwar et al. 2024, CFTR mutation…","2026-06-29-ep1"],["2026-07-16","2026-07-16-ep3"]]},
+{id:"A6",lane:"A",name:"CFTR variant-label provenance auditor",
+ sub:"Flag circular / curation-biased labels: 'pathogenic' calls at implausibly common AF; unanimous in-silico agreement among tools sharing training lineage. Extended by later episodes into cross-database concordance (CFTR2 vs CFTR1 vs CFTR-France vs ClinVar) and per-person genotype-completeness auditing. Extended 2026-08-25 with an outcome-evidence tracker view: pair the variant table (HGVS + current label + source database/version) against per-variant real-world outcome events, so accumulated evidence contradicting a standing label surfaces as a curator-review trigger.",
+ imp:3,feas:4,hard:3,prog:"Not started",
+ srcs:[["PrimateAI","2026-06-20-ep1"],["Variant Classifications, Databases and…","2026-06-26-ep3"],["CF genetic heterogeneity in Torbat Jam (Iran):…","2026-07-17-ep3"],["fourteen \"deleterious\" CFTR nsSNPs, and how…","2026-07-20-ep1"],["2026-08-02","2026-08-02-ep3"],["2026-08-03","2026-08-03-ep3"],["Two-Class-I ELX/TEZ/IVA real-world cohort (Burgel 2025)","2026-08-24-ep1"]]},
+{id:"B1",lane:"B",name:"Reproducible CFTR variant-QC pipeline (nf-core-style)",
+ sub:"cftr-varqc: VCF → HGVS norm → effect-score join → CFTR2/ClinVar cross-check → MultiQC report. Containerized, CI-tested, -resume. Wraps A1/A2 into portfolio-grade infra. Extended 2026-08-25 with a module-architecture pattern: hold a fixed core backbone separate from a swappable scoring/annotation layer, each step a main.nf process with explicit I/O, pinned container/Conda deps, a small CI test profile, and numbered GitHub releases.",
+ imp:5,feas:5,hard:3,prog:"Not started",
+ srcs:[["Nextflow","2026-06-16-ep2"],["nf-core","2026-06-17-ep2"],["Accurate predictions on small data with a…","2026-06-27-ep2"],["Intronomics-MIP: a reproducible snakemake…","2026-07-01-ep2"],["scalepopgen","2026-07-10-ep2"],["2026-07-16","2026-07-16-ep2"],["2026-07-25","2026-07-25-ep2"],["Nextflow: reproducible, portable pipelines (Di…","2026-07-28-ep2"],["MuSA Nextflow pipeline (Scognamiglio 2026)","2026-08-08-ep1"],["NFTest automated Nextflow pipeline testing (Patel 2024)","2026-08-16-ep2"],["nf-core/metatdenovo structural-audit template (Di Leo 2025)","2026-08-17-ep2"],["yQTL pipeline + Shiny viz (Li 2024)","2026-08-18-ep2"],["MHCquant2 nf-core module architecture (Scheid 2025)","2026-08-24-ep2"]]},
+{id:"B2",lane:"B",name:"Registry foundation-embedding module",
+ sub:"Transformer (Med-BERT-style) on per-person coded-event sequences → reusable embeddings + fine-tuning head. Build skip-gram baseline first; scvi-tools-style Lightning scaffold. Central AI-on-registry-depth bet.",
+ imp:5,feas:2,hard:4,prog:"Not started",
+ srcs:[["scvi-tools","2026-06-18-ep2"],["Med-BERT","2026-06-22-ep2"],["Deep EHR survey","2026-06-23-ep2"],["Track B (AI for registry/bioinformatics,…","2026-07-12-ep2"],["2026-07-13","2026-07-13-ep2"],["NYUTron, and the two numbers that decide…","2026-07-20-ep2"]]},
+{id:"B3",lane:"B",name:"Schema-driven data-quality harness for a longitudinal registry",
+ sub:"OHDSI DQD-style: parameterized conformance/completeness/plausibility SQL templates → HTML+JSON report, editable thresholds, inline query. Career + the explicit Liz data-quality lane.",
+ imp:4,feas:3,hard:3,prog:"Not started",
+ srcs:[["OHDSI DQD","2026-06-20-ep2"],["(AI / bioinformatics tooling)","2026-06-30-ep2"],["2026-07-02","2026-07-02-ep2"],["INSPIRE datahub: OHDSI/OMOP harmonization at…","2026-07-04-ep2"],["Target Trial Emulation (Hernan, Wang, Leaf, 2022)","2026-07-07-ep2"],["OHDSI Standardized Vocabularies (Reich et al.,…","2026-07-09-ep2"],["2026-07-15","2026-07-15-ep2"],["BEHRT: Transformer for Electronic Health…","2026-07-18-ep2"],["RxMap: an LLM-assisted tool for medication…","2026-07-23-ep2"],["An open data model for pharmacogenetics","2026-07-29-ep2"],["2026-07-30","2026-07-30-ep2"],["2026-08-02","2026-08-02-ep2"],["Cross-lingual term mapping (Guillen-Ramirez 2026)","2026-08-05-ep2"],["Convert-Pheno OMOP→Beacon v2 (Rueda 2026)","2026-08-07-ep2"],["DICOM→OMOP concept extension (Park 2025)","2026-08-08-ep2"],["registry-quality-probe (Dixon 2020)","2026-08-10-ep2"],["ADEpedia-on-OHDSI pharmacovigilance ETL (Yu 2019)","2026-08-11-ep2"],["OMOP-CDM EMR governance (Hallinan 2024)","2026-08-12-ep2"],["LLM-assisted missing-data recovery (Lotspeich 2026)","2026-08-15-ep3"],["OMOP pharmacovigilance PDP (Shin & Lee 2021)","2026-08-20-ep2"],["TARGET Statement reporting guideline (Cashin/Hansford/Hernán 2025)","2026-08-22-ep2"],["RICOPILI GWAS pipeline architecture (Lam 2020)","2026-08-23-ep2"]]},
+{id:"B4",lane:"B",name:"PheCAP-style semi-supervised phenotyping harness",
+ sub:"SAFE surrogate-assisted feature selection + orthogonalization + adaptive elastic-net; validate on a public MIMIC-derived phenotype with ~100–200 gold labels. Liz phenotype lane + career method.",
+ imp:4,feas:3,hard:3,prog:"Not started",
+ srcs:[["PheCAP","2026-06-21-ep2"],["Automated real-world data integration improves…","2026-06-28-ep2"],["APHRODITE noisy-labeling phenotyping (Banda 2017)","2026-08-19-ep2"]]},
+{id:"B5",lane:"B",name:"Clinical-narrative information-extraction service (GatorTron)",
+ sub:"Fine-tune GatorTron-base for concept/relation extraction from notes. Lower priority — CFFPR is largely structured, and notes + GPU are hard to access.",
+ imp:2,feas:2,hard:4,prog:"Not started",
+ srcs:[["GatorTron","2026-06-24-ep2"],["ClinicalTransformerNER (Yang 2020)","2026-08-09-ep2"],["RAG-assisted deep phenotyping extraction (Garcia 2025)","2026-08-13-ep2"]]},
+{id:"B6",lane:"B",name:"Clinical-AI evaluation harness (accuracy / calibration / safety)",
+ sub:"Reusable framework to score any clinical LLM or predictive model against ground truth: per-axis rubric (correctness, omission, fabrication, harm, bias), subgroup-stratified calibration curves, Top-K precision/recall at an alert budget, RAG/summarization-fidelity checks, patient-identity-handling checks. Added 2026-08-03 — 'independent audit as a shippable product' is the single most-recurring new theme since the last eval (19 episodes proposed a version of this).",
+ imp:5,feas:4,hard:3,prog:"Not started",
+ srcs:[["2026-06-25","2026-06-25-ep2"],["The Shaky Foundations of LLMs and Foundation…","2026-06-26-ep2"],["Van Veen et al. 2024, adapted LLMs for…","2026-06-29-ep2"],["2026-07-03","2026-07-03-ep2"],["LLM-driven sepsis knowledge graph","2026-07-05-ep2"],["Evaluating MedDRA-to-ICD terminology mappings…","2026-07-06-ep2"],["MetaGP: a generative medical foundation model…","2026-07-08-ep2"],["the independent audit as a shippable product","2026-07-11-ep2"],["2026-07-14","2026-07-14-ep2"],["RAG in biomedicine: systematic review,…","2026-07-17-ep2"],["Clinical Agents Fail Silently on Patient Identity","2026-07-19-ep2"],["2026-07-21","2026-07-21-ep2"],["2026-07-22","2026-07-22-ep2"],["i2b2-ML: a module to facilitate machine…","2026-07-24-ep2"],["2026-07-26","2026-07-26-ep2"],["2026-07-27","2026-07-27-ep2"],["Carrot: map sensitive data to OMOP without…","2026-07-31-ep2"],["KEEPER + LLM case adjudication","2026-08-01-ep2"],["2026-08-03","2026-08-03-ep2"],["AIR·MS registry query assistant (Guerrero 2025)","2026-08-04-ep2"],["LLM phenotype-definition extraction (Tekumalla 2024)","2026-08-06-ep2"],["Rule- vs LLM-based phenotype extraction, NF1 generalization (Kaster 2025)","2026-08-14-ep2"],["Hybrid LLM breast-cancer treatment extraction (Tariq 2025)","2026-08-15-ep2"]]},
+{id:"C1",lane:"C",name:"Composite CF-severity index + within-genotype variance profiler",
+ sub:"Standardized DELTA/SaKnorm-style severity index; genotype-matched discordant-extreme (DIS/CON±) selection; within-F508del-homozygous variance decomposition; growth/height trajectory (SITAR-style) and sweat-chloride-continuum variants. Reusable phenotyping for Liz — listener feedback flagged their team's own interest in modulator-era height trajectories. Consumes clean trajectories from the upstream growth-QC flagging work now tracked separately at C7.",
+ imp:5,feas:3,hard:2,prog:"Not started",
+ srcs:[["Bronsveld twin","2026-06-16-ep3"],["DELTA twin","2026-06-17-ep3"],["(CF modifier / cohort)","2026-06-30-ep3"],["Meconium ileus modifier study: ADIPOR2,…","2026-07-01-ep3"],["SLC26A9 variant in two CF siblings","2026-07-05-ep3"],["CFTR genotype-phenotype associations in…","2026-07-09-ep3"],["CFTR variants in bronchiectasis","2026-07-10-ep3"],["fatherhood as an exposure, and the comparator…","2026-07-11-ep3"],["(CF modifier / genotype-phenotype)","2026-07-13-ep3"],["2026-07-14","2026-07-14-ep3"],["Cystic fibrosis in a septuagenarian (Johnson &…","2026-07-18-ep3"],["Long-Term Outcomes of Neonatal CF Presentation","2026-07-19-ep3"],["residual disease activity, or what modulators…","2026-07-20-ep3"],["CF-related kidney disease (CFKD): emerging…","2026-07-28-ep3"],["SLC26A9 RPCF extreme-phenotype (Luo 2024)","2026-08-09-ep3"]]},
+{id:"C7",lane:"C",name:"Growth-trajectory implausible-value/outlier detection method bakeoff",
+ sub:"Added 2026-08-17 — the single most-recurring new theme this eval (12 episodes), now extended further. Benchmark harness reimplementing the wave of published height/weight implausible-value & outlier flagging methods (EWMA/growthcleanr, cascade review-budget staging, adult wGAMLSS reference models, rule-based cap/cup/repeat, two-tier population+longitudinal-outlier staging, conditional-percentile flagging, jackknife-residual scoring, corroborating-measure consistency checks, brokenstick trajectory baselines, an 11-method BIV sensitivity sweep) on synthetic longitudinal data with injected errors, scored for sensitivity/specificity, and organized against the Weiskopf/Kahn data-quality-dimension taxonomy. Directly feeds Liz's ~1,500-case registry ht/wt outlier adjudication task (assigned 2026-08-09) — feeds clean series forward into C1. Recurring caution across this wave: a genuine modulator-era rapid weight change is repeatedly reported as statistically indistinguishable from a data error under most of these methods. Extended 2026-08-17 with a People-Like-Me/Mahalanobis matched-neighbor trajectory baseline and a GPR-vs-CDC-LMS z-score-calculation divergence caution. Extended 2026-08-24 with 12 more building blocks: a condition-specific growth reference (LMSz), a naive sequential-encounter noise floor, a Bi-LSTM candidate generator (AWAD) and its ~19%-sensitivity-ceiling precursor benchmark, a reference-free percent-change digit-error rule, a monotonic-BART cross-sectional ML generator, a Clinical-Knowledge-Database fuzzy-unit cleaner, the SITAR size/tempo/velocity instrument, the GAMLSS automatic-smoothing engine underlying every centile-based method here, conditional studentized residuals from CKiD (the closest structural analogue yet to the Liz adjudication task), a visit-level-IQR-plus-downstream-model-influence design, and the Kodra seven-dimension registry-DQ framework. Extended 2026-08-25 with two evaluation-design pieces: a pre/post-transformation comparator that recomputes the same indicators on both sides of a pipeline stage to isolate where a quality change entered, and a small randomly-sampled blinded re-abstraction stratum (scored with PABAK inter-reviewer agreement) run alongside the outlier-flagging track to estimate what that track misses.",
+ imp:5,feas:5,hard:3,prog:"Not started",
+ srcs:[["growthcleanr benchmark harness (Daymont 2017)","2026-08-10-ep3"],["cascade review-budget simulator (Phan 2020)","2026-08-10-ep4"],["Adult wGAMLSS reference, All of Us (Guide 2024)","2026-08-11-ep3"],["growthcleanr vs. cp vs. PeAnOF bakeoff (Lin 2022)","2026-08-11-ep4"],["Cap/cup/repeat rule algorithm (Harrall 2024)","2026-08-12-ep3"],["Two-tier PO/LO staged flagger (de Mello e Silva 2024)","2026-08-12-ep4"],["Conditional-percentile flagger (Yang 2016)","2026-08-13-ep3"],["11-method BIV sensitivity sweep (Lawman 2015)","2026-08-13-ep4"],["Jackknife-residual recipe (Shi 2018)","2026-08-14-ep3"],["WHO BIV cutoff validity + corroborating measures (Freedman 2015)","2026-08-14-ep4"],["Broken Stick Model for irregular longitudinal data (van Buuren 2023)","2026-08-15-ep4"],["DQ vocabulary crosswalk, Weiskopf & Weng 2013","2026-08-16-ep3"],["Kahn harmonized DQ framework (Kahn 2016)","2026-08-16-ep4"],["People-Like-Me Mahalanobis trajectory matching (Jin 2025)","2026-08-17-ep3"],["GPR z-score calculation accuracy vs CDC-LMS (Martinez-Millana 2018)","2026-08-17-ep4"],["LMSz condition-specific growth reference (Low 2026)","2026-08-18-ep3"],["2010 KPSC ht/wt noise baseline (Smith 2010)","2026-08-18-ep4"],["AWAD Bi-LSTM weight-abnormality detector (Liu 2021)","2026-08-19-ep3"],["~19% sensitivity ceiling benchmark (Wu 2018)","2026-08-19-ep4"],["Spurious weight percent-change rule (Chen 2018)","2026-08-20-ep3"],["Monotonic BART height outlier ML (Sparapani 2022)","2026-08-20-ep4"],["CKD fuzzy-unit EHR cleaning (Shi 2021)","2026-08-21-ep3"],["SITAR growth curve instrument (Cole 2010)","2026-08-21-ep4"],["GAMLSS automatic smoothing selection (Rigby & Stasinopoulos 2014)","2026-08-22-ep3"],["Conditional studentized residuals, CKiD (Ng 2023)","2026-08-22-ep4"],["Visit-level IQR + model-influence check, TEDDY (Mramba 2024)","2026-08-23-ep3"],["Rare-disease registry DQ framework (Kodra 2017)","2026-08-23-ep4"],["Pre/post-transformation DQ comparator, rare-disease EHR (Tahar 2023)","2026-08-24-ep3"],["NCDR random blinded re-abstraction audit + PABAK (Malenka 2022)","2026-08-24-ep4"]]},
+{id:"C2",lane:"C",name:"Tissue-specific colocalization notebook for modifier loci",
+ sub:"coloc at SLC26A9 / SLC6A14: CF-modifier GWAS sumstats × GTEx eQTL pancreas vs lung. Reusable per-locus template — but Zhou full sumstats aren't public.",
+ imp:3,feas:2,hard:3,prog:"Not started",
+ srcs:[["Eastman SLC26A9","2026-06-18-ep3"],["Mercier SLC6A14","2026-06-23-ep3"],["2026-06-25","2026-06-25-ep3"],["Gene expression in transformed lymphocytes…","2026-06-27-ep3"],["Dupuis et al. 2016, meconium ileus prevalence…","2026-06-29-ep3"],["2026-07-03","2026-07-03-ep3"],["Impact of Genetics on Endocrine Manifestations…","2026-07-06-ep3"],["CFRD ECFS viewpoints (Snowball, Salem, Wu,…","2026-07-07-ep3"],["2026-07-15","2026-07-15-ep3"],["Role of the ADAM33 rs2280091 Variant in…","2026-07-23-ep3"],["2026-07-25","2026-07-25-ep3"],["CF modifier systematic review (Ward 2024)","2026-08-05-ep3"],["coloc at NALCN/chr13 (Kim 2025)","2026-08-06-ep3"],["SPLUNC1-Orai1 axis review (Tarran 2025)","2026-08-07-ep3"],["TAS2R38/CRS signal scan (Cantone 2025)","2026-08-08-ep3"]]},
+{id:"C3",lane:"C",name:"Modifier-locus pleiotropy / PheWAS-scan design notebooks",
+ sub:"AGTR2 + TCF7L2/CFRD: pre-specified phenome scans with effect modifiers (steroid status) and X-chr / sex-aware handling pre-registered. A design/scaffold artifact you can write now.",
+ imp:3,feas:3,hard:2,prog:"Not started",
+ srcs:[["AGTR2","2026-06-19-ep3"],["TCF7L2/CFRD","2026-06-21-ep3"],["2026-07-02","2026-07-02-ep3"]]},
+{id:"C4",lane:"C",name:"Pre-flight QC checkers for modifier signals",
+ sub:"Tissue-aware eQTL-coverage checker + ancestry LD tag-vs-causal divergence checker — guardrails (against GTEx lung mis-sampling and ancestry sign-flips) before any colocalization. GTEx + LD panels are public.",
+ imp:3,feas:4,hard:2,prog:"Not started",
+ srcs:[["SLC6A14/GTEx","2026-06-23-ep3"],["Corvol sign-flip","2026-06-24-ep3"]]},
+{id:"C5",lane:"C",name:"Rare-variant imputation-quality re-scoring filter",
+ sub:"MagicalRsq over CF modifier regions → per-variant keep/drop flags. Long-game WGS — depends on imputed-dosage/WGS access, which is currently closed.",
+ imp:2,feas:1,hard:3,prog:"Blocked (WGS access closed)",
+ srcs:[["MagicalRsq","2026-06-22-ep3"]]},
+{id:"C6",lane:"C",name:"Running CF modifier-gene catalog",
+ sub:"The structured living catalog (locus → mechanism → tissue → druggability) that feeds C2/C3/C4. Already partly built via the podcast + biobank index. Field is saturated, so modest standalone visibility.",
+ imp:3,feas:5,hard:2,prog:"In progress (podcast feed)",
+ srcs:[["AGTR2","2026-06-19-ep3"],["TCF7L2","2026-06-21-ep3"],["SLC6A14","2026-06-23-ep3"],["In-silico modifier-gene search for pancreatic…","2026-07-04-ep3"],["CF genetic heterogeneity in Torbat Jam…","2026-07-08-ep3"],["Track C (CF modifier-gene catalog)","2026-07-12-ep3"],["2026-07-21","2026-07-21-ep3"],["2026-07-22","2026-07-22-ep3"],["DNA methylation predicts lung function and…","2026-07-24-ep3"],["2026-07-27","2026-07-27-ep3"],["Eight rare CFTR variants in organoids + cell lines","2026-07-29-ep3"],["2026-07-30","2026-07-30-ep3"],["48 Romanian/Moldova CF patients: regional…","2026-07-31-ep3"],["miRNA network in CF sibling pairs","2026-08-01-ep3"]]},
+{id:"X1",lane:"X",name:"Causal-inference reference notebook (g-methods)",
+ sub:"g-formula vs IPW/MSM vs g-estimation, validated on simulated longitudinal data with a known effect; stabilized-weight diagnostics. Validate code against a known answer before touching real registry data.",
+ imp:3,feas:5,hard:3,prog:"Not started",
+ srcs:[["g-methods","2026-06-19-ep2"],["2026-07-26","2026-07-26-ep3"],["Propensity score / MatchIt tutorial (Zhang 2017)","2026-08-21-ep2"]]},
+{id:"X2",lane:"X",name:"Ancestry-stratified CFTR-modifier PheWAS design",
+ sub:"Non-European CF subgroups as primary (not sensitivity) analyses, at gene/pathway level; sex-stratified replication check (CFF cohort ~50/50). Equity differentiator, but needs ancestry-resolved cohort data.",
+ imp:3,feas:2,hard:3,prog:"Not started",
+ srcs:[["MVP/Verma","2026-05-06-ep2"],["multi-ancestry","2026-05-22-ep2"]]},
+];
+
+// ---- raw appendix (29 source mentions) ----
+const APX = [
+["2026-05-06-ep1","Verma 2022 (MVP multi-ancestry)","C","Ancestry-stratified CF modifier PheWAS at gene/pathway level","—","X2"],
+["2026-05-22-ep2","Multi-ancestry BP GWAS","C","Multi-cohort discovery+replication template; sex-stratified check","—","X2"],
+["2026-06-16-ep1","AlphaFold2 (Jumper 2021)","A","CFTR variant structural-context annotator (pLDDT, ATP-pocket dist.)","S–M","A3"],
+["2026-06-16-ep2","Nextflow (Di Tommaso 2017)","B","cftr-annot-nf: resumable containerized annotation pipeline","M","B1"],
+["2026-06-16-ep3","CF Twin & Sibling Cl- secretion (Bronsveld 2000)","C","within_genotype_variance profiler","S","C1"],
+["2026-06-17-ep1","EVE (Frazer 2021)","A","CFTR VUS triage notebook (EVE vs CFTR2 + ClinVar)","S–M","A1"],
+["2026-06-17-ep2","nf-core (Ewels 2020)","B","Scaffold nf-core-style cftr-varqc pipeline","M","B1"],
+["2026-06-17-ep3","DELTA severity / twin heritability","C","Composite CF-severity index + discordant-extreme selection","S–M","C1"],
+["2026-06-18-ep1","AlphaMissense (Cheng 2023)","A","CFTR variant evidence table (discordances)","S","A1"],
+["2026-06-18-ep2","scvi-tools (Gayoso 2022)","B","Longitudinal-cohort modeling scaffold (Lightning)","M","B2"],
+["2026-06-18-ep3","SLC26A9 null (Eastman 2021)","C","Tissue-specific colocalization notebook","M","C2"],
+["2026-06-19-ep1","ESM1b (Brandes 2023)","A","CFTR missense discordance notebook (3-predictor view)","S–M","A1"],
+["2026-06-19-ep2","g-methods (Naimi 2017)","X","g-formula vs IPW reference notebook (simulated)","M","X1"],
+["2026-06-19-ep3","AGTR2 (Darrah 2019)","C","AGTR2 pleiotropy-scan design notebook (X-chr aware)","S–M","C3"],
+["2026-06-20-ep1","PrimateAI (Sundaram 2018)","A","CFTR variant-label provenance auditor","M","A6"],
+["2026-06-20-ep2","OHDSI DQD","B","Schema-driven data-quality harness","M","B3"],
+["2026-06-20-ep3","CFTR2 modulator panel (Raraigh 2022)","A","Modulator-eligibility annotation layer (phase-aware)","S–M","A5"],
+["2026-06-21-ep1","CADD-Splice (Rentzsch 2021)","A","CFTR splice-variant annotation/discordance notebook","S–M","A2"],
+["2026-06-21-ep2","PheCAP (Zhang 2019)","B","Portable SAFE phenotyping harness","M","B4"],
+["2026-06-21-ep3","TCF7L2/CFRD (Blackman 2009)","C","TCF7L2/CFRD pleiotropy + GxE scan design notebook","S–M","C3"],
+["2026-06-22-ep1","SpliceAI (Jaganathan 2019)","A","CFTR splice-variant evidence/discordance table","S–M","A2"],
+["2026-06-22-ep2","Med-BERT (Rasmy 2021)","B","Registry foundation-embedding module","M–L","B2"],
+["2026-06-22-ep3","MagicalRsq (Sun 2022)","C","Rare-variant imputation-quality re-scoring filter","M","C5"],
+["2026-06-23-ep1","REVEL (Ioannidis 2016)","A","CFTR missense triage table (REVEL vs CFTR2 + ClinVar)","S","A1"],
+["2026-06-23-ep2","Deep EHR survey (Shickel 2018)","B","Skip-gram code-embedding baseline (pre-Med-BERT)","M","B2"],
+["2026-06-23-ep3","SLC6A14 (Mercier 2022)","C","Tissue-aware eQTL-coverage checker + coloc","S–M","C4"],
+["2026-06-24-ep1","ClinGen PP3/BP4 (Pejaver 2022)","A","Calibrated ACMG-evidence-strength layer for CFTR","S","A4"],
+["2026-06-24-ep2","GatorTron (Yang 2022)","B","Clinical-narrative information-extraction service","M","B5"],
+["2026-06-24-ep3","SLC26A9/ivacaftor (Corvol 2018)","C","Ancestry LD tag-vs-causal divergence checker","S–M","C4"],
+["2026-06-25-ep1","2026-06-25","A","CFTR variant-label harmonizer — input a list of CFTR variant strings in any notation (legacy F508del, HGVS…","S-M","A1"],
+["2026-06-25-ep2","2026-06-25","B","CF clinical-QA eval harness — input a CF question bank (variant interpretation, modulator eligibility,…","M","B6"],
+["2026-06-25-ep3","2026-06-25","C","modifier-locus pleiotropy lookup — input the paper's CFRD modifier rsIDs (rs4077468/SLC26A9,…","S","C2"],
+["2026-06-26-ep1","Functional Assays Are Essential for…","A","Build a CFTR missense calibration notebook that joins each variant to its published functional %WT-CFTR…","S-M","A4"],
+["2026-06-26-ep2","The Shaky Foundations of LLMs and Foundation…","B","Build a framework-agnostic `capacity-aware evaluation harness` — a small Python package that takes a…","S-M","B6"],
+["2026-06-26-ep3","Variant Classifications, Databases and…","A","Build a CFTR cross-database classification concordance table — a script that pulls the public CFTR2…","M","A6"],
+["2026-06-27-ep1","ClinVar: improving access to variant…","A","Build a CFTR ClinVar harmonization-and-reconciliation table — pull every CFTR Variation ID from the…","S-M","A4"],
+["2026-06-27-ep2","Accurate predictions on small data with a…","B","Build a TabPFN baseline harness — a reusable Python module that takes any tidy clinical feature table +…","S","B1"],
+["2026-06-27-ep3","Gene expression in transformed lymphocytes…","C","Build a CF lung-modifier pathway-concordance table — take published CF expression-association and GWAS…","M","C2"],
+["2026-06-28-ep1","Complete CFTR gene sequencing in 5,058…","A","CFTR genotype-completeness auditor* — input a per-individual table of reported CFTR variants → normalize…","S-M","A3"],
+["2026-06-28-ep2","Automated real-world data integration improves…","B","NLP-feature-to-prognostic-baseline harness* — input a clinical-note corpus + structured outcome →…","M","B4"],
+["2026-06-28-ep3","Residual function of CF mutants predicts…","A","CFTR missense theratype map* — join each CFTR missense variant to its published residual-function value +…","S-M","A5"],
+["2026-06-29-ep1","Anwar et al. 2024, CFTR mutation…","A","CFTR-variant-class-annotation-and-discordance table — input a list of CFTR variants in HGVS; for each,…","S-M","A5"],
+["2026-06-29-ep2","Van Veen et al. 2024, adapted LLMs for…","B","clinical-free-text-summarization evaluation harness — input (source document, candidate summary, human…","M","B6"],
+["2026-06-29-ep3","Dupuis et al. 2016, meconium ileus prevalence…","C","perinatal-phenotype severity-ranking notebook — input de-identified genotype × early-binary-phenotype…","S-M","C2"],
+["2026-06-30-ep1","2026-06-30","A","CFTR PP3/BP4 calibration notebook — input: CFTR missense variants + CFTR2 expert labels; run AlphaMissense…","M","A4"],
+["2026-06-30-ep2","(AI / bioinformatics tooling)","B","nf-core-style variant-annotation harmonizer — input: a VCF; fan out AlphaMissense + ESM1b + SpliceAI +…","M-L","B3"],
+["2026-06-30-ep3","(CF modifier / cohort)","C","Genotype–phenotype discordance flagger — input: a de-identified table of individuals × {CFTR genotype…","S-M","C1"],
+["2026-07-01-ep1","Gene-specific ACMG/AMP: the ClinGen ENIGMA…","A","CFTR ACMG/AMP criteria worklist — input CFTR variants in normalized HGVS plus available evidence…","M","A4"],
+["2026-07-01-ep2","Intronomics-MIP: a reproducible snakemake…","B","snakemake CFTR-amplicon-to-HGVS skeleton — input raw paired-end amplicon FASTQs covering CFTR regions;…","M","B1"],
+["2026-07-01-ep3","Meconium ileus modifier study: ADIPOR2,…","C","secondary-trait confounding checker — input a de-identified individuals × phenotypes table (a candidate…","S-M","C1"],
+["2026-07-02-ep1","2026-07-02","A","- **Priority:** Karen / variant interpretation (splice lane). - **Artifact — CFTR splice-evidence router…","S-M","A2"],
+["2026-07-02-ep2","2026-07-02","B","- **Priority:** AI-tooling / career (secondary: Liz / data quality). - **Artifact — harmonization-process…","S","B3"],
+["2026-07-02-ep3","2026-07-02","C","- **Priority:** Liz / CFFPR phenotype reasoning (cross-phenotype modifier logic). - **Artifact —…","S","C3"],
+["2026-07-03-ep1","2026-07-03","A","CFTR VEP calibration-and-agreement notebook* — input a table of CFTR missense variants × {published…","M","A4"],
+["2026-07-03-ep2","2026-07-03","B","variant-CDM DQ linter* — input a genomic-variant table mapped into an OMOP-style extension (variant →…","S-M","B6"],
+["2026-07-03-ep3","2026-07-03","C","CF-modifier-locus colocalization notebook* — input published CF modifier GWAS summary statistics at named…","M","C2"],
+["2026-07-04-ep1","Cross-protein transfer learning for missense…","A","`cftr-missense-feature-fusion-notebook` — input a list of CFTR missense variants (HGVS); pull each…","M","A3"],
+["2026-07-04-ep2","INSPIRE datahub: OHDSI/OMOP harmonization at…","B","`phenotype-dqd-dashboard` — input a de-identified phenotype export mapped to a minimal OMOP-style schema;…","M","B3"],
+["2026-07-04-ep3","In-silico modifier-gene search for pancreatic…","C","`cf-modifier-candidate-triage-notebook` — regenerate the multi-database intersection + PPI-hub +…","M","C6"],
+["2026-07-05-ep1","VariPred","A","A notebook that ingests the CFTR2 missense list (HGVS-p) + the CFTR reference sequence, runs ESM-1b to…","S","A1"],
+["2026-07-05-ep2","LLM-driven sepsis knowledge graph","B","A script that ingests a folder of CF genetic-modifier abstracts (+ PMIDs), runs a few-shot LLM prompt to…","M","B6"],
+["2026-07-05-ep3","SLC26A9 variant in two CF siblings","C","A notebook that, given a de-identified phenotype table with CFTR genotype + a modifier genotype column,…","S","C1"],
+["2026-07-06-ep1","Sequence UNET (Dunham et al. 2023)","A","CFTR whole-protein pre-annotation scorer — input a single CFTR FASTA sequence → output a per-position ×…","S","A4"],
+["2026-07-06-ep2","Evaluating MedDRA-to-ICD terminology mappings…","B","terminology-crosswalk auditor — input two term lists + an existing mapping table → output coverage %,…","M","B6"],
+["2026-07-06-ep3","Impact of Genetics on Endocrine Manifestations…","C","cross-trait modifier overlap notebook — input a CF endocrine modifier-locus list (CFRD /…","M","C2"],
+["2026-07-07-ep1","SpliceAI-visual (de Sainte Agathe et al., 2023)","A","`cftr-splice-rawscore-notebook` — input a CFTR variant list (HGVS); run SpliceAI on reference + variant…","M","A2"],
+["2026-07-07-ep2","Target Trial Emulation (Hernan, Wang, Leaf, 2022)","B","`tte-protocol-template` — a parametrized notebook/package that ingests an OMOP-CDM cohort + a YAML…","M","B3"],
+["2026-07-07-ep3","CFRD ECFS viewpoints (Snowball, Salem, Wu,…","C","`cfrd-shared-vs-unique-quantifier` — input public CFRD/glycemic-trait GWAS summary statistics + type 2…","M","C2"],
+["2026-07-08-ep1","Making sense of missense (Molotkov 2024)","A","`cftr-alphamissense-audit-notebook` — input = public AlphaMissense CFTR missense score table + CFTR2…","M","A4"],
+["2026-07-08-ep2","MetaGP: a generative medical foundation model…","B","`clinician-ai-uplift-harness` — input = de-identified case vignettes + each clinician's diagnosis without…","M","B6"],
+["2026-07-08-ep3","CF genetic heterogeneity in Torbat Jam…","C","`cftr-cismodifier-cnv-annotator` — input = CFTR variant call list + CFTR2 poly-T/TG annotations; output =…","S-M","C6"],
+["2026-07-09-ep1","The landscape of tolerated genetic variation…","A","> **CFTR missense benign-evidence annotator (S–M):** input = list of CFTR missense variants in HGVS; for…","S-M","A1"],
+["2026-07-09-ep2","OHDSI Standardized Vocabularies (Reich et al.,…","B","> **Variable-to-OMOP concept mapper (M):** input = a data dictionary CSV (variable name, description,…","M","B3"],
+["2026-07-09-ep3","CFTR genotype-phenotype associations in…","C","> **CFTR genotype-to-severity-group labeler (S):** input = two columns (variant 1, variant 2 in…","S","C1"],
+["2026-07-10-ep1","SHINE","A","CFTR in-frame-indel pathogenicity annotator notebook — input a list of CFTR in-frame indels in HGVS (e.g.…","M","A2"],
+["2026-07-10-ep2","scalepopgen","B","containerized, config-driven cohort-genomics QC-and-structure pipeline skeleton — a minimal Nextflow…","M-L","B1"],
+["2026-07-10-ep3","CFTR variants in bronchiectasis","C","CFTR carrier-enrichment-and-phenotype-association harness — input a phenotype cohort's CFTR variant calls…","S-M","C1"],
+["2026-07-11-ep1","SPiP, the splicing predictor that names the…","A","Take every CFTR VUS from ClinVar + CFTR2 in HGVS c. notation on the canonical transcript, score each with…","M","A2"],
+["2026-07-11-ep2","the independent audit as a shippable product","B","A two-mode library — (1) **purity**: give it a table plus a YAML spec of \"null markers\" (domain-declared…","M","B6"],
+["2026-07-11-ep3","fatherhood as an exposure, and the comparator…","C","Takes a long-format longitudinal table (person, date, outcome) plus a per-person index-event date and a…","S","C1"],
+["2026-07-12-ep1","Track A (CFTR variant interpretation &…","A","Priority served: Karen / CFTR variant interpretation.** **`cftr-tissue-splice-panel` (difficulty: M)** —…","M","A2"],
+["2026-07-12-ep2","Track B (AI for registry/bioinformatics,…","B","Priority served: AI-tooling / career.** **`event-sequence-registry-baseline` (difficulty: M)** — *Input:*…","M","B2"],
+["2026-07-12-ep3","Track C (CF modifier-gene catalog)","C","Priority served: Liz / CFFPR phenotype & data quality — as method only.**…","S","C6"],
+["2026-07-13-ep1","2026-07-13","A","`cftr-hgvs-conformance-harness` — a script that takes one column of CFTR variant strings in any form…","M","A1"],
+["2026-07-13-ep2","2026-07-13","B","`code-embedding-qc` — an **ontology-drift detector**. Input: a long table of `(person_id, code, date)`.…","M","B2"],
+["2026-07-13-ep3","(CF modifier / genotype-phenotype)","C","`sitar-phenotyper` — input: a long table of `(person_id, age, measurement)` for any repeatedly-measured…","M","C1"],
+["2026-07-14-ep1","2026-07-14","A","Serves: Karen / variant interpretation.** This is the architecture for the variant-notation-harmonization…","M","A1"],
+["2026-07-14-ep2","2026-07-14","B","Serves: AI-tooling / career.** A shippable, portfolio-grade tool in a lane (LLM-assisted evidence…","S","B6"],
+["2026-07-14-ep3","2026-07-14","C","Serves: Liz / CFFPR phenotype & data quality — METHOD ONLY.** (Nothing here describes or assumes anything…","S","C1"],
+["2026-07-15-ep1","2026-07-15","A","cftr-cosegregation-points-helper (S)** — input a family pedigree table + a phenotype-specific CFTR…","S","A4"],
+["2026-07-15-ep2","2026-07-15","B","registry-freetext-harmonizer (M)** — input one free-text clinical column + a target ontology; extract…","M","B3"],
+["2026-07-15-ep3","2026-07-15","C","cf-comorbidity-ePRS-prototype (M)** — input target genotypes + a CF comorbidity outcome + one public…","M","C2"],
+["2026-07-16-ep1","2026-07-16","A","> **acmg-spec-impact-simulator (M)** — input: a table of already-classified variants, each row a variant ×…","M","A4"],
+["2026-07-16-ep2","2026-07-16","B","> **ccw-target-trial-pipeline (M)** — inputs: (1) a person-period long table (one row per person per…","M","B1"],
+["2026-07-16-ep3","2026-07-16","A","> **cftr-modality-matcher (M)** — input: a list of CFTR variants (HGVS or legacy names). Classify each by…","M","A5"],
+["2026-07-17-ep1","Mechanism of CFTR correction by type I folding…","A","Serves **Karen / variant interpretation** (the correctability / theratyping axis).…","—","A3"],
+["2026-07-17-ep2","RAG in biomedicine: systematic review,…","B","Serves **AI-tooling / career** (RWE × LLM-tooling, evaluation-discipline lane). `rag-stage-attributor`…","—","B6"],
+["2026-07-17-ep3","CF genetic heterogeneity in Torbat Jam (Iran):…","A","Serves the **modifier / whole-genome long game (Track C)**; secondary **Liz / CFFPR data-quality** (method…","—","A6"],
+["2026-07-18-ep1","Spectrum and Classification of CFTR and ADGRG2…","A","cftr-polyT-aware-reclassifier (M)* — input a CFTR variant list with per-person genotypes; output, per…","M","A1"],
+["2026-07-18-ep2","BEHRT: Transformer for Electronic Health…","B","registry-event-embedder + neighbor-QC (M)* — input de-identified coded event sequences (one ordered list…","M","B3"],
+["2026-07-18-ep3","Cystic fibrosis in a septuagenarian (Johnson &…","C","genotype-phenotype-discordance-surfacer (M)* — for people with two CFTR variants, model expected severity…","M","C1"],
+["2026-07-19-ep1","Distinct CFTR Mutation Spectrum in Chinese…","A","Population-stratified CFTR variant annotation + theratyping-gap tracker. Input: the China-enriched variant…","S-M","A4"],
+["2026-07-19-ep2","Clinical Agents Fail Silently on Patient Identity","B","(1) Identity-integrity eval harness — de-identified record set → programmatically inject header-swap /…","M","B6"],
+["2026-07-19-ep3","Long-Term Outcomes of Neonatal CF Presentation","C","Genotype-stratified longitudinal trajectory notebook. Input: a de-identified longitudinal phenotype table…","S-M","C1"],
+["2026-07-20-ep1","fourteen \"deleterious\" CFTR nsSNPs, and how…","A","Priority served: Karen / CFTR variant interpretation.** > **predictor-correlation-auditor (S–M)** — input…","S-M","A6"],
+["2026-07-20-ep2","NYUTron, and the two numbers that decide…","B","Priority served: AI tooling / career.** > **deployment-readiness-harness (S–M)** — wrap any longitudinal…","S-M","B2"],
+["2026-07-20-ep3","residual disease activity, or what modulators…","C","Priority served: modifier / WGS long game (Track C).** > **rda-domain-concordance-panel (S–M)** — for each…","S-M","C1"],
+["2026-07-21-ep1","2026-07-21","A","Serves: Karen / CFTR variant interpretation.** > **`disorder-aware-predictor-reliability-flagger` (S–M)**…","S-M","A3"],
+["2026-07-21-ep2","2026-07-21","B","Serves: AI-tooling / career.** The three critiques below are not specific to this paper — they are the…","M","B6"],
+["2026-07-21-ep3","2026-07-21","C","Serves: modifier / WGS long game (Track C).** The catalog gains a non-pulmonary phenotype axis that…","M","C6"],
+["2026-07-22-ep1","2026-07-22","A","input a list of CFTR splice variants in HGVS; join each variant's SpliceAI ΔDL (via SpliceAI Lookup API),…","S-M","A2"],
+["2026-07-22-ep2","2026-07-22","B","take an LLM doing a multi-step task with a known correct information-gathering path (e.g. extracting a…","M","B6"],
+["2026-07-22-ep3","2026-07-22","C","input a list of candidate CF modifier genes; from a public lung scRNA atlas, attach each gene's CFTR…","S-M","C6"],
+["2026-07-23-ep1","Deciphering gain-of-function from…","A","\"CFTR variant discordance scanner — input: CFTR2 classified variant list; join precomputed AlphaMissense,…","S","A1"],
+["2026-07-23-ep2","RxMap: an LLM-assisted tool for medication…","B","\"CF-medication normalizer with review queue — input: column of free-text medication strings; run RxNorm…","M","B3"],
+["2026-07-23-ep3","Role of the ADAM33 rs2280091 Variant in…","C","\"Cross-phenotype modifier direction-check notebook — input: candidate CF modifier variant list (start…","S-M","C2"],
+["2026-07-24-ep1","Compressing the collective knowledge of ESM…","A","\"CFTR VUS re-scoring notebook — input: CFTR missense VUS list (HGVS protein) from CFTR2/ClinVar; run…","S-M","A1"],
+["2026-07-24-ep2","i2b2-ML: a module to facilitate machine…","B","\"Cohort-to-model spec schema + runner — define a JSON/YAML spec capturing positive-cohort query,…","M","B6"],
+["2026-07-24-ep3","DNA methylation predicts lung function and…","C","\"CF methylation-modifier tracker — pull the paper's supplementary CpG tables + GEO GSE289379; build a tidy…","S","C6"],
+["2026-07-25-ep1","2026-07-25","A","Serves **Karen / CFTR variant interpretation**. **cftr-vep-finetune (M–L):** assemble a labeled CFTR…","M-L","A1"],
+["2026-07-25-ep2","2026-07-25","B","Serves **AI-tooling / career** + **Liz / CFFPR phenotype & data quality** (method only).…","M","B1"],
+["2026-07-25-ep3","2026-07-25","C","Serves **CF modifier catalog + summary-stats colocalization**. **mouse-QTL-to-human-modifier mapper…","S-M","C2"],
+["2026-07-26-ep1","2026-07-26","A","cftr-assay-harmonizer* (M) — collect published CFTR variant readouts across assay types (organoid…","M","A1"],
+["2026-07-26-ep2","2026-07-26","B","concept-gap-auditor* (M) — input a domain data-definition document (flat list of fields/concepts); the…","M","B6"],
+["2026-07-26-ep3","2026-07-26","X","registry-effectiveness-template* (M) — inputs: treated-cohort definition, concurrent-comparator…","M","X1"],
+["2026-07-27-ep1","2026-07-27","A","Serves the **Karen / CFTR variant-interpretation** collaboration. **cftr-haplotype-scorer (M)** — Input:…","M","A1"],
+["2026-07-27-ep2","2026-07-27","B","Serves **AI-tooling / career**, with a method-only assist to **Liz / CFFPR phenotype & data quality**.…","M","B6"],
+["2026-07-27-ep3","2026-07-27","C","Serves the **CF modifier-gene catalog** (Track C). **severe-genotype modifier-priority map (S–M)** —…","S-M","C6"],
+["2026-07-28-ep1","Calibrating ML predictors for missense VUS…","A","`cftr_calibration.ipynb` — input a CSV of CFTR missense variants with CFTR2/ClinVar labels → fetch…","M","A4"],
+["2026-07-28-ep2","Nextflow: reproducible, portable pipelines (Di…","B","`cftr-annotate-nf` — a Nextflow pipeline, input a CFTR-variant VCF → (1) VEP annotation in container, (2)…","M","B1"],
+["2026-07-28-ep3","CF-related kidney disease (CFKD): emerging…","C","`cfkd_egfr_trajectory.ipynb` — input a de-identified longitudinal serum-creatinine table (age, sex) →…","M","C1"],
+["2026-07-29-ep1","AI-CURA","A","`cftr-vus-acmg-agent (M–L)` — input a CFTR variant in HGVS → split ACMG criteria into deterministic (PM2…","M-L","A2"],
+["2026-07-29-ep2","An open data model for pharmacogenetics","B","`cftr-modulator-indicator-model (M)` — define two linked-but-separate structures: (1) a stable \"genomic…","M","B3"],
+["2026-07-29-ep3","Eight rare CFTR variants in organoids + cell lines","C","`cftr-variant-domain-theratyping-map (S–M)` — build a table of rare CFTR variants annotated by protein…","S-M","C6"],
+["2026-07-30-ep1","2026-07-30","A","input = per-variant raw functional scores from ≥2 CFTR assays (theratyping / organoid FIS / Ussing / DMS);…","M","A4"],
+["2026-07-30-ep2","2026-07-30","B","input = a candidate phenotype definition + a written CF clinical-expectation template; compute…","M","B3"],
+["2026-07-30-ep3","2026-07-30","C","input = a CFTR genotype including the intron-8 (TG)m(T)n haplotype; output = a context-adjusted…","S-M","C6"],
+["2026-07-31-ep1","In silico predictor performance is…","A","> `cftr-predictor-gene-calibration` (M) — Assemble a CFTR-specific truth set (CFTR2 CF-causing + benign…","M","A4"],
+["2026-07-31-ep2","Carrot: map sensitive data to OMOP without…","B","> `registry-mapping-corpus` (M) — Input: a White-Rabbit-style scan report of a registry extract (metadata…","M","B6"],
+["2026-07-31-ep3","48 Romanian/Moldova CF patients: regional…","C","> `cftr-second-allele-phenotype-stratifier` (S–M) — Among F508del-heterozygous patients (pooled across…","S-M","C6"],
+["2026-08-01-ep1","SpliceSelectNet","A","cftr-deep-intronic-splice-screener (M)** — input a CFTR intronic candidate variant + reference sequence;…","M","A2"],
+["2026-08-01-ep2","KEEPER + LLM case adjudication","B","outcome-adjudication-assistant (M)** — input a candidate case cohort in OMOP form; generate a KEEPER-style…","M","B6"],
+["2026-08-01-ep3","miRNA network in CF sibling pairs","C","cf-mirna-modifier-candidate-tracker (S–M)** — living table collecting, from published CF miRNA studies,…","S-M","C6"],
+["2026-08-02-ep1","2026-08-02","A","A notebook that scores every CFTR intronic + near-splice-site variant with SpliceAI and Pangolin, then…","M","A2"],
+["2026-08-02-ep2","2026-08-02","B","Serves: Liz / CFFPR phenotype & data quality (method only).** Tool sketch (paste-ready): *A Python…","M","B3"],
+["2026-08-02-ep3","2026-08-02","A","A parser that ingests a published CF cohort's variant table (e.g. this paper's Table 3), normalizes each…","S-M","A6"],
+["2026-08-03-ep1","2026-08-03","A","Take every CFTR variant currently classified as VUS or benign missense/synonymous that sits within ~50bp…","M","A2"],
+["2026-08-03-ep2","2026-08-03","B","Given an OMOP-style cohort from a candidate phenotype algorithm, demographic covariates, and a small…","M","B6"],
+["2026-08-03-ep3","2026-08-03","A","Given a list of CFTR variants (HGVS or legacy notation), normalize each and query classification from…","M","A6"],
+["2026-08-04-ep1","ProteoCast (Abakarova 2026)","A","Run ColabFold-then-GEMME pipeline on CFTR for full mutational landscape + Gaussian-mixture classification + FPOP R-domain hotspot flagging","L","A1"],
+["2026-08-04-ep2","AIR·MS platform (Guerrero 2025)","B","NL-to-SQL registry query assistant, schema-grounded, benchmarked against curated cohort ground truth","M","B6"],
+["2026-08-04-ep3","Brazil CF cohort (Meneses 2024)","A","CFTR neighbor-precedent VUS worksheet — pull CFTR2/ClinVar neighbor-codon evidence + gnomAD freq + in-silico consensus","S-M","A4"],
+["2026-08-05-ep1","VUStruct (Moth 2026)","A","Rosetta ΔΔG + PathProx spatial-clustering check against CFTR2/gnomAD on CFTR cryo-EM structures","L","A3"],
+["2026-08-05-ep2","Cross-lingual term mapping (Guillen-Ramirez 2026)","B","Sanitize→LLM-translate→embed→vector-store terminology-mapping pipeline with confidence tiers","M","B3"],
+["2026-08-05-ep3","CF modifier systematic review (Ward 2024)","C","Rank modifier-review gene table by replication/organ-system/modulator-data for coloc/MR follow-up shortlist","S-M","C2"],
+["2026-08-06-ep1","NBS diagnostic gap case (Ortuzar Menendez 2026)","A","Panel-vs-ancestry-frequency coverage gap tool for targeted CFTR mutation panels","S-M","A1"],
+["2026-08-06-ep2","LLM phenotype extraction (Tekumalla 2024)","B","Stability + hallucination-check harness for LLM-generated phenotype code-and-logic tables","M","B6"],
+["2026-08-06-ep3","qJLS coloc at NALCN (Kim 2025)","C","Formal Bayesian colocalization (coloc) of regional GWAS + GTEx eQTL sumstats at a CF modifier locus","S-M","C2"],
+["2026-08-07-ep1","KCNQ1 mechanism classifier (Chang-Gonzalez 2026)","A","cftr-mechanism-classifier — two-track (trafficking vs. function) random-forest classifier trained on CFTR2 functional-assay data","—","A4"],
+["2026-08-07-ep2","Convert-Pheno (Rueda 2026)","B","registry-beacon-bridge — auditable OMOP CDM → GA4GH Beacon v2 converter","—","B3"],
+["2026-08-07-ep3","SPLUNC1-Orai1 axis review (Tarran 2025)","C","bpifa1-orai1-locus-scanner — genetic-variant evidence check at a known CF modifier locus","—","C2"],
+["2026-08-08-ep1","MuSA Nextflow pipeline (Scognamiglio 2026)","A","cftr-musa-panel — CFTR-scoped MuSA deployment with CFTR2 wired in as evidence column","—","B1"],
+["2026-08-08-ep2","DICOM→OMOP (Park 2025)","B","omop-genomic-vocab-extension — mint custom OMOP concepts for a genomic-annotation vocabulary (e.g. ClinVar review tiers)","—","B3"],
+["2026-08-08-ep3","TAS2R38/CRS (Cantone 2025)","C","tas2r38-crs-signal-scan — GWAS Catalog/Open Targets lookup for CF sinonasal-outcome signal at TAS2R38","—","C2"],
+["2026-08-09-ep1","MARRVEL-MCP (Everton/Botas 2026)","A","cftr-variant-copilot — MCP server wrapping CFTR-scoped variant tools behind an LLM with audit log","—","A1"],
+["2026-08-09-ep2","ClinicalTransformerNER (Yang 2020)","B","cf-note-concept-extractor — zero-fine-tune RoBERTa-MIMIC pass over CF-relevant text","—","B5"],
+["2026-08-09-ep3","SLC26A9 RPCF (Luo 2024)","C","cf-extreme-phenotype-flagger — trajectory-based severe-outlier detection from longitudinal lung-function data","—","C1"],
+["2026-08-10-ep1","Universal Presence of Gene/Variant Nomenclature Errors in Journal Manuscripts (Lansdon 2026)","A","cftr-hgvs-linter — CFTR-scoped HGVS compliance rubric (transcript, prefix, syntax) validating variant strings before matching/curation","S","A1"],
+["2026-08-10-ep2","Extending an Open-Source Tool to Measure Data Quality: OHDSI Case Report (Dixon 2020)","B","registry-quality-probe — per-field completeness % + Shannon entropy trends vs. Kahn conformance/completeness/plausibility framework","M","B3"],
+["2026-08-10-ep3","Automated Identification of Implausible Values in Growth Data from Pediatric EHRs / growthcleanr (Daymont 2017)","C","growthcleanr-benchmark-harness — EWMA-style flagging vs. spline mixed-effects candidate generator on synthetic longitudinal growth data","M","C7"],
+["2026-08-10-ep4","Automated Data Cleaning of Paediatric Anthropometric Data / Southampton Protocol (Phan 2020)","C","cascade-review-budget-simulator — multi-tier cascade producing a sensitivity-vs-review-queue-size tuning curve on synthetic growth data","M","C7"],
+["2026-08-11-ep1","Decoding splicing variants via functional validation (Hersent 2026)","A","cftr-splice-concordance-tracker — SpliceAI/CADD-Splice disagreement flagging + ClinVar/lit cross-reference for a ranked functional-confirmation table","S-M","A2"],
+["2026-08-11-ep2","ADEpedia-on-OHDSI (Yu 2019)","B","registry-omop-mapping-probe — draft OMOP CDM table/field mapping + concept_id lookups for generic registry fields","S","B3"],
+["2026-08-11-ep3","Adult BIV in All of Us EHRs (Guide 2024)","C","adult-wgamlss-reference-prototype — adult reference model + MSDS/EWMA flags, sensitivity-vs-precision benchmarking harness","M","C7"],
+["2026-08-11-ep4","growthcleanr vs. cp vs. PeAnOF, PCORnet (Lin 2022)","C","trajectory-vs-regression-flagging-bakeoff — EWMA vs. robust-regression flaggers on a shared synthetic sparse-data edge case","M","C7"],
+["2026-08-12-ep1","Variant characterization, disordered proteome (Hubrich 2026)","A","cftr-rdomain-interface-scan — AlphaMissense-benign VUS in R-domain, SLiM overlap check, AlphaFold docking triage list","S","A3"],
+["2026-08-12-ep2","Seamless EMR access / OMOP-CDM governance (Hallinan 2024)","B","omop-cdm-scaffold-mapper — map synthetic registry fields into OMOP-CDM core tables + Achilles-style completeness check","M","B3"],
+["2026-08-12-ep3","Better-performing implausible-growth algorithm (Harrall 2024)","C","harrall-caps-cups-stress-test — cap/cup/repeat rule logic on synthetic trajectories, tested against a real accelerating-growth pattern","S","C7"],
+["2026-08-12-ep4","Implausible values in big longitudinal data (de Mello e Silva 2024)","C","po-lo-staged-flagger — two-stage population+longitudinal outlier pipeline, scaled/studentized-residual compute-time benchmark","M","C7"],
+["2026-08-13-ep1","BoltzOmics variant-drug-binding (Ngo 2026)","A","cftr-eti-boltz-screen — Boltz-2 WT/mutant CFTR structures, ETI modulator docking, binding-affinity-shift triage list","M","A3"],
+["2026-08-13-ep2","RAG-assisted deep phenotyping (Garcia 2025)","B","registry-term-rag-extractor — extract→retrieve-ground→constrained-select architecture ported to a new clinical vocabulary","M","B5"],
+["2026-08-13-ep3","Outliers in growth trajectory data (Yang 2016)","C","conditional-percentile-flagger — individual-trajectory-conditioned method diffed against a population cross-sectional cutoff","S","C7"],
+["2026-08-13-ep4","Comparing BIV methods in youth (Lawman 2015)","C","biv-method-sensitivity-sweep — reimplement 11 published BIV method families, report flagged-prevalence spread","S-M","C7"],
+["2026-08-14-ep1","MEN1 VUS reclassification (Bindra 2026)","A","cftr-vus-recuration-worklist — REVEL/AlphaMissense/SpliceAI + AlphaFold domain flags, ACMG/AMP-style triage worklist","S-M","A4"],
+["2026-08-14-ep2","Rule- vs LLM-based phenotype extraction, NF1 (Kaster 2025)","B","phenotype-extraction generalization harness — rule-based vs. LLM extractor F1 comparison across two documentation styles","S","B6"],
+["2026-08-14-ep3","Implausible longitudinal childhood anthropometrics (Shi 2018)","C","jackknife-residual scorer — z-score/raw jackknife-residual recipe on synthetic data with injected errors","S","C7"],
+["2026-08-14-ep4","WHO BIV cutoff validity in youth (Freedman 2015)","C","corroborating-measure consistency-check + subgroup flag-rate audit — cross-field agreement + demographic-uniformity check","S","C7"],
+["2026-08-15-ep1","Turkish CFTR cohort genotype-phenotype (Canitez 2026)","A","cftr-ancestry-variant-registry — running table of non-European CFTR variant/frequency/phenotype vs. CFTR2 status","S-M","A1"],
+["2026-08-15-ep2","Hybrid LLM breast-cancer extraction (Tariq 2025)","B","hybrid-extraction-harness — ontology-parser + fine-tuned LLM two-phase benchmark vs. zero-shot and rule-based baselines","M","B6"],
+["2026-08-15-ep3","LLM-assisted missing-data recovery (Lotspeich 2026)","C","roadmap-expansion-harness — LLM candidate-expansion of a clinician rule set, self-consistency plateau, human-adjudication queue","S-M","B3"],
+["2026-08-15-ep4","Broken Stick Model (van Buuren 2023)","C","brokenstick-baseline-notebook — brokenstick fit as expected-trajectory baseline for residual-based flagging, vs. naive-linear baseline","S","C7"],
+["2026-08-16-ep1","SSEP transporter-variant effect predictor (Park 2026)","A","cftr-eti-vep-domain-stratification — compile modulator rescue data, stratify generic VEP scores by CFTR domain/binding pocket","S-M","A3"],
+["2026-08-16-ep2","NFTest, automated Nextflow pipeline testing (Patel 2024)","B","run nftest init against CFTR-WGS Nextflow tooling; per-stage checksum + comparator test cases","S","B1"],
+["2026-08-16-ep3","DQ vocabulary, Weiskopf & Weng 2013","C","five-dimension DQ crosswalk spreadsheet — map existing/proposed flagging rules against the vocabulary's five dimensions","S","C7"],
+["2026-08-16-ep4","Kahn harmonized DQ framework (Kahn 2016)","C","extend crosswalk with Verification/Validation-context tagging per flagging rule","S","C7"],
+["2026-08-17-ep1","Gene-specific CHD2 predictor benchmarking (Gu 2025)","A","run the same ~20-predictor gene-specific benchmark design on CFTR2's curated ground-truth set to produce a CFTR-specific ranked predictor table","S-M","A1"],
+["2026-08-17-ep2","nf-core/metatdenovo pipeline (Di Leo 2025)","B","nf-core-style structural audit of existing CFTR-WGS Nextflow pipeline — module boundaries, config-driven tool swap, wired-in MultiQC report","S","B1"],
+["2026-08-17-ep3","People-Like-Me Mahalanobis growth prediction (Jin 2025)","C","Mahalanobis-PLM matched-neighbor trajectory baseline on brokenstick-preprocessed synthetic data, vs. spline mixed-effects baseline","S-M","C7"],
+["2026-08-17-ep4","z-score calculation accuracy, GPR vs CDC-LMS (Martinez-Millana 2018)","C","GPR z-score calculator on public CDC reference tables, side-by-side with CDC-LMS to check central-range divergence","S","C7"],
+["2026-08-18-ep1","CYP tunnel/cofactor pathogenicity gradient (Špačková 2025)","A","score CFTR VUS by pore/NBD proximity, test pathogenicity gradient (AlphaMissense)","S","A3"],
+["2026-08-18-ep2","yQTL pipeline + Shiny viz (Li 2024)","B","port 4 Shiny views (Manhattan/Miami/network/boxplot) as standalone QTL/GWAS viz tool","S-M","B1"],
+["2026-08-18-ep3","LMSz condition-specific growth reference (Low 2026)","C","implement LMSz on synthetic CF ht/wt data anchored to CDC baseline, compare vs plain CDC z-scores","S-M","C7"],
+["2026-08-18-ep4","2010 KPSC ht/wt noise baseline (Smith 2010)","C","replicate naive sequential-encounter error detection, age-stratified floor on synthetic data","S","C7"],
+["2026-08-19-ep1","Lilace FACS-DMS statistical model (Freudenberg 2026)","A","refit public CFTR DMS dataset with Lilace, produce FDR-controlled PS3/BS3 variant scores","M","A4"],
+["2026-08-19-ep2","APHRODITE noisy-labeling phenotyping (Banda 2017)","B","run APHRODITE noisy-labeling + anchor learning on Synthea OMOP toy phenotype","S-M","B4"],
+["2026-08-19-ep3","AWAD Bi-LSTM weight-abnormality detector (Liu 2021)","C","prototype Bi-LSTM on synthetic ht/wt trajectories vs spline mixed-effects residual approach","M","C7"],
+["2026-08-19-ep4","~19% sensitivity ceiling benchmark (Wu 2018)","C","build synthetic eval harness scoring CDC/REG/CHOP rules against 3-category failure taxonomy","S","C7"],
+["2026-08-20-ep1","MAVISp structure-based variant framework (Arnaudi 2026)","A","run MAVISp STABILITY/LONG_RANGE modules on CFTR NBD1/NBD2/R-domain vs CFTR2 VUS","M-L","A3"],
+["2026-08-20-ep2","OMOP pharmacovigilance PDP (Shin & Lee 2021)","B","Synthea-based OMOP pipeline demonstrating FAERS+EHR two-source triangulation","S-M","B3"],
+["2026-08-20-ep3","Spurious weight percent-change rule (Chen 2018)","C","replicate 3 percent-change algorithms on synthetic weight data w/ injected digit-transposition errors","S","C7"],
+["2026-08-20-ep4","Monotonic BART height outlier ML (Sparapani 2022)","C","implement monotonic BART height-from-age/sex/race/weight, compare vs spline residual approach","S-M","C7"],
+["2026-08-21-ep1","VarCard.io cardiac PLM benchmark (Hochstadt 2024)","A","pull CFTR2 VUS, query VarCard.io by HGVS, compute reclassification-rate vs CFTR2/sweat-chloride","S","A1"],
+["2026-08-21-ep2","Propensity score / MatchIt tutorial (Zhang 2017)","X","reusable propensity-matching template (MatchIt's 4 methods) w/ auto balance diagnostics","S","X1"],
+["2026-08-21-ep3","CKD fuzzy-unit EHR cleaning (Shi 2021)","C","build CKD-style config table for ht/wt fields, apply fuzzy unit-matching + magnitude-error rule","S","C7"],
+["2026-08-21-ep4","SITAR growth curve instrument (Cole 2010)","C","fit SITAR to synthetic pediatric height w/ injected errors, compare vs conditional-studentized-residual","S/M","C7"],
+["2026-08-22-ep1","Moroccan CFTR long-read + VUS triage (El Makhzen 2026)","A","cftr-vus-triage: VCF/CSV → CFTR2/ClinVar/gnomAD cross-ref, flag VUS w/ no orthogonal evidence","S","A1"],
+["2026-08-22-ep2","TARGET Statement reporting guideline (Cashin/Hansford/Hernán 2025)","B","target-checklist-linter: encode 21 TARGET items as schema, validate filled-in protocol","S/M","B3"],
+["2026-08-22-ep3","GAMLSS automatic smoothing selection (Rigby & Stasinopoulos 2014)","C","gamlss-smoothing-sensitivity-explorer: visualize L/M/S curve shift under over-/under-smoothing","S","C7"],
+["2026-08-22-ep4","Conditional studentized residuals, CKiD (Ng 2023)","C","csr-vs-marginal-flag-comparator: fit CSR alongside fixed-threshold on synthetic ht/wt + errors","M","C7"],
+["2026-08-23-ep1","AlphaMissense vs CFTR2 stress test (McDonald 2024)","A","cftr-predictor-calibration-report: reproduce 3-class ROC-AUC + clinical-correlation vs CFTR2","S-M","A4"],
+["2026-08-23-ep2","RICOPILI GWAS pipeline architecture (Lam 2020)","B","pipeline-qc-flags-lite: red/yellow/green QC flagging via Snakemake/Nextflow on tabular data","M","B3"],
+["2026-08-23-ep3","Visit-level IQR + model-influence check, TEDDY (Mramba 2024)","C","visit-level-iqr-vs-model-influence: per-visit IQR flags, refit downstream model w/wo flagged pts","S","C7"],
+["2026-08-23-ep4","Rare-disease registry DQ framework (Kodra 2017)","C","registry-dq-dimension-scorecard: map existing checks to 7 Kodra + Kahn/Weiskopf DQ dimensions","S","C7"]
+];
+
+// episodes proposed but not yet published as site HTML (link would 404). Refreshed at weekly re-eval.
+const UNPUB=new Set([]);
+function epLink(slug,label){return UNPUB.has(slug)?('<span class="note" title="episode page not yet published">'+label+'</span>'):('<a href="'+slug+'.html" title="'+slug+'">'+label+'</a>');}
+const laneName={A:"A · Karen / variant interp",B:"B · AI tooling / career",C:"C · Modifiers / Liz data-quality",X:"X · Cross-cutting methods"};
+T.forEach(t=>t.prio=t.imp+t.feas+(6-t.hard));
+let curFilter="all", sortKey="prio", sortDir=-1;
+
+function scoreCell(v,isHard){const cls=isHard?("hard"+v):("s"+v);return '<span class="score '+cls+'">'+v+'</span>';}
+function render(){
+  let rows=T.filter(t=>curFilter==="all"||t.lane===curFilter);
+  rows.sort((a,b)=>{let x=a[sortKey],y=b[sortKey];if(typeof x==="string"){x=x.toLowerCase();y=y.toLowerCase();}return x<y?-1*sortDir:x>y?1*sortDir:0;});
+  const tb=document.getElementById("tbody");tb.innerHTML="";
+  rows.forEach(t=>{
+    const src=t.srcs.map(s=>epLink(s[1],s[0])).join(" · ");
+    tb.insertAdjacentHTML("beforeend",
+      '<tr>'+
+      '<td><b>'+t.id+'</b></td>'+
+      '<td class="todo-name">'+t.name+'<span class="sub">'+t.sub+'</span></td>'+
+      '<td><span class="lane-pill lane-'+t.lane+'">'+t.lane+'</span></td>'+
+      '<td>'+scoreCell(t.imp,false)+'</td>'+
+      '<td>'+scoreCell(t.feas,false)+'</td>'+
+      '<td>'+scoreCell(t.hard,true)+'</td>'+
+      '<td class="prio">'+t.prio+'</td>'+
+      '<td><span class="prog">'+t.prog+'</span></td>'+
+      '<td class="srcs">'+src+'</td>'+
+      '</tr>');
+  });
+  document.querySelectorAll("thead th .arr").forEach(a=>a.innerHTML="");
+  const th=document.querySelector('thead th[data-k="'+sortKey+'"] .arr');if(th)th.innerHTML=sortDir<0?"&#9660;":"&#9650;";
+}
+function sortBy(k){if(sortKey===k){sortDir*=-1;}else{sortKey=k;sortDir=(k==="hard"||k==="id"||k==="name"||k==="lane"||k==="prog")?1:-1;}render();}
+function setFilter(l,el){curFilter=l;document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));el.classList.add("active");render();}
+
+function renderApx(){
+  const tb=document.getElementById("apxbody");
+  APX.forEach(r=>{
+    tb.insertAdjacentHTML("beforeend",
+      '<tr><td>'+epLink(r[0],r[0])+'</td><td>'+r[1]+'</td>'+
+      '<td><span class="lane-pill lane-'+r[2]+'">'+r[2]+'</span></td>'+
+      '<td>'+r[3]+'</td><td>'+r[4]+'</td><td><b>'+r[5]+'</b></td></tr>');
+  });
+}
+render();renderApx();
+</script>
+</body></html>

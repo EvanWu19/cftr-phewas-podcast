@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Aug 2026 11:21:36 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 11:21:20 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 398: Cole 2026</title>
+      <description>Cole 2026</description>
+      <guid isPermaLink="false">2026-08-31-ep4</guid>
+      <pubDate>Mon, 31 Aug 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-31-ep4.mp3" length="21086829" type="audio/mpeg"/>
+      <itunes:title>Ep 398: Cole 2026</itunes:title>
+      <itunes:episode>398</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 397: Zimbalist 2025</title>
+      <description>Zimbalist 2025</description>
+      <guid isPermaLink="false">2026-08-31-ep3</guid>
+      <pubDate>Mon, 31 Aug 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-31-ep3.mp3" length="23695797" type="audio/mpeg"/>
+      <itunes:title>Ep 397: Zimbalist 2025</itunes:title>
+      <itunes:episode>397</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 396: Ru 2023</title>
+      <description>Ru 2023</description>
+      <guid isPermaLink="false">2026-08-31-ep2</guid>
+      <pubDate>Mon, 31 Aug 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-31-ep2.mp3" length="27180069" type="audio/mpeg"/>
+      <itunes:title>Ep 396: Ru 2023</itunes:title>
+      <itunes:episode>396</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 395: Del Angel 2020</title>
+      <description>Del Angel 2020</description>
+      <guid isPermaLink="false">2026-08-31-ep1</guid>
+      <pubDate>Mon, 31 Aug 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-31-ep1.mp3" length="25713261" type="audio/mpeg"/>
+      <itunes:title>Ep 395: Del Angel 2020</itunes:title>
+      <itunes:episode>395</itunes:episode>
+    </item>
     <item>
       <title>Ep 394: Santos IKSD 2024</title>
       <description>Santos IKSD 2024</description>
