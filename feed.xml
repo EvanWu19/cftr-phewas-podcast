@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Sep 2026 11:21:55 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 11:21:33 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 410: Santana Dos Santos IK 2024</title>
+      <description>Santana Dos Santos IK 2024</description>
+      <guid isPermaLink="false">2026-09-03-ep4</guid>
+      <pubDate>Thu, 03 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-03-ep4.mp3" length="20471949" type="audio/mpeg"/>
+      <itunes:title>Ep 410: Santana Dos Santos IK 2024</itunes:title>
+      <itunes:episode>410</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 409: Chan PY 2018</title>
+      <description>Chan PY 2018</description>
+      <guid isPermaLink="false">2026-09-03-ep3</guid>
+      <pubDate>Thu, 03 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-03-ep3.mp3" length="21581253" type="audio/mpeg"/>
+      <itunes:title>Ep 409: Chan PY 2018</itunes:title>
+      <itunes:episode>409</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 408: Zhou S 2022</title>
+      <description>Zhou S 2022</description>
+      <guid isPermaLink="false">2026-09-03-ep2</guid>
+      <pubDate>Thu, 03 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-03-ep2.mp3" length="26964885" type="audio/mpeg"/>
+      <itunes:title>Ep 408: Zhou S 2022</itunes:title>
+      <itunes:episode>408</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 407: Xu H 2026</title>
+      <description>Xu H 2026</description>
+      <guid isPermaLink="false">2026-09-03-ep1</guid>
+      <pubDate>Thu, 03 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-03-ep1.mp3" length="29699061" type="audio/mpeg"/>
+      <itunes:title>Ep 407: Xu H 2026</itunes:title>
+      <itunes:episode>407</itunes:episode>
+    </item>
     <item>
       <title>Ep 406: Freedman DS 2022</title>
       <description>Freedman DS 2022</description>
