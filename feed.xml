@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Sep 2026 11:22:21 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 11:21:34 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 422: Kompaniyets L 2025</title>
+      <description>Kompaniyets L 2025</description>
+      <guid isPermaLink="false">2026-09-06-ep4</guid>
+      <pubDate>Sun, 06 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-06-ep4.mp3" length="22176309" type="audio/mpeg"/>
+      <itunes:title>Ep 422: Kompaniyets L 2025</itunes:title>
+      <itunes:episode>422</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 421: Daymont C 2020</title>
+      <description>Daymont C 2020</description>
+      <guid isPermaLink="false">2026-09-06-ep3</guid>
+      <pubDate>Sun, 06 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-06-ep3.mp3" length="21749757" type="audio/mpeg"/>
+      <itunes:title>Ep 421: Daymont C 2020</itunes:title>
+      <itunes:episode>421</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 420: Choubey et al. 2025</title>
+      <description>Choubey et al. 2025</description>
+      <guid isPermaLink="false">2026-09-06-ep2</guid>
+      <pubDate>Sun, 06 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-06-ep2.mp3" length="25442085" type="audio/mpeg"/>
+      <itunes:title>Ep 420: Choubey et al. 2025</itunes:title>
+      <itunes:episode>420</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 419: Domènech-Vivó J 2026</title>
+      <description>Domènech-Vivó J 2026</description>
+      <guid isPermaLink="false">2026-09-06-ep1</guid>
+      <pubDate>Sun, 06 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-06-ep1.mp3" length="27213165" type="audio/mpeg"/>
+      <itunes:title>Ep 419: Domènech-Vivó J 2026</itunes:title>
+      <itunes:episode>419</itunes:episode>
+    </item>
     <item>
       <title>Ep 418: Wood CT 2023</title>
       <description>Wood CT 2023</description>
