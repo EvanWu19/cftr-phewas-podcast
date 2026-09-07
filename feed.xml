@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Sep 2026 11:21:34 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 11:22:59 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 426: Schmidt M 2015</title>
+      <description>Schmidt M 2015</description>
+      <guid isPermaLink="false">2026-09-07-ep4</guid>
+      <pubDate>Mon, 07 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-07-ep4.mp3" length="23942925" type="audio/mpeg"/>
+      <itunes:title>Ep 426: Schmidt M 2015</itunes:title>
+      <itunes:episode>426</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 425: King RJ 2022</title>
+      <description>King RJ 2022</description>
+      <guid isPermaLink="false">2026-09-07-ep3</guid>
+      <pubDate>Mon, 07 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-07-ep3.mp3" length="20765085" type="audio/mpeg"/>
+      <itunes:title>Ep 425: King RJ 2022</itunes:title>
+      <itunes:episode>425</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 424: Li 2024</title>
+      <description>Li 2024</description>
+      <guid isPermaLink="false">2026-09-07-ep2</guid>
+      <pubDate>Mon, 07 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-07-ep2.mp3" length="28369077" type="audio/mpeg"/>
+      <itunes:title>Ep 424: Li 2024</itunes:title>
+      <itunes:episode>424</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 423: Nayar G 2026</title>
+      <description>Nayar G 2026</description>
+      <guid isPermaLink="false">2026-09-07-ep1</guid>
+      <pubDate>Mon, 07 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-07-ep1.mp3" length="29156517" type="audio/mpeg"/>
+      <itunes:title>Ep 423: Nayar G 2026</itunes:title>
+      <itunes:episode>423</itunes:episode>
+    </item>
     <item>
       <title>Ep 422: Kompaniyets L 2025</title>
       <description>Kompaniyets L 2025</description>
