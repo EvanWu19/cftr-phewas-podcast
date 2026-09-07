@@ -58,7 +58,7 @@ A <b>Progress</b> column is reserved for future sessions — start a session and
 </div>
 
 <div class="board-intro">
-<p><b>What this is.</b> Every episode ends with a "buildable artifact" — the concrete thing worth building off that paper. After the CFGP/WGS door closed and the project re-centered on Liz-sponsored data work + the Karen Raraigh genetics collaboration as the warm near-term move, these collapse into a small set of distinct, mostly public-data-only deliverables. 284 raw mentions across 426 episodes (plus signals from the listener Q&amp;A feedback log) are consolidated into <b>21 distinct to-dos</b> below (full source list in the appendix). Auto-updated weekly by a scheduled task that archives the prior version to <code>todo_archive/</code> before rewriting.</p>
+<p><b>What this is.</b> Every episode ends with a "buildable artifact" — the concrete thing worth building off that paper. After the CFGP/WGS door closed and the project re-centered on Liz-sponsored data work + the Karen Raraigh genetics collaboration as the warm near-term move, these collapse into a small set of distinct, mostly public-data-only deliverables. 275 raw mentions across 426 episodes (plus signals from the listener Q&amp;A feedback log) are consolidated into <b>21 distinct to-dos</b> below (full source list in the appendix). Auto-updated weekly by a scheduled task that archives the prior version to <code>todo_archive/</code> before rewriting.</p>
 <div class="legend">
 <div class="lg"><b>Importance (1–5)</b> — weight to career. 5 = directly breaks the bottleneck (Karen collaboration / AI-on-registry-depth positioning). Higher is better.</div>
 <div class="lg"><b>Feasibility / Access (1–5)</b> — can you start now with what you have? 5 = inputs are all public, no gated data or GPU. Higher is better.</div>
@@ -95,7 +95,7 @@ A <b>Progress</b> column is reserved for future sessions — start a session and
 <p class="note">Default sort: Priority (quick-win bets first). Click any header to re-sort.</p>
 
 <details class="appendix">
-<summary>Raw appendix — all 284 source mentions (every episode that proposed a build)</summary>
+<summary>Raw appendix — all 275 source mentions (every episode that proposed a build)</summary>
 <div style="overflow-x:auto"><table id="apxtbl">
 <thead><tr><th>Episode</th><th>Paper / topic</th><th>Track</th><th>Proposed artifact</th><th>Diff.</th><th>→ To-do</th></tr></thead>
 <tbody id="apxbody"></tbody>
@@ -195,7 +195,7 @@ const T = [
  srcs:[["MVP/Verma","2026-05-06-ep2"],["multi-ancestry","2026-05-22-ep2"]]},
 ];
 
-// ---- raw appendix (271 source mentions) ----
+// ---- raw appendix (275 source mentions) ----
 const APX = [
 ["2026-05-06-ep1","Verma 2022 (MVP multi-ancestry)","C","Ancestry-stratified CF modifier PheWAS at gene/pathway level","—","X2"],
 ["2026-05-22-ep2","Multi-ancestry BP GWAS","C","Multi-cohort discovery+replication template; sex-stratified check","—","X2"],
@@ -467,7 +467,11 @@ const APX = [
 ["2026-09-06-ep1","RNA splicing evidence enables robust classification of BRCA1 exon 18 variants, ENIGMA consortium (Domènech-Vivó 2026)","A","Regression testing ACMG/AMP >30%/<70% RNA thresholds for CFTR-specific recalibration","M","A4"],
 ["2026-09-06-ep2","Data Extraction and Curation from Radiology Reports for Pancreatic Cyst Surveillance Using LLMs (Choubey 2025)","B","Zero-shot structured extraction + eval harness (accuracy/kappa vs hand-labeled set)","S-M","B6"],
 ["2026-09-06-ep3","Clinician Diagnoses of Failure to Thrive Before and After Switch to WHO Growth Curves (Daymont 2020)","C","Recompute z-scores under multiple reference charts, surface discontinuities at chart-switch dates","S-M","C7"],
-["2026-09-06-ep4","Who Gets a Code for Obesity? Reliability of ICD-Based Obesity Codes (Kompaniyets 2025)","C","Discount missing corroborating code's evidentiary weight by severity-dependent sensitivity","S","C7"]
+["2026-09-06-ep4","Who Gets a Code for Obesity? Reliability of ICD-Based Obesity Codes (Kompaniyets 2025)","C","Discount missing corroborating code's evidentiary weight by severity-dependent sensitivity","S","C7"],
+["2026-09-07-ep1","Genetic background shapes AI-predicted variant effects (Nayar 2026)","A","CFTR haplotype-sensitivity checker — rescore a variant across sampled phased population haplotypes, report score range + threshold crossings","M","A1"],
+["2026-09-07-ep2","A large language model framework for literature-based disease-gene association prediction, LORE (Li 2024)","B","CFTR-LORE mini pipeline — atomic relation extraction + CF-specific taxonomy + embedding/ranking into an evidence-linked modifier-gene table","M","C6"],
+["2026-09-07-ep3","The Childhood Obesity Data Initiative (CODI) implementation case study (King 2022)","C","One-page collaboration-planning template — GEP-HI evaluation questions + CODI-style stakeholder map for a multi-team data-quality effort","S","B3"],
+["2026-09-07-ep4","The Danish National Patient Registry: content, data quality, research potential (Schmidt 2015)","C","PPV/completeness reporting template — flagged + randomly-sampled-unflagged adjudicated records to PPV, sensitivity, Wilson CIs by category","S","C7"]
 ];
 
 // episodes proposed but not yet published as site HTML (link would 404). Refreshed at weekly re-eval.
