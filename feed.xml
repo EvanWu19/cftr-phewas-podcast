@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Sep 2026 11:22:59 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2026 11:22:23 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 430: Massara P 2023</title>
+      <description>Massara P 2023</description>
+      <guid isPermaLink="false">2026-09-08-ep4</guid>
+      <pubDate>Tue, 08 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-08-ep4.mp3" length="22625349" type="audio/mpeg"/>
+      <itunes:title>Ep 430: Massara P 2023</itunes:title>
+      <itunes:episode>430</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 429: Wang H 2021</title>
+      <description>Wang H 2021</description>
+      <guid isPermaLink="false">2026-09-08-ep3</guid>
+      <pubDate>Tue, 08 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-08-ep3.mp3" length="21455301" type="audio/mpeg"/>
+      <itunes:title>Ep 429: Wang H 2021</itunes:title>
+      <itunes:episode>429</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 428: Reali P 2026</title>
+      <description>Reali P 2026</description>
+      <guid isPermaLink="false">2026-09-08-ep2</guid>
+      <pubDate>Tue, 08 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-08-ep2.mp3" length="24870621" type="audio/mpeg"/>
+      <itunes:title>Ep 428: Reali P 2026</itunes:title>
+      <itunes:episode>428</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 427: Wu J 2026</title>
+      <description>Wu J 2026</description>
+      <guid isPermaLink="false">2026-09-08-ep1</guid>
+      <pubDate>Tue, 08 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-08-ep1.mp3" length="29288997" type="audio/mpeg"/>
+      <itunes:title>Ep 427: Wu J 2026</itunes:title>
+      <itunes:episode>427</itunes:episode>
+    </item>
     <item>
       <title>Ep 426: Schmidt M 2015</title>
       <description>Schmidt M 2015</description>
