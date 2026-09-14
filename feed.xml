@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Sep 2026 11:23:58 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2026 11:22:54 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 442: Ohi S 2026</title>
+      <description>Ohi S 2026</description>
+      <guid isPermaLink="false">2026-09-14-ep4</guid>
+      <pubDate>Mon, 14 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-14-ep4.mp3" length="23288829" type="audio/mpeg"/>
+      <itunes:title>Ep 442: Ohi S 2026</itunes:title>
+      <itunes:episode>442</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 441: Xie S 2025</title>
+      <description>Xie S 2025</description>
+      <guid isPermaLink="false">2026-09-14-ep3</guid>
+      <pubDate>Mon, 14 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-14-ep3.mp3" length="20357373" type="audio/mpeg"/>
+      <itunes:title>Ep 441: Xie S 2025</itunes:title>
+      <itunes:episode>441</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 440: Rappoport N 2025</title>
+      <description>Rappoport N 2025</description>
+      <guid isPermaLink="false">2026-09-14-ep2</guid>
+      <pubDate>Mon, 14 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-14-ep2.mp3" length="28849173" type="audio/mpeg"/>
+      <itunes:title>Ep 440: Rappoport N 2025</itunes:title>
+      <itunes:episode>440</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 439: Kırboğa KK 2026</title>
+      <description>Kırboğa KK 2026</description>
+      <guid isPermaLink="false">2026-09-14-ep1</guid>
+      <pubDate>Mon, 14 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-14-ep1.mp3" length="27720837" type="audio/mpeg"/>
+      <itunes:title>Ep 439: Kırboğa KK 2026</itunes:title>
+      <itunes:episode>439</itunes:episode>
+    </item>
     <item>
       <title>Ep 438: Wolf L 2023</title>
       <description>Wolf L 2023</description>
