@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Sep 2026 11:22:54 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 11:22:41 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 446: Shao L 2025</title>
+      <description>Shao L 2025</description>
+      <guid isPermaLink="false">2026-09-15-ep4</guid>
+      <pubDate>Tue, 15 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-15-ep4.mp3" length="22399893" type="audio/mpeg"/>
+      <itunes:title>Ep 446: Shao L 2025</itunes:title>
+      <itunes:episode>446</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 445: Zayed A 2024</title>
+      <description>Zayed A 2024</description>
+      <guid isPermaLink="false">2026-09-15-ep3</guid>
+      <pubDate>Tue, 15 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-15-ep3.mp3" length="24054381" type="audio/mpeg"/>
+      <itunes:title>Ep 445: Zayed A 2024</itunes:title>
+      <itunes:episode>445</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 444: Blacketer C 2025</title>
+      <description>Blacketer C 2025</description>
+      <guid isPermaLink="false">2026-09-15-ep2</guid>
+      <pubDate>Tue, 15 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-15-ep2.mp3" length="25974333" type="audio/mpeg"/>
+      <itunes:title>Ep 444: Blacketer C 2025</itunes:title>
+      <itunes:episode>444</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 443: Amzaleg Y 2026</title>
+      <description>Amzaleg Y 2026</description>
+      <guid isPermaLink="false">2026-09-15-ep1</guid>
+      <pubDate>Tue, 15 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-15-ep1.mp3" length="27715845" type="audio/mpeg"/>
+      <itunes:title>Ep 443: Amzaleg Y 2026</itunes:title>
+      <itunes:episode>443</itunes:episode>
+    </item>
     <item>
       <title>Ep 442: Ohi S 2026</title>
       <description>Ohi S 2026</description>
