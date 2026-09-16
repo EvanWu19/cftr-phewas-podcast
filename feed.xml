@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Sep 2026 11:22:41 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 11:23:14 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 450: Dziadkowiec O 2016</title>
+      <description>Dziadkowiec O 2016</description>
+      <guid isPermaLink="false">2026-09-16-ep4</guid>
+      <pubDate>Wed, 16 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-16-ep4.mp3" length="23016957" type="audio/mpeg"/>
+      <itunes:title>Ep 450: Dziadkowiec O 2016</itunes:title>
+      <itunes:episode>450</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 449: Kahn MG 2012</title>
+      <description>Kahn MG 2012</description>
+      <guid isPermaLink="false">2026-09-16-ep3</guid>
+      <pubDate>Wed, 16 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-16-ep3.mp3" length="23408565" type="audio/mpeg"/>
+      <itunes:title>Ep 449: Kahn MG 2012</itunes:title>
+      <itunes:episode>449</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 448: Rashan A 2025</title>
+      <description>Rashan A 2025</description>
+      <guid isPermaLink="false">2026-09-16-ep2</guid>
+      <pubDate>Wed, 16 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-16-ep2.mp3" length="28766229" type="audio/mpeg"/>
+      <itunes:title>Ep 448: Rashan A 2025</itunes:title>
+      <itunes:episode>448</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 447: Goel H 2026</title>
+      <description>Goel H 2026</description>
+      <guid isPermaLink="false">2026-09-16-ep1</guid>
+      <pubDate>Wed, 16 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-16-ep1.mp3" length="28923213" type="audio/mpeg"/>
+      <itunes:title>Ep 447: Goel H 2026</itunes:title>
+      <itunes:episode>447</itunes:episode>
+    </item>
     <item>
       <title>Ep 446: Shao L 2025</title>
       <description>Shao L 2025</description>
