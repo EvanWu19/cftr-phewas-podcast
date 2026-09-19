@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Sep 2026 11:21:53 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 11:21:16 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 462: Fu A 2025</title>
+      <description>Fu A 2025</description>
+      <guid isPermaLink="false">2026-09-19-ep4</guid>
+      <pubDate>Sat, 19 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-19-ep4.mp3" length="20782605" type="audio/mpeg"/>
+      <itunes:title>Ep 462: Fu A 2025</itunes:title>
+      <itunes:episode>462</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 461: Zayed AM 2025</title>
+      <description>Zayed AM 2025</description>
+      <guid isPermaLink="false">2026-09-19-ep3</guid>
+      <pubDate>Sat, 19 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-19-ep3.mp3" length="20879301" type="audio/mpeg"/>
+      <itunes:title>Ep 461: Zayed AM 2025</itunes:title>
+      <itunes:episode>461</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 460: Ren S 2026</title>
+      <description>Ren S 2026</description>
+      <guid isPermaLink="false">2026-09-19-ep2</guid>
+      <pubDate>Sat, 19 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-19-ep2.mp3" length="25150485" type="audio/mpeg"/>
+      <itunes:title>Ep 460: Ren S 2026</itunes:title>
+      <itunes:episode>460</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 459: Ahmad RM 2026</title>
+      <description>Ahmad RM 2026</description>
+      <guid isPermaLink="false">2026-09-19-ep1</guid>
+      <pubDate>Sat, 19 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-19-ep1.mp3" length="27637101" type="audio/mpeg"/>
+      <itunes:title>Ep 459: Ahmad RM 2026</itunes:title>
+      <itunes:episode>459</itunes:episode>
+    </item>
     <item>
       <title>Ep 458: Kwong A 2025</title>
       <description>Kwong A 2025</description>
