@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Sep 2026 11:22:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 11:30:45 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 470: Kralik M 2021</title>
+      <description>Kralik M 2021</description>
+      <guid isPermaLink="false">2026-09-21-ep4</guid>
+      <pubDate>Mon, 21 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-21-ep4.mp3" length="25361733" type="audio/mpeg"/>
+      <itunes:title>Ep 470: Kralik M 2021</itunes:title>
+      <itunes:episode>470</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 469: Sarafoglou K 2026</title>
+      <description>Sarafoglou K 2026</description>
+      <guid isPermaLink="false">2026-09-21-ep3</guid>
+      <pubDate>Mon, 21 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-21-ep3.mp3" length="22656213" type="audio/mpeg"/>
+      <itunes:title>Ep 469: Sarafoglou K 2026</itunes:title>
+      <itunes:episode>469</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 468: Berthou F 2026</title>
+      <description>Berthou F 2026</description>
+      <guid isPermaLink="false">2026-09-21-ep2</guid>
+      <pubDate>Mon, 21 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-21-ep2.mp3" length="25982589" type="audio/mpeg"/>
+      <itunes:title>Ep 468: Berthou F 2026</itunes:title>
+      <itunes:episode>468</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 467: Bozlak S 2026</title>
+      <description>Bozlak S 2026</description>
+      <guid isPermaLink="false">2026-09-21-ep1</guid>
+      <pubDate>Mon, 21 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-21-ep1.mp3" length="27408237" type="audio/mpeg"/>
+      <itunes:title>Ep 467: Bozlak S 2026</itunes:title>
+      <itunes:episode>467</itunes:episode>
+    </item>
     <item>
       <title>Ep 466: Buczek L 2023</title>
       <description>Buczek L 2023</description>
