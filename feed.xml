@@ -8,11 +8,155 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Sep 2026 11:30:45 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 11:46:42 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 486: Conover MM 2025</title>
+      <description>Conover MM 2025</description>
+      <guid isPermaLink="false">2026-09-25-ep4</guid>
+      <pubDate>Fri, 25 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-25-ep4.mp3" length="16752741" type="audio/mpeg"/>
+      <itunes:title>Ep 486: Conover MM 2025</itunes:title>
+      <itunes:episode>486</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 485: Kahn MG 2016</title>
+      <description>Kahn MG 2016</description>
+      <guid isPermaLink="false">2026-09-25-ep3</guid>
+      <pubDate>Fri, 25 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-25-ep3.mp3" length="16070709" type="audio/mpeg"/>
+      <itunes:title>Ep 485: Kahn MG 2016</itunes:title>
+      <itunes:episode>485</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 484: Litman HJ 2025</title>
+      <description>Litman HJ 2025</description>
+      <guid isPermaLink="false">2026-09-25-ep2</guid>
+      <pubDate>Fri, 25 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-25-ep2.mp3" length="13329501" type="audio/mpeg"/>
+      <itunes:title>Ep 484: Litman HJ 2025</itunes:title>
+      <itunes:episode>484</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 483: Ytterberg SR 2022</title>
+      <description>Ytterberg SR 2022</description>
+      <guid isPermaLink="false">2026-09-25-ep1</guid>
+      <pubDate>Fri, 25 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-25-ep1.mp3" length="15362565" type="audio/mpeg"/>
+      <itunes:title>Ep 483: Ytterberg SR 2022</itunes:title>
+      <itunes:episode>483</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 482: Yiu ZZN 2021</title>
+      <description>Yiu ZZN 2021</description>
+      <guid isPermaLink="false">2026-09-24-ep4</guid>
+      <pubDate>Thu, 24 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-24-ep4.mp3" length="15721701" type="audio/mpeg"/>
+      <itunes:title>Ep 482: Yiu ZZN 2021</itunes:title>
+      <itunes:episode>482</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 481: Robins JM 2000</title>
+      <description>Robins JM 2000</description>
+      <guid isPermaLink="false">2026-09-24-ep3</guid>
+      <pubDate>Thu, 24 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-24-ep3.mp3" length="15891357" type="audio/mpeg"/>
+      <itunes:title>Ep 481: Robins JM 2000</itunes:title>
+      <itunes:episode>481</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 480: Cro S 2024</title>
+      <description>Cro S 2024</description>
+      <guid isPermaLink="false">2026-09-24-ep2</guid>
+      <pubDate>Thu, 24 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-24-ep2.mp3" length="18357021" type="audio/mpeg"/>
+      <itunes:title>Ep 480: Cro S 2024</itunes:title>
+      <itunes:episode>480</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 479: Austin PC 2015</title>
+      <description>Austin PC 2015</description>
+      <guid isPermaLink="false">2026-09-24-ep1</guid>
+      <pubDate>Thu, 24 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-24-ep1.mp3" length="14458005" type="audio/mpeg"/>
+      <itunes:title>Ep 479: Austin PC 2015</itunes:title>
+      <itunes:episode>479</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 478: Lund JL 2015</title>
+      <description>Lund JL 2015</description>
+      <guid isPermaLink="false">2026-09-23-ep4</guid>
+      <pubDate>Wed, 23 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-23-ep4.mp3" length="12597261" type="audio/mpeg"/>
+      <itunes:title>Ep 478: Lund JL 2015</itunes:title>
+      <itunes:episode>478</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 477: Suissa S 2020</title>
+      <description>Suissa S 2020</description>
+      <guid isPermaLink="false">2026-09-23-ep3</guid>
+      <pubDate>Wed, 23 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-23-ep3.mp3" length="13826325" type="audio/mpeg"/>
+      <itunes:title>Ep 477: Suissa S 2020</itunes:title>
+      <itunes:episode>477</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 476: Sylvestre MP 2009</title>
+      <description>Sylvestre MP 2009</description>
+      <guid isPermaLink="false">2026-09-23-ep2</guid>
+      <pubDate>Wed, 23 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-23-ep2.mp3" length="12890637" type="audio/mpeg"/>
+      <itunes:title>Ep 476: Sylvestre MP 2009</itunes:title>
+      <itunes:episode>476</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 475: Suissa S 2008</title>
+      <description>Suissa S 2008</description>
+      <guid isPermaLink="false">2026-09-23-ep1</guid>
+      <pubDate>Wed, 23 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-23-ep1.mp3" length="13463517" type="audio/mpeg"/>
+      <itunes:title>Ep 475: Suissa S 2008</itunes:title>
+      <itunes:episode>475</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 474: Hernán MA 2012</title>
+      <description>Hernán MA 2012</description>
+      <guid isPermaLink="false">2026-09-22-ep4</guid>
+      <pubDate>Tue, 22 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-22-ep4.mp3" length="13831725" type="audio/mpeg"/>
+      <itunes:title>Ep 474: Hernán MA 2012</itunes:title>
+      <itunes:episode>474</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 473: Hernán MA 2016</title>
+      <description>Hernán MA 2016</description>
+      <guid isPermaLink="false">2026-09-22-ep3</guid>
+      <pubDate>Tue, 22 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-22-ep3.mp3" length="13318797" type="audio/mpeg"/>
+      <itunes:title>Ep 473: Hernán MA 2016</itunes:title>
+      <itunes:episode>473</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 472: Hicks B 2023</title>
+      <description>Hicks B 2023</description>
+      <guid isPermaLink="false">2026-09-22-ep2</guid>
+      <pubDate>Tue, 22 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-22-ep2.mp3" length="13370973" type="audio/mpeg"/>
+      <itunes:title>Ep 472: Hicks B 2023</itunes:title>
+      <itunes:episode>472</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 471: McGettigan P 2019</title>
+      <description>McGettigan P 2019</description>
+      <guid isPermaLink="false">2026-09-22-ep1</guid>
+      <pubDate>Tue, 22 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-22-ep1.mp3" length="13700925" type="audio/mpeg"/>
+      <itunes:title>Ep 471: McGettigan P 2019</itunes:title>
+      <itunes:episode>471</itunes:episode>
+    </item>
     <item>
       <title>Ep 470: Kralik M 2021</title>
       <description>Kralik M 2021</description>
