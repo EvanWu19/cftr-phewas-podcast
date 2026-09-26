@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2026 11:05:57 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 12:01:29 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 490: Horchani R 2026</title>
+      <description>Horchani R 2026</description>
+      <guid isPermaLink="false">2026-09-26-ep4</guid>
+      <pubDate>Sat, 26 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-26-ep4.mp3" length="18674901" type="audio/mpeg"/>
+      <itunes:title>Ep 490: Horchani R 2026</itunes:title>
+      <itunes:episode>490</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 489: Stefan G 2026</title>
+      <description>Stefan G 2026</description>
+      <guid isPermaLink="false">2026-09-26-ep3</guid>
+      <pubDate>Sat, 26 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-26-ep3.mp3" length="16776861" type="audio/mpeg"/>
+      <itunes:title>Ep 489: Stefan G 2026</itunes:title>
+      <itunes:episode>489</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 488: Schiffer-Kane K 2024</title>
+      <description>Schiffer-Kane K 2024</description>
+      <guid isPermaLink="false">2026-09-26-ep2</guid>
+      <pubDate>Sat, 26 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-26-ep2.mp3" length="19276629" type="audio/mpeg"/>
+      <itunes:title>Ep 488: Schiffer-Kane K 2024</itunes:title>
+      <itunes:episode>488</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 487: Nikolovski M 2026</title>
+      <description>Nikolovski M 2026</description>
+      <guid isPermaLink="false">2026-09-26-ep1</guid>
+      <pubDate>Sat, 26 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-26-ep1.mp3" length="23968269" type="audio/mpeg"/>
+      <itunes:title>Ep 487: Nikolovski M 2026</itunes:title>
+      <itunes:episode>487</itunes:episode>
+    </item>
     <item>
       <title>Ep 486: Conover MM 2025</title>
       <description>Conover MM 2025</description>
