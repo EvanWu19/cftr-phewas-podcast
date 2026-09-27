@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Sep 2026 12:01:29 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 11:23:51 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 494: Cai L 2024</title>
+      <description>Cai L 2024</description>
+      <guid isPermaLink="false">2026-09-27-ep4</guid>
+      <pubDate>Sun, 27 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-27-ep4.mp3" length="20901429" type="audio/mpeg"/>
+      <itunes:title>Ep 494: Cai L 2024</itunes:title>
+      <itunes:episode>494</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 493: Poser PL 2026</title>
+      <description>Poser PL 2026</description>
+      <guid isPermaLink="false">2026-09-27-ep3</guid>
+      <pubDate>Sun, 27 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-27-ep3.mp3" length="19051701" type="audio/mpeg"/>
+      <itunes:title>Ep 493: Poser PL 2026</itunes:title>
+      <itunes:episode>493</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 492: Wratten L 2021</title>
+      <description>Wratten L 2021</description>
+      <guid isPermaLink="false">2026-09-27-ep2</guid>
+      <pubDate>Sun, 27 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-27-ep2.mp3" length="25062093" type="audio/mpeg"/>
+      <itunes:title>Ep 492: Wratten L 2021</itunes:title>
+      <itunes:episode>492</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 491: Dave N 2026</title>
+      <description>Dave N 2026</description>
+      <guid isPermaLink="false">2026-09-27-ep1</guid>
+      <pubDate>Sun, 27 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-27-ep1.mp3" length="27410805" type="audio/mpeg"/>
+      <itunes:title>Ep 491: Dave N 2026</itunes:title>
+      <itunes:episode>491</itunes:episode>
+    </item>
     <item>
       <title>Ep 490: Horchani R 2026</title>
       <description>Horchani R 2026</description>
