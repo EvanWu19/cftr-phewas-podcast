@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Sep 2026 11:23:51 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 11:35:05 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 498: Gao C 2025</title>
+      <description>Gao C 2025</description>
+      <guid isPermaLink="false">2026-09-28-ep4</guid>
+      <pubDate>Mon, 28 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-28-ep4.mp3" length="23439669" type="audio/mpeg"/>
+      <itunes:title>Ep 498: Gao C 2025</itunes:title>
+      <itunes:episode>498</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 497: Theodorou B 2025</title>
+      <description>Theodorou B 2025</description>
+      <guid isPermaLink="false">2026-09-28-ep3</guid>
+      <pubDate>Mon, 28 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-28-ep3.mp3" length="21663501" type="audio/mpeg"/>
+      <itunes:title>Ep 497: Theodorou B 2025</itunes:title>
+      <itunes:episode>497</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 496: Beghini F 2021</title>
+      <description>Beghini F 2021</description>
+      <guid isPermaLink="false">2026-09-28-ep2</guid>
+      <pubDate>Mon, 28 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-28-ep2.mp3" length="26537493" type="audio/mpeg"/>
+      <itunes:title>Ep 496: Beghini F 2021</itunes:title>
+      <itunes:episode>496</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 495: Li HD 2026</title>
+      <description>Li HD 2026</description>
+      <guid isPermaLink="false">2026-09-28-ep1</guid>
+      <pubDate>Mon, 28 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-28-ep1.mp3" length="29359269" type="audio/mpeg"/>
+      <itunes:title>Ep 495: Li HD 2026</itunes:title>
+      <itunes:episode>495</itunes:episode>
+    </item>
     <item>
       <title>Ep 494: Cai L 2024</title>
       <description>Cai L 2024</description>
