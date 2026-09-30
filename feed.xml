@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Sep 2026 11:39:07 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 11:36:44 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 506: Razzaghi H 2024</title>
+      <description>Razzaghi H 2024</description>
+      <guid isPermaLink="false">2026-09-30-ep4</guid>
+      <pubDate>Wed, 30 Sep 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-30-ep4.mp3" length="23429229" type="audio/mpeg"/>
+      <itunes:title>Ep 506: Razzaghi H 2024</itunes:title>
+      <itunes:episode>506</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 505: Schwabe D 2024</title>
+      <description>Schwabe D 2024</description>
+      <guid isPermaLink="false">2026-09-30-ep3</guid>
+      <pubDate>Wed, 30 Sep 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-30-ep3.mp3" length="23697645" type="audio/mpeg"/>
+      <itunes:title>Ep 505: Schwabe D 2024</itunes:title>
+      <itunes:episode>505</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 504: Aoyagi Y 2025</title>
+      <description>Aoyagi Y 2025</description>
+      <guid isPermaLink="false">2026-09-30-ep2</guid>
+      <pubDate>Wed, 30 Sep 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-30-ep2.mp3" length="26217069" type="audio/mpeg"/>
+      <itunes:title>Ep 504: Aoyagi Y 2025</itunes:title>
+      <itunes:episode>504</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 503: Gnanaolivu RD 2026</title>
+      <description>Gnanaolivu RD 2026</description>
+      <guid isPermaLink="false">2026-09-30-ep1</guid>
+      <pubDate>Wed, 30 Sep 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-09-30-ep1.mp3" length="30946917" type="audio/mpeg"/>
+      <itunes:title>Ep 503: Gnanaolivu RD 2026</itunes:title>
+      <itunes:episode>503</itunes:episode>
+    </item>
     <item>
       <title>Ep 502: Stamoulopoulos A 2026</title>
       <description>Stamoulopoulos A 2026</description>
