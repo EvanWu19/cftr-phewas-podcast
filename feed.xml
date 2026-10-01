@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Sep 2026 11:36:44 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 11:33:38 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 510: Estiri H 2019</title>
+      <description>Estiri H 2019</description>
+      <guid isPermaLink="false">2026-10-01-ep4</guid>
+      <pubDate>Thu, 01 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-01-ep4.mp3" length="22937493" type="audio/mpeg"/>
+      <itunes:title>Ep 510: Estiri H 2019</itunes:title>
+      <itunes:episode>510</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 509: Muthalagu A 2014</title>
+      <description>Muthalagu A 2014</description>
+      <guid isPermaLink="false">2026-10-01-ep3</guid>
+      <pubDate>Thu, 01 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-01-ep3.mp3" length="23311965" type="audio/mpeg"/>
+      <itunes:title>Ep 509: Muthalagu A 2014</itunes:title>
+      <itunes:episode>509</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 508: Oh SW 2023</title>
+      <description>Oh SW 2023</description>
+      <guid isPermaLink="false">2026-10-01-ep2</guid>
+      <pubDate>Thu, 01 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-01-ep2.mp3" length="26816349" type="audio/mpeg"/>
+      <itunes:title>Ep 508: Oh SW 2023</itunes:title>
+      <itunes:episode>508</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 507: Fadaei S 2026</title>
+      <description>Fadaei S 2026</description>
+      <guid isPermaLink="false">2026-10-01-ep1</guid>
+      <pubDate>Thu, 01 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-01-ep1.mp3" length="27438357" type="audio/mpeg"/>
+      <itunes:title>Ep 507: Fadaei S 2026</itunes:title>
+      <itunes:episode>507</itunes:episode>
+    </item>
     <item>
       <title>Ep 506: Razzaghi H 2024</title>
       <description>Razzaghi H 2024</description>
