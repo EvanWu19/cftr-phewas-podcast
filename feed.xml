@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Oct 2026 11:23:07 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 11:32:52 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 526: Pardo MDC 2014</title>
+      <description>Pardo MDC 2014</description>
+      <guid isPermaLink="false">2026-10-05-ep4</guid>
+      <pubDate>Mon, 05 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-05-ep4.mp3" length="21905205" type="audio/mpeg"/>
+      <itunes:title>Ep 526: Pardo MDC 2014</itunes:title>
+      <itunes:episode>526</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 525: Cole TJ 2019</title>
+      <description>Cole TJ 2019</description>
+      <guid isPermaLink="false">2026-10-05-ep3</guid>
+      <pubDate>Mon, 05 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-05-ep3.mp3" length="17977797" type="audio/mpeg"/>
+      <itunes:title>Ep 525: Cole TJ 2019</itunes:title>
+      <itunes:episode>525</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 524: Song 2025</title>
+      <description>Song 2025</description>
+      <guid isPermaLink="false">2026-10-05-ep2</guid>
+      <pubDate>Mon, 05 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-05-ep2.mp3" length="25863093" type="audio/mpeg"/>
+      <itunes:title>Ep 524: Song 2025</itunes:title>
+      <itunes:episode>524</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 523: Sio JS 2026</title>
+      <description>Sio JS 2026</description>
+      <guid isPermaLink="false">2026-10-05-ep1</guid>
+      <pubDate>Mon, 05 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-05-ep1.mp3" length="26811429" type="audio/mpeg"/>
+      <itunes:title>Ep 523: Sio JS 2026</itunes:title>
+      <itunes:episode>523</itunes:episode>
+    </item>
     <item>
       <title>Ep 522: Bian J 2020</title>
       <description>Bian J 2020</description>
