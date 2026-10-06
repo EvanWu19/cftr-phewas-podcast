@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Oct 2026 11:32:52 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 11:23:50 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 530: Groenwold RHH 2020</title>
+      <description>Groenwold RHH 2020</description>
+      <guid isPermaLink="false">2026-10-06-ep4</guid>
+      <pubDate>Tue, 06 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-06-ep4.mp3" length="20822925" type="audio/mpeg"/>
+      <itunes:title>Ep 530: Groenwold RHH 2020</itunes:title>
+      <itunes:episode>530</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 529: Pullenayegum EM 2021</title>
+      <description>Pullenayegum EM 2021</description>
+      <guid isPermaLink="false">2026-10-06-ep3</guid>
+      <pubDate>Tue, 06 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-06-ep3.mp3" length="23692485" type="audio/mpeg"/>
+      <itunes:title>Ep 529: Pullenayegum EM 2021</itunes:title>
+      <itunes:episode>529</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 528: Mölder F 2021</title>
+      <description>Mölder F 2021</description>
+      <guid isPermaLink="false">2026-10-06-ep2</guid>
+      <pubDate>Tue, 06 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-06-ep2.mp3" length="25181565" type="audio/mpeg"/>
+      <itunes:title>Ep 528: Mölder F 2021</itunes:title>
+      <itunes:episode>528</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 527: Chen 2025</title>
+      <description>Chen 2025</description>
+      <guid isPermaLink="false">2026-10-06-ep1</guid>
+      <pubDate>Tue, 06 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-06-ep1.mp3" length="28133061" type="audio/mpeg"/>
+      <itunes:title>Ep 527: Chen 2025</itunes:title>
+      <itunes:episode>527</itunes:episode>
+    </item>
     <item>
       <title>Ep 526: Pardo MDC 2014</title>
       <description>Pardo MDC 2014</description>
