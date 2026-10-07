@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Oct 2026 11:23:50 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 11:59:51 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 534: Heude B 2019</title>
+      <description>Heude B 2019</description>
+      <guid isPermaLink="false">2026-10-07-ep4</guid>
+      <pubDate>Wed, 07 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-07-ep4.mp3" length="22711605" type="audio/mpeg"/>
+      <itunes:title>Ep 534: Heude B 2019</itunes:title>
+      <itunes:episode>534</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 533: Ray S 2018</title>
+      <description>Ray S 2018</description>
+      <guid isPermaLink="false">2026-10-07-ep3</guid>
+      <pubDate>Wed, 07 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-07-ep3.mp3" length="22656309" type="audio/mpeg"/>
+      <itunes:title>Ep 533: Ray S 2018</itunes:title>
+      <itunes:episode>533</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 532: Wu P 2019</title>
+      <description>Wu P 2019</description>
+      <guid isPermaLink="false">2026-10-07-ep2</guid>
+      <pubDate>Wed, 07 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-07-ep2.mp3" length="25959885" type="audio/mpeg"/>
+      <itunes:title>Ep 532: Wu P 2019</itunes:title>
+      <itunes:episode>532</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 531: Lindquist M 2026</title>
+      <description>Lindquist M 2026</description>
+      <guid isPermaLink="false">2026-10-07-ep1</guid>
+      <pubDate>Wed, 07 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-07-ep1.mp3" length="27532293" type="audio/mpeg"/>
+      <itunes:title>Ep 531: Lindquist M 2026</itunes:title>
+      <itunes:episode>531</itunes:episode>
+    </item>
     <item>
       <title>Ep 530: Groenwold RHH 2020</title>
       <description>Groenwold RHH 2020</description>
