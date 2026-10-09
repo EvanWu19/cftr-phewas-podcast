@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Oct 2026 11:24:55 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 11:26:18 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 542: Welch C 2012</title>
+      <description>Welch C 2012</description>
+      <guid isPermaLink="false">2026-10-09-ep4</guid>
+      <pubDate>Fri, 09 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-09-ep4.mp3" length="26988573" type="audio/mpeg"/>
+      <itunes:title>Ep 542: Welch C 2012</itunes:title>
+      <itunes:episode>542</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 541: Khan MS 2022</title>
+      <description>Khan MS 2022</description>
+      <guid isPermaLink="false">2026-10-09-ep3</guid>
+      <pubDate>Fri, 09 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-09-ep3.mp3" length="22492221" type="audio/mpeg"/>
+      <itunes:title>Ep 541: Khan MS 2022</itunes:title>
+      <itunes:episode>541</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 540: Ji Y 2021</title>
+      <description>Ji Y 2021</description>
+      <guid isPermaLink="false">2026-10-09-ep2</guid>
+      <pubDate>Fri, 09 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-09-ep2.mp3" length="28556277" type="audio/mpeg"/>
+      <itunes:title>Ep 540: Ji Y 2021</itunes:title>
+      <itunes:episode>540</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 539: Li W 2026</title>
+      <description>Li W 2026</description>
+      <guid isPermaLink="false">2026-10-09-ep1</guid>
+      <pubDate>Fri, 09 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-09-ep1.mp3" length="28072005" type="audio/mpeg"/>
+      <itunes:title>Ep 539: Li W 2026</itunes:title>
+      <itunes:episode>539</itunes:episode>
+    </item>
     <item>
       <title>Ep 538: Daniel C 2019</title>
       <description>Daniel C 2019</description>
