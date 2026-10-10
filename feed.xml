@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2026 11:26:18 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 11:24:17 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 546: Röchner P 2023</title>
+      <description>Röchner P 2023</description>
+      <guid isPermaLink="false">2026-10-10-ep4</guid>
+      <pubDate>Sat, 10 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-10-ep4.mp3" length="27220485" type="audio/mpeg"/>
+      <itunes:title>Ep 546: Röchner P 2023</itunes:title>
+      <itunes:episode>546</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 545: Hagedorn PA 2017</title>
+      <description>Hagedorn PA 2017</description>
+      <guid isPermaLink="false">2026-10-10-ep3</guid>
+      <pubDate>Sat, 10 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-10-ep3.mp3" length="20302269" type="audio/mpeg"/>
+      <itunes:title>Ep 545: Hagedorn PA 2017</itunes:title>
+      <itunes:episode>545</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 544: Hao Y 2021</title>
+      <description>Hao Y 2021</description>
+      <guid isPermaLink="false">2026-10-10-ep2</guid>
+      <pubDate>Sat, 10 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-10-ep2.mp3" length="31094037" type="audio/mpeg"/>
+      <itunes:title>Ep 544: Hao Y 2021</itunes:title>
+      <itunes:episode>544</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 543: Dai Z 2026</title>
+      <description>Dai Z 2026</description>
+      <guid isPermaLink="false">2026-10-10-ep1</guid>
+      <pubDate>Sat, 10 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-10-ep1.mp3" length="30828621" type="audio/mpeg"/>
+      <itunes:title>Ep 543: Dai Z 2026</itunes:title>
+      <itunes:episode>543</itunes:episode>
+    </item>
     <item>
       <title>Ep 542: Welch C 2012</title>
       <description>Welch C 2012</description>
