@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Oct 2026 11:24:17 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 11:21:34 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 550: Oliveira-Santos R 2025</title>
+      <description>Oliveira-Santos R 2025</description>
+      <guid isPermaLink="false">2026-10-11-ep4</guid>
+      <pubDate>Sun, 11 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-11-ep4.mp3" length="22341669" type="audio/mpeg"/>
+      <itunes:title>Ep 550: Oliveira-Santos R 2025</itunes:title>
+      <itunes:episode>550</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 549: Sakurai R 2019</title>
+      <description>Sakurai R 2019</description>
+      <guid isPermaLink="false">2026-10-11-ep3</guid>
+      <pubDate>Sun, 11 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-11-ep3.mp3" length="19320813" type="audio/mpeg"/>
+      <itunes:title>Ep 549: Sakurai R 2019</itunes:title>
+      <itunes:episode>549</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 548: Kolberg L 2020</title>
+      <description>Kolberg L 2020</description>
+      <guid isPermaLink="false">2026-10-11-ep2</guid>
+      <pubDate>Sun, 11 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-11-ep2.mp3" length="25752933" type="audio/mpeg"/>
+      <itunes:title>Ep 548: Kolberg L 2020</itunes:title>
+      <itunes:episode>548</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 547: Liu S 2026</title>
+      <description>Liu S 2026</description>
+      <guid isPermaLink="false">2026-10-11-ep1</guid>
+      <pubDate>Sun, 11 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-11-ep1.mp3" length="21660261" type="audio/mpeg"/>
+      <itunes:title>Ep 547: Liu S 2026</itunes:title>
+      <itunes:episode>547</itunes:episode>
+    </item>
     <item>
       <title>Ep 546: Röchner P 2023</title>
       <description>Röchner P 2023</description>
