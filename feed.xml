@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2026 11:29:42 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 11:22:35 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 562: Mang JM 2022</title>
+      <description>Mang JM 2022</description>
+      <guid isPermaLink="false">2026-10-14-ep4</guid>
+      <pubDate>Wed, 14 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-14-ep4.mp3" length="22728045" type="audio/mpeg"/>
+      <itunes:title>Ep 562: Mang JM 2022</itunes:title>
+      <itunes:episode>562</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 561: Huser V 2016</title>
+      <description>Huser V 2016</description>
+      <guid isPermaLink="false">2026-10-14-ep3</guid>
+      <pubDate>Wed, 14 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-14-ep3.mp3" length="19902645" type="audio/mpeg"/>
+      <itunes:title>Ep 561: Huser V 2016</itunes:title>
+      <itunes:episode>561</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 560: Haendel MA 2021</title>
+      <description>Haendel MA 2021</description>
+      <guid isPermaLink="false">2026-10-14-ep2</guid>
+      <pubDate>Wed, 14 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-14-ep2.mp3" length="26902845" type="audio/mpeg"/>
+      <itunes:title>Ep 560: Haendel MA 2021</itunes:title>
+      <itunes:episode>560</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 559: Gattu Linga B 2026</title>
+      <description>Gattu Linga B 2026</description>
+      <guid isPermaLink="false">2026-10-14-ep1</guid>
+      <pubDate>Wed, 14 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-14-ep1.mp3" length="27646197" type="audio/mpeg"/>
+      <itunes:title>Ep 559: Gattu Linga B 2026</itunes:title>
+      <itunes:episode>559</itunes:episode>
+    </item>
     <item>
       <title>Ep 558: Javidi H 2022</title>
       <description>Javidi H 2022</description>
