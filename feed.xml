@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 11:22:35 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 13:05:43 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 566: Qualls LG 2018</title>
+      <description>Qualls LG 2018</description>
+      <guid isPermaLink="false">2026-10-15-ep4</guid>
+      <pubDate>Thu, 15 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-15-ep4.mp3" length="19271637" type="audio/mpeg"/>
+      <itunes:title>Ep 566: Qualls LG 2018</itunes:title>
+      <itunes:episode>566</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 565: Callahan TJ 2017</title>
+      <description>Callahan TJ 2017</description>
+      <guid isPermaLink="false">2026-10-15-ep3</guid>
+      <pubDate>Thu, 15 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-15-ep3.mp3" length="19191453" type="audio/mpeg"/>
+      <itunes:title>Ep 565: Callahan TJ 2017</itunes:title>
+      <itunes:episode>565</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 564: Challis R 2020</title>
+      <description>Challis R 2020</description>
+      <guid isPermaLink="false">2026-10-15-ep2</guid>
+      <pubDate>Thu, 15 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-15-ep2.mp3" length="25247565" type="audio/mpeg"/>
+      <itunes:title>Ep 564: Challis R 2020</itunes:title>
+      <itunes:episode>564</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 563: Ngo 2026</title>
+      <description>Ngo 2026</description>
+      <guid isPermaLink="false">2026-10-15-ep1</guid>
+      <pubDate>Thu, 15 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-15-ep1.mp3" length="26895261" type="audio/mpeg"/>
+      <itunes:title>Ep 563: Ngo 2026</itunes:title>
+      <itunes:episode>563</itunes:episode>
+    </item>
     <item>
       <title>Ep 562: Mang JM 2022</title>
       <description>Mang JM 2022</description>
