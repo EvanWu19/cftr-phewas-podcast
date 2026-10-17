@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Oct 2026 11:26:14 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 11:24:50 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 574: Wang Z 2020</title>
+      <description>Wang Z 2020</description>
+      <guid isPermaLink="false">2026-10-17-ep4</guid>
+      <pubDate>Sat, 17 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-17-ep4.mp3" length="21782205" type="audio/mpeg"/>
+      <itunes:title>Ep 574: Wang Z 2020</itunes:title>
+      <itunes:episode>574</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 573: Van den Broeck J 2005</title>
+      <description>Van den Broeck J 2005</description>
+      <guid isPermaLink="false">2026-10-17-ep3</guid>
+      <pubDate>Sat, 17 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-17-ep3.mp3" length="24768333" type="audio/mpeg"/>
+      <itunes:title>Ep 573: Van den Broeck J 2005</itunes:title>
+      <itunes:episode>573</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 572: Kim H 2026</title>
+      <description>Kim H 2026</description>
+      <guid isPermaLink="false">2026-10-17-ep2</guid>
+      <pubDate>Sat, 17 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-17-ep2.mp3" length="26926989" type="audio/mpeg"/>
+      <itunes:title>Ep 572: Kim H 2026</itunes:title>
+      <itunes:episode>572</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 571: Alay MT 2026</title>
+      <description>Alay MT 2026</description>
+      <guid isPermaLink="false">2026-10-17-ep1</guid>
+      <pubDate>Sat, 17 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-17-ep1.mp3" length="26982429" type="audio/mpeg"/>
+      <itunes:title>Ep 571: Alay MT 2026</itunes:title>
+      <itunes:episode>571</itunes:episode>
+    </item>
     <item>
       <title>Ep 570: Thomadakis C 2025</title>
       <description>Thomadakis C 2025</description>
