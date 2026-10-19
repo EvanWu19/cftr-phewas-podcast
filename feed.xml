@@ -8,11 +8,83 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Oct 2026 11:24:50 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 11:47:17 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 582: Flegal KM 2009</title>
+      <description>Flegal KM 2009</description>
+      <guid isPermaLink="false">2026-10-19-ep4</guid>
+      <pubDate>Mon, 19 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-19-ep4.mp3" length="22999725" type="audio/mpeg"/>
+      <itunes:title>Ep 582: Flegal KM 2009</itunes:title>
+      <itunes:episode>582</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 581: Pullenayegum EM 2016</title>
+      <description>Pullenayegum EM 2016</description>
+      <guid isPermaLink="false">2026-10-19-ep3</guid>
+      <pubDate>Mon, 19 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-19-ep3.mp3" length="23427189" type="audio/mpeg"/>
+      <itunes:title>Ep 581: Pullenayegum EM 2016</itunes:title>
+      <itunes:episode>581</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 580: Rueda M 2026</title>
+      <description>Rueda M 2026</description>
+      <guid isPermaLink="false">2026-10-19-ep2</guid>
+      <pubDate>Mon, 19 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-19-ep2.mp3" length="27288813" type="audio/mpeg"/>
+      <itunes:title>Ep 580: Rueda M 2026</itunes:title>
+      <itunes:episode>580</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 579: Lin PY 2026</title>
+      <description>Lin PY 2026</description>
+      <guid isPermaLink="false">2026-10-19-ep1</guid>
+      <pubDate>Mon, 19 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-19-ep1.mp3" length="31080525" type="audio/mpeg"/>
+      <itunes:title>Ep 579: Lin PY 2026</itunes:title>
+      <itunes:episode>579</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 578: Bönisch C 2025</title>
+      <description>Bönisch C 2025</description>
+      <guid isPermaLink="false">2026-10-18-ep4</guid>
+      <pubDate>Sun, 18 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-18-ep4.mp3" length="21208845" type="audio/mpeg"/>
+      <itunes:title>Ep 578: Bönisch C 2025</itunes:title>
+      <itunes:episode>578</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 577: Mohamed Y 2023</title>
+      <description>Mohamed Y 2023</description>
+      <guid isPermaLink="false">2026-10-18-ep3</guid>
+      <pubDate>Sun, 18 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-18-ep3.mp3" length="25770141" type="audio/mpeg"/>
+      <itunes:title>Ep 577: Mohamed Y 2023</itunes:title>
+      <itunes:episode>577</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 576: Scognamiglio D 2026</title>
+      <description>Scognamiglio D 2026</description>
+      <guid isPermaLink="false">2026-10-18-ep2</guid>
+      <pubDate>Sun, 18 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-18-ep2.mp3" length="27591693" type="audio/mpeg"/>
+      <itunes:title>Ep 576: Scognamiglio D 2026</itunes:title>
+      <itunes:episode>576</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 575: Livesey BJ 2026</title>
+      <description>Livesey BJ 2026</description>
+      <guid isPermaLink="false">2026-10-18-ep1</guid>
+      <pubDate>Sun, 18 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-18-ep1.mp3" length="29383821" type="audio/mpeg"/>
+      <itunes:title>Ep 575: Livesey BJ 2026</itunes:title>
+      <itunes:episode>575</itunes:episode>
+    </item>
     <item>
       <title>Ep 574: Wang Z 2020</title>
       <description>Wang Z 2020</description>
