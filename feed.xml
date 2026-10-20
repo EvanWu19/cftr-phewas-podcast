@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Oct 2026 11:47:17 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 12:04:06 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 586: Kahn MG 2015</title>
+      <description>Kahn MG 2015</description>
+      <guid isPermaLink="false">2026-10-20-ep4</guid>
+      <pubDate>Tue, 20 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-20-ep4.mp3" length="19556109" type="audio/mpeg"/>
+      <itunes:title>Ep 586: Kahn MG 2015</itunes:title>
+      <itunes:episode>586</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 585: Arts DG 2002</title>
+      <description>Arts DG 2002</description>
+      <guid isPermaLink="false">2026-10-20-ep3</guid>
+      <pubDate>Tue, 20 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-20-ep3.mp3" length="21119781" type="audio/mpeg"/>
+      <itunes:title>Ep 585: Arts DG 2002</itunes:title>
+      <itunes:episode>585</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 584: Zhang W 2026</title>
+      <description>Zhang W 2026</description>
+      <guid isPermaLink="false">2026-10-20-ep2</guid>
+      <pubDate>Tue, 20 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-20-ep2.mp3" length="26131389" type="audio/mpeg"/>
+      <itunes:title>Ep 584: Zhang W 2026</itunes:title>
+      <itunes:episode>584</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 583: Hull S 2026</title>
+      <description>Hull S 2026</description>
+      <guid isPermaLink="false">2026-10-20-ep1</guid>
+      <pubDate>Tue, 20 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-20-ep1.mp3" length="28812885" type="audio/mpeg"/>
+      <itunes:title>Ep 583: Hull S 2026</itunes:title>
+      <itunes:episode>583</itunes:episode>
+    </item>
     <item>
       <title>Ep 582: Flegal KM 2009</title>
       <description>Flegal KM 2009</description>
