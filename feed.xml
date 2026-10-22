@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Oct 2026 12:27:20 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 11:22:48 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 594: Rigby 2004</title>
+      <description>Rigby 2004</description>
+      <guid isPermaLink="false">2026-10-22-ep4</guid>
+      <pubDate>Thu, 22 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-22-ep4.mp3" length="23538861" type="audio/mpeg"/>
+      <itunes:title>Ep 594: Rigby 2004</itunes:title>
+      <itunes:episode>594</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 593: Cole 2014</title>
+      <description>Cole 2014</description>
+      <guid isPermaLink="false">2026-10-22-ep3</guid>
+      <pubDate>Thu, 22 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-22-ep3.mp3" length="22092333" type="audio/mpeg"/>
+      <itunes:title>Ep 593: Cole 2014</itunes:title>
+      <itunes:episode>593</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 592: Xie 2026</title>
+      <description>Xie 2026</description>
+      <guid isPermaLink="false">2026-10-22-ep2</guid>
+      <pubDate>Thu, 22 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-22-ep2.mp3" length="29315541" type="audio/mpeg"/>
+      <itunes:title>Ep 592: Xie 2026</itunes:title>
+      <itunes:episode>592</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 591: Fortier 2026</title>
+      <description>Fortier 2026</description>
+      <guid isPermaLink="false">2026-10-22-ep1</guid>
+      <pubDate>Thu, 22 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-22-ep1.mp3" length="30717141" type="audio/mpeg"/>
+      <itunes:title>Ep 591: Fortier 2026</itunes:title>
+      <itunes:episode>591</itunes:episode>
+    </item>
     <item>
       <title>Ep 590: Cole 2021</title>
       <description>Cole 2021</description>
