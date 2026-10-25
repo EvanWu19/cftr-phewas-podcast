@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Oct 2026 11:33:07 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 11:26:59 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 606: Gray 2014</title>
+      <description>Gray 2014</description>
+      <guid isPermaLink="false">2026-10-25-ep4</guid>
+      <pubDate>Sun, 25 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-25-ep4.mp3" length="21631149" type="audio/mpeg"/>
+      <itunes:title>Ep 606: Gray 2014</itunes:title>
+      <itunes:episode>606</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 605: Thurber 2014</title>
+      <description>Thurber 2014</description>
+      <guid isPermaLink="false">2026-10-25-ep3</guid>
+      <pubDate>Sun, 25 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-25-ep3.mp3" length="18444021" type="audio/mpeg"/>
+      <itunes:title>Ep 605: Thurber 2014</itunes:title>
+      <itunes:episode>605</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 604: Hwang 2026</title>
+      <description>Hwang 2026</description>
+      <guid isPermaLink="false">2026-10-25-ep2</guid>
+      <pubDate>Sun, 25 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-25-ep2.mp3" length="28186125" type="audio/mpeg"/>
+      <itunes:title>Ep 604: Hwang 2026</itunes:title>
+      <itunes:episode>604</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 603: Wang 2026</title>
+      <description>Wang 2026</description>
+      <guid isPermaLink="false">2026-10-25-ep1</guid>
+      <pubDate>Sun, 25 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-25-ep1.mp3" length="28304325" type="audio/mpeg"/>
+      <itunes:title>Ep 603: Wang 2026</itunes:title>
+      <itunes:episode>603</itunes:episode>
+    </item>
     <item>
       <title>Ep 602: Zaaqoq 2026</title>
       <description>Zaaqoq 2026</description>
