@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Oct 2026 11:26:59 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 11:29:33 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 610: Dugravot 2015</title>
+      <description>Dugravot 2015</description>
+      <guid isPermaLink="false">2026-10-26-ep4</guid>
+      <pubDate>Mon, 26 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-26-ep4.mp3" length="23680533" type="audio/mpeg"/>
+      <itunes:title>Ep 610: Dugravot 2015</itunes:title>
+      <itunes:episode>610</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 609: Silva NJ 2023</title>
+      <description>Silva NJ 2023</description>
+      <guid isPermaLink="false">2026-10-26-ep3</guid>
+      <pubDate>Mon, 26 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-26-ep3.mp3" length="24198621" type="audio/mpeg"/>
+      <itunes:title>Ep 609: Silva NJ 2023</itunes:title>
+      <itunes:episode>609</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 608: Ahdritz 2024</title>
+      <description>Ahdritz 2024</description>
+      <guid isPermaLink="false">2026-10-26-ep2</guid>
+      <pubDate>Mon, 26 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-26-ep2.mp3" length="24253149" type="audio/mpeg"/>
+      <itunes:title>Ep 608: Ahdritz 2024</itunes:title>
+      <itunes:episode>608</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 607: Pakpahan 2026</title>
+      <description>Pakpahan 2026</description>
+      <guid isPermaLink="false">2026-10-26-ep1</guid>
+      <pubDate>Mon, 26 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-26-ep1.mp3" length="27970605" type="audio/mpeg"/>
+      <itunes:title>Ep 607: Pakpahan 2026</itunes:title>
+      <itunes:episode>607</itunes:episode>
+    </item>
     <item>
       <title>Ep 606: Gray 2014</title>
       <description>Gray 2014</description>
