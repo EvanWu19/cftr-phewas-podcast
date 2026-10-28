@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Oct 2026 11:38:18 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 11:21:22 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 618: Khare R 2019</title>
+      <description>Khare R 2019</description>
+      <guid isPermaLink="false">2026-10-28-ep4</guid>
+      <pubDate>Wed, 28 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-28-ep4.mp3" length="19621077" type="audio/mpeg"/>
+      <itunes:title>Ep 618: Khare R 2019</itunes:title>
+      <itunes:episode>618</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 617: Nawaz A 2025</title>
+      <description>Nawaz A 2025</description>
+      <guid isPermaLink="false">2026-10-28-ep3</guid>
+      <pubDate>Wed, 28 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-28-ep3.mp3" length="22242117" type="audio/mpeg"/>
+      <itunes:title>Ep 617: Nawaz A 2025</itunes:title>
+      <itunes:episode>617</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 616: Chandak P 2023</title>
+      <description>Chandak P 2023</description>
+      <guid isPermaLink="false">2026-10-28-ep2</guid>
+      <pubDate>Wed, 28 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-28-ep2.mp3" length="27161709" type="audio/mpeg"/>
+      <itunes:title>Ep 616: Chandak P 2023</itunes:title>
+      <itunes:episode>616</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 615: Smith L 2026</title>
+      <description>Smith L 2026</description>
+      <guid isPermaLink="false">2026-10-28-ep1</guid>
+      <pubDate>Wed, 28 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-28-ep1.mp3" length="25155765" type="audio/mpeg"/>
+      <itunes:title>Ep 615: Smith L 2026</itunes:title>
+      <itunes:episode>615</itunes:episode>
+    </item>
     <item>
       <title>Ep 614: Hoxhaj V 2025</title>
       <description>Hoxhaj V 2025</description>
