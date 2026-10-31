@@ -8,11 +8,83 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Oct 2026 11:21:30 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 11:22:50 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 630: Ntinopoulos V 2025</title>
+      <description>Ntinopoulos V 2025</description>
+      <guid isPermaLink="false">2026-10-31-ep4</guid>
+      <pubDate>Sat, 31 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-31-ep4.mp3" length="21244269" type="audio/mpeg"/>
+      <itunes:title>Ep 630: Ntinopoulos V 2025</itunes:title>
+      <itunes:episode>630</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 629: Razzaghi H 2026</title>
+      <description>Razzaghi H 2026</description>
+      <guid isPermaLink="false">2026-10-31-ep3</guid>
+      <pubDate>Sat, 31 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-31-ep3.mp3" length="25294869" type="audio/mpeg"/>
+      <itunes:title>Ep 629: Razzaghi H 2026</itunes:title>
+      <itunes:episode>629</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 628: Canelas-Pais M 2026</title>
+      <description>Canelas-Pais M 2026</description>
+      <guid isPermaLink="false">2026-10-31-ep2</guid>
+      <pubDate>Sat, 31 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-31-ep2.mp3" length="25190277" type="audio/mpeg"/>
+      <itunes:title>Ep 628: Canelas-Pais M 2026</itunes:title>
+      <itunes:episode>628</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 627: Dalgleish R 2026</title>
+      <description>Dalgleish R 2026</description>
+      <guid isPermaLink="false">2026-10-31-ep1</guid>
+      <pubDate>Sat, 31 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-31-ep1.mp3" length="26436501" type="audio/mpeg"/>
+      <itunes:title>Ep 627: Dalgleish R 2026</itunes:title>
+      <itunes:episode>627</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 626: Kontopantelis E 2017</title>
+      <description>Kontopantelis E 2017</description>
+      <guid isPermaLink="false">2026-10-30-ep4</guid>
+      <pubDate>Fri, 30 Oct 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-30-ep4.mp3" length="26984781" type="audio/mpeg"/>
+      <itunes:title>Ep 626: Kontopantelis E 2017</itunes:title>
+      <itunes:episode>626</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 625: Gesicho MB 2020</title>
+      <description>Gesicho MB 2020</description>
+      <guid isPermaLink="false">2026-10-30-ep3</guid>
+      <pubDate>Fri, 30 Oct 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-30-ep3.mp3" length="24420645" type="audio/mpeg"/>
+      <itunes:title>Ep 625: Gesicho MB 2020</itunes:title>
+      <itunes:episode>625</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 624: Herman 2026</title>
+      <description>Herman 2026</description>
+      <guid isPermaLink="false">2026-10-30-ep2</guid>
+      <pubDate>Fri, 30 Oct 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-30-ep2.mp3" length="26003733" type="audio/mpeg"/>
+      <itunes:title>Ep 624: Herman 2026</itunes:title>
+      <itunes:episode>624</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 623: Sun L 2026</title>
+      <description>Sun L 2026</description>
+      <guid isPermaLink="false">2026-10-30-ep1</guid>
+      <pubDate>Fri, 30 Oct 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-30-ep1.mp3" length="28669077" type="audio/mpeg"/>
+      <itunes:title>Ep 623: Sun L 2026</itunes:title>
+      <itunes:episode>623</itunes:episode>
+    </item>
     <item>
       <title>Ep 622: Rogers JR 2019</title>
       <description>Rogers JR 2019</description>
