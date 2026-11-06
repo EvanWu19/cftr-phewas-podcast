@@ -8,11 +8,83 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Nov 2026 11:23:57 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 11:37:38 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 650: Bilukha O 2020</title>
+      <description>Bilukha O 2020</description>
+      <guid isPermaLink="false">2026-11-05-ep4</guid>
+      <pubDate>Thu, 05 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-05-ep4.mp3" length="25230597" type="audio/mpeg"/>
+      <itunes:title>Ep 650: Bilukha O 2020</itunes:title>
+      <itunes:episode>650</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 649: Xiao L 2018</title>
+      <description>Xiao L 2018</description>
+      <guid isPermaLink="false">2026-11-05-ep3</guid>
+      <pubDate>Thu, 05 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-05-ep3.mp3" length="21849765" type="audio/mpeg"/>
+      <itunes:title>Ep 649: Xiao L 2018</itunes:title>
+      <itunes:episode>649</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 648: Nazari I 2026</title>
+      <description>Nazari I 2026</description>
+      <guid isPermaLink="false">2026-11-05-ep2</guid>
+      <pubDate>Thu, 05 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-05-ep2.mp3" length="24883005" type="audio/mpeg"/>
+      <itunes:title>Ep 648: Nazari I 2026</itunes:title>
+      <itunes:episode>648</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 647: Lacaria M 2026</title>
+      <description>Lacaria M 2026</description>
+      <guid isPermaLink="false">2026-11-05-ep1</guid>
+      <pubDate>Thu, 05 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-05-ep1.mp3" length="25570989" type="audio/mpeg"/>
+      <itunes:title>Ep 647: Lacaria M 2026</itunes:title>
+      <itunes:episode>647</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 646: Cole TJ 2018</title>
+      <description>Cole TJ 2018</description>
+      <guid isPermaLink="false">2026-11-04-ep4</guid>
+      <pubDate>Wed, 04 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-04-ep4.mp3" length="19380237" type="audio/mpeg"/>
+      <itunes:title>Ep 646: Cole TJ 2018</itunes:title>
+      <itunes:episode>646</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 645: Boeyer ME 2020</title>
+      <description>Boeyer ME 2020</description>
+      <guid isPermaLink="false">2026-11-04-ep3</guid>
+      <pubDate>Wed, 04 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-04-ep3.mp3" length="20954565" type="audio/mpeg"/>
+      <itunes:title>Ep 645: Boeyer ME 2020</itunes:title>
+      <itunes:episode>645</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 644: Fu S 2026</title>
+      <description>Fu S 2026</description>
+      <guid isPermaLink="false">2026-11-04-ep2</guid>
+      <pubDate>Wed, 04 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-04-ep2.mp3" length="27359781" type="audio/mpeg"/>
+      <itunes:title>Ep 644: Fu S 2026</itunes:title>
+      <itunes:episode>644</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 643: Hauser BM 2026</title>
+      <description>Hauser BM 2026</description>
+      <guid isPermaLink="false">2026-11-04-ep1</guid>
+      <pubDate>Wed, 04 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-04-ep1.mp3" length="28076253" type="audio/mpeg"/>
+      <itunes:title>Ep 643: Hauser BM 2026</itunes:title>
+      <itunes:episode>643</itunes:episode>
+    </item>
     <item>
       <title>Ep 642: Mohamed Y 2022</title>
       <description>Mohamed Y 2022</description>
