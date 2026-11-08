@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Nov 2026 11:22:02 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 11:23:21 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 658: Razzaghi H 2022</title>
+      <description>Razzaghi H 2022</description>
+      <guid isPermaLink="false">2026-11-07-ep4</guid>
+      <pubDate>Sat, 07 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-07-ep4.mp3" length="29263893" type="audio/mpeg"/>
+      <itunes:title>Ep 658: Razzaghi H 2022</itunes:title>
+      <itunes:episode>658</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 657: Sang P 2025</title>
+      <description>Sang P 2025</description>
+      <guid isPermaLink="false">2026-11-07-ep3</guid>
+      <pubDate>Sat, 07 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-07-ep3.mp3" length="23061285" type="audio/mpeg"/>
+      <itunes:title>Ep 657: Sang P 2025</itunes:title>
+      <itunes:episode>657</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 656: Agarwal A 2026</title>
+      <description>Agarwal A 2026</description>
+      <guid isPermaLink="false">2026-11-07-ep2</guid>
+      <pubDate>Sat, 07 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-07-ep2.mp3" length="27636957" type="audio/mpeg"/>
+      <itunes:title>Ep 656: Agarwal A 2026</itunes:title>
+      <itunes:episode>656</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 655: Ye S 2026</title>
+      <description>Ye S 2026</description>
+      <guid isPermaLink="false">2026-11-07-ep1</guid>
+      <pubDate>Sat, 07 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-07-ep1.mp3" length="26907309" type="audio/mpeg"/>
+      <itunes:title>Ep 655: Ye S 2026</itunes:title>
+      <itunes:episode>655</itunes:episode>
+    </item>
     <item>
       <title>Ep 654: Blagus R 2025</title>
       <description>Blagus R 2025</description>
