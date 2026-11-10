@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Nov 2026 11:21:09 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 11:22:31 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 666: Yankam BM 2026</title>
+      <description>Yankam BM 2026</description>
+      <guid isPermaLink="false">2026-11-09-ep4</guid>
+      <pubDate>Mon, 09 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-09-ep4.mp3" length="20968869" type="audio/mpeg"/>
+      <itunes:title>Ep 666: Yankam BM 2026</itunes:title>
+      <itunes:episode>666</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 665: Penev YP 2024</title>
+      <description>Penev YP 2024</description>
+      <guid isPermaLink="false">2026-11-09-ep3</guid>
+      <pubDate>Mon, 09 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-09-ep3.mp3" length="22888413" type="audio/mpeg"/>
+      <itunes:title>Ep 665: Penev YP 2024</itunes:title>
+      <itunes:episode>665</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 664: Schneider-Lunitz V 2026</title>
+      <description>Schneider-Lunitz V 2026</description>
+      <guid isPermaLink="false">2026-11-09-ep2</guid>
+      <pubDate>Mon, 09 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-09-ep2.mp3" length="26023341" type="audio/mpeg"/>
+      <itunes:title>Ep 664: Schneider-Lunitz V 2026</itunes:title>
+      <itunes:episode>664</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 663: Green AG 2026</title>
+      <description>Green AG 2026</description>
+      <guid isPermaLink="false">2026-11-09-ep1</guid>
+      <pubDate>Mon, 09 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-09-ep1.mp3" length="27859845" type="audio/mpeg"/>
+      <itunes:title>Ep 663: Green AG 2026</itunes:title>
+      <itunes:episode>663</itunes:episode>
+    </item>
     <item>
       <title>Ep 662: Lighterness A 2024</title>
       <description>Lighterness A 2024</description>
