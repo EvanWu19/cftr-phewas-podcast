@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Nov 2026 11:22:31 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 11:21:46 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 670: Dwivedi LK 2022</title>
+      <description>Dwivedi LK 2022</description>
+      <guid isPermaLink="false">2026-11-10-ep4</guid>
+      <pubDate>Tue, 10 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-10-ep4.mp3" length="22245957" type="audio/mpeg"/>
+      <itunes:title>Ep 670: Dwivedi LK 2022</itunes:title>
+      <itunes:episode>670</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 669: Corsi DJ 2017</title>
+      <description>Corsi DJ 2017</description>
+      <guid isPermaLink="false">2026-11-10-ep3</guid>
+      <pubDate>Tue, 10 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-10-ep3.mp3" length="21417045" type="audio/mpeg"/>
+      <itunes:title>Ep 669: Corsi DJ 2017</itunes:title>
+      <itunes:episode>669</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 668: Kress L 2026</title>
+      <description>Kress L 2026</description>
+      <guid isPermaLink="false">2026-11-10-ep2</guid>
+      <pubDate>Tue, 10 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-10-ep2.mp3" length="26307309" type="audio/mpeg"/>
+      <itunes:title>Ep 668: Kress L 2026</itunes:title>
+      <itunes:episode>668</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 667: Torretto GC 2026</title>
+      <description>Torretto GC 2026</description>
+      <guid isPermaLink="false">2026-11-10-ep1</guid>
+      <pubDate>Tue, 10 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-10-ep1.mp3" length="30299613" type="audio/mpeg"/>
+      <itunes:title>Ep 667: Torretto GC 2026</itunes:title>
+      <itunes:episode>667</itunes:episode>
+    </item>
     <item>
       <title>Ep 666: Yankam BM 2026</title>
       <description>Yankam BM 2026</description>
