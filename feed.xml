@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Nov 2026 11:21:46 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 11:21:19 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 674: Wang Z 2019</title>
+      <description>Wang Z 2019</description>
+      <guid isPermaLink="false">2026-11-11-ep4</guid>
+      <pubDate>Wed, 11 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-11-ep4.mp3" length="22621941" type="audio/mpeg"/>
+      <itunes:title>Ep 674: Wang Z 2019</itunes:title>
+      <itunes:episode>674</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 673: Grellety E 2016</title>
+      <description>Grellety E 2016</description>
+      <guid isPermaLink="false">2026-11-11-ep3</guid>
+      <pubDate>Wed, 11 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-11-ep3.mp3" length="22075053" type="audio/mpeg"/>
+      <itunes:title>Ep 673: Grellety E 2016</itunes:title>
+      <itunes:episode>673</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 672: Menzies IJ 2026</title>
+      <description>Menzies IJ 2026</description>
+      <guid isPermaLink="false">2026-11-11-ep2</guid>
+      <pubDate>Wed, 11 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-11-ep2.mp3" length="26878293" type="audio/mpeg"/>
+      <itunes:title>Ep 672: Menzies IJ 2026</itunes:title>
+      <itunes:episode>672</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 671: Wang L 2026</title>
+      <description>Wang L 2026</description>
+      <guid isPermaLink="false">2026-11-11-ep1</guid>
+      <pubDate>Wed, 11 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-11-ep1.mp3" length="26088333" type="audio/mpeg"/>
+      <itunes:title>Ep 671: Wang L 2026</itunes:title>
+      <itunes:episode>671</itunes:episode>
+    </item>
     <item>
       <title>Ep 670: Dwivedi LK 2022</title>
       <description>Dwivedi LK 2022</description>
