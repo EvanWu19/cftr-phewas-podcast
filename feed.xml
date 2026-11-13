@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Nov 2026 11:21:19 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 11:21:37 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 678: Estiri H 2017</title>
+      <description>Estiri H 2017</description>
+      <guid isPermaLink="false">2026-11-12-ep4</guid>
+      <pubDate>Thu, 12 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-12-ep4.mp3" length="20776701" type="audio/mpeg"/>
+      <itunes:title>Ep 678: Estiri H 2017</itunes:title>
+      <itunes:episode>678</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 677: Tian Q 2021</title>
+      <description>Tian Q 2021</description>
+      <guid isPermaLink="false">2026-11-12-ep3</guid>
+      <pubDate>Thu, 12 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-12-ep3.mp3" length="21267381" type="audio/mpeg"/>
+      <itunes:title>Ep 677: Tian Q 2021</itunes:title>
+      <itunes:episode>677</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 676: Bellucci G 2026</title>
+      <description>Bellucci G 2026</description>
+      <guid isPermaLink="false">2026-11-12-ep2</guid>
+      <pubDate>Thu, 12 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-12-ep2.mp3" length="27688629" type="audio/mpeg"/>
+      <itunes:title>Ep 676: Bellucci G 2026</itunes:title>
+      <itunes:episode>676</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 675: Gallego-Delgado M 2026</title>
+      <description>Gallego-Delgado M 2026</description>
+      <guid isPermaLink="false">2026-11-12-ep1</guid>
+      <pubDate>Thu, 12 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-12-ep1.mp3" length="26002101" type="audio/mpeg"/>
+      <itunes:title>Ep 675: Gallego-Delgado M 2026</itunes:title>
+      <itunes:episode>675</itunes:episode>
+    </item>
     <item>
       <title>Ep 674: Wang Z 2019</title>
       <description>Wang Z 2019</description>
