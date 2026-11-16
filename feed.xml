@@ -8,11 +8,65 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Nov 2026 11:22:35 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 11:21:52 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 692: Review: Guide A 2024</title>
+      <description>Review: Guide A 2024</description>
+      <guid isPermaLink="false">2026-11-16-ep4</guid>
+      <pubDate>Mon, 16 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-11-ep3.mp3" length="23878125" type="audio/mpeg"/>
+      <itunes:title>Ep 692: Review: Guide A 2024</itunes:title>
+      <itunes:episode>692</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 691: Review: Daymont C 2017</title>
+      <description>Review: Daymont C 2017</description>
+      <guid isPermaLink="false">2026-11-16-ep3</guid>
+      <pubDate>Mon, 16 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-10-ep3.mp3" length="20480781" type="audio/mpeg"/>
+      <itunes:title>Ep 691: Review: Daymont C 2017</itunes:title>
+      <itunes:episode>691</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 690: Tilling K 2014</title>
+      <description>Tilling K 2014</description>
+      <guid isPermaLink="false">2026-11-15-ep4</guid>
+      <pubDate>Sun, 15 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-15-ep4.mp3" length="21239493" type="audio/mpeg"/>
+      <itunes:title>Ep 690: Tilling K 2014</itunes:title>
+      <itunes:episode>690</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 689: Harton J 2022</title>
+      <description>Harton J 2022</description>
+      <guid isPermaLink="false">2026-11-15-ep3</guid>
+      <pubDate>Sun, 15 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-15-ep3.mp3" length="22495485" type="audio/mpeg"/>
+      <itunes:title>Ep 689: Harton J 2022</itunes:title>
+      <itunes:episode>689</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 688: Schuemie M 2024</title>
+      <description>Schuemie M 2024</description>
+      <guid isPermaLink="false">2026-11-15-ep2</guid>
+      <pubDate>Sun, 15 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-15-ep2.mp3" length="26847525" type="audio/mpeg"/>
+      <itunes:title>Ep 688: Schuemie M 2024</itunes:title>
+      <itunes:episode>688</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 687: Ye C 2026</title>
+      <description>Ye C 2026</description>
+      <guid isPermaLink="false">2026-11-15-ep1</guid>
+      <pubDate>Sun, 15 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-15-ep1.mp3" length="27179853" type="audio/mpeg"/>
+      <itunes:title>Ep 687: Ye C 2026</itunes:title>
+      <itunes:episode>687</itunes:episode>
+    </item>
     <item>
       <title>Ep 686: Pfaff ER 2022</title>
       <description>Pfaff ER 2022</description>
