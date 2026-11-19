@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Nov 2026 11:16:27 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 11:15:58 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 702: Review: Woolley CSC 2020</title>
+      <description>Review: Woolley CSC 2020</description>
+      <guid isPermaLink="false">2026-11-18-ep4</guid>
+      <pubDate>Wed, 18 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-27-ep3.mp3" length="23747613" type="audio/mpeg"/>
+      <itunes:title>Ep 702: Review: Woolley CSC 2020</itunes:title>
+      <itunes:episode>702</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 701: Review: Ng DK 2023</title>
+      <description>Review: Ng DK 2023</description>
+      <guid isPermaLink="false">2026-11-18-ep3</guid>
+      <pubDate>Wed, 18 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-22-ep4.mp3" length="22977477" type="audio/mpeg"/>
+      <itunes:title>Ep 701: Review: Ng DK 2023</itunes:title>
+      <itunes:episode>701</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 700: Langer BE 2025</title>
+      <description>Langer BE 2025</description>
+      <guid isPermaLink="false">2026-11-18-ep2</guid>
+      <pubDate>Wed, 18 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-18-ep2.mp3" length="27981885" type="audio/mpeg"/>
+      <itunes:title>Ep 700: Langer BE 2025</itunes:title>
+      <itunes:episode>700</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 699: Abujamous L 2026</title>
+      <description>Abujamous L 2026</description>
+      <guid isPermaLink="false">2026-11-18-ep1</guid>
+      <pubDate>Wed, 18 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-18-ep1.mp3" length="30220533" type="audio/mpeg"/>
+      <itunes:title>Ep 699: Abujamous L 2026</itunes:title>
+      <itunes:episode>699</itunes:episode>
+    </item>
     <item>
       <title>Ep 698: Review: Wu DTY 2018</title>
       <description>Review: Wu DTY 2018</description>
