@@ -8,11 +8,65 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Nov 2026 11:15:06 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 11:24:09 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 716: Review: Van den Broeck J 2005</title>
+      <description>Review: Van den Broeck J 2005</description>
+      <guid isPermaLink="false">2026-11-22-ep4</guid>
+      <pubDate>Sun, 22 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-17-ep3.mp3" length="24768333" type="audio/mpeg"/>
+      <itunes:title>Ep 716: Review: Van den Broeck J 2005</itunes:title>
+      <itunes:episode>716</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 715: Review: Welch C 2012</title>
+      <description>Review: Welch C 2012</description>
+      <guid isPermaLink="false">2026-11-22-ep3</guid>
+      <pubDate>Sun, 22 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-10-09-ep4.mp3" length="26988573" type="audio/mpeg"/>
+      <itunes:title>Ep 715: Review: Welch C 2012</itunes:title>
+      <itunes:episode>715</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 714: Blake V 2026</title>
+      <description>Blake V 2026</description>
+      <guid isPermaLink="false">2026-11-22-ep2</guid>
+      <pubDate>Sun, 22 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-22-ep2.mp3" length="27434493" type="audio/mpeg"/>
+      <itunes:title>Ep 714: Blake V 2026</itunes:title>
+      <itunes:episode>714</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 713: O'Neill AK 2026</title>
+      <description>O'Neill AK 2026</description>
+      <guid isPermaLink="false">2026-11-22-ep1</guid>
+      <pubDate>Sun, 22 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-22-ep1.mp3" length="31855269" type="audio/mpeg"/>
+      <itunes:title>Ep 713: O'Neill AK 2026</itunes:title>
+      <itunes:episode>713</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 712: Mir-Pedrol J 2026</title>
+      <description>Mir-Pedrol J 2026</description>
+      <guid isPermaLink="false">2026-11-21-ep2</guid>
+      <pubDate>Sat, 21 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-21-ep2.mp3" length="24885261" type="audio/mpeg"/>
+      <itunes:title>Ep 712: Mir-Pedrol J 2026</itunes:title>
+      <itunes:episode>712</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 711: Lv J 2026</title>
+      <description>Lv J 2026</description>
+      <guid isPermaLink="false">2026-11-21-ep1</guid>
+      <pubDate>Sat, 21 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-21-ep1.mp3" length="26409189" type="audio/mpeg"/>
+      <itunes:title>Ep 711: Lv J 2026</itunes:title>
+      <itunes:episode>711</itunes:episode>
+    </item>
     <item>
       <title>Ep 710: Review: Naehrlich L 2025</title>
       <description>Review: Naehrlich L 2025</description>
