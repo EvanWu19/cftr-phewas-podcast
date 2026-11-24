@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Nov 2026 11:24:09 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 11:16:19 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 720: Review: Harrall KK 2024</title>
+      <description>Review: Harrall KK 2024</description>
+      <guid isPermaLink="false">2026-11-23-ep4</guid>
+      <pubDate>Mon, 23 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-12-ep3.mp3" length="21405621" type="audio/mpeg"/>
+      <itunes:title>Ep 720: Review: Harrall KK 2024</itunes:title>
+      <itunes:episode>720</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 719: Review: Phan HTT 2020</title>
+      <description>Review: Phan HTT 2020</description>
+      <guid isPermaLink="false">2026-11-23-ep3</guid>
+      <pubDate>Mon, 23 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-10-ep4.mp3" length="22173309" type="audio/mpeg"/>
+      <itunes:title>Ep 719: Review: Phan HTT 2020</itunes:title>
+      <itunes:episode>719</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 718: Zhang G 2026</title>
+      <description>Zhang G 2026</description>
+      <guid isPermaLink="false">2026-11-23-ep2</guid>
+      <pubDate>Mon, 23 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-23-ep2.mp3" length="29074293" type="audio/mpeg"/>
+      <itunes:title>Ep 718: Zhang G 2026</itunes:title>
+      <itunes:episode>718</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 717: Santcroos MA 2025</title>
+      <description>Santcroos MA 2025</description>
+      <guid isPermaLink="false">2026-11-23-ep1</guid>
+      <pubDate>Mon, 23 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-23-ep1.mp3" length="30381621" type="audio/mpeg"/>
+      <itunes:title>Ep 717: Santcroos MA 2025</itunes:title>
+      <itunes:episode>717</itunes:episode>
+    </item>
     <item>
       <title>Ep 716: Review: Van den Broeck J 2005</title>
       <description>Review: Van den Broeck J 2005</description>
