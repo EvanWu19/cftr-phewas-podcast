@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Nov 2026 11:16:19 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 11:15:02 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 724: Review: Yang S 2016</title>
+      <description>Review: Yang S 2016</description>
+      <guid isPermaLink="false">2026-11-24-ep4</guid>
+      <pubDate>Tue, 24 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-13-ep3.mp3" length="19412181" type="audio/mpeg"/>
+      <itunes:title>Ep 724: Review: Yang S 2016</itunes:title>
+      <itunes:episode>724</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 723: Review: de Mello E Silva JF 2024</title>
+      <description>Review: de Mello E Silva JF 2024</description>
+      <guid isPermaLink="false">2026-11-24-ep3</guid>
+      <pubDate>Tue, 24 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-12-ep4.mp3" length="22479453" type="audio/mpeg"/>
+      <itunes:title>Ep 723: Review: de Mello E Silva JF 2024</itunes:title>
+      <itunes:episode>723</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 722: Builtjes L 2025</title>
+      <description>Builtjes L 2025</description>
+      <guid isPermaLink="false">2026-11-24-ep2</guid>
+      <pubDate>Tue, 24 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-24-ep2.mp3" length="25640565" type="audio/mpeg"/>
+      <itunes:title>Ep 722: Builtjes L 2025</itunes:title>
+      <itunes:episode>722</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 721: Al-Eitan LN 2026</title>
+      <description>Al-Eitan LN 2026</description>
+      <guid isPermaLink="false">2026-11-24-ep1</guid>
+      <pubDate>Tue, 24 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-24-ep1.mp3" length="28143405" type="audio/mpeg"/>
+      <itunes:title>Ep 721: Al-Eitan LN 2026</itunes:title>
+      <itunes:episode>721</itunes:episode>
+    </item>
     <item>
       <title>Ep 720: Review: Harrall KK 2024</title>
       <description>Review: Harrall KK 2024</description>
