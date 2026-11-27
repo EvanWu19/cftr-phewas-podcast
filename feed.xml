@@ -8,11 +8,47 @@
     <atom:link href="https://evanwu19.github.io/cftr-phewas-podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Nov 2026 11:16:46 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 11:15:16 +0000</lastBuildDate>
     <itunes:author>Runyu</itunes:author>
     <itunes:summary>Daily one-paper-per-episode digest: CFTR variant interpretation, AI / bioinformatics tooling, and CF genetic modifiers. Two-host format (ALEX &amp; JORDAN).</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Science"/>
+    <item>
+      <title>Ep 732: Review: Smith N 2010</title>
+      <description>Review: Smith N 2010</description>
+      <guid isPermaLink="false">2026-11-26-ep4</guid>
+      <pubDate>Thu, 26 Nov 2026 07:04:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-18-ep4.mp3" length="24194469" type="audio/mpeg"/>
+      <itunes:title>Ep 732: Review: Smith N 2010</itunes:title>
+      <itunes:episode>732</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 731: Review: Freedman DS 2015</title>
+      <description>Review: Freedman DS 2015</description>
+      <guid isPermaLink="false">2026-11-26-ep3</guid>
+      <pubDate>Thu, 26 Nov 2026 07:03:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-08-14-ep4.mp3" length="28564533" type="audio/mpeg"/>
+      <itunes:title>Ep 731: Review: Freedman DS 2015</itunes:title>
+      <itunes:episode>731</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 730: Tong J 2026</title>
+      <description>Tong J 2026</description>
+      <guid isPermaLink="false">2026-11-26-ep2</guid>
+      <pubDate>Thu, 26 Nov 2026 07:02:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-26-ep2.mp3" length="28745613" type="audio/mpeg"/>
+      <itunes:title>Ep 730: Tong J 2026</itunes:title>
+      <itunes:episode>730</itunes:episode>
+    </item>
+    <item>
+      <title>Ep 729: Landrum MJ 2020</title>
+      <description>Landrum MJ 2020</description>
+      <guid isPermaLink="false">2026-11-26-ep1</guid>
+      <pubDate>Thu, 26 Nov 2026 07:01:00 +0000</pubDate>
+      <enclosure url="https://pub-d39575d193664070a81a9da62c9ec5f8.r2.dev/2026-11-26-ep1.mp3" length="25727853" type="audio/mpeg"/>
+      <itunes:title>Ep 729: Landrum MJ 2020</itunes:title>
+      <itunes:episode>729</itunes:episode>
+    </item>
     <item>
       <title>Ep 728: Review: Shi J 2018</title>
       <description>Review: Shi J 2018</description>
